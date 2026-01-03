@@ -3,14 +3,31 @@
  */
 
 import { create } from 'zustand';
-import type { GameState } from '@/types';
+import type { GameState, Scene, Choice } from '@/types';
+import {
+  applyFlagChanges,
+  applyItemChanges,
+  applyRelationshipChanges,
+  applyEvidenceChanges,
+  collectStateChanges,
+} from './sceneTransitions';
 
 /**
  * Game store interface combining state and actions
  */
 interface GameStore extends GameState {
   // Navigation actions
-  goToScene: (sceneId: string) => void;
+  goToScene: (sceneId: string, addToHistory?: boolean) => void;
+  goBack: () => void;
+  canGoBack: () => boolean;
+  clearHistory: () => void;
+
+  // Scene transition with state changes
+  transitionToScene: (
+    nextSceneId: string,
+    currentScene?: Scene,
+    choice?: Choice
+  ) => void;
 
   // Inventory actions
   addItem: (itemId: string) => void;
@@ -24,10 +41,12 @@ interface GameStore extends GameState {
 
   // Flag actions
   setFlag: (flag: string) => void;
+  unsetFlag: (flag: string) => void;
   hasFlag: (flag: string) => boolean;
 
   // Evidence actions
   addEvidence: (evidenceId: string) => void;
+  removeEvidence: (evidenceId: string) => void;
   hasEvidence: (evidenceId: string) => boolean;
 
   // Utility actions
@@ -38,7 +57,8 @@ interface GameStore extends GameState {
  * Initial game state
  */
 const initialState: GameState = {
-  currentScene: 'intro',
+  currentScene: 'X-0-001',
+  sceneHistory: [],
   inventory: [],
   relationships: {},
   flags: [],
@@ -53,8 +73,74 @@ export const useGameStore = create<GameStore>((set, get) => ({
   ...initialState,
 
   // Navigation
-  goToScene: (sceneId: string) => {
-    set({ currentScene: sceneId });
+  goToScene: (sceneId: string, addToHistory = true) => {
+    set((state) => {
+      const newHistory = addToHistory
+        ? [...state.sceneHistory, state.currentScene]
+        : state.sceneHistory;
+      return {
+        currentScene: sceneId,
+        sceneHistory: newHistory,
+      };
+    });
+  },
+
+  goBack: () => {
+    set((state) => {
+      if (state.sceneHistory.length === 0) {
+        return state; // No history to go back to
+      }
+      const newHistory = [...state.sceneHistory];
+      const previousScene = newHistory.pop()!;
+      return {
+        currentScene: previousScene,
+        sceneHistory: newHistory,
+      };
+    });
+  },
+
+  canGoBack: () => {
+    return get().sceneHistory.length > 0;
+  },
+
+  clearHistory: () => {
+    set({ sceneHistory: [] });
+  },
+
+  // Scene transition with automatic state changes
+  transitionToScene: (
+    nextSceneId: string,
+    currentScene?: Scene,
+    choice?: Choice
+  ) => {
+    set((state) => {
+      // Collect all state changes from scene and choice
+      const stateChanges = currentScene
+        ? collectStateChanges(currentScene, choice)
+        : {};
+
+      // Apply all state changes
+      const newFlags = applyFlagChanges(state.flags, stateChanges.flags);
+      const newInventory = applyItemChanges(state.inventory, stateChanges.items);
+      const newRelationships = applyRelationshipChanges(
+        state.relationships,
+        stateChanges.relationships
+      );
+      const newEvidence = applyEvidenceChanges(
+        state.evidence,
+        stateChanges.evidence
+      );
+
+      // Update scene and add to history
+      return {
+        currentScene: nextSceneId,
+        sceneHistory: [...state.sceneHistory, state.currentScene],
+        flags: newFlags,
+        inventory: newInventory,
+        relationships: newRelationships,
+        evidence: newEvidence,
+      };
+    });
   },
 
   // Inventory management
@@ -114,6 +200,12 @@ export const useGameStore = create<GameStore>((set, get) => ({
     });
   },
 
+  unsetFlag: (flag: string) => {
+    set((state) => ({
+      flags: state.flags.filter((f) => f !== flag),
+    }));
+  },
+
   hasFlag: (flag: string) => {
     return get().flags.includes(flag);
   },
@@ -126,6 +218,12 @@ export const useGameStore = create<GameStore>((set, get) => ({
       }
       return { evidence: [...state.evidence, evidenceId] };
     });
+  },
+
+  removeEvidence: (evidenceId: string) => {
+    set((state) => ({
+      evidence: state.evidence.filter((item) => item !== evidenceId),
+    }));
   },
 
   hasEvidence: (evidenceId: string) => {

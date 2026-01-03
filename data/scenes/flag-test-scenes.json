@@ -1,0 +1,138 @@
+[
+  {
+    "id": "FLAG-TEST-001",
+    "type": "narrative",
+    "content": {
+      "text": "Welcome to the flag persistence test. This scene will set the 'story:intro_complete' flag when you visit it. Click Continue to proceed.",
+      "visual": "/images/test/flag-test.png"
+    },
+    "choices": [],
+    "nextScene": "FLAG-TEST-002",
+    "flagChanges": {
+      "set": ["story:intro_complete"]
+    }
+  },
+  {
+    "id": "FLAG-TEST-002",
+    "type": "choice",
+    "content": {
+      "text": "The intro flag has been set. Now make a choice to set more flags or check requirements."
+    },
+    "choices": [
+      {
+        "text": "Meet the warden (sets char:met_warden flag)",
+        "nextScene": "FLAG-TEST-003",
+        "flagChanges": {
+          "set": ["story:met_warden"]
+        }
+      },
+      {
+        "text": "Explore the courtyard (sets loc:found_courtyard flag)",
+        "nextScene": "FLAG-TEST-004",
+        "flagChanges": {
+          "set": ["loc:found_courtyard"]
+        }
+      },
+      {
+        "text": "Go back to test persistence",
+        "nextScene": "FLAG-TEST-001"
+      }
+    ]
+  },
+  {
+    "id": "FLAG-TEST-003",
+    "type": "dialogue",
+    "content": {
+      "speaker": "Warden",
+      "text": "Welcome to El Palo de Queso. The 'story:met_warden' flag has been set. You can now access special choices that require meeting me.",
+      "visual": "/images/characters/warden.png"
+    },
+    "choices": [
+      {
+        "text": "Ask about the escape plan (requires met_warden flag)",
+        "nextScene": "FLAG-TEST-005",
+        "requirements": {
+          "flags": ["story:met_warden"]
+        },
+        "flagChanges": {
+          "set": ["quest:accepted_escape_plan"]
+        }
+      },
+      {
+        "text": "This choice requires intro_complete AND met_warden",
+        "nextScene": "FLAG-TEST-006",
+        "requirements": {
+          "flags": ["story:intro_complete", "story:met_warden"]
+        }
+      },
+      {
+        "text": "Go back",
+        "nextScene": "FLAG-TEST-002"
+      }
+    ]
+  },
+  {
+    "id": "FLAG-TEST-004",
+    "type": "investigation",
+    "content": {
+      "text": "You explore the courtyard and discover the guard schedule hidden behind a bench. The 'loc:found_courtyard' and 'disc:guard_schedule' flags have been set.",
+      "visual": "/images/locations/courtyard.png"
+    },
+    "choices": [
+      {
+        "text": "Continue exploring",
+        "nextScene": "FLAG-TEST-002"
+      }
+    ],
+    "flagChanges": {
+      "set": ["disc:guard_schedule"]
+    }
+  },
+  {
+    "id": "FLAG-TEST-005",
+    "type": "dialogue",
+    "content": {
+      "speaker": "Warden",
+      "text": "The escape plan is risky, but if you have the guard schedule it might work. This choice required the 'story:met_warden' flag.",
+      "visual": "/images/characters/warden-serious.png"
+    },
+    "choices": [
+      {
+        "text": "Execute the plan (requires guard_schedule flag)",
+        "nextScene": "FLAG-TEST-007",
+        "requirements": {
+          "flags": ["disc:guard_schedule"]
+        }
+      },
+      {
+        "text": "Not ready yet",
+        "nextScene": "FLAG-TEST-002"
+      }
+    ]
+  },
+  {
+    "id": "FLAG-TEST-006",
+    "type": "narrative",
+    "content": {
+      "text": "Success! You accessed this scene because you had BOTH the 'story:intro_complete' and 'story:met_warden' flags. This demonstrates that multiple flag requirements work correctly."
+    },
+    "choices": [
+      {
+        "text": "Continue",
+        "nextScene": "FLAG-TEST-002"
+      }
+    ]
+  },
+  {
+    "id": "FLAG-TEST-007",
+    "type": "ending",
+    "content": {
+      "text": "You successfully escaped! This ending required having both 'quest:accepted_escape_plan' and 'disc:guard_schedule' flags. The 'ending:escape_success' flag has been set.",
+      "visual": "/images/endings/escape-success.png"
+    },
+    "choices": [],
+    "flagChanges": {
+      "set": ["ending:escape_success"]
+    }
+  }
+]

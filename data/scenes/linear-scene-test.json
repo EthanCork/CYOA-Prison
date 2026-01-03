@@ -1,0 +1,180 @@
+[
+  {
+    "id": "LINEAR-001",
+    "type": "narrative",
+    "content": {
+      "text": "Welcome to the linear scene test. This scene has no choices - just a Continue button that will automatically take you to the next scene. Notice how the button appears after the text is displayed.",
+      "visual": "/images/test/linear-start.png"
+    },
+    "choices": [],
+    "nextScene": "LINEAR-002",
+    "flagChanges": {
+      "set": ["story:linear_test_started"]
+    }
+  },
+  {
+    "id": "LINEAR-002",
+    "type": "narrative",
+    "content": {
+      "text": "The iron door slams shut behind you. The sound echoes through the cold stone corridor. This is El Palo de Queso - the most notorious prison in the country. Your new home."
+    },
+    "choices": [],
+    "nextScene": "LINEAR-003",
+    "itemChanges": {
+      "add": ["prison_uniform"]
+    }
+  },
+  {
+    "id": "LINEAR-003",
+    "type": "narrative",
+    "content": {
+      "text": "A guard escorts you through the facility. Other inmates watch you pass, their eyes following your every move. Some nod knowingly, others look away. You feel the weight of their judgment.",
+      "visual": "/images/locations/corridor.png"
+    },
+    "choices": [],
+    "nextScene": "LINEAR-004",
+    "relationshipChanges": {
+      "guard": -5
+    }
+  },
+  {
+    "id": "LINEAR-004",
+    "type": "dialogue",
+    "content": {
+      "speaker": "Guard Captain",
+      "text": "Listen up, new fish. Keep your head down, follow the rules, and maybe you will make it out of here alive. Step out of line, and you will wish you had never been born.",
+      "visual": "/images/characters/guard-captain.png"
+    },
+    "choices": [],
+    "nextScene": "LINEAR-005",
+    "flagChanges": {
+      "set": ["story:received_warning"]
+    }
+  },
+  {
+    "id": "LINEAR-005",
+    "type": "narrative",
+    "content": {
+      "text": "The guard leaves you at your cell. A small metal bed, a rusty sink, and a toilet. This is your world now. But maybe, just maybe, there is a way out."
+    },
+    "choices": [],
+    "nextScene": "LINEAR-006",
+    "itemChanges": {
+      "add": ["cell_key"]
+    },
+    "flagChanges": {
+      "set": ["loc:arrived_at_cell"]
+    }
+  },
+  {
+    "id": "LINEAR-006",
+    "type": "narrative",
+    "content": {
+      "text": "As you lie on the hard bed, staring at the ceiling, you notice something scratched into the concrete above you: TRUST NO ONE. YOU CAN ESCAPE. Interesting advice from a previous occupant."
+    },
+    "choices": [],
+    "nextScene": "LINEAR-CHOICE",
+    "flagChanges": {
+      "set": ["disc:found_message"]
+    }
+  },
+  {
+    "id": "LINEAR-CHOICE",
+    "type": "choice",
+    "content": {
+      "text": "After experiencing a series of linear narrative scenes, you now face your first choice. The linear Continue buttons have brought you to this point. What will you do?"
+    },
+    "choices": [
+      {
+        "text": "Start planning your escape",
+        "nextScene": "LINEAR-ESCAPE-PATH",
+        "flagChanges": {
+          "set": ["quest:planning_escape"]
+        }
+      },
+      {
+        "text": "Try to fit in with the inmates",
+        "nextScene": "LINEAR-SOCIAL-PATH",
+        "flagChanges": {
+          "set": ["quest:building_relationships"]
+        }
+      },
+      {
+        "text": "Keep a low profile and survive",
+        "nextScene": "LINEAR-SURVIVE-PATH",
+        "flagChanges": {
+          "set": ["quest:laying_low"]
+        }
+      }
+    ]
+  },
+  {
+    "id": "LINEAR-ESCAPE-PATH",
+    "type": "narrative",
+    "content": {
+      "text": "You decide to focus on escaping. Every day, you study the guard patterns, looking for weaknesses in their routine. It is dangerous work, but freedom is worth the risk."
+    },
+    "choices": [],
+    "nextScene": "LINEAR-ENDING-ESCAPE",
+    "flagChanges": {
+      "set": ["char:escape_focused"]
+    }
+  },
+  {
+    "id": "LINEAR-SOCIAL-PATH",
+    "type": "narrative",
+    "content": {
+      "text": "You spend your time getting to know the other inmates. Building alliances, making friends, establishing your place in the prison hierarchy. Survival is a social game in here."
+    },
+    "choices": [],
+    "nextScene": "LINEAR-ENDING-SOCIAL",
+    "relationshipChanges": {
+      "inmates": 30
+    }
+  },
+  {
+    "id": "LINEAR-SURVIVE-PATH",
+    "type": "narrative",
+    "content": {
+      "text": "You keep your head down and follow the rules. No trouble, no attention. Just one day at a time, trying to make it through your sentence in one piece."
+    },
+    "choices": [],
+    "nextScene": "LINEAR-ENDING-SURVIVE"
+  },
+  {
+    "id": "LINEAR-ENDING-ESCAPE",
+    "type": "ending",
+    "content": {
+      "text": "After months of planning, you finally make your move. Under cover of darkness, you slip through the gap in the fence you have been widening for weeks. Freedom awaits!",
+      "visual": "/images/endings/escape.png"
+    },
+    "choices": [],
+    "flagChanges": {
+      "set": ["ending:escape_attempt"]
+    }
+  },
+  {
+    "id": "LINEAR-ENDING-SOCIAL",
+    "type": "ending",
+    "content": {
+      "text": "Your social connections have made prison life bearable. You have become a respected member of the community. When your sentence ends, you leave with friends and connections that will last a lifetime.",
+      "visual": "/images/endings/social.png"
+    },
+    "choices": [],
+    "flagChanges": {
+      "set": ["ending:social_success"]
+    }
+  },
+  {
+    "id": "LINEAR-ENDING-SURVIVE",
+    "type": "ending",
+    "content": {
+      "text": "You made it through. Day by day, week by week, year by year. It was not glamorous, but you survived. You walk out of El Palo de Queso a free person, ready to rebuild your life.",
+      "visual": "/images/endings/survive.png"
+    },
+    "choices": [],
+    "flagChanges": {
+      "set": ["ending:survived"]
+    }
+  }
+]

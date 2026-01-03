@@ -1,0 +1,116 @@
+{
+  "scenes": [
+    {
+      "id": "X-0-001",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/prison-exterior.jpg",
+        "text": "The transport van rumbles to a stop. Through the small reinforced window, you catch your first glimpse of El Palo de Queso - the notorious prison that will be your home for the foreseeable future. The massive concrete walls loom against the Venezuelan sky.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-002"
+    },
+    {
+      "id": "X-0-002",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/characters/guard-serious.png",
+        "text": "Welcome to El Palo de Queso. I'm Officer Ramirez. You'll want to keep your head down in here. This place... it has a way of changing people.",
+        "speaker": "Officer Ramirez"
+      },
+      "choices": [
+        {
+          "text": "Thank you for the advice, officer.",
+          "nextScene": "A-1-001",
+          "relationshipChanges": {
+            "ramirez": 5
+          }
+        },
+        {
+          "text": "I can take care of myself.",
+          "nextScene": "A-1-002",
+          "relationshipChanges": {
+            "ramirez": -3
+          }
+        },
+        {
+          "text": "Say nothing and just nod.",
+          "nextScene": "A-1-003"
+        }
+      ]
+    },
+    {
+      "id": "A-1-001",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/cell-block.jpg",
+        "text": "Officer Ramirez leads you through the cell block. The eyes of dozens of inmates follow your every move. You reach your cell - a cramped space with a single bunk, a toilet, and a small barred window.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Examine the cell carefully",
+          "nextScene": "A-1-015",
+          "flagChanges": {
+            "set": ["examined_cell"]
+          }
+        },
+        {
+          "text": "Try to talk to the inmates nearby",
+          "nextScene": "A-1-016",
+          "requirements": {
+            "relationships": {
+              "ramirez": 5
+            }
+          }
+        },
+        {
+          "text": "Rest on your bunk and think",
+          "nextScene": "A-1-017"
+        }
+      ]
+    },
+    {
+      "id": "A-1-015",
+      "type": "investigation",
+      "content": {
+        "visual": "/images/backgrounds/cell-interior.jpg",
+        "text": "You carefully examine every corner of your cell. Behind a loose brick near the window, you find something scratched into the wall - a series of numbers: '23-7-89'. Someone was keeping track of something here.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Take note of the numbers",
+          "nextScene": "A-2-001",
+          "evidenceChanges": {
+            "add": ["mysterious_numbers"]
+          },
+          "flagChanges": {
+            "set": ["found_cell_clue"]
+          }
+        },
+        {
+          "text": "Ignore it and move on",
+          "nextScene": "A-2-002"
+        }
+      ],
+      "itemChanges": {
+        "add": ["loose_brick"]
+      }
+    },
+    {
+      "id": "END-1-ESCAPE",
+      "type": "ending",
+      "content": {
+        "visual": "/images/backgrounds/freedom.jpg",
+        "text": "After months of careful planning and building alliances, you finally make it over the wall. The Venezuelan jungle stretches before you. You're free, but the secrets of El Palo de Queso will haunt you forever.",
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["escaped_prison", "ending_reached"]
+      }
+    }
+  ]
+}

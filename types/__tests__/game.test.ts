@@ -5,6 +5,8 @@
 
 import type {
   Scene,
+  SceneType,
+  SceneContent,
   GameState,
   Choice,
   Character,
@@ -12,22 +14,41 @@ import type {
   Evidence,
 } from '../game';
 
+// Test SceneContent type
+const testSceneContent: SceneContent = {
+  visual: '/images/test-bg.jpg',
+  text: 'This is a test scene.',
+  speaker: 'Test Character',
+};
+
 // Test Scene type
 const testScene: Scene = {
-  id: 'test-scene',
-  content: 'This is a test scene.',
+  id: 'X-0-001',
+  type: 'narrative',
+  content: {
+    visual: '/images/backgrounds/test.jpg',
+    text: 'This is a test scene.',
+    speaker: null,
+  },
   choices: [
     {
       text: 'Continue',
-      nextScene: 'next-scene',
+      nextScene: 'X-0-002',
     },
   ],
-  flags: ['test-flag'],
-  items: ['test-item'],
-  relationships: {
+  nextScene: 'X-0-002',
+  flagChanges: {
+    set: ['test-flag'],
+  },
+  itemChanges: {
+    add: ['test-item'],
+  },
+  relationshipChanges: {
     'character-1': 10,
   },
-  evidence: ['test-evidence'],
+  evidenceChanges: {
+    add: ['test-evidence'],
+  },
 };
 
 // Test Choice type with requirements
@@ -80,6 +101,7 @@ const testEvidence: Evidence = {
 
 // Export to prevent unused variable errors
 export {
+  testSceneContent,
   testScene,
   testChoice,
   testCharacter,

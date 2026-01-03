@@ -1,0 +1,179 @@
+[
+  {
+    "id": "AUTO-001",
+    "type": "narrative",
+    "content": {
+      "text": "Welcome to the Auto-Actions test. When you entered this scene, you automatically received a rusty_key and gained +10 relationship with the guard. Notice the notifications that appeared!",
+      "visual": "/images/test/auto-action.png"
+    },
+    "choices": [
+      {
+        "text": "Continue to the next test",
+        "nextScene": "AUTO-002"
+      }
+    ],
+    "itemChanges": {
+      "add": ["rusty_key"]
+    },
+    "relationshipChanges": {
+      "guard": 10
+    },
+    "flagChanges": {
+      "set": ["story:auto_actions_intro"]
+    }
+  },
+  {
+    "id": "AUTO-002",
+    "type": "narrative",
+    "content": {
+      "text": "This scene automatically gives you multiple items at once: a lockpick, a map, and some bread. It also sets two flags. Watch the notifications stack!"
+    },
+    "choices": [
+      {
+        "text": "Continue",
+        "nextScene": "AUTO-003"
+      }
+    ],
+    "itemChanges": {
+      "add": ["lockpick", "map", "bread"]
+    },
+    "flagChanges": {
+      "set": ["loc:found_items", "quest:gathered_supplies"]
+    }
+  },
+  {
+    "id": "AUTO-003",
+    "type": "dialogue",
+    "content": {
+      "speaker": "Friendly Inmate",
+      "text": "Hey, you seem trustworthy. Let me help you out. Here, take this evidence I found. Also, I will vouch for you with the other inmates.",
+      "visual": "/images/characters/inmate-friendly.png"
+    },
+    "choices": [
+      {
+        "text": "Thank him (+5 relationship)",
+        "nextScene": "AUTO-004",
+        "relationshipChanges": {
+          "friendly_inmate": 5
+        }
+      },
+      {
+        "text": "Refuse his help (-5 relationship)",
+        "nextScene": "AUTO-004",
+        "relationshipChanges": {
+          "friendly_inmate": -5
+        }
+      }
+    ],
+    "evidenceChanges": {
+      "add": ["mysterious_note"]
+    },
+    "relationshipChanges": {
+      "inmates": 15
+    }
+  },
+  {
+    "id": "AUTO-004",
+    "type": "investigation",
+    "content": {
+      "text": "You find a hidden stash in the courtyard! Automatically gained: guard_uniform, keycard, and discovered the secret_passage flag. Lost: rusty_key (upgraded to keycard)."
+    },
+    "choices": [
+      {
+        "text": "Use the keycard immediately",
+        "nextScene": "AUTO-005",
+        "requirements": {
+          "items": ["keycard"]
+        },
+        "itemChanges": {
+          "remove": ["keycard"]
+        },
+        "flagChanges": {
+          "set": ["used:keycard"]
+        }
+      },
+      {
+        "text": "Save it for later",
+        "nextScene": "AUTO-005"
+      }
+    ],
+    "itemChanges": {
+      "add": ["guard_uniform", "keycard"],
+      "remove": ["rusty_key"]
+    },
+    "flagChanges": {
+      "set": ["disc:secret_passage"]
+    }
+  },
+  {
+    "id": "AUTO-005",
+    "type": "choice",
+    "content": {
+      "text": "This scene demonstrates negative auto-actions. Entering this scene automatically removes some items and decreases relationship with guards (simulating getting caught)."
+    },
+    "choices": [
+      {
+        "text": "Try to escape anyway",
+        "nextScene": "AUTO-006"
+      },
+      {
+        "text": "Lay low for now",
+        "nextScene": "AUTO-006"
+      }
+    ],
+    "itemChanges": {
+      "remove": ["bread"]
+    },
+    "relationshipChanges": {
+      "guard": -20
+    },
+    "flagChanges": {
+      "set": ["char:caught_searching"],
+      "unset": ["loc:found_items"]
+    }
+  },
+  {
+    "id": "AUTO-006",
+    "type": "narrative",
+    "content": {
+      "text": "Complex state changes: This scene modifies multiple types of state at once. You gain evidence, lose an item, relationship changes with multiple characters, and several flags are set/unset."
+    },
+    "choices": [
+      {
+        "text": "Review all the changes",
+        "nextScene": "AUTO-007"
+      }
+    ],
+    "itemChanges": {
+      "add": ["contraband"],
+      "remove": ["map"]
+    },
+    "evidenceChanges": {
+      "add": ["fingerprints", "alibi"]
+    },
+    "relationshipChanges": {
+      "warden": -10,
+      "inmates": 20,
+      "friendly_inmate": 5
+    },
+    "flagChanges": {
+      "set": ["quest:joined_inmates", "char:rebel"],
+      "unset": ["char:caught_searching"]
+    }
+  },
+  {
+    "id": "AUTO-007",
+    "type": "ending",
+    "content": {
+      "text": "You have completed the auto-actions test! This ending automatically sets the ending flag and grants you a final achievement item.",
+      "visual": "/images/test/complete.png"
+    },
+    "choices": [],
+    "itemChanges": {
+      "add": ["achievement_badge"]
+    },
+    "flagChanges": {
+      "set": ["ending:test_complete", "achievement:auto_actions_master"]
+    }
+  }
+]
