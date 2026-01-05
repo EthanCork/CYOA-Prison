@@ -1,0 +1,256 @@
+{
+  "characters": [
+    {
+      "id": "bastian",
+      "name": "Bastian",
+      "initialRelationship": 30,
+      "description": "A fellow inmate who has been at El Palo de Queso for several years. He knows the ins and outs of the prison and can be a valuable ally if you maintain his trust.",
+      "role": "Veteran Inmate",
+      "category": "ally",
+      "location": "Cell Block A",
+      "traits": ["Resourceful", "Cautious", "Loyal"],
+      "background": "Bastian has survived in the prison by staying neutral and helping those who help him. He has connections throughout the facility.",
+      "relationshipThresholds": {
+        "trusted": 50,
+        "friend": 70,
+        "devotedAlly": 90
+      },
+      "unlocks": {
+        "50": "Bastian shares prison secrets and safe routes",
+        "70": "Bastian introduces you to his network of contacts",
+        "90": "Bastian commits to helping you escape"
+      }
+    },
+    {
+      "id": "marcel",
+      "name": "Marcel",
+      "initialRelationship": 0,
+      "description": "A quiet inmate who keeps to himself. You haven't had much interaction with him yet, so your relationship is neutral.",
+      "role": "Loner",
+      "category": "neutral",
+      "location": "Cell Block B",
+      "traits": ["Reserved", "Observant", "Unpredictable"],
+      "background": "Marcel arrived around the same time as you. Nobody knows much about him, and he prefers it that way.",
+      "relationshipThresholds": {
+        "acquaintance": 20,
+        "trusted": 60,
+        "confidant": 85
+      },
+      "unlocks": {
+        "20": "Marcel starts acknowledging you",
+        "60": "Marcel reveals he's actually an undercover agent",
+        "85": "Marcel offers to help with your escape plan"
+      }
+    },
+    {
+      "id": "viktor",
+      "name": "Viktor",
+      "initialRelationship": -20,
+      "description": "A member of the dominant prison gang. He views you with suspicion and has made it clear you're not welcome in his territory.",
+      "role": "Gang Lieutenant",
+      "category": "antagonist",
+      "location": "Cell Block C",
+      "traits": ["Aggressive", "Territorial", "Intimidating"],
+      "background": "Viktor runs protection rackets in his cell block and doesn't like outsiders. You got off on the wrong foot with him during your first day.",
+      "relationshipThresholds": {
+        "neutral": 0,
+        "respectful": 40,
+        "ally": 70
+      },
+      "unlocks": {
+        "0": "Viktor stops harassing you",
+        "40": "Viktor offers protection in exchange for favors",
+        "70": "Viktor pledges his gang's support for your escape"
+      }
+    },
+    {
+      "id": "denis",
+      "name": "Denis",
+      "initialRelationship": 20,
+      "description": "A friendly inmate who works in the kitchen. He helped you out when you first arrived and seems genuinely kind despite the harsh environment.",
+      "role": "Kitchen Worker",
+      "category": "ally",
+      "location": "Kitchen / Cafeteria",
+      "traits": ["Kind", "Helpful", "Optimistic"],
+      "background": "Denis has been trying to keep his head down and serve his time peacefully. He believes in treating others with respect.",
+      "relationshipThresholds": {
+        "friend": 50,
+        "trustedFriend": 75,
+        "bestFriend": 95
+      },
+      "unlocks": {
+        "50": "Denis sneaks you extra food and supplies",
+        "75": "Denis reveals guard schedules and weak points",
+        "95": "Denis risks his safety to aid your escape"
+      }
+    },
+    {
+      "id": "emile",
+      "name": "Émile",
+      "initialRelationship": -50,
+      "description": "A dangerous inmate with a violent reputation. He's made it clear he doesn't like you and has threatened you multiple times.",
+      "role": "Enforcer",
+      "category": "antagonist",
+      "location": "Yard / Cell Block D",
+      "traits": ["Violent", "Ruthless", "Feared"],
+      "background": "Émile is the muscle for the prison's most powerful gang. He's known for brutal attacks and has a personal grudge against you for reasons you don't fully understand.",
+      "relationshipThresholds": {
+        "hostile": -20,
+        "neutral": 10,
+        "peaceful": 50
+      },
+      "unlocks": {
+        "-20": "Émile will avoid direct confrontation",
+        "10": "Émile stops actively hunting you",
+        "50": "Émile becomes a reluctant ally"
+      }
+    },
+    {
+      "id": "dr_moreau",
+      "name": "Dr. Moreau",
+      "initialRelationship": 0,
+      "description": "The prison doctor who runs the infirmary. Professional but distant, he treats inmates with clinical detachment.",
+      "role": "Prison Doctor",
+      "category": "neutral",
+      "location": "Infirmary",
+      "traits": ["Professional", "Detached", "Knowledgeable"],
+      "background": "Dr. Moreau has worked at El Palo de Queso for over a decade. He's seen everything and maintains strict neutrality with inmates.",
+      "relationshipThresholds": {
+        "cooperative": 30,
+        "helpful": 60,
+        "accomplice": 85
+      },
+      "unlocks": {
+        "30": "Dr. Moreau provides medical supplies discreetly",
+        "60": "Dr. Moreau falsifies medical records for you",
+        "85": "Dr. Moreau actively assists in escape plans"
+      }
+    },
+    {
+      "id": "lucia",
+      "name": "Lucía",
+      "initialRelationship": 0,
+      "description": "A sharp-minded inmate who works in the prison library. She's observant and well-informed about everything happening in the prison.",
+      "role": "Librarian",
+      "category": "ally",
+      "location": "Library",
+      "traits": ["Intelligent", "Perceptive", "Secretive"],
+      "background": "Lucía was a journalist before being imprisoned for exposing government corruption. She maintains an information network within the prison.",
+      "relationshipThresholds": {
+        "informant": 25,
+        "collaborator": 55,
+        "partner": 80
+      },
+      "unlocks": {
+        "25": "Lucía shares valuable intel about guards and inmates",
+        "55": "Lucía provides access to restricted documents",
+        "80": "Lucía coordinates the information network for your escape"
+      }
+    },
+    {
+      "id": "warden_vasquez",
+      "name": "Warden Vásquez",
+      "initialRelationship": -30,
+      "description": "The warden of El Palo de Queso. Corrupt and ruthless, he runs the prison like a personal fiefdom.",
+      "role": "Warden",
+      "category": "antagonist",
+      "location": "Administration Building",
+      "traits": ["Corrupt", "Calculating", "Merciless"],
+      "background": "Warden Vásquez has been in charge for 15 years, amassing wealth through bribes and illegal dealings. He sees inmates as commodities.",
+      "relationshipThresholds": {
+        "tolerated": -10,
+        "useful": 20,
+        "asset": 60
+      },
+      "unlocks": {
+        "-10": "Warden stops targeting you specifically",
+        "20": "Warden offers 'special' work assignments",
+        "60": "Warden might look the other way for the right price"
+      }
+    },
+    {
+      "id": "padre_ramon",
+      "name": "Padre Ramón",
+      "initialRelationship": 15,
+      "description": "The prison chaplain who offers spiritual guidance and counseling. He's one of the few genuinely good people in the prison.",
+      "role": "Chaplain",
+      "category": "ally",
+      "location": "Chapel",
+      "traits": ["Compassionate", "Wise", "Principled"],
+      "background": "Padre Ramón has served at the prison for 8 years, trying to bring hope and redemption to the inmates. He opposes the warden's corruption.",
+      "relationshipThresholds": {
+        "confided": 40,
+        "mentor": 65,
+        "advocate": 85
+      },
+      "unlocks": {
+        "40": "Padre Ramón provides sanctuary in the chapel",
+        "65": "Padre Ramón shares escape routes used by past inmates",
+        "85": "Padre Ramón actively works to expose prison corruption"
+      }
+    },
+    {
+      "id": "carlos",
+      "name": "Carlos 'El Serpiente'",
+      "initialRelationship": -40,
+      "description": "The leader of the most powerful gang in El Palo de Queso. Cunning and dangerous, he controls much of the contraband trade.",
+      "role": "Gang Leader",
+      "category": "antagonist",
+      "location": "Cell Block D / Yard",
+      "traits": ["Cunning", "Charismatic", "Dangerous"],
+      "background": "Carlos built his empire through manipulation and violence. He sees the prison as his kingdom and doesn't tolerate challenges to his authority.",
+      "relationshipThresholds": {
+        "acknowledged": -10,
+        "respected": 30,
+        "partnership": 70
+      },
+      "unlocks": {
+        "-10": "Carlos orders his gang to leave you alone",
+        "30": "Carlos offers to work together on mutual goals",
+        "70": "Carlos provides resources and manpower for escape"
+      }
+    },
+    {
+      "id": "officer_ramirez",
+      "name": "Officer Ramírez",
+      "initialRelationship": 5,
+      "description": "A prison guard who seems less corrupt than most. He's professional but shows occasional glimpses of humanity.",
+      "role": "Prison Guard",
+      "category": "neutral",
+      "location": "Cell Blocks / Yard",
+      "traits": ["Professional", "Conflicted", "Fair"],
+      "background": "Officer Ramírez is relatively new to El Palo de Queso and hasn't been fully corrupted yet. He struggles with the moral compromises required.",
+      "relationshipThresholds": {
+        "civil": 25,
+        "sympathetic": 50,
+        "compromised": 75
+      },
+      "unlocks": {
+        "25": "Ramírez turns a blind eye to minor infractions",
+        "50": "Ramírez provides warnings about upcoming searches",
+        "75": "Ramírez actively assists your escape attempt"
+      }
+    },
+    {
+      "id": "maria",
+      "name": "María",
+      "initialRelationship": 0,
+      "description": "Your sister on the outside. Though you can't interact with her directly, her letters and visits remind you why you must survive and escape.",
+      "role": "Family (Outside)",
+      "category": "referenced",
+      "location": "Outside Prison",
+      "traits": ["Loving", "Supportive", "Determined"],
+      "background": "María has been fighting to prove your innocence and working to get you out legally. She visits when she can and sends letters of encouragement.",
+      "relationshipThresholds": {
+        "maintained": 20,
+        "strengthened": 60,
+        "unbreakable": 90
+      },
+      "unlocks": {
+        "20": "María sends care packages with hidden items",
+        "60": "María coordinates with outside contacts to help",
+        "90": "María arranges external support for your escape"
+      }
+    }
+  ]
+}

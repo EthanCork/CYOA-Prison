@@ -1,0 +1,49 @@
+{
+  "evidence": [
+    {
+      "id": "warden_ledger",
+      "name": "Warden's Financial Ledger",
+      "description": "A detailed ledger showing bribes, embezzlement, and illegal payments. Documents years of corruption by Warden Vásquez, including payments from gang leaders and missing prisoner funds."
+    },
+    {
+      "id": "guard_brutality_photos",
+      "name": "Photographs of Guard Brutality",
+      "description": "Hidden camera photos showing guards beating inmates without provocation. Clear evidence of systematic abuse and violations of prisoner rights. Several guards can be identified."
+    },
+    {
+      "id": "fake_death_certificate",
+      "name": "Forged Death Certificate",
+      "description": "An official-looking death certificate for an inmate who is actually alive in solitary confinement. Proves the warden has been covering up prisoner disappearances and possibly murders."
+    },
+    {
+      "id": "contraband_manifest",
+      "name": "Contraband Supply Manifest",
+      "description": "A shipping manifest showing contraband being delivered to the prison with guard signatures. Links specific guards to drug and weapon smuggling operations inside the facility."
+    },
+    {
+      "id": "judicial_bribery_letter",
+      "name": "Letter from Judge Morales",
+      "description": "A letter from Judge Morales discussing kickbacks for harsh sentences. Exposes a conspiracy between the judiciary and private prison industry to keep cells filled for profit."
+    },
+    {
+      "id": "solitary_torture_log",
+      "name": "Solitary Confinement Torture Log",
+      "description": "Handwritten logs documenting extended solitary confinement (months to years) and deliberate psychological torture. Shows systematic human rights violations by prison administration."
+    },
+    {
+      "id": "innocence_dna_report",
+      "name": "DNA Test Results",
+      "description": "DNA analysis results that prove your innocence in the crime you were convicted for. The evidence was suppressed during your trial. Could exonerate you if presented to the right authorities."
+    },
+    {
+      "id": "gang_guard_payments",
+      "name": "Gang-Guard Payment Records",
+      "description": "Financial records showing regular payments from Carlos 'El Serpiente' to multiple guards. Demonstrates collusion between prison gangs and corrupt guards to control prison operations."
+    },
+    {
+      "id": "missing_prisoner_list",
+      "name": "List of Missing Prisoners",
+      "description": "A compiled list of 47 prisoners who officially 'transferred' but never arrived at their destination facilities. Strong evidence of systematic disappearances and potential murders covered up by the prison administration."
+    }
+  ]
+}

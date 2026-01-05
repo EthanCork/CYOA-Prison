@@ -1,0 +1,124 @@
+{
+  "scenes": [
+    {
+      "id": "REL-DEMO-001",
+      "type": "choice",
+      "content": {
+        "text": "You're in the prison yard. Several inmates are nearby, each with different relationship levels. Your actions and choices depend on how they feel about you."
+      },
+      "choices": [
+        {
+          "text": "Ask Bastian for help escaping (Requires: Bastian ≥ 50)",
+          "nextScene": "REL-DEMO-SUCCESS",
+          "requirements": {
+            "relationships": {
+              "bastian": 50
+            }
+          },
+          "relationshipChanges": {
+            "bastian": 5
+          }
+        },
+        {
+          "text": "Form alliance with Denis (Requires: Denis ≥ 40)",
+          "nextScene": "REL-DEMO-SUCCESS",
+          "requirements": {
+            "relationships": {
+              "denis": 40
+            }
+          },
+          "relationshipChanges": {
+            "denis": 10
+          }
+        },
+        {
+          "text": "Confront Viktor (Requires: Viktor ≥ 30)",
+          "nextScene": "REL-DEMO-SUCCESS",
+          "requirements": {
+            "relationships": {
+              "viktor": 30
+            }
+          },
+          "relationshipChanges": {
+            "viktor": -10
+          }
+        },
+        {
+          "text": "Betray Viktor to the guards (Requires: Viktor ≤ -20)",
+          "nextScene": "REL-DEMO-SUCCESS",
+          "requirements": {
+            "maxRelationships": {
+              "viktor": -20
+            }
+          },
+          "relationshipChanges": {
+            "viktor": -20,
+            "officer_ramirez": 15
+          }
+        },
+        {
+          "text": "Recruit both Bastian and Denis (Requires: Both ≥ 60)",
+          "nextScene": "REL-DEMO-SUCCESS",
+          "requirements": {
+            "relationships": {
+              "bastian": 60,
+              "denis": 60
+            }
+          },
+          "relationshipChanges": {
+            "bastian": 10,
+            "denis": 10
+          }
+        },
+        {
+          "text": "Manipulate Marcel (Requires: 20 ≤ Marcel ≤ 50)",
+          "nextScene": "REL-DEMO-SUCCESS",
+          "requirements": {
+            "relationships": {
+              "marcel": 20
+            },
+            "maxRelationships": {
+              "marcel": 50
+            }
+          },
+          "relationshipChanges": {
+            "marcel": -15
+          }
+        },
+        {
+          "text": "Challenge Émile (Requires: Émile ≥ -20 AND guard uniform)",
+          "nextScene": "REL-DEMO-SUCCESS",
+          "requirements": {
+            "relationships": {
+              "emile": -20
+            },
+            "items": ["guard_uniform"]
+          },
+          "relationshipChanges": {
+            "emile": 25
+          }
+        },
+        {
+          "text": "Continue without special actions",
+          "nextScene": "REL-DEMO-NEUTRAL"
+        }
+      ]
+    },
+    {
+      "id": "REL-DEMO-SUCCESS",
+      "type": "narrative",
+      "content": {
+        "text": "Your action was successful! The relationship requirements were met. You can see how your choice affected your relationships with the characters."
+      },
+      "nextScene": "REL-DEMO-001"
+    },
+    {
+      "id": "REL-DEMO-NEUTRAL",
+      "type": "narrative",
+      "content": {
+        "text": "You chose a neutral action that doesn't require any specific relationships. Sometimes the safest choice is to not get involved."
+      },
+      "nextScene": "REL-DEMO-001"
+    }
+  ]
+}

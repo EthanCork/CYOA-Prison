@@ -1,0 +1,354 @@
+{
+  "items": [
+    {
+      "id": "loose_brick",
+      "name": "Loose Brick",
+      "description": "A brick that was loose in your cell wall. It hid something important behind it.",
+      "category": "tool",
+      "locationHint": "Found in your cell, behind the loose mortar"
+    },
+    {
+      "id": "rusty_spoon",
+      "name": "Rusty Spoon",
+      "description": "A bent, rusty spoon from the cafeteria. Could be useful for digging or prying.",
+      "category": "tool",
+      "locationHint": "Cafeteria, can be stolen during meals"
+    },
+    {
+      "id": "contraband_phone",
+      "name": "Contraband Phone",
+      "description": "A smuggled cell phone. Very valuable in prison, but dangerous to possess.",
+      "category": "misc",
+      "locationHint": "Obtained through trade or found hidden in common areas"
+    },
+    {
+      "id": "guard_keycard",
+      "name": "Guard Keycard",
+      "description": "A stolen keycard from a prison guard. Opens certain restricted areas.",
+      "category": "tool",
+      "locationHint": "Pickpocketed from guards or found in guard stations"
+    },
+    {
+      "id": "tobacco_pouch",
+      "name": "Tobacco Pouch",
+      "description": "A pouch of tobacco. Common currency among inmates.",
+      "category": "misc",
+      "locationHint": "Obtained through trade, commissary, or as payment"
+    },
+    {
+      "id": "shiv",
+      "name": "Makeshift Shiv",
+      "description": "A crude weapon fashioned from scrap metal. Dangerous to carry.",
+      "category": "weapon",
+      "locationHint": "Crafted in workshop or obtained from other inmates"
+    },
+    {
+      "id": "prison_map",
+      "name": "Prison Map",
+      "description": "A hand-drawn map of the prison layout, including some unmarked areas.",
+      "category": "evidence",
+      "locationHint": "Drawn by you or obtained from a trusted inmate"
+    },
+    {
+      "id": "soap_bar",
+      "name": "Bar of Soap",
+      "description": "Standard prison-issue soap. Could be carved or used as a weapon.",
+      "category": "misc",
+      "locationHint": "Issued during intake or available in showers"
+    },
+    {
+      "id": "playing_cards",
+      "name": "Deck of Cards",
+      "description": "A worn deck of playing cards. Good for gambling or making friends.",
+      "category": "misc",
+      "locationHint": "Recreation area or obtained from other inmates"
+    },
+    {
+      "id": "photo_family",
+      "name": "Family Photo",
+      "description": "A photograph of your family. A reminder of what you're fighting for.",
+      "category": "misc",
+      "locationHint": "Brought with you during intake"
+    },
+    {
+      "id": "wire_cutters",
+      "name": "Wire Cutters",
+      "description": "Small wire cutters smuggled from the workshop. Essential for an escape.",
+      "category": "tool",
+      "locationHint": "Workshop area, must be smuggled out carefully"
+    },
+    {
+      "id": "flashlight",
+      "name": "Flashlight",
+      "description": "A small flashlight. Useful for navigating dark areas.",
+      "category": "tool",
+      "locationHint": "Maintenance closets or guard stations"
+    },
+    {
+      "id": "guard_uniform",
+      "name": "Guard Uniform",
+      "description": "A complete guard uniform. Could allow you to move freely through restricted areas.",
+      "category": "disguise",
+      "locationHint": "Laundry room or stolen from guard locker"
+    },
+    {
+      "id": "janitor_outfit",
+      "name": "Janitor Outfit",
+      "description": "A janitor's uniform and ID badge. Grants access to maintenance areas.",
+      "category": "disguise",
+      "locationHint": "Janitorial closet in the maintenance wing"
+    },
+    {
+      "id": "kitchen_apron",
+      "name": "Kitchen Worker Apron",
+      "description": "Standard kitchen staff apron. Allows movement in food service areas.",
+      "category": "disguise",
+      "locationHint": "Kitchen storage or laundry"
+    },
+    {
+      "id": "medical_scrubs",
+      "name": "Medical Scrubs",
+      "description": "Infirmary staff scrubs. Useful for accessing the medical wing.",
+      "category": "disguise",
+      "locationHint": "Infirmary laundry or stolen from medical staff"
+    },
+    {
+      "id": "bandages",
+      "name": "Bandages",
+      "description": "Clean medical bandages. Essential for treating injuries.",
+      "category": "medical",
+      "locationHint": "Infirmary supply closet"
+    },
+    {
+      "id": "painkillers",
+      "name": "Pain Medication",
+      "description": "Basic pain relief medication. Valuable for trade or personal use.",
+      "category": "medical",
+      "locationHint": "Infirmary or obtained during sick call"
+    },
+    {
+      "id": "antibiotics",
+      "name": "Antibiotics",
+      "description": "Prescription antibiotics. Highly valuable for treating infections.",
+      "category": "medical",
+      "locationHint": "Infirmary locked cabinet, requires key or stealth"
+    },
+    {
+      "id": "first_aid_kit",
+      "name": "First Aid Kit",
+      "description": "A compact first aid kit with various medical supplies.",
+      "category": "medical",
+      "locationHint": "Guard stations or infirmary"
+    },
+    {
+      "id": "lockpick_set",
+      "name": "Lockpick Set",
+      "description": "A makeshift set of lockpicks. Can open simple locks.",
+      "category": "tool",
+      "locationHint": "Crafted from wire and metal scraps in the workshop"
+    },
+    {
+      "id": "screwdriver",
+      "name": "Screwdriver",
+      "description": "A flathead screwdriver. Useful for prying and unscrewing things.",
+      "category": "tool",
+      "locationHint": "Workshop or maintenance areas"
+    },
+    {
+      "id": "hammer",
+      "name": "Small Hammer",
+      "description": "A compact hammer from the workshop. Can break things quietly.",
+      "category": "tool",
+      "locationHint": "Workshop tool rack"
+    },
+    {
+      "id": "rope",
+      "name": "Rope",
+      "description": "A strong rope, about 20 feet long. Essential for climbing or binding.",
+      "category": "tool",
+      "locationHint": "Workshop or smuggled from supply room"
+    },
+    {
+      "id": "duct_tape",
+      "name": "Duct Tape",
+      "description": "A roll of duct tape. Useful for repairs, binding, or silencing.",
+      "category": "tool",
+      "locationHint": "Maintenance closets throughout the prison"
+    },
+    {
+      "id": "crowbar",
+      "name": "Crowbar",
+      "description": "A heavy iron crowbar. Perfect for prying open doors or vents.",
+      "category": "tool",
+      "locationHint": "Maintenance storage or workshop"
+    },
+    {
+      "id": "glass_shard",
+      "name": "Sharp Glass Shard",
+      "description": "A jagged piece of broken glass. Can be used as a crude weapon or cutting tool.",
+      "category": "weapon",
+      "locationHint": "Broken windows or smashed bottles in the yard"
+    },
+    {
+      "id": "metal_pipe",
+      "name": "Metal Pipe",
+      "description": "A section of metal pipe. Heavy and intimidating.",
+      "category": "weapon",
+      "locationHint": "Maintenance areas or plumbing access points"
+    },
+    {
+      "id": "razor_blade",
+      "name": "Razor Blade",
+      "description": "A sharp razor blade. Can be concealed easily.",
+      "category": "weapon",
+      "locationHint": "Barber shop or personal hygiene supplies"
+    },
+    {
+      "id": "brass_knuckles",
+      "name": "Brass Knuckles",
+      "description": "Makeshift brass knuckles crafted from metal. Increases striking power.",
+      "category": "weapon",
+      "locationHint": "Crafted in workshop or obtained from gang members"
+    },
+    {
+      "id": "cell_key",
+      "name": "Cell Block Key",
+      "description": "A key that opens cell doors in your block.",
+      "category": "tool",
+      "locationHint": "Stolen from guards or copied from an impression"
+    },
+    {
+      "id": "master_key",
+      "name": "Master Key",
+      "description": "A master key that opens multiple locks throughout the prison.",
+      "category": "tool",
+      "locationHint": "Warden's office or senior guard locker"
+    },
+    {
+      "id": "security_manual",
+      "name": "Security Manual",
+      "description": "A guard's security manual detailing patrol routes and procedures.",
+      "category": "evidence",
+      "locationHint": "Guard break room or security office"
+    },
+    {
+      "id": "shift_schedule",
+      "name": "Guard Shift Schedule",
+      "description": "This week's guard rotation schedule. Shows when areas are least monitored.",
+      "category": "evidence",
+      "locationHint": "Guard station bulletin board"
+    },
+    {
+      "id": "warden_memo",
+      "name": "Warden's Memo",
+      "description": "A confidential memo from the warden. Contains information about prison operations.",
+      "category": "evidence",
+      "locationHint": "Warden's office or administrative area"
+    },
+    {
+      "id": "inmate_ledger",
+      "name": "Inmate Ledger",
+      "description": "A ledger listing all inmates and their cell assignments.",
+      "category": "evidence",
+      "locationHint": "Administrative office"
+    },
+    {
+      "id": "tunnel_plans",
+      "name": "Tunnel Plans",
+      "description": "Detailed plans for an escape tunnel, started by a previous inmate.",
+      "category": "evidence",
+      "locationHint": "Hidden in the library or passed down by old-timers"
+    },
+    {
+      "id": "radio_scanner",
+      "name": "Radio Scanner",
+      "description": "A device that can intercept guard radio communications.",
+      "category": "tool",
+      "locationHint": "Smuggled in or built from electronic parts"
+    },
+    {
+      "id": "binoculars",
+      "name": "Binoculars",
+      "description": "Small binoculars. Useful for surveillance and planning.",
+      "category": "tool",
+      "locationHint": "Guard tower or recreation area"
+    },
+    {
+      "id": "camera",
+      "name": "Disposable Camera",
+      "description": "A small disposable camera. Can document evidence.",
+      "category": "tool",
+      "locationHint": "Smuggled in or obtained through trade"
+    },
+    {
+      "id": "money_cash",
+      "name": "Cash Money",
+      "description": "A small amount of cash. Very valuable inside prison walls.",
+      "category": "misc",
+      "locationHint": "Smuggled in or earned through services"
+    },
+    {
+      "id": "cigarettes",
+      "name": "Pack of Cigarettes",
+      "description": "A full pack of cigarettes. Premium currency in prison.",
+      "category": "misc",
+      "locationHint": "Commissary or obtained through trade"
+    },
+    {
+      "id": "chocolate_bar",
+      "name": "Chocolate Bar",
+      "description": "A rare treat from the commissary. Good for morale or trade.",
+      "category": "misc",
+      "locationHint": "Commissary or care packages"
+    },
+    {
+      "id": "watch",
+      "name": "Wristwatch",
+      "description": "A working wristwatch. Helps keep track of guard rotations.",
+      "category": "misc",
+      "locationHint": "Obtained during intake or through trade"
+    },
+    {
+      "id": "bible",
+      "name": "Bible",
+      "description": "A well-worn bible. Could hide contraband or contain coded messages.",
+      "category": "misc",
+      "locationHint": "Chapel or library"
+    },
+    {
+      "id": "journal",
+      "name": "Journal",
+      "description": "A blank journal. Useful for recording observations and planning.",
+      "category": "misc",
+      "locationHint": "Commissary or library"
+    },
+    {
+      "id": "pen",
+      "name": "Pen",
+      "description": "A basic ballpoint pen. Can write or serve as a weapon in a pinch.",
+      "category": "misc",
+      "locationHint": "Library, education center, or administrative areas"
+    },
+    {
+      "id": "mirror_shard",
+      "name": "Mirror Shard",
+      "description": "A piece of mirror. Useful for seeing around corners.",
+      "category": "tool",
+      "locationHint": "Broken bathroom mirrors"
+    },
+    {
+      "id": "blanket",
+      "name": "Extra Blanket",
+      "description": "A spare prison blanket. Can be torn into strips for rope.",
+      "category": "misc",
+      "locationHint": "Laundry or storage areas"
+    },
+    {
+      "id": "pillow",
+      "name": "Pillow",
+      "description": "A prison-issue pillow. Can be used to muffle sounds.",
+      "category": "misc",
+      "locationHint": "Cell or laundry"
+    }
+  ]
+}

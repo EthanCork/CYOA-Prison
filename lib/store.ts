@@ -3,7 +3,7 @@
  */
 
 import { create } from 'zustand';
-import type { GameState, Scene, Choice } from '@/types';
+import type { GameState, GameStats, Scene, Choice, DayTime, TimeOfDay, WorkAssignment } from '@/types';
 import {
   applyFlagChanges,
   applyItemChanges,
@@ -11,6 +11,7 @@ import {
   applyEvidenceChanges,
   collectStateChanges,
 } from './sceneTransitions';
+import { advanceTime, setTime, getPathCStartTime } from './timeUtils';
 
 /**
  * Game store interface combining state and actions
@@ -39,6 +40,10 @@ interface GameStore extends GameState {
   setRelationship: (characterId: string, score: number) => void;
   getRelationship: (characterId: string) => number;
 
+  // Character discovery actions
+  discoverCharacter: (characterId: string) => void;
+  hasDiscoveredCharacter: (characterId: string) => boolean;
+
   // Flag actions
   setFlag: (flag: string) => void;
   unsetFlag: (flag: string) => void;
@@ -49,9 +54,40 @@ interface GameStore extends GameState {
   removeEvidence: (evidenceId: string) => void;
   hasEvidence: (evidenceId: string) => boolean;
 
+  // Path actions
+  setPath: (path: 'A' | 'B' | 'C') => void;
+  getPath: () => 'A' | 'B' | 'C' | null;
+  isOnPath: (path: 'A' | 'B' | 'C') => boolean;
+
+  // Time actions (Path C)
+  initializeTime: () => void;
+  advanceToNextPeriod: () => void;
+  setDayTime: (day: number, timeOfDay: TimeOfDay) => void;
+  getDayTime: () => DayTime | null;
+  isTimeOfDay: (timeOfDay: TimeOfDay) => boolean;
+
+  // Work assignment actions (Path C)
+  setWorkAssignment: (assignment: WorkAssignment) => void;
+  getWorkAssignment: () => WorkAssignment | null;
+  hasWorkAssignment: () => boolean;
+
   // Utility actions
   resetGame: () => void;
 }
+
+/**
+ * Initial stats
+ */
+const initialStats: GameStats = {
+  scenesVisited: 0,
+  choicesMade: 0,
+  itemsFound: 0,
+  relationshipsMaxed: 0,
+  relationshipsMinned: 0,
+  stageReached: 0,
+  pathTaken: null,
+  playTimeSeconds: 0,
+};
 
 /**
  * Initial game state
@@ -59,10 +95,15 @@ interface GameStore extends GameState {
 const initialState: GameState = {
   currentScene: 'X-0-001',
   sceneHistory: [],
+  currentPath: null,
+  dayTime: null,
+  workAssignment: null,
   inventory: [],
   relationships: {},
+  discoveredCharacters: [],
   flags: [],
   evidence: [],
+  stats: { ...initialStats },
 };
 
 /**
@@ -78,9 +119,18 @@ export const useGameStore = create<GameStore>((set, get) => ({
       const newHistory = addToHistory
         ? [...state.sceneHistory, state.currentScene]
         : state.sceneHistory;
+
+      // Track unique scenes visited
+      const allVisitedScenes = new Set([...newHistory, sceneId]);
+      const scenesVisited = allVisitedScenes.size;
+
       return {
         currentScene: sceneId,
         sceneHistory: newHistory,
+        stats: {
+          ...state.stats,
+          scenesVisited,
+        },
       };
     });
   },
@@ -131,6 +181,11 @@ export const useGameStore = create<GameStore>((set, get) => ({
         stateChanges.evidence
       );
 
+      // Track choice made and unique scenes visited
+      const allVisitedScenes = new Set([...state.sceneHistory, state.currentScene, nextSceneId]);
+      const scenesVisited = allVisitedScenes.size;
+      const choicesMade = choice ? state.stats.choicesMade + 1 : state.stats.choicesMade;
+
       // Update scene and add to history
       return {
         currentScene: nextSceneId,
@@ -139,6 +194,11 @@ export const useGameStore = create<GameStore>((set, get) => ({
         inventory: newInventory,
         relationships: newRelationships,
         evidence: newEvidence,
+        stats: {
+          ...state.stats,
+          scenesVisited,
+          choicesMade,
+        },
       };
     });
   },
@@ -149,7 +209,13 @@ export const useGameStore = create<GameStore>((set, get) => ({
       if (state.inventory.includes(itemId)) {
         return state; // Item already in inventory
       }
-      return { inventory: [...state.inventory, itemId] };
+      return {
+        inventory: [...state.inventory, itemId],
+        stats: {
+          ...state.stats,
+          itemsFound: state.stats.itemsFound + 1,
+        },
+      };
     });
   },
 
@@ -168,26 +234,75 @@ export const useGameStore = create<GameStore>((set, get) => ({
     set((state) => {
       const currentScore = state.relationships[characterId] || 0;
       const newScore = Math.max(-100, Math.min(100, currentScore + delta));
+
+      // Calculate maxed and minned relationships
+      const updatedRelationships = {
+        ...state.relationships,
+        [characterId]: newScore,
+      };
+      const relationshipsMaxed = Object.values(updatedRelationships).filter(
+        (score) => score === 100
+      ).length;
+      const relationshipsMinned = Object.values(updatedRelationships).filter(
+        (score) => score === -100
+      ).length;
+
       return {
-        relationships: {
-          ...state.relationships,
-          [characterId]: newScore,
+        relationships: updatedRelationships,
+        stats: {
+          ...state.stats,
+          relationshipsMaxed,
+          relationshipsMinned,
         },
       };
     });
   },
 
   setRelationship: (characterId: string, score: number) => {
-    set((state) => ({
-      relationships: {
+    set((state) => {
+      const clampedScore = Math.max(-100, Math.min(100, score));
+      const updatedRelationships = {
         ...state.relationships,
-        [characterId]: Math.max(-100, Math.min(100, score)),
-      },
-    }));
+        [characterId]: clampedScore,
+      };
+
+      // Calculate maxed and minned relationships
+      const relationshipsMaxed = Object.values(updatedRelationships).filter(
+        (score) => score === 100
+      ).length;
+      const relationshipsMinned = Object.values(updatedRelationships).filter(
+        (score) => score === -100
+      ).length;
+
+      return {
+        relationships: updatedRelationships,
+        stats: {
+          ...state.stats,
+          relationshipsMaxed,
+          relationshipsMinned,
+        },
+      };
+    });
   },
 
   getRelationship: (characterId: string) => {
     return get().relationships[characterId] || 0;
+  },
+
+  // Character discovery
+  discoverCharacter: (characterId: string) => {
+    set((state) => {
+      if (state.discoveredCharacters.includes(characterId)) {
+        return state; // Character already discovered
+      }
+      return {
+        discoveredCharacters: [...state.discoveredCharacters, characterId],
+      };
+    });
+  },
+
+  hasDiscoveredCharacter: (characterId: string) => {
+    return get().discoveredCharacters.includes(characterId);
   },
 
   // Flag management
@@ -228,6 +343,79 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   hasEvidence: (evidenceId: string) => {
     return get().evidence.includes(evidenceId);
+  },
+
+  // Path management
+  setPath: (path: 'A' | 'B' | 'C') => {
+    set((state) => ({
+      currentPath: path,
+      stats: {
+        ...state.stats,
+        pathTaken: path,
+      },
+    }));
+  },
+
+  getPath: () => {
+    return get().currentPath;
+  },
+
+  isOnPath: (path: 'A' | 'B' | 'C') => {
+    return get().currentPath === path;
+  },
+
+  // Time management (Path C)
+  initializeTime: () => {
+    set({ dayTime: getPathCStartTime() });
+  },
+
+  advanceToNextPeriod: () => {
+    set((state) => {
+      if (!state.dayTime) {
+        return state; // No time to advance
+      }
+      const nextTime = advanceTime(state.dayTime);
+
+      // Track the highest day reached as stageReached
+      const stageReached = nextTime
+        ? Math.max(state.stats.stageReached, nextTime.day)
+        : state.stats.stageReached;
+
+      return {
+        dayTime: nextTime,
+        stats: {
+          ...state.stats,
+          stageReached,
+        },
+      };
+    });
+  },
+
+  setDayTime: (day: number, timeOfDay: TimeOfDay) => {
+    const newTime = setTime(day, timeOfDay);
+    set({ dayTime: newTime });
+  },
+
+  getDayTime: () => {
+    return get().dayTime;
+  },
+
+  isTimeOfDay: (timeOfDay: TimeOfDay) => {
+    const dayTime = get().dayTime;
+    return dayTime ? dayTime.timeOfDay === timeOfDay : false;
+  },
+
+  // Work assignment management (Path C)
+  setWorkAssignment: (assignment: WorkAssignment) => {
+    set({ workAssignment: assignment });
+  },
+
+  getWorkAssignment: () => {
+    return get().workAssignment;
+  },
+
+  hasWorkAssignment: () => {
+    return get().workAssignment !== null;
   },
 
   // Reset game to initial state

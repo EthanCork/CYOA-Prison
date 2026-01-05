@@ -82,6 +82,11 @@ export interface ChoiceRequirements {
 }
 
 /**
+ * Character category type
+ */
+export type CharacterCategory = 'ally' | 'neutral' | 'antagonist' | 'referenced';
+
+/**
  * Represents a character in the game
  */
 export interface Character {
@@ -89,10 +94,24 @@ export interface Character {
   id: string;
   /** Display name of the character */
   name: string;
-  /** Current relationship score with the player (-100 to 100) */
-  relationshipScore: number;
+  /** Initial relationship score when starting the game (-100 to 100) */
+  initialRelationship: number;
   /** Description of the character */
   description: string;
+  /** Character's role in the prison */
+  role: string;
+  /** Character category (ally, neutral, antagonist, referenced) */
+  category: CharacterCategory;
+  /** Where the character is typically found */
+  location: string;
+  /** Character traits/personality */
+  traits: string[];
+  /** Character backstory */
+  background: string;
+  /** Relationship score thresholds for unlocking content */
+  relationshipThresholds: Record<string, number>;
+  /** Content/features unlocked at specific relationship scores */
+  unlocks: Record<string, string>;
 }
 
 /**
@@ -133,6 +152,59 @@ export interface Scene {
 }
 
 /**
+ * Main story paths in the game
+ */
+export type GamePath = 'A' | 'B' | 'C' | null;
+
+/**
+ * Time of day periods (for Path C)
+ */
+export type TimeOfDay = 'morning' | 'day' | 'evening' | 'night';
+
+/**
+ * Day and time tracking (primarily for Path C: Day/Justice)
+ */
+export interface DayTime {
+  /** Current day (1-6 for Path C) */
+  day: number;
+  /** Current time of day */
+  timeOfDay: TimeOfDay;
+}
+
+/**
+ * Work assignments available to player (Path C)
+ */
+export type WorkAssignment =
+  | 'kitchen'
+  | 'laundry'
+  | 'yard'
+  | 'infirmary'
+  | 'chapel'
+  | 'library';
+
+/**
+ * Player statistics tracking for end-game display
+ */
+export interface GameStats {
+  /** Total number of unique scenes visited */
+  scenesVisited: number;
+  /** Total number of choices made */
+  choicesMade: number;
+  /** Total number of unique items found */
+  itemsFound: number;
+  /** Number of relationships at max positive (100) */
+  relationshipsMaxed: number;
+  /** Number of relationships at max negative (-100) */
+  relationshipsMinned: number;
+  /** Highest stage/day reached */
+  stageReached: number;
+  /** Path taken (A, B, C, or null if not chosen) */
+  pathTaken: GamePath;
+  /** Total play time in seconds (optional, can be tracked separately) */
+  playTimeSeconds?: number;
+}
+
+/**
  * Represents the current state of the game
  */
 export interface GameState {
@@ -140,17 +212,32 @@ export interface GameState {
   currentScene: string;
   /** History of visited scene IDs (for back navigation) */
   sceneHistory: string[];
+  /** Current main story path (A=Night, B=Social, C=Day/Justice) */
+  currentPath: GamePath;
+  /** Current day and time (Path C only) */
+  dayTime: DayTime | null;
+  /** Player's work assignment (Path C only) */
+  workAssignment: WorkAssignment | null;
   /** Items in the player's inventory */
   inventory: string[];
   /** Relationship scores with all characters */
   relationships: {
     [characterId: string]: number;
   };
+  /** Characters that the player has discovered/met */
+  discoveredCharacters: string[];
   /** Flags that have been set during gameplay */
   flags: string[];
   /** Evidence collected by the player */
   evidence: string[];
+  /** Player statistics for end-game display */
+  stats: GameStats;
 }
+
+/**
+ * Category for items
+ */
+export type ItemCategory = 'tool' | 'disguise' | 'medical' | 'weapon' | 'evidence' | 'misc';
 
 /**
  * Item that can be collected and used in the game
@@ -162,6 +249,10 @@ export interface Item {
   name: string;
   /** Description of the item */
   description: string;
+  /** Category of the item */
+  category: ItemCategory;
+  /** Hint about where this item can be found */
+  locationHint: string;
 }
 
 /**
