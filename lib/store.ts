@@ -12,6 +12,7 @@ import {
   collectStateChanges,
 } from './sceneTransitions';
 import { advanceTime, setTime, getPathCStartTime } from './timeUtils';
+import { saveGame, loadGame, deleteSave, autoSave, loadAutoSave, hasAutoSave, deleteAutoSave, type SavedGame } from './saveGame';
 
 /**
  * Game store interface combining state and actions
@@ -71,8 +72,20 @@ interface GameStore extends GameState {
   getWorkAssignment: () => WorkAssignment | null;
   hasWorkAssignment: () => boolean;
 
+  // Save/Load actions
+  saveToSlot: (slotNumber: number) => SavedGame;
+  loadFromSlot: (slotNumber: number) => boolean;
+  deleteSlot: (slotNumber: number) => void;
+
+  // Auto-save actions
+  performAutoSave: () => SavedGame;
+  loadFromAutoSave: () => boolean;
+  hasAutoSaveData: () => boolean;
+
   // Utility actions
   resetGame: () => void;
+  startNewGame: (deleteAutoSave?: boolean) => void;
+  hasProgress: () => boolean;
 }
 
 /**
@@ -116,9 +129,15 @@ export const useGameStore = create<GameStore>((set, get) => ({
   // Navigation
   goToScene: (sceneId: string, addToHistory = true) => {
     set((state) => {
-      const newHistory = addToHistory
+      let newHistory = addToHistory
         ? [...state.sceneHistory, state.currentScene]
         : state.sceneHistory;
+
+      // Limit history to last 20 scenes
+      const MAX_HISTORY_LENGTH = 20;
+      if (newHistory.length > MAX_HISTORY_LENGTH) {
+        newHistory = newHistory.slice(-MAX_HISTORY_LENGTH);
+      }
 
       // Track unique scenes visited
       const allVisitedScenes = new Set([...newHistory, sceneId]);
@@ -418,8 +437,96 @@ export const useGameStore = create<GameStore>((set, get) => ({
     return get().workAssignment !== null;
   },
 
+  // Save/Load
+  saveToSlot: (slotNumber: number) => {
+    const state = get();
+    const gameState: GameState = {
+      currentScene: state.currentScene,
+      sceneHistory: state.sceneHistory,
+      currentPath: state.currentPath,
+      dayTime: state.dayTime,
+      workAssignment: state.workAssignment,
+      inventory: state.inventory,
+      relationships: state.relationships,
+      discoveredCharacters: state.discoveredCharacters,
+      flags: state.flags,
+      evidence: state.evidence,
+      stats: state.stats,
+    };
+    return saveGame(slotNumber, gameState);
+  },
+
+  loadFromSlot: (slotNumber: number) => {
+    const savedGame = loadGame(slotNumber);
+    if (!savedGame) {
+      return false;
+    }
+    set(savedGame.gameState);
+    return true;
+  },
+
+  deleteSlot: (slotNumber: number) => {
+    deleteSave(slotNumber);
+  },
+
+  // Auto-save
+  performAutoSave: () => {
+    const state = get();
+    const gameState: GameState = {
+      currentScene: state.currentScene,
+      sceneHistory: state.sceneHistory,
+      currentPath: state.currentPath,
+      dayTime: state.dayTime,
+      workAssignment: state.workAssignment,
+      inventory: state.inventory,
+      relationships: state.relationships,
+      discoveredCharacters: state.discoveredCharacters,
+      flags: state.flags,
+      evidence: state.evidence,
+      stats: state.stats,
+    };
+    return autoSave(gameState);
+  },
+
+  loadFromAutoSave: () => {
+    const savedGame = loadAutoSave();
+    if (!savedGame) {
+      return false;
+    }
+    set(savedGame.gameState);
+    return true;
+  },
+
+  hasAutoSaveData: () => {
+    return hasAutoSave();
+  },
+
   // Reset game to initial state
   resetGame: () => {
     set(initialState);
+  },
+
+  // Start new game with optional auto-save deletion
+  startNewGame: (deleteAutoSaveData = true) => {
+    set(initialState);
+    if (deleteAutoSaveData) {
+      try {
+        deleteAutoSave();
+      } catch (error) {
+        console.error('Failed to delete auto-save:', error);
+      }
+    }
+  },
+
+  // Check if player has made progress
+  hasProgress: () => {
+    const state = get();
+    return (
+      state.currentScene !== 'X-0-001' ||
+      state.sceneHistory.length > 0 ||
+      state.inventory.length > 0 ||
+      state.flags.length > 0 ||
+      Object.keys(state.relationships).length > 0
+    );
   },
 }));

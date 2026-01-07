@@ -43,6 +43,11 @@ The game store (`store.ts`) manages all game state using Zustand.
 - `addEvidence(evidenceId)`: Add evidence
 - `hasEvidence(evidenceId)`: Check if evidence collected
 
+**Save/Load**
+- `saveToSlot(slotNumber)`: Save current game state to a slot (1-3)
+- `loadFromSlot(slotNumber)`: Load game state from a slot (returns true if successful)
+- `deleteSlot(slotNumber)`: Delete a saved game from a slot
+
 **Utility**
 - `resetGame()`: Reset to initial state
 
@@ -99,3 +104,144 @@ console.log(`Total scenes: ${allScenes.length}`);
 
 ### Scene Data Location
 Scenes are stored in `/data/scenes/` as JSON files. The loader automatically caches all scenes on first use for optimal performance.
+
+## Save/Load System
+
+The save/load system (`saveGame.ts`) provides localStorage-based game save functionality with support for multiple save slots.
+
+### Features
+- **Multiple Save Slots**: Support for 3 independent save slots
+- **Timestamp Tracking**: Each save includes timestamp and human-readable date
+- **Complete State Serialization**: Saves entire game state including inventory, relationships, flags, evidence, and stats
+- **Metadata**: Quick access to save slot info without loading full game state
+- **Import/Export**: Export saves as JSON for backup/sharing
+
+### Constants
+- `MAX_SAVE_SLOTS`: Number of available save slots (3)
+
+### Core Functions
+
+**Saving and Loading**
+- `saveGame(slotNumber, gameState)`: Save game state to a slot
+- `loadGame(slotNumber)`: Load game state from a slot (returns SavedGame or null)
+- `deleteSave(slotNumber)`: Delete a saved game
+
+**Metadata Access**
+- `getSaveSlotMetadata(slotNumber)`: Get save metadata without loading full state
+- `getAllSaveSlots()`: Get metadata for all save slots
+- `isSaveSlotEmpty(slotNumber)`: Check if a slot is empty
+- `getMostRecentSaveSlot()`: Get the slot number of the most recent save
+- `hasSavedGames()`: Check if any saves exist
+
+**Import/Export**
+- `exportSave(slotNumber)`: Export save as JSON string
+- `importSave(slotNumber, jsonString)`: Import save from JSON string
+
+### Data Structures
+
+**SaveSlot Metadata**
+```typescript
+{
+  slotNumber: number;        // Slot number (1-3)
+  timestamp: number;         // Unix timestamp
+  dateString: string;        // Human-readable date
+  currentScene: string;      // Scene ID for quick reference
+  currentPath: 'A' | 'B' | 'C' | null;
+  dayTime: { day: number; timeOfDay: string } | null;
+  playTimeSeconds: number;
+}
+```
+
+**SavedGame**
+```typescript
+{
+  metadata: SaveSlot;        // Save slot metadata
+  gameState: GameState;      // Complete game state
+  version: string;           // Save format version
+}
+```
+
+### Usage with Game Store
+
+```typescript
+import { useGameStore } from '@/lib/store';
+
+function SaveLoadButtons() {
+  const { saveToSlot, loadFromSlot, deleteSlot } = useGameStore();
+
+  const handleSave = () => {
+    const savedGame = saveToSlot(1);
+    console.log('Game saved:', savedGame.metadata.dateString);
+  };
+
+  const handleLoad = () => {
+    const success = loadFromSlot(1);
+    if (success) {
+      console.log('Game loaded successfully');
+    } else {
+      console.log('No save found in slot 1');
+    }
+  };
+
+  const handleDelete = () => {
+    deleteSlot(1);
+    console.log('Save deleted');
+  };
+
+  return (
+    <>
+      <button onClick={handleSave}>Save Game</button>
+      <button onClick={handleLoad}>Load Game</button>
+      <button onClick={handleDelete}>Delete Save</button>
+    </>
+  );
+}
+```
+
+### Direct Usage (without Store)
+
+```typescript
+import {
+  saveGame,
+  loadGame,
+  getAllSaveSlots,
+  getMostRecentSaveSlot
+} from '@/lib/saveGame';
+
+// Get all save slots
+const slots = getAllSaveSlots();
+slots.forEach((slot, index) => {
+  if (slot) {
+    console.log(`Slot ${index + 1}:`, slot.dateString);
+  } else {
+    console.log(`Slot ${index + 1}: Empty`);
+  }
+});
+
+// Load most recent save
+const recentSlot = getMostRecentSaveSlot();
+if (recentSlot) {
+  const savedGame = loadGame(recentSlot);
+  console.log('Loaded most recent save:', savedGame);
+}
+
+// Manual save
+const gameState = useGameStore.getState();
+saveGame(1, gameState);
+```
+
+### Error Handling
+
+All save/load functions throw descriptive errors if operations fail:
+- Invalid slot numbers (not 1-3)
+- localStorage access issues
+- Corrupted save data
+- Server-side rendering (no localStorage available)
+
+```typescript
+try {
+  saveToSlot(1);
+} catch (error) {
+  console.error('Failed to save:', error.message);
+}
+```
