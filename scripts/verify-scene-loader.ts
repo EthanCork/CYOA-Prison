@@ -36,9 +36,9 @@ console.log(`✓ Scene Type: ${scene1.type}`);
 console.log(`✓ Scene Text: ${scene1.content.text.substring(0, 80)}...`);
 console.log(`✓ Next Scene: ${scene1.nextScene}\n`);
 
-// Test 5: Load a dialogue scene with speaker
-console.log('Test 5: Load dialogue scene (X-0-002)');
-const scene2 = loadScene('X-0-002');
+// Test 5: Load a dialogue scene with choices (X-0-005)
+console.log('Test 5: Load dialogue scene (X-0-005)');
+const scene2 = loadScene('X-0-005');
 console.log(`✓ Scene ID: ${scene2.id}`);
 console.log(`✓ Scene Type: ${scene2.type}`);
 console.log(`✓ Speaker: ${scene2.content.speaker}`);

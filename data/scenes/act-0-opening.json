@@ -1,0 +1,169 @@
+{
+  "scenes": [
+    {
+      "id": "X-0-001",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-001.png",
+        "text": "Île de Pierre\n\nA prison. An island. A conspiracy.\n\nYou were innocent. They didn't care.\n\nNow you're trapped in France's most notorious prison fortress, and the only way out is through the truth.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-002"
+    },
+    {
+      "id": "X-0-002",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-002.png",
+        "text": "",
+        "pages": [
+          "SIX MONTHS AGO\n\nThe train lurches violently. Metal screams against metal. You're thrown against the wall as the carriages behind you derail, one after another, like dominoes falling in slow motion.",
+          "Forty-seven people dead. Including Sophie.\n\nYou were the lead engineer. You signed off on the maintenance reports. But you didn't cut corners. You didn't ignore the failing brake systems.",
+          "Francois Marchand did.\n\nBut who's going to believe you over a wealthy industrialist?"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-003"
+    },
+    {
+      "id": "X-0-003",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-003.png",
+        "text": "",
+        "pages": [
+          "FOUR MONTHS AGO\n\nThe judge's gavel falls like a guillotine. \"Coupable. Life imprisonment.\"\n\nGuilty of criminal negligence. Guilty of forty-seven counts of manslaughter.",
+          "Your lawyer barely mounted a defense. The evidence was manufactured - you know it was - but no one listened.\n\nDocuments with your forged signature. Testimony from engineers you'd never met. Financial records showing you'd accepted bribes to approve faulty equipment.",
+          "Someone wanted you gone. Someone powerful enough to orchestrate all of this.\n\nAs they lead you away, you catch a glimpse of Francois Marchand in the gallery. He doesn't even try to hide his satisfaction."
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-004",
+      "flagChanges": {
+        "set": ["wrongfully_convicted", "saw_marchand"]
+      }
+    },
+    {
+      "id": "X-0-004",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-004.png",
+        "text": "",
+        "pages": [
+          "NOW - 1923\n\nThe prison transport cuts through the grey waters off the Brittany coast. Île de Pierre rises from the Atlantic like a clenched fist of stone and iron.",
+          "The prison fortress that will be your home. Perhaps your tomb.\n\nYou're chained to four other prisoners. None of them meet your eyes. They know what awaits on Stone Island.",
+          "A guard walks down the narrow aisle between benches, checking restraints. He stops at your row, reading from a manifest."
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-005"
+    },
+    {
+      "id": "X-0-005",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/characters/X-0-005.png",
+        "text": "",
+        "pages": [
+          "Alexandre Dubois. The train engineer. First time on the island? You still have that look - like you think someone will realize there's been a mistake.",
+          "Let me give you advice, engineer: forget your old life. Forget justice. On Île de Pierre, there is only survival."
+        ],
+        "speaker": "Guard Captain Legrand"
+      },
+      "choices": [
+        {
+          "text": "\"I'm innocent. This is a mistake.\"",
+          "nextScene": "X-0-006B",
+          "relationshipChanges": {
+            "legrand": -5
+          },
+          "flagChanges": {
+            "set": ["claimed_innocence_to_legrand", "processing_defiant"]
+          }
+        },
+        {
+          "text": "\"What do I need to know to survive here?\"",
+          "nextScene": "X-0-006A",
+          "relationshipChanges": {
+            "legrand": 3
+          },
+          "flagChanges": {
+            "set": ["asked_legrand_for_advice", "processing_cooperative"]
+          }
+        },
+        {
+          "text": "Say nothing. Just meet his eyes.",
+          "nextScene": "X-0-006C",
+          "flagChanges": {
+            "set": ["stayed_silent_with_legrand", "processing_silent"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "X-0-006A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/characters/X-0-006A.png",
+        "text": "Practical. Smart. Most newcomers waste breath protesting innocence. Listen well: Stay clear of Émile Beaumont and his men - they rule the yard. Don't trust anyone who offers help for free. And whatever you do, don't attract Warden Beauregard's attention. Invisible men survive here.",
+        "speaker": "Guard Captain Legrand"
+      },
+      "choices": [],
+      "nextScene": "X-0-007",
+      "flagChanges": {
+        "set": ["legrand_gave_advice", "learned_about_emile"]
+      }
+    },
+    {
+      "id": "X-0-006B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/characters/X-0-006B.png",
+        "text": "Innocent? They all say that. The murderers, the thieves, the traitors. You know what I care about your innocence? Nothing. The judge said you're guilty. Forty-seven people are dead because of you. You want to survive? Drop the righteous act. Nobody here gives a damn about your story.",
+        "speaker": "Guard Captain Legrand"
+      },
+      "choices": [],
+      "nextScene": "X-0-007",
+      "flagChanges": {
+        "set": ["legrand_angered"]
+      }
+    },
+    {
+      "id": "X-0-006C",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/characters/X-0-006C.png",
+        "text": "The silent type. Not stupid, then. In here, the less you say, the less trouble finds you. Remember this: eyes open, mouth shut, head down. That's how you survive Île de Pierre, engineer.",
+        "speaker": "Guard Captain Legrand"
+      },
+      "choices": [],
+      "nextScene": "X-0-007",
+      "flagChanges": {
+        "set": ["legrand_respects_silence"]
+      }
+    },
+    {
+      "id": "X-0-007",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-007.png",
+        "text": "",
+        "pages": [
+          "The boat lurches against the stone dock. Guards shout orders in rapid French. You're pulled to your feet, chains rattling, and herded down the gangplank onto slick, sea-worn stones.",
+          "The fortress looms above you - ancient stone walls topped with newer iron bars and guard towers. This is real. This is happening.",
+          "You are Alexandre Dubois. Railway engineer. Wrongfully convicted.\n\nAnd you take your first steps onto Île de Pierre as prisoner number 1247."
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-001",
+      "flagChanges": {
+        "set": ["arrived_at_prison", "act_0_complete", "prisoner_1247"]
+      }
+    }
+  ]
+}

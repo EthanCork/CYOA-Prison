@@ -30,7 +30,7 @@ export default function MainMenu({
 
   const handleNewGame = () => {
     onStartGame?.();
-    router.push('/game');
+    router.push('/game-full-demo');
   };
 
   const handleContinue = () => {
@@ -38,7 +38,7 @@ export default function MainMenu({
     const loaded = loadFromAutoSave();
     if (loaded) {
       onStartGame?.();
-      router.push('/game');
+      router.push('/game-full-demo');
     }
   };
 
@@ -49,7 +49,7 @@ export default function MainMenu({
   const handleLoadComplete = () => {
     setShowLoadMenu(false);
     onStartGame?.();
-    router.push('/game');
+    router.push('/game-full-demo');
   };
 
   const handleSettings = () => {
@@ -71,12 +71,18 @@ export default function MainMenu({
         {/* Title */}
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold mb-4 tracking-wider text-shadow-lg">
-            <span className="bg-gradient-to-b from-gray-100 to-gray-400 bg-clip-text text-transparent">
-              EL PALO DE QUESO
+            <span className="bg-gradient-to-b from-amber-200 to-amber-600 bg-clip-text text-transparent">
+              Île de Pierre
             </span>
           </h1>
+          <p className="text-lg text-gray-400 tracking-wide font-light italic mb-2">
+            Stone Island
+          </p>
           <p className="text-xl text-gray-400 tracking-wide font-light">
             A Prison Escape in 58 Endings
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Brittany Coast, France • 1923
           </p>
         </div>
 

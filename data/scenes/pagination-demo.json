@@ -1,0 +1,57 @@
+{
+  "scenes": [
+    {
+      "id": "DEMO-PAGES-001",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-002.png",
+        "text": "This text is ignored when pages are present",
+        "speaker": null,
+        "pages": [
+          "SIX MONTHS AGO\n\nThe train lurches violently. Metal screams against metal.",
+          "You're thrown against the wall as the carriages behind you derail, one after another, like dominoes falling in slow motion.",
+          "Forty-seven people dead. Including Sophie.\n\nYou were the lead engineer. You signed off on the maintenance reports.",
+          "But you didn't cut corners. You didn't ignore the failing brake systems.\n\nFrancois Marchand did.\n\nBut who's going to believe you over a wealthy industrialist?"
+        ]
+      },
+      "choices": [],
+      "nextScene": "DEMO-PAGES-002"
+    },
+    {
+      "id": "DEMO-PAGES-002",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/characters/X-0-005.png",
+        "text": "This is a single-page dialogue for comparison.",
+        "speaker": "Guard Captain Legrand",
+        "pages": [
+          "Alexandre Dubois. The train engineer.",
+          "First time on the island? You still have that look - like you think someone will realize there's been a mistake.",
+          "Let me give you advice, engineer: forget your old life. Forget justice.",
+          "On Île de Pierre, there is only survival."
+        ]
+      },
+      "choices": [
+        {
+          "text": "\"I understand.\"",
+          "nextScene": "DEMO-PAGES-003"
+        },
+        {
+          "text": "\"I won't give up.\"",
+          "nextScene": "DEMO-PAGES-003"
+        }
+      ]
+    },
+    {
+      "id": "DEMO-PAGES-003",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-007.png",
+        "text": "This is a regular scene without pagination. All text appears at once, which is fine for shorter content like this. The pagination system is completely optional and backwards compatible.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": null
+    }
+  ]
+}

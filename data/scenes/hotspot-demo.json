@@ -1,0 +1,101 @@
+{
+  "scenes": [
+    {
+      "id": "HOTSPOT-DEMO",
+      "type": "investigation",
+      "content": {
+        "visual": "/images/backgrounds/cell-interior.jpg",
+        "text": "Your prison cell. A cramped space with stone walls, a metal bunk, and a barred window. The door clangs shut behind you.\n\nTake your time to examine your surroundings. Click on objects to interact with them.",
+        "speaker": null
+      },
+      "hotspots": [
+        {
+          "id": "wall_scratches",
+          "label": "Examine Wall Scratches",
+          "position": {
+            "x": 10,
+            "y": 25,
+            "width": 20,
+            "height": 30
+          },
+          "action": {
+            "type": "examine",
+            "text": "The stone wall is covered in scratches - desperate tallies marking endless days. Most are random, but one sequence stands out, carved deeper:\n\n4-7-1-9-2-3\n\nSomeone wanted this number remembered. But what does it mean?",
+            "evidenceChanges": {
+              "add": ["mysterious_numbers"]
+            },
+            "flagChanges": {
+              "set": ["examined_wall_scratches", "knows_number_sequence"]
+            },
+            "oneTime": true
+          }
+        },
+        {
+          "id": "window_view",
+          "label": "Look Out Window",
+          "position": {
+            "x": 70,
+            "y": 15,
+            "width": 18,
+            "height": 25
+          },
+          "action": {
+            "type": "examine",
+            "text": "Through the narrow window, you see the prison yard below. Guard towers stand at every corner. Beyond the walls, the ocean crashes against jagged rocks.\n\nÎle de Pierre. Stone Island. Your new home."
+          }
+        },
+        {
+          "id": "metal_bunk",
+          "label": "Search Under Bunk",
+          "position": {
+            "x": 40,
+            "y": 60,
+            "width": 25,
+            "height": 20
+          },
+          "action": {
+            "type": "take",
+            "text": "You kneel and feel under the metal bunk frame. Your fingers find something wrapped in cloth - a makeshift shiv, crude but sharp.\n\nThe previous occupant left you a gift. Or a warning.",
+            "itemChanges": {
+              "add": ["crude_shiv"]
+            },
+            "flagChanges": {
+              "set": ["found_hidden_shiv"]
+            },
+            "oneTime": true
+          }
+        },
+        {
+          "id": "loose_stone",
+          "label": "Loose Stone",
+          "position": {
+            "x": 15,
+            "y": 70,
+            "width": 12,
+            "height": 15
+          },
+          "requirements": {
+            "flags": ["examined_wall_scratches"]
+          },
+          "action": {
+            "type": "examine",
+            "text": "Near the floor, one stone looks slightly different from the others. You pry it loose and find a small cavity behind it.\n\nInside: a folded piece of paper with a crude map and a single word: 'TRUST ÉMILE'.\n\nBut Guard Captain Legrand warned you about Émile Beaumont. Who do you believe?",
+            "evidenceChanges": {
+              "add": ["hidden_map", "trust_emile_note"]
+            },
+            "flagChanges": {
+              "set": ["found_secret_hiding_spot", "knows_about_emile_connection"]
+            },
+            "oneTime": true
+          }
+        }
+      ],
+      "choices": [
+        {
+          "text": "Continue",
+          "nextScene": "X-0-001"
+        }
+      ]
+    }
+  }
+}

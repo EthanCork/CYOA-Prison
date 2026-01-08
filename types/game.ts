@@ -22,6 +22,8 @@ export interface SceneContent {
   text: string;
   /** The character speaking (if any) */
   speaker?: string;
+  /** Optional pages for multi-page dialogue (if present, text is ignored) */
+  pages?: string[];
 }
 
 /**
@@ -149,6 +151,58 @@ export interface Scene {
     add?: string[];
     remove?: string[];
   };
+  /** Interactive hotspots on the background */
+  hotspots?: Hotspot[];
+}
+
+/**
+ * Interactive hotspot on a scene background
+ */
+export interface Hotspot {
+  /** Unique identifier for this hotspot */
+  id: string;
+  /** Display label when hovering */
+  label: string;
+  /** Position on screen (percentage-based for responsiveness) */
+  position: {
+    x: number; // 0-100 (percentage from left)
+    y: number; // 0-100 (percentage from top)
+    width: number; // 0-100 (percentage of screen width)
+    height: number; // 0-100 (percentage of screen height)
+  };
+  /** Requirements to make this hotspot visible/interactable */
+  requirements?: ChoiceRequirements;
+  /** Action that occurs when hotspot is clicked */
+  action: HotspotAction;
+}
+
+/**
+ * Action that occurs when a hotspot is clicked
+ */
+export interface HotspotAction {
+  /** Type of action */
+  type: 'examine' | 'take' | 'talk' | 'use' | 'navigate';
+  /** Text shown in popup/overlay when examined */
+  text?: string;
+  /** Scene to navigate to */
+  nextScene?: string;
+  /** Flag changes that occur */
+  flagChanges?: {
+    set?: string[];
+    unset?: string[];
+  };
+  /** Item changes that occur */
+  itemChanges?: {
+    add?: string[];
+    remove?: string[];
+  };
+  /** Evidence changes that occur */
+  evidenceChanges?: {
+    add?: string[];
+    remove?: string[];
+  };
+  /** Makes this hotspot disappear after interaction */
+  oneTime?: boolean;
 }
 
 /**

@@ -10,6 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "verify:scenes": "tsx scripts/verify-scene-loader.ts",
+    "verify:branching": "tsx scripts/verify-branching-scenes.ts",
     "verify:flags": "tsx scripts/verify-flag-system.ts",
     "verify:items": "tsx scripts/verify-items.ts",
     "verify:relationships": "tsx scripts/verify-relationships.ts"

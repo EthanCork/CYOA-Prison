@@ -18,4 +18,6 @@ export type {
   Item,
   ItemCategory,
   Evidence,
+  Hotspot,
+  HotspotAction,
 } from './game';

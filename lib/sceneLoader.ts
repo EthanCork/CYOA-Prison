@@ -4,6 +4,7 @@
 
 import type { Scene } from '@/types';
 import sampleScenes from '@/data/scenes/sample-scenes.json';
+import act0Scenes from '@/data/scenes/act-0-opening.json';
 
 /**
  * Error thrown when a scene cannot be found
@@ -30,10 +31,20 @@ function initializeSceneCache(): Map<string, Scene> {
 
   sceneCache = new Map<string, Scene>();
 
+  // Load scenes from act-0-opening.json (Act 0 scenes take priority)
+  if (act0Scenes && Array.isArray(act0Scenes.scenes)) {
+    for (const scene of act0Scenes.scenes) {
+      sceneCache.set(scene.id, scene as Scene);
+    }
+  }
+
   // Load scenes from sample-scenes.json
   if (sampleScenes && Array.isArray(sampleScenes.scenes)) {
     for (const scene of sampleScenes.scenes) {
-      sceneCache.set(scene.id, scene as Scene);
+      // Only add if not already loaded (act-0 scenes take priority)
+      if (!sceneCache.has(scene.id)) {
+        sceneCache.set(scene.id, scene as Scene);
+      }
     }
   }
 
