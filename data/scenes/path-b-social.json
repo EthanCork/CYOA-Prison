@@ -1,0 +1,1933 @@
+{
+  "scenes": [
+    {
+      "id": "B-1-001",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-001.png",
+        "text": "",
+        "pages": [
+          "MORNING 17\n\nYou wake to the sound of the morning bell. Bastian is already up, standing at the small window, watching the yard below.\n\nYou've made your choice. Not a desperate flight through darkness. Not a patient methodical investigation. Something else. Something that requires trust.",
+          "The Social Route. Build alliances. Recruit help. Escape as a team.\n\nAlone, you're just one man against a fortress of stone and iron and hundreds of guards. But together? With the right people? Maybe you have a chance.",
+          "Bastian turns from the window. \"You're thinking about something,\" he observes. \"You have that look. The engineer calculating variables.\"\n\nYou nod slowly. It's time. Time to bring someone else into this desperate plan. And Bastian is the logical first choice."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-001-1.png",
+          "/images/backgrounds/B-1-001-2.png",
+          "/images/backgrounds/B-1-001-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-002",
+      "flagChanges": {
+        "set": ["path_b_started", "morning_17", "social_route_chosen"]
+      },
+      "requirements": {
+        "flags": ["chose_social_path"]
+      }
+    },
+    {
+      "id": "B-1-002",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-002.png",
+        "text": "",
+        "pages": [
+          "You take a breath. This is it. The moment you stop being alone in this.\n\n\"Bastian,\" you say quietly. \"I need to talk to you about something. Something... dangerous.\"",
+          "He doesn't react with surprise. Just turns fully to face you, his expression unreadable. \"Go on,\" he says.\n\n\"I'm going to escape,\" you say. \"Not alone. Not through brute force or luck. I'm going to build a team. People I can trust. People with skills. And I want you to be the first.\""
+        ],
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "\"I know about your sister. The fishing boat. We can use that.\"",
+          "nextScene": "B-1-003A",
+          "requirements": {
+            "relationships": {
+              "bastian": 60
+            }
+          },
+          "flagChanges": {
+            "set": ["mentioned_cordelia", "direct_approach"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        },
+        {
+          "text": "\"I've watched you. You're smart. Careful. You know this place.\"",
+          "nextScene": "B-1-003B",
+          "flagChanges": {
+            "set": ["complimented_bastian", "respectful_approach"]
+          },
+          "relationshipChanges": {
+            "bastian": 5
+          }
+        },
+        {
+          "text": "\"You've been here six years. Don't you want to see the outside again?\"",
+          "nextScene": "B-1-003C",
+          "flagChanges": {
+            "set": ["appealed_to_freedom", "emotional_approach"]
+          },
+          "relationshipChanges": {
+            "bastian": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-003A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-003A.png",
+        "text": "Bastian's eyes widen slightly. Just for a moment. Then his expression hardens.\n\n\"Who told you about Cordelia?\" His voice is quiet, but there's steel in it.\n\nYou meet his gaze. \"You did. In your sleep. You talk sometimes. 'Thursday at three.' You've said it a dozen times.\"\n\nA long silence. Then Bastian's shoulders relax slightly. \"You're observant. That's good. We'll need that.\" He pauses. \"Yes. Cordelia passes the northwest rocks every Thursday at 3 AM. I've been watching her boat for six years, never acting on it. But if you're serious about this...\"\n\nHe nods slowly. \"I'm in. But we do this right. We plan. We recruit carefully. And we don't move until we're ready.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "B-1-004",
+      "flagChanges": {
+        "set": ["bastian_fully_committed", "cordelia_connection_established"]
+      },
+      "relationshipChanges": {
+        "bastian": 5
+      }
+    },
+    {
+      "id": "B-1-003B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-003B.png",
+        "text": "Bastian studies you for a long moment. \"Smart and careful. That's true. I've survived six years by being both.\"\n\nHe sits on his bunk. \"Why me? Why not someone with more... influence? Viktor could fight guards. Marcel could pick any lock. Denis knows passages I've never seen.\"\n\n\"Because you're my cellmate,\" you say simply. \"Because I've lived three feet from you for months and I trust you. And because you're the kind of man who watches for six years before making a move.\"\n\nBastian nods slowly. \"Patience. Yes. But there's a difference between patience and cowardice.\" He meets your eyes. \"I'm in. But we need more than just the two of us. We need people with specific skills. And we need to be very, very careful who we approach.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "B-1-004",
+      "flagChanges": {
+        "set": ["bastian_committed", "emphasized_trust"]
+      }
+    },
+    {
+      "id": "B-1-003C",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-003C.png",
+        "text": "Bastian's expression doesn't change. \"Six years. Yes. I've thought about escape every single day. But wanting something and achieving it are very different things.\"\n\nHe crosses his arms. \"Freedom. Everyone here wants it. But most men who try to escape end up dead or in the hole. What makes you think your plan will be different?\"\n\nYou explain your thinking. Not a desperate flight. Not a lone wolf attempt. A coordinated team effort. Multiple people with complementary skills. Careful planning. Patience.\n\nBastian listens. Finally, he nods. \"Alright. I'm willing to hear more. But understand - I won't risk my life on a half-formed plan. If we do this, we do it right. That means recruiting carefully. Testing loyalty. And having backups for every backup.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "B-1-004",
+      "flagChanges": {
+        "set": ["bastian_cautiously_committed", "needs_convincing"]
+      }
+    },
+    {
+      "id": "B-1-004",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-004.png",
+        "text": "",
+        "pages": [
+          "You and Bastian spend the next hour in quiet discussion. Planning. Strategizing. Assessing risks.\n\n\"We need specialists,\" Bastian says. \"People who bring skills we don't have.\"",
+          "He ticks them off on his fingers: \"Locks - Marcel. Muscle - Viktor, if you can recruit him. Spiritual cover and secret passages - Denis. Medical access - maybe Dr. Moreau, though that's risky.\"",
+          "\"And then there's Émile,\" you say quietly.\n\nBastian's expression darkens. \"Émile is dangerous. He has connections to the smuggler network. Could be useful. Could also betray us for sport. I'd avoid him if possible.\"",
+          "\"So our targets are Marcel, Viktor, and Denis,\" you summarize. \"Three men who might help us escape. Three very different men who will need very different approaches.\"\n\nBastian nods. \"And we need to move carefully. One wrong word to the wrong person, and we're both in solitary. Or dead.\""
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-005",
+      "flagChanges": {
+        "set": ["discussed_recruitment_targets", "identified_marcel_viktor_denis"]
+      }
+    },
+    {
+      "id": "B-1-005",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-1-005.png",
+        "text": "\"So,\" Bastian says, \"what are my conditions? What do I need from you to fully commit?\"\n\nHe holds up his hand. \"First: We recruit at least two more people before we attempt anything. I won't risk it with just the two of us. Second: We have an exit plan. A real one. Not 'steal a boat and hope.' Third: If things go wrong, we protect each other. No one gets left behind.\"\n\nHe looks at you seriously. \"Can you agree to those terms?\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [
+        {
+          "text": "\"Agreed. All three conditions. This is a team effort.\"",
+          "nextScene": "B-1-006",
+          "flagChanges": {
+            "set": ["accepted_bastians_conditions", "team_first_mentality"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        },
+        {
+          "text": "\"Two more people, yes. But if someone becomes a liability, we cut them loose.\"",
+          "nextScene": "B-1-006",
+          "flagChanges": {
+            "set": ["accepted_conditions_with_caveat", "pragmatic_approach"]
+          },
+          "relationshipChanges": {
+            "bastian": 5
+          }
+        },
+        {
+          "text": "\"I'll try my best, but I can't guarantee no one gets left behind. Survival comes first.\"",
+          "nextScene": "B-1-006",
+          "flagChanges": {
+            "set": ["conditional_acceptance", "self_preservation_mentality"]
+          },
+          "relationshipChanges": {
+            "bastian": -5
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-006",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-006.png",
+        "text": "",
+        "pages": [
+          "Bastian accepts your response with a nod. The alliance is formed. Your first recruit.\n\nNow comes the hard part: identifying and approaching the others. You need to understand who these men are, what motivates them, and how to win their trust.",
+          "Over the next few days, you'll need to observe. Listen. Learn. Every prisoner has a story. Every man has something he wants. The key is finding the intersection between their desires and your needs.",
+          "You and Bastian begin planning your recruitment strategy. Who to approach first? How to make contact? What to say? What NOT to say?\n\nOne wrong move and the guards will hear about it. One bad recruit and the whole plan falls apart."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-006-1.png",
+          "/images/backgrounds/B-1-006-2.png",
+          "/images/backgrounds/B-1-006-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-007",
+      "flagChanges": {
+        "set": ["alliance_formed", "recruitment_phase_begins"]
+      }
+    },
+    {
+      "id": "B-1-007",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-007.png",
+        "text": "",
+        "pages": [
+          "DAY 2 - OBSERVATION\n\nYou spend the day watching. The yard during exercise. The cafeteria during meals. The workshop during assigned duties.\n\nMarcel Laurent: Age 52. Usually found in the workshop or library. Moves like a man half his age. Patient, methodical. You've seen him fix broken locks, carve intricate wooden figurines, help younger prisoners with reading.",
+          "Viktor Kozlov: Age 41. The yard is his domain. Former boxer. You watch him do pull-ups with such perfect form it looks effortless. Guards give him space. Other prisoners give him more space. He radiates controlled violence.",
+          "Denis Archambault: Age 67. The priest. You see him in the chapel during morning prayers, then later volunteering at the infirmary. He moves slowly but with purpose. Several prisoners seek him out for counsel. He never turns anyone away.",
+          "Three very different men. Three very different approaches will be needed. Bastian was easy - he was already your cellmate, already somewhat trusted you. These three? They require strategy."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-007-1.png",
+          "/images/backgrounds/B-1-007-2.png",
+          "/images/backgrounds/B-1-007-3.png",
+          "/images/backgrounds/B-1-007-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-008",
+      "flagChanges": {
+        "set": ["observed_recruits", "day_2_complete"]
+      }
+    },
+    {
+      "id": "B-1-008",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-008.png",
+        "text": "",
+        "pages": [
+          "That evening, you and Bastian huddle in your cell, speaking in low voices.\n\n\"Risk evaluation,\" Bastian says. \"Each recruit carries different dangers.\"",
+          "\"Marcel - Low risk. He's a professional thief. Keeps secrets. But he's cautious. It'll take time to win his trust.\"\n\n\"Viktor - High risk, high reward. If he agrees, we have protection and muscle. If he refuses or betrays us, we're dead. He could break us both with his bare hands.\"",
+          "\"Denis - Medium risk. He's a pacifist. Won't participate in violence. But he knows hidden passages. Could provide escape route or sanctuary. The question is: will he help criminals escape?\"\n\n\"And Émile?\" you ask.\n\nBastian's face hardens. \"Émile is maximum risk. He has smuggler connections. Could get us anything - weapons, tools, outside help. But he's unpredictable. Cruel. If we approach him and he refuses, he might report us just to watch us suffer.\""
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-009",
+      "flagChanges": {
+        "set": ["risk_assessment_complete", "evaluated_all_targets"]
+      }
+    },
+    {
+      "id": "B-1-009",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-1-009.png",
+        "text": "\"So,\" you say, \"who do we approach first?\"\n\nBastian considers. \"Each has advantages. Marcel is safest. Viktor is most useful if we can get him. Denis offers the most unique asset. Your call.\"\n\nThis decision will set the tone for your recruitment strategy. Whoever you approach first will likely influence how the others see you.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "\"Marcel first. Build trust slowly with someone safe.\"",
+          "nextScene": "B-1-010A",
+          "flagChanges": {
+            "set": ["chose_marcel_first", "cautious_strategy"]
+          }
+        },
+        {
+          "text": "\"Viktor first. If we can get him, the others will follow.\"",
+          "nextScene": "B-1-010B",
+          "flagChanges": {
+            "set": ["chose_viktor_first", "bold_strategy"]
+          }
+        },
+        {
+          "text": "\"Denis first. His moral authority could help recruit others.\"",
+          "nextScene": "B-1-010C",
+          "flagChanges": {
+            "set": ["chose_denis_first", "moral_strategy"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-010A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-010A.png",
+        "text": "\"Marcel,\" you decide. \"He's the safest approach. A professional. If he refuses, he'll keep it quiet. And if he agrees, he brings skills we desperately need.\"\n\nBastian nods approvingly. \"Smart. Cautious. That's how you survive here. Tomorrow, find him in the library. That's where he goes to think. Quiet. Private. Good place for a careful conversation.\"\n\nYou feel a mix of excitement and fear. Tomorrow, you expand the conspiracy. Tomorrow, you bring a second person into the escape plan.\n\nAnd if it goes wrong? If Marcel reports you?\n\nYou push the thought away. This is the path you've chosen. The Social Route. Trust is a risk you must take.\n\n[MARCEL RECRUITMENT SEQUENCE BEGINS]",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-011",
+      "flagChanges": {
+        "set": ["commitment_made", "marcel_sequence_next"]
+      }
+    },
+    {
+      "id": "B-1-010B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-010B.png",
+        "text": "\"Viktor,\" you say. \"If we can get him on our side, everything else becomes easier. Protection. Muscle. Respect from other prisoners.\"\n\nBastian looks concerned. \"Bold. Maybe too bold. Viktor doesn't respect words. He respects strength. You'll need to prove yourself somehow.\"\n\n\"I know,\" you say. \"But if we're building a team, we need someone who can handle the physical challenges. Marcel picks locks. Denis knows passages. But Viktor? Viktor can fight our way out if it comes to that.\"\n\nBastian sighs. \"Your call. Tomorrow, approach him in the yard. During afternoon exercise. That's his domain. Be direct. He respects directness. And be prepared - he might test you.\"\n\n[VIKTOR RECRUITMENT SEQUENCE BEGINS]",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-016",
+      "flagChanges": {
+        "set": ["commitment_made", "viktor_sequence_next"]
+      }
+    },
+    {
+      "id": "B-1-010C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-010C.png",
+        "text": "\"Denis,\" you say. \"He's respected. Trusted. If he endorses our plan, others will be more likely to join. And he knows things - passages, history - that could be critical.\"\n\nBastian considers this. \"Interesting choice. Denis is complicated. He helped political prisoners escape twenty years ago - that's why he's here. But he's also a pacifist now. He won't condone violence.\"\n\n\"We don't need him to fight,\" you counter. \"We need him to guide. To provide sanctuary if things go wrong. And maybe his moral authority will keep us from becoming what we're trying to escape.\"\n\nBastian nods slowly. \"Philosophical. I like it. Tomorrow, find him in the chapel. Morning prayers. He'll be alone after, cleaning. That's when you can talk.\"\n\n[DENIS RECRUITMENT SEQUENCE BEGINS]",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-021",
+      "flagChanges": {
+        "set": ["commitment_made", "denis_sequence_next"]
+      }
+    },
+    {
+      "id": "B-1-011",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-011.png",
+        "text": "",
+        "pages": [
+          "DAY 3 - MORNING\n\nThe library. A small room with three shelves of donated books, a single table, and weak sunlight filtering through barred windows.\n\nMarcel Laurent sits alone, reading. Age 52. Grey hair. Weathered hands that move with surprising grace as he turns pages.",
+          "He's been here for twelve years. Caught during his last burglary - a mansion on the outskirts of Paris. The papers called him 'The Silver Fox.' Never violent. Never cruel. Just... professional.\n\nYou've been watching him for three days. He comes to the library every morning. Reads for an hour. Sometimes helps younger prisoners with their reading. Patient. Methodical. Calm.",
+          "Today, you approach. This is the first test of your recruitment strategy. If Marcel refuses, if he reports you, everything ends here.\n\nYou pick a book from the shelf - something about engineering, appropriately - and sit across from him. He glances up, acknowledges you with a small nod, then returns to his reading."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-011-1.png",
+          "/images/backgrounds/B-1-011-2.png",
+          "/images/backgrounds/B-1-011-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-012",
+      "flagChanges": {
+        "set": ["day_3_morning", "approached_marcel", "in_library"]
+      }
+    },
+    {
+      "id": "B-1-012",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-012.png",
+        "text": "",
+        "pages": [
+          "You read in silence for several minutes. Not rushing. Building comfort. Finally, Marcel speaks.\n\n\"Engineering,\" he observes, glancing at your book. \"You're the train engineer. The one from the newspapers. Alexandre Dubois.\"",
+          "You nod. \"You remember?\"\n\n\"I remember everything,\" Marcel says simply. \"It's my profession. Details matter. You maintained innocence throughout the trial. The evidence was... convenient. Too convenient.\"\n\nHe sets his own book down. \"What brings you to the library, Monsieur Dubois? You don't strike me as a man who reads for pleasure during a life sentence.\""
+        ],
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "\"I'm looking for a friend. Someone intelligent to talk to.\"",
+          "nextScene": "B-1-013A",
+          "flagChanges": {
+            "set": ["friendly_approach", "slow_build"]
+          },
+          "relationshipChanges": {
+            "marcel": 5
+          }
+        },
+        {
+          "text": "\"I'm looking for information. About locks. You're the best.\"",
+          "nextScene": "B-1-013B",
+          "flagChanges": {
+            "set": ["direct_approach", "flattery"]
+          },
+          "relationshipChanges": {
+            "marcel": 3
+          }
+        },
+        {
+          "text": "\"I'm looking for someone who understands being wrongfully convicted.\"",
+          "nextScene": "B-1-013C",
+          "flagChanges": {
+            "set": ["honest_approach", "common_ground"]
+          },
+          "relationshipChanges": {
+            "marcel": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-013A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-013A.png",
+        "text": "",
+        "pages": [
+          "Marcel studies you for a moment. \"Friendship. A luxury in a place like this. Most men here are too busy surviving to cultivate genuine connections.\"\n\nHe picks up his book again, but doesn't open it. \"I appreciate directness, Monsieur Dubois. So let me be direct: men don't seek friendship from old locksmiths without ulterior motives. What do you really want?\"",
+          "You meet his gaze. Time for truth. \"I want to escape. And I want help. Your help specifically. You know locks. You know this place. And you're smart enough to know I'm not going alone.\"\n\nMarcel's expression doesn't change. But his fingers tap the book cover once. Twice. Calculating.",
+          "\"Interesting,\" he says finally. \"Most prisoners who want to escape either do it impulsively - and die - or talk about it endlessly - and never act. You seem... different. Methodical. Like an engineer approaching a problem.\"\n\nHe leans forward slightly. \"Tell me more.\""
+        ],
+        "speaker": "Marcel Laurent"
+      },
+      "choices": [],
+      "nextScene": "B-1-014",
+      "flagChanges": {
+        "set": ["marcel_interested", "truth_revealed"]
+      },
+      "relationshipChanges": {
+        "marcel": 5
+      }
+    },
+    {
+      "id": "B-1-013B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-013B.png",
+        "text": "Marcel's lips quirk in what might be amusement. \"Flattery. The tool of the desperate. 'You're the best,' they say. As if I don't know my own skills.\"\n\nHe sets his book aside. \"But you're not wrong. I am the best. Twelve years breaking into places that claimed to be unbreakable. Never once hurt anyone. Never once stole more than my commission. I had... principles.\"\n\n\"Had?\" you ask.\n\n\"Prison changes perspectives,\" Marcel says. \"But let's not dance around the obvious. You want my help with something. Escape, presumably. The question is: why should I risk what little comfort I've earned here to help a relative stranger?\"\n\nHe crosses his arms. \"Convince me.\"",
+        "speaker": "Marcel Laurent"
+      },
+      "choices": [],
+      "nextScene": "B-1-014",
+      "flagChanges": {
+        "set": ["marcel_skeptical", "needs_convincing"]
+      }
+    },
+    {
+      "id": "B-1-013C",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-013C.png",
+        "text": "",
+        "pages": [
+          "Marcel's eyes narrow slightly. Then he closes his book carefully, deliberately. When he speaks, his voice is softer.\n\n\"Wrongfully convicted. An interesting phrase. I've heard it before. Usually from men who absolutely committed their crimes but feel the sentences were unjust.\"",
+          "He studies you. \"But your case was different, wasn't it? The evidence was manufactured. The witnesses were paid. The verdict was purchased. I followed your trial in the newspapers. I know what real guilt looks like. And I know what a frame-up looks like.\"\n\nHe leans back. \"I'm not wrongfully convicted, Monsieur Dubois. I was a thief. I broke into homes and stole valuable objects. The only injustice in my case was getting caught on my final job.\"",
+          "He pauses. \"But I understand being powerless against corruption. Against money. Against the machine that grinds us all. So yes. I understand what you're feeling. The rage. The helplessness. The need to do something.\"\n\nMarcel nods slowly. \"You're not here just for friendship, are you?\""
+        ],
+        "speaker": "Marcel Laurent"
+      },
+      "choices": [],
+      "nextScene": "B-1-014",
+      "flagChanges": {
+        "set": ["marcel_sympathetic", "deep_connection"]
+      },
+      "relationshipChanges": {
+        "marcel": 7
+      }
+    },
+    {
+      "id": "B-1-014",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-014.png",
+        "text": "",
+        "pages": [
+          "You outline your plan. Not everything. But enough. You're building a team. People with complementary skills. Bastian is already in. You need someone who understands locks, keys, security systems. You need Marcel.\n\nHe listens without interrupting. When you finish, he's quiet for a long moment.",
+          "\"A team approach,\" he finally says. \"Smart. Safer than going alone. But it introduces a new variable: trust. Every person you recruit is another potential point of failure. Another person who could betray you.\"\n\nHe looks at you directly. \"So here's my test, Monsieur Dubois. My condition for even considering this proposal.\"",
+          "Marcel pulls something from his pocket. A small brass key. \"This unlocks the workshop storage. Inside is a set of lockpicks I made years ago. Hidden behind the third shelf from the left, inside a hollowed-out block of wood.\"\n\nHe places the key on the table between you. \"Go get them. Bring them to me tonight. Prove you can move quietly, avoid guards, and keep a secret. Do that, and we'll talk seriously about escape.\"\n\nHe stands. \"But if you're caught, if you mention my name, I'll deny everything. Understood?\""
+        ],
+        "speaker": "Marcel Laurent"
+      },
+      "choices": [
+        {
+          "text": "\"I'll get the lockpicks. You have my word.\"",
+          "nextScene": "B-1-015A",
+          "flagChanges": {
+            "set": ["accepted_marcels_test", "confident_response"]
+          },
+          "relationshipChanges": {
+            "marcel": 5
+          }
+        },
+        {
+          "text": "\"This test is too risky. Can't we build trust another way?\"",
+          "nextScene": "B-1-015B",
+          "flagChanges": {
+            "set": ["questioned_test", "cautious_response"]
+          },
+          "relationshipChanges": {
+            "marcel": -5
+          }
+        },
+        {
+          "text": "\"What if I get caught? How do I know you won't let me take the fall?\"",
+          "nextScene": "B-1-015C",
+          "flagChanges": {
+            "set": ["challenged_marcel", "suspicious_response"]
+          },
+          "relationshipChanges": {
+            "marcel": -10
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-015A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-015A.png",
+        "text": "",
+        "pages": [
+          "Marcel nods, a hint of approval in his eyes. \"Good. Confidence without arrogance. That's what separates successful thieves from dead ones.\"\n\nHe pockets the key - no, wait. He leaves it on the table. A test within a test. You take it smoothly, naturally.",
+          "\"Tonight. After lights out. The guard station is positioned to watch the cells, not the workshop corridor. You'll have a ten-minute window when they change shift at midnight.\"\n\nMarcel turns to leave, then pauses. \"One more thing, Monsieur Dubois. If you succeed, you'll have proven more than just stealth. You'll have proven you're serious. That this isn't idle prison talk. I respect that.\"\n\nHe walks out, leaving you alone with the key and the weight of the task ahead.",
+          "Tonight, you'll either gain a powerful ally with the skills you desperately need... or you'll end up in solitary confinement wondering where your plan went wrong.\n\n[MARCEL TEST ACCEPTED - Success will advance recruitment]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-015A-1.png",
+          "/images/backgrounds/B-1-015A-2.png",
+          "/images/backgrounds/B-1-015A-3.png",
+          "/images/backgrounds/B-1-015A-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "itemChanges": {
+        "add": ["workshop_key"]
+      },
+      "flagChanges": {
+        "set": ["marcel_test_active", "has_workshop_key", "midnight_mission_pending"]
+      }
+    },
+    {
+      "id": "B-1-015B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-015B.png",
+        "text": "Marcel's expression hardens. \"Too risky? Monsieur Dubois, you just asked me to help you escape from a maximum security prison fortress. Everything about that proposal is risky.\"\n\nHe picks up the key and returns it to his pocket. \"Trust isn't built through conversation. It's built through action. Through risk taken together. If you're not willing to take this small risk for me, why should I believe you'd take the much larger risks required for escape?\"\n\nMarcel stands. \"I misjudged you. I thought you were serious. Methodical. Instead, you're just another prisoner with dreams but no courage.\"\n\nHe walks to the door, then looks back. \"If you change your mind - if you decide you're actually willing to act rather than just talk - you know where to find me.\"\n\nHe leaves. The conversation is over.\n\n[MARCEL RECRUITMENT: PAUSED - Relationship damaged but not destroyed]",
+        "speaker": "Marcel Laurent"
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "flagChanges": {
+        "set": ["marcel_disappointed", "test_declined", "recruitment_stalled"]
+      }
+    },
+    {
+      "id": "B-1-015C",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-015C.png",
+        "text": "Marcel's face closes off completely. \"How do you know I won't let you take the fall?\" He stands, his voice cold. \"You don't. That's the nature of trust, Monsieur Dubois. It's a risk. A gamble.\"\n\nHe pockets the key. \"But since you've just demonstrated that you don't trust me, why on earth would I trust you? Alliances require mutual faith. You've shown me you have none.\"\n\nMarcel picks up his book. \"This conversation is over. I suggest you find other allies - ones who meet your apparently very high standards for trustworthiness. Though I suspect you'll find prison full of disappointed recruits.\"\n\nHe walks out without looking back. You've blown the Marcel recruitment entirely.\n\n[MARCEL RECRUITMENT: FAILED - Relationship severely damaged]",
+        "speaker": "Marcel Laurent"
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "flagChanges": {
+        "set": ["marcel_offended", "marcel_recruitment_failed", "trust_broken"]
+      },
+      "relationshipChanges": {
+        "marcel": -15
+      }
+    },
+    {
+      "id": "B-1-016",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-016.png",
+        "text": "",
+        "pages": [
+          "The yard. Afternoon sun beating down on concrete. Viktor Kozlov dominates the weight area like it's his personal kingdom.\n\nFormer boxer. Killed a man in an illegal fight. 41 years old and built like a tank. Most prisoners give him a wide berth.\n\nBastian warned you: \"Viktor sees you as weak. He sees most people as weak. You'll need to change that perception before he'll even listen to you.\"",
+          "Viktor is doing pull-ups on a makeshift bar, his movements controlled and methodical. Even his exercise has the precision of violence held in check.\n\nTwo of Émile's crew - Luc and Thierry - watch from across the yard. They're laughing about something. Probably you.\n\nYou have Viktor's attention briefly when you approach. His eyes - cold, calculating - take you in with a single glance.\n\n\"What?\" His voice is like gravel. Not hostile. Just... indifferent.",
+          "This is your opening. How you approach Viktor will set the tone for everything that follows."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-016-1.png",
+          "/images/backgrounds/B-1-016-2.png",
+          "/images/backgrounds/B-1-016-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-017",
+      "requirements": {
+        "flags": ["chose_viktor_route", "bastian_alliance_formed"]
+      },
+      "flagChanges": {
+        "set": ["viktor_recruitment_started", "approached_viktor"]
+      }
+    },
+    {
+      "id": "B-1-017",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-017.png",
+        "text": "You need to get Viktor's attention. Actually get his attention, not just stand in front of him. The question is how.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "\"I'm planning something. Something big. I need someone strong enough to back it up.\"",
+          "nextScene": "B-1-018A",
+          "flagChanges": {
+            "set": ["viktor_approach_direct"]
+          },
+          "relationshipChanges": {
+            "viktor": 5
+          }
+        },
+        {
+          "text": "\"Émile's crew. They're planning something for me. I'm not going down without a fight.\"",
+          "nextScene": "B-1-018B",
+          "flagChanges": {
+            "set": ["viktor_approach_protection"]
+          },
+          "relationshipChanges": {
+            "viktor": 3
+          }
+        },
+        {
+          "text": "\"You're wasting your strength in here. I know a way out. Interested?\"",
+          "nextScene": "B-1-018C",
+          "flagChanges": {
+            "set": ["viktor_approach_bold"]
+          },
+          "relationshipChanges": {
+            "viktor": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-018A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-018A.png",
+        "text": "",
+        "pages": [
+          "Viktor drops from the bar, landing with barely a sound. He turns to face you fully. Up close, he's even more intimidating.\n\n\"Something big,\" he repeats, his voice flat. \"Every week, someone has 'something big.' Plans. Schemes. Dreams. You know what they all have in common?\"\n\nHe steps closer. \"They fail. They always fail. Because the people making plans don't understand violence. Don't understand that when steel meets flesh, all the clever planning in the world means nothing.\"",
+          "He crosses his arms. \"So. This 'something big' of yours. Does it involve guards? Walls? Locks? Because those things don't care about your plans. They require force. Control. The willingness to do what soft men like you can't do.\"\n\nÉmile's crew is watching now, interested in the confrontation.\n\nViktor continues: \"You want my strength. Fine. But strength isn't free. You pay for it. With respect. With trust. With proof that you're not just another prison talker who'll fold the moment things get real.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-018A-1.png",
+          "/images/backgrounds/B-1-018A-2.png"
+        ],
+        "speaker": "Viktor Kozlov"
+      },
+      "choices": [],
+      "nextScene": "B-1-019",
+      "relationshipChanges": {
+        "viktor": 5
+      }
+    },
+    {
+      "id": "B-1-018B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-018B.png",
+        "text": "",
+        "pages": [
+          "Viktor glances at Émile's crew, then back to you. \"So you want protection. You want me to be your guard dog.\"\n\nHe doesn't sound angry. Just... disappointed.\n\n\"Émile picks on you because you're weak. Because you project weakness. Running to me for protection doesn't change that. It reinforces it.\"\n\nHe sits down on the bench, picks up a weight. \"Here's the truth, Dubois: If you can't handle Émile yourself, you can't handle escape. You can't handle freedom. Because the world outside isn't easier than in here. It's harder.\"",
+          "Viktor sets the weight down, looks at you directly. \"But I'll make you an offer. Not protection. Training. Show me you're willing to stand on your own feet, and I'll teach you how to stand properly. Show me you have courage instead of just fear, and maybe - maybe - you'll earn my respect.\"\n\nHe gestures to Émile's crew. \"They're watching. Waiting to see if you're prey or predator. What you do next will tell them everything.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-018B-1.png",
+          "/images/backgrounds/B-1-018B-2.png"
+        ],
+        "speaker": "Viktor Kozlov"
+      },
+      "choices": [],
+      "nextScene": "B-1-019",
+      "relationshipChanges": {
+        "viktor": 0
+      }
+    },
+    {
+      "id": "B-1-018C",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-018C.png",
+        "text": "",
+        "pages": [
+          "Viktor stops mid-pull-up. Hangs there for a moment, processing your words. Then drops to the ground, turning to face you with genuine interest for the first time.\n\n\"A way out.\" He doesn't phrase it as a question. \"Not a plan. Not a dream. A way.\"\n\nHe studies you with new eyes. \"You've got spine. I'll give you that. Most men whisper about escape. They're afraid even saying it loud will bring the guards. You just announced it like it's a fact.\"",
+          "Viktor steps closer, his voice dropping to a rumble only you can hear. \"But spine isn't enough. I've seen tough men break. Seen clever men die. Escape requires something most prisoners don't have: the willingness to go through hell and come out the other side.\"\n\nHe glances at the guards on the wall. \"Strength matters. Violence matters. But what really matters is this: when the moment comes - when you're bleeding, when someone's life is in your hands, when every choice is between bad and worse - will you do what needs to be done?\"\n\nHe crosses his arms. \"Answer that, and we'll talk about my 'wasted strength.'\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-018C-1.png",
+          "/images/backgrounds/B-1-018C-2.png"
+        ],
+        "speaker": "Viktor Kozlov"
+      },
+      "choices": [],
+      "nextScene": "B-1-019",
+      "relationshipChanges": {
+        "viktor": 7
+      }
+    },
+    {
+      "id": "B-1-019",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-019.png",
+        "text": "",
+        "pages": [
+          "Viktor glances across the yard. Émile's crew - Luc and Thierry - are moving closer. The yard has gone quiet. The kind of quiet that precedes violence.\n\n\"Here's your test,\" Viktor says calmly. \"Luc over there. He owes me. One word from me, and he'll back off. You'll be safe. Protected.\"\n\nLuc is cracking his knuckles, grinning. Thierry has something metallic palmed in his hand.",
+          "\"Or,\" Viktor continues, \"you handle it yourself. You prove you're not just talk. You show me - and everyone watching - that you have the steel to survive what's coming.\"\n\nViktor's eyes are cold, evaluating. \"This is what separates prison dreamers from men who deserve freedom. When violence comes, do you hide behind someone stronger? Or do you stand?\"\n\nÉmile appears at the edge of the yard, watching with interest. Guards are positioned, but they won't intervene unless blood is shed. Prison politics.\n\n\"Choose,\" Viktor says simply."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-019-1.png",
+          "/images/backgrounds/B-1-019-2.png"
+        ],
+        "speaker": "Viktor Kozlov"
+      },
+      "choices": [
+        {
+          "text": "\"Tell them to back off. I'm not stupid enough to fight when diplomacy works.\"",
+          "nextScene": "B-1-020A",
+          "flagChanges": {
+            "set": ["viktor_test_declined", "chose_safety"]
+          },
+          "relationshipChanges": {
+            "viktor": -5
+          }
+        },
+        {
+          "text": "\"I'll handle it myself. But I'll handle it my way - not with your violence.\"",
+          "nextScene": "B-1-020B",
+          "flagChanges": {
+            "set": ["viktor_test_partial", "chose_compromise"]
+          },
+          "relationshipChanges": {
+            "viktor": 5
+          }
+        },
+        {
+          "text": "\"I don't need your protection, Viktor. I never did. This conversation is over.\"",
+          "nextScene": "B-1-020C",
+          "flagChanges": {
+            "set": ["viktor_test_accepted", "chose_courage"]
+          },
+          "relationshipChanges": {
+            "viktor": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-020A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-020A.png",
+        "text": "",
+        "pages": [
+          "Viktor's expression doesn't change, but something shifts in his eyes. Disappointment? Confirmation?\n\n\"Smart,\" he says. Not a compliment. \"Practical. Safe.\"\n\nHe raises a hand. Luc and Thierry stop their approach, confused. Émile narrows his eyes from across the yard but stays where he is.\n\nViktor turns back to you. \"You're not wrong. Diplomacy does work. Sometimes. But escape isn't diplomacy. It's the end of negotiation. It's the moment when all the talking stops and only action matters.\"",
+          "He picks up his weight again, dismissing you. \"You want my strength? You want me to fight for you when it counts? Then you need to prove you'd fight for yourself first. Until then, you're just another prisoner asking someone else to take the risks.\"\n\n\"We're done here,\" Viktor says, his back to you.\n\nÉmile's crew laughs. The yard returns to normal. You've failed the test.\n\n[VIKTOR RECRUITMENT: FAILED - Seen as weak, cannot recruit Viktor]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-020A-1.png",
+          "/images/backgrounds/B-1-020A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "flagChanges": {
+        "set": ["viktor_recruitment_failed", "seen_as_weak", "protection_sought"]
+      },
+      "relationshipChanges": {
+        "viktor": -10
+      }
+    },
+    {
+      "id": "B-1-020B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-020B.png",
+        "text": "",
+        "pages": [
+          "Viktor watches as you turn to face Luc and Thierry. Not with aggression, but with presence. Standing your ground.\n\nLuc stops a few feet away. \"Émile wants to talk, Dubois.\"\n\n\"Then Émile can come talk to me himself,\" you say calmly. \"I don't negotiate through intermediaries.\"\n\nIt's not violence. It's not submission. It's something else: the refusal to be intimidated. The assertion of your own terms.",
+          "Luc glances at Viktor, confused. Viktor says nothing, just watches.\n\nAfter a long moment, Luc spits on the ground and walks away. Thierry follows. The yard exhales.\n\nViktor grunts. \"Interesting. Not what I expected, but interesting.\"\n\nHe doesn't smile, but his posture changes slightly. \"You won't fight when fighting is stupid. Good. Most men are either cowards or fools - too afraid to stand or too eager to prove themselves. You might be neither.\"",
+          "\"I won't join your escape,\" Viktor says bluntly. \"Not yet. You haven't earned that. But I won't work against you either. And if you need distraction - controlled chaos - when the time comes, find me. Maybe we can do business.\"\n\nHe goes back to his weights. The conversation is over, but the door isn't completely closed.\n\n[VIKTOR RECRUITMENT: CONDITIONAL - Not fully recruited, but door left open for distraction help]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-020B-1.png",
+          "/images/backgrounds/B-1-020B-2.png",
+          "/images/backgrounds/B-1-020B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "flagChanges": {
+        "set": ["viktor_recruitment_partial", "viktor_conditional_ally", "handled_emile_crew"]
+      },
+      "relationshipChanges": {
+        "viktor": 10
+      }
+    },
+    {
+      "id": "B-1-020C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-020C.png",
+        "text": "",
+        "pages": [
+          "You turn your back on Viktor - an insult in prison language - and walk directly toward Luc and Thierry.\n\nThe yard goes dead silent.\n\nViktor doesn't move. Doesn't speak. Just watches.\n\nLuc's grin falters. Men who walk toward violence instead of away from it are unpredictable. Dangerous. \"Émile wants—\"\n\n\"I don't care what Émile wants,\" you say, closing the distance. \"Tell him if he has business with me, he handles it himself. Not through muscle. Not through intermediaries. Man to man.\"",
+          "Thierry's hand moves toward whatever he's holding, but Luc stops him. There's calculation in Luc's eyes now, not amusement. You've changed the dynamic.\n\nThey back off. Not because they're afraid. Because you've made it clear that attacking you will cost more than Émile is willing to pay right now.\n\nThe yard gradually returns to normal. But something has changed. You're not invisible anymore.",
+          "Viktor is beside you suddenly. You didn't hear him approach.\n\n\"Courage,\" he says quietly. \"Real courage. Not the absence of fear - everyone's afraid. But the willingness to act despite it. To refuse to be prey.\"\n\nHe extends his hand. The handshake is brief, iron-hard. \"You've got steel in you, Dubois. I respect that. If you're planning something serious - something that requires strength, violence, chaos - I'm listening.\"",
+          "Viktor leans closer. \"But understand this: I don't do half-measures. If I'm in, I'm all in. And if you betray me, if you waste my time with prison fantasies, you'll discover that Émile's crew is nothing compared to what I can do.\"\n\nHe slaps your shoulder - the impact like a sledgehammer - and walks away.\n\n[VIKTOR RECRUITED - Will provide chaos/riot distraction when needed, relationship significantly improved]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-020C-1.png",
+          "/images/backgrounds/B-1-020C-2.png",
+          "/images/backgrounds/B-1-020C-3.png",
+          "/images/backgrounds/B-1-020C-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "flagChanges": {
+        "set": ["viktor_recruited", "viktor_full_ally", "showed_courage", "emile_crew_deterred"]
+      },
+      "relationshipChanges": {
+        "viktor": 25
+      },
+      "itemChanges": {
+        "add": ["viktor_commitment"]
+      }
+    },
+    {
+      "id": "B-1-021",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-021.png",
+        "text": "",
+        "pages": [
+          "DAY 4 - MORNING\n\nThe chapel. A small stone room that predates the modern prison by centuries. Once part of a monastery. Now a quiet refuge where the faithful - and the faithless seeking peace - come to sit.\n\nDenis Archambault kneels at the altar, finishing morning prayers. Age 67. White hair. Weathered hands folded in contemplation.\n\nHe's been here for twenty years. Helped political prisoners escape during the civil unrest. The government never forgave mercy.",
+          "You've heard the stories. Denis volunteers in the infirmary. Helps illiterate prisoners write letters. Mediates disputes. He's the closest thing this place has to a conscience.\n\nBastian said: \"Denis is complicated. He's kind, but he won't help you escape if it means violence. He's seen too much death. But he knows things. Passages. History. If you can convince him that escape doesn't mean bloodshed, he might share what he knows.\"",
+          "Denis finishes his prayers and stands slowly, his joints audibly protesting. He notices you in the doorway.\n\n\"Alexandre,\" he says warmly. \"Come in. The chapel is for all who seek solace, regardless of what they believe.\"\n\nHe gestures to the pew beside him. An invitation."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-021-1.png",
+          "/images/backgrounds/B-1-021-2.png",
+          "/images/backgrounds/B-1-021-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-022",
+      "requirements": {
+        "flags": ["chose_denis_route", "bastian_alliance_formed"]
+      },
+      "flagChanges": {
+        "set": ["denis_recruitment_started", "day_4_morning", "in_chapel"]
+      }
+    },
+    {
+      "id": "B-1-022",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-022.png",
+        "text": "",
+        "pages": [
+          "You sit beside Denis. The chapel is quiet. Peaceful. Almost makes you forget the bars and walls.\n\n\"You carry weight,\" Denis observes gently. \"I've seen it before. The burden of injustice. Of being powerless against forces larger than yourself.\"\n\nHe looks at the crucifix above the altar. \"I was a priest once. A real one, in a real church. Then the government started arresting dissidents. Poets. Teachers. People whose only crime was speaking truth.\"\n\n\"I helped them escape. Not many. Perhaps twenty souls over five years. I thought I was doing God's work. Mercy over law. Grace over judgment.\"",
+          "Denis turns to you. \"Then one night, a guard was killed. Not by me. Not by anyone I helped. But during a chase. An accident. A fall.\"\n\nHis eyes are sad. \"They arrested me. The government wanted to make an example. 'Even priests must respect the law,' they said. Twenty years ago. I've been here ever since.\"\n\nHe studies you. \"So. You've come to ask for help with something. Something that cannot be spoken aloud. Am I correct?\""
+        ],
+        "speaker": "Denis Archambault"
+      },
+      "choices": [
+        {
+          "text": "\"I want to escape. Without violence. Without anyone dying. I need wisdom.\"",
+          "nextScene": "B-1-023A",
+          "flagChanges": {
+            "set": ["denis_approach_peaceful", "emphasized_nonviolence"]
+          },
+          "relationshipChanges": {
+            "denis": 8
+          }
+        },
+        {
+          "text": "\"I need information. You know this place. The old parts. The passages.\"",
+          "nextScene": "B-1-023B",
+          "flagChanges": {
+            "set": ["denis_approach_direct", "asking_for_info"]
+          },
+          "relationshipChanges": {
+            "denis": 3
+          }
+        },
+        {
+          "text": "\"You helped prisoners escape before. I need you to do it again. For me.\"",
+          "nextScene": "B-1-023C",
+          "flagChanges": {
+            "set": ["denis_approach_personal", "invoked_past"]
+          },
+          "relationshipChanges": {
+            "denis": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-023A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-023A.png",
+        "text": "",
+        "pages": [
+          "Denis's expression softens. \"Without violence. Without death. Do you understand how rare it is to hear those words in here?\"\n\nHe stands, walks to the window. Bars cast shadows across his face. \"Most men who plan escape focus on weapons. On overpowering guards. On what they're willing to destroy to be free. You speak of wisdom instead.\"\n\nHe turns back to you. \"But I must be honest, Alexandre. Even peaceful escapes carry risk. The guard who died during my time helping others - that was an accident. We planned carefully. We moved quietly. Still, someone died.\"",
+          "\"Can you promise me,\" Denis asks, \"that if I help you - if I share what I know - that no one will be harmed? That you won't cross the line from escape to violence? Because I've carried the weight of that guard's death for twenty years. I cannot carry another.\"\n\nHis eyes search yours. This is his test. Not of courage or skill. Of conscience."
+        ],
+        "speaker": "Denis Archambault"
+      },
+      "choices": [],
+      "nextScene": "B-1-024",
+      "relationshipChanges": {
+        "denis": 7
+      },
+      "flagChanges": {
+        "set": ["denis_concerned", "nonviolence_emphasized"]
+      }
+    },
+    {
+      "id": "B-1-023B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-023B.png",
+        "text": "",
+        "pages": [
+          "Denis sighs. \"Information. Passages. Always it comes down to practical matters.\"\n\nHe sits down heavily. \"Yes, I know the old monastery sections. The passages that predate the modern prison. They were built for monks seeking solitude. For pilgrims traveling between abbeys. Some connect to the cliffs. To the sea.\"\n\nHe looks at you. \"But knowledge is not neutral, Alexandre. If I tell you how to escape, and you use that knowledge to harm someone - to fight a guard, to kill in your desperation - then I am complicit. I am responsible.\"",
+          "\"Twenty years ago, I thought I could help without consequence. I was wrong. The guard who died - his name was Christophe. He had a wife. Two daughters. They came to my trial. I saw their faces.\"\n\nDenis's voice is quiet. \"So before I share what I know, I need to understand: What are you willing to do to be free? What lines will you not cross?\""
+        ],
+        "speaker": "Denis Archambault"
+      },
+      "choices": [],
+      "nextScene": "B-1-024",
+      "relationshipChanges": {
+        "denis": 0
+      },
+      "flagChanges": {
+        "set": ["denis_cautious", "needs_moral_assurance"]
+      }
+    },
+    {
+      "id": "B-1-023C",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-023C.png",
+        "text": "",
+        "pages": [
+          "Denis's face hardens slightly. \"Do it again? As if it were a service I provide? A skill I market?\"\n\nHe shakes his head. \"Alexandre, what I did before wasn't a career. It was a calling that cost me everything. My church. My freedom. My peace of mind. And ultimately, it cost a man his life.\"\n\nHe sits down, suddenly looking very old. \"I've spent twenty years asking myself: Was it worth it? Did helping twenty escape justify one death? Some days I believe yes. Other days I'm not certain.\"",
+          "\"But let me be clear,\" Denis continues. \"I didn't help those prisoners because they asked. I helped them because they were innocent. Political prisoners. People arrested for words, for thoughts, for truth.\"\n\nHe looks at you directly. \"You claim innocence. The newspapers suggest otherwise. But I've learned that truth is often more complex than evidence. So I ask you: Why do you deserve help? What makes your freedom worth the risk I would take - again?\""
+        ],
+        "speaker": "Denis Archambault"
+      },
+      "choices": [],
+      "nextScene": "B-1-024",
+      "relationshipChanges": {
+        "denis": 5
+      },
+      "flagChanges": {
+        "set": ["denis_defensive", "must_justify_innocence"]
+      }
+    },
+    {
+      "id": "B-1-024",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-024.png",
+        "text": "",
+        "pages": [
+          "You explain your situation. Not just the false conviction. But Sophie. The evidence of corruption. The people responsible walking free while you rot. The need not just for escape, but for justice.\n\nDenis listens without interrupting. When you finish, he's quiet for a long moment.",
+          "\"Justice,\" he finally says. \"A dangerous word. It can mean truth restored... or it can mean revenge dressed in noble language.\"\n\nHe stands, walks to a loose stone in the chapel wall. With surprising strength, he pries it out. Behind it is a small recess. He pulls out a folded piece of paper - old, yellowed, covered in drawings.\n\n\"A map,\" Denis says. \"Of the old monastery passages. I drew this twenty years ago, before my arrest. Hid it here during my trial, hoping... I don't know. Hoping it might help someone someday.\"",
+          "He holds the map but doesn't hand it over yet. \"These passages lead beneath the prison. Through the old monastery cellars. Eventually to the cliffs and a small cave accessible only at low tide. It's how monks brought in supplies centuries ago.\"\n\n\"If you use this for escape - truly escape, without harming anyone - I will help you. I will pray for you. But Alexandre...\" His eyes are steel. \"If blood is shed because of this map, I will confess everything. I will tell the warden. I will ensure you never reach freedom.\"\n\nHe extends the map. \"Do we have an understanding?\""
+        ],
+        "speaker": "Denis Archambault"
+      },
+      "choices": [
+        {
+          "text": "\"I swear. No violence. No one dies because of this. You have my word.\"",
+          "nextScene": "B-1-025A",
+          "flagChanges": {
+            "set": ["promised_nonviolence", "gave_word_to_denis"]
+          },
+          "relationshipChanges": {
+            "denis": 10
+          }
+        },
+        {
+          "text": "\"I'll try my best. But I can't promise perfection in an imperfect plan.\"",
+          "nextScene": "B-1-025B",
+          "flagChanges": {
+            "set": ["honest_about_uncertainty", "realistic_promise"]
+          },
+          "relationshipChanges": {
+            "denis": 5
+          }
+        },
+        {
+          "text": "\"I won't promise something I can't guarantee. If guards attack, I'll defend myself.\"",
+          "nextScene": "B-1-025C",
+          "flagChanges": {
+            "set": ["refused_absolute_promise", "self_defense_stance"]
+          },
+          "relationshipChanges": {
+            "denis": -5
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-025A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-025A.png",
+        "text": "",
+        "pages": [
+          "Denis studies your face for a long moment. Searching for sincerity. For truth.\n\nThen he hands you the map. \"Your word. That's all any of us have in the end. The weight of our promises.\"\n\nYou unfold the paper. The drawings are detailed - passage entrances, turn counts, distance estimates, tidal notes. This isn't just a sketch. It's a complete guide.",
+          "\"The entrance is in the chapel cellar,\" Denis explains quietly. \"Behind the wine storage. There's a false wall - three stones that slide out. Only I know about it. Even the guards have forgotten the old passages exist.\"\n\nHe places a hand on your shoulder. \"I will help you when the time comes. I will guide you through the passages if needed. But Alexandre - remember your promise. The moment violence enters the plan, I withdraw. I will not be responsible for another death.\"",
+          "Denis returns to the altar, kneels again. \"Go with God. Or if you don't believe, go with wisdom. May you find both freedom and peace.\"\n\n[DENIS RECRUITED - Full ally, passage knowledge unlocked, guide available]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-025A-1.png",
+          "/images/backgrounds/B-1-025A-2.png",
+          "/images/backgrounds/B-1-025A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "flagChanges": {
+        "set": ["denis_recruited", "denis_full_ally", "has_passage_map", "nonviolence_oath_taken"]
+      },
+      "relationshipChanges": {
+        "denis": 15
+      },
+      "itemChanges": {
+        "add": ["monastery_passage_map", "denis_commitment"]
+      }
+    },
+    {
+      "id": "B-1-025B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-025B.png",
+        "text": "",
+        "pages": [
+          "Denis hesitates, the map still in his hand. \"Honesty. I appreciate that. Most men would promise anything to get what they need.\"\n\nHe looks at the map, then back to you. \"But 'trying your best' is not the same as commitment. It's leaving yourself space to compromise when things become difficult.\"",
+          "After a long pause, he sighs and hands you the map. \"I'm old enough to know that perfection is impossible. Young enough to remember that we must still strive for it.\"\n\n\"I will share the passage location with you,\" Denis says carefully. \"The entrance is in the chapel cellar, behind the wine storage. But I won't guide you. I won't be part of the execution. Consider this... information freely given, with prayer that you use it wisely.\"",
+          "He steps back. \"If you escape without harming anyone, I will rejoice. If blood is shed, I will carry that weight as I've carried the others. But I won't be complicit this time. The choice - and the consequences - are yours.\"\n\n[DENIS RECRUITMENT: PARTIAL - Map obtained, but Denis won't actively participate]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-025B-1.png",
+          "/images/backgrounds/B-1-025B-2.png",
+          "/images/backgrounds/B-1-025B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "flagChanges": {
+        "set": ["denis_recruitment_partial", "has_passage_map", "denis_wary", "no_guide_available"]
+      },
+      "relationshipChanges": {
+        "denis": 0
+      },
+      "itemChanges": {
+        "add": ["monastery_passage_map"]
+      }
+    },
+    {
+      "id": "B-1-025C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-025C.png",
+        "text": "",
+        "pages": [
+          "Denis pulls the map back, returning it to the hiding place. \"Self-defense. The oldest justification for violence. It starts with 'if they attack me' and ends with preemptive strikes. With 'necessary force.' With bodies.\"\n\nHe replaces the stone in the wall with finality. \"I cannot give you this. Not if you're already planning contingencies for violence. Because contingencies become plans. Plans become actions. And actions become deaths.\"",
+          "Denis turns to face you. \"Twenty years ago, the guard who died was 'self-defense' in someone's mind. An accident during a legitimate escape attempt. But his daughters still grew up without a father. His wife still wept at his funeral.\"\n\n\"I'm sorry, Alexandre. I truly am. You may well be innocent. You may deserve freedom. But I cannot help someone who enters with the expectation of violence. Find another way. Or find another helper.\"\n\nHe returns to the altar, his back to you. The conversation is over.",
+          "[DENIS RECRUITMENT: FAILED - Refused due to unwillingness to promise nonviolence]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-025C-1.png",
+          "/images/backgrounds/B-1-025C-2.png",
+          "/images/backgrounds/B-1-025C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-026",
+      "flagChanges": {
+        "set": ["denis_recruitment_failed", "refused_nonviolence_oath", "map_withheld"]
+      },
+      "relationshipChanges": {
+        "denis": -10
+      }
+    },
+    {
+      "id": "B-1-026",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-026.png",
+        "text": "",
+        "pages": [
+          "DAY 5 - AFTERNOON\n\nThis is it. The convergence point. Marcel, Viktor, Denis - you've approached them all. Some succeeded. Some failed. But there's one more name on Bastian's list. The name neither of you wanted to say out loud.\n\nÉmile Beaumont.\n\nAge 38. Multiple murders. A genuine sociopath who runs half the prison through fear and violence. His crew - Luc, Thierry, and a rotating cast of enforcers - control the yard, the cafeteria, and most of the informal economy.",
+          "Bastian warned you: \"Émile is different from the others. He's not misunderstood. He's not waiting for someone to see his better nature. He's a predator who respects only one thing: strength. Greater strength than his own.\"\n\n\"If you approach him and show weakness, he'll destroy you. Not recruit. Not refuse. Destroy. But...\" Bastian paused. \"If you can somehow earn his respect - actually earn it - he has information we need. Guard corruption. Warden's secrets. Things that could make the difference between escape and recapture.\"",
+          "You're standing at the entrance to the cafeteria. Émile sits at the center table with his crew. He's laughing about something. Probably someone's pain.\n\nThis is the most dangerous recruitment attempt. Success would be invaluable. Failure... failure might be worse than simply walking away.\n\nBastian's final words echo: \"You don't have to do this. We can escape without him. But if you're going to try, commit fully. Half-measures get you killed.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-026-1.png",
+          "/images/backgrounds/B-1-026-2.png",
+          "/images/backgrounds/B-1-026-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-027",
+      "flagChanges": {
+        "set": ["day_5_afternoon", "emile_recruitment_started", "at_cafeteria", "dangerous_territory"]
+      }
+    },
+    {
+      "id": "B-1-027",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-027.png",
+        "text": "You have to decide how to approach this. There's no safe option. But some approaches are more dangerous than others.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Walk directly to his table. Public approach. Everyone watches. No backing down.",
+          "nextScene": "B-1-028A",
+          "flagChanges": {
+            "set": ["emile_approach_public", "maximum_risk"]
+          },
+          "relationshipChanges": {
+            "emile": 10
+          }
+        },
+        {
+          "text": "Wait until he's alone. Corner him. Private conversation, lower stakes.",
+          "nextScene": "B-1-028B",
+          "flagChanges": {
+            "set": ["emile_approach_private", "moderate_risk"]
+          },
+          "relationshipChanges": {
+            "emile": 5
+          }
+        },
+        {
+          "text": "Don't approach. Walk away. Some enemies should stay enemies.",
+          "nextScene": "B-1-030",
+          "flagChanges": {
+            "set": ["emile_avoided", "recruitment_declined"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-028A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-028A.png",
+        "text": "",
+        "pages": [
+          "You walk straight to Émile's table. Every eye in the cafeteria follows you. The room goes quiet.\n\nÉmile sees you coming. His smile widens. Predatory. He's been waiting for you to make a mistake.\n\n\"Dubois,\" he says loudly. \"The innocent engineer. Come to beg? Or just stupid?\"\n\nHis crew laughs. Luc and Thierry flank you. Blocking escape routes. This is their territory. Their rules.",
+          "You don't sit. Don't ask permission. You stand there, meeting his eyes. \"I have a proposition,\" you say clearly. Loud enough for everyone to hear. \"Something that benefits both of us.\"\n\nÉmile's smile fades slightly. \"Both of us? There's no 'us,' Dubois. There's me and my business. And there's you - a target I haven't gotten around to yet.\"\n\nHe stands. The cafeteria tenses. \"But sure. I'll listen. Entertain me. What could you possibly offer that I can't just take?\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-028A-1.png",
+          "/images/backgrounds/B-1-028A-2.png"
+        ],
+        "speaker": "Émile Beaumont"
+      },
+      "choices": [],
+      "nextScene": "B-1-029",
+      "relationshipChanges": {
+        "emile": 10
+      },
+      "flagChanges": {
+        "set": ["emile_confronted_publicly", "cafeteria_watching"]
+      }
+    },
+    {
+      "id": "B-1-028B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-028B.png",
+        "text": "",
+        "pages": [
+          "You wait. Days pass. You study Émile's patterns. When he's alone. Where he goes when his crew isn't watching.\n\nDay 7. Early morning. Émile walks alone from the showers to his cell block. Thirty seconds of vulnerability.\n\nYou step into his path. Not aggressive. Just... present.\n\nHe stops. Surprised. Then angry. \"You've got exactly five seconds to explain why I don't break your jaw right now, Dubois.\"",
+          "\"Because I have information you want,\" you say quickly. \"About escape routes. Guard vulnerabilities. Things that could make you the most powerful man in this prison.\"\n\nÉmile's eyes narrow. \"Escape routes? You think I want to escape? I run this place. Why would I leave?\"\n\nBut he hasn't hit you yet. Hasn't called for his crew. That's something.\n\n\"Then use the information for leverage,\" you counter. \"Guard secrets. Warden weaknesses. I know you have your own intelligence. Imagine what you could do with more.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-028B-1.png",
+          "/images/backgrounds/B-1-028B-2.png"
+        ],
+        "speaker": "Émile Beaumont"
+      },
+      "choices": [],
+      "nextScene": "B-1-029",
+      "relationshipChanges": {
+        "emile": 5
+      },
+      "flagChanges": {
+        "set": ["emile_cornered_privately", "one_on_one"]
+      }
+    },
+    {
+      "id": "B-1-029",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/B-1-029.png",
+        "text": "",
+        "pages": [
+          "Émile studies you. Really looks at you for the first time. Not as a target. As a calculation.\n\n\"You've been recruiting,\" he says finally. Not a question. \"Marcel. Viktor. Maybe others. Building a team. For what? Escape? Revenge? A power play?\"\n\nHe circles you slowly. Predator evaluating prey. Or... evaluating a potential rival.",
+          "\"Here's what I know about you, Dubois. You're not stupid. You're not a fighter. But you're still here, still planning, after I sent Luc and Thierry to intimidate you. That takes something. Spine? Desperation? Madness?\"\n\nÉmile stops in front of you. \"I also know the warden wants you broken. Specifically you. That means someone paid him. Someone with money and reach. That makes you... interesting.\"\n\nHe leans closer. \"So. Your proposition. Make it good.\"",
+          "This is it. The moment. You explain: you're building an alliance. Not for power. For escape. Or leverage. Or both. You need someone who understands the guards. Their schedules. Their corruption. Their fears.\n\nÉmile laughs. \"You want me to betray guards? The warden? For what? Your friendship?\"\n\n\"No,\" you say. \"For mutual benefit. You hate being controlled as much as I do. The warden thinks he owns this place. Prove him wrong.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-029-1.png",
+          "/images/backgrounds/B-1-029-2.png",
+          "/images/backgrounds/B-1-029-3.png"
+        ],
+        "speaker": "Émile Beaumont"
+      },
+      "choices": [
+        {
+          "text": "\"Work with me. Full partnership. We escape together or not at all.\"",
+          "nextScene": "B-1-030A",
+          "flagChanges": {
+            "set": ["offered_full_partnership", "high_trust_ask"]
+          },
+          "relationshipChanges": {
+            "emile": 15
+          }
+        },
+        {
+          "text": "\"Trade information. You give me guard secrets, I give you escape intel. Mutual benefit.\"",
+          "nextScene": "B-1-030B",
+          "flagChanges": {
+            "set": ["offered_information_trade", "transactional"]
+          },
+          "relationshipChanges": {
+            "emile": 10
+          }
+        },
+        {
+          "text": "\"Stay out of my way. I'll stay out of yours. That's the deal.\"",
+          "nextScene": "B-1-030C",
+          "flagChanges": {
+            "set": ["offered_non_aggression", "minimal_ask"]
+          },
+          "relationshipChanges": {
+            "emile": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "B-1-030",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-030.png",
+        "text": "",
+        "pages": [
+          "You walk away. The cafeteria. The yard. Émile's territory.\n\nSome battles aren't worth fighting. Some enemies should stay enemies. You have Marcel, Viktor, Denis - depending on how those recruitments went. Maybe that's enough.",
+          "Bastian nods when you tell him. \"Smart. Émile is a wildcard. Could help. Could destroy everything. Sometimes the strongest move is knowing when not to play.\"\n\nYou've completed the recruitment phase. The alliance is forming. Not perfect. Not everyone you approached joined. But you have something: a team. A plan. A chance.\n\n[ÉMILE RECRUITMENT: DECLINED - Avoided confrontation, maintained safety]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-030-1.png",
+          "/images/backgrounds/B-1-030-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-031",
+      "flagChanges": {
+        "set": ["emile_not_recruited", "recruitment_phase_complete", "safe_choice"]
+      }
+    },
+    {
+      "id": "B-1-030A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-030A.png",
+        "text": "",
+        "pages": [
+          "Émile stares at you. For a long, dangerous moment, you think he's going to attack.\n\nThen he laughs. Not mockery. Genuine surprise. \"Full partnership? You? With me? That's either brilliant or suicidal.\"\n\nHe extends his hand. The handshake is crushing. Testing. You don't flinch.\n\n\"Alright, Dubois. You've got spine. More than most. I respect that. Maybe even admire it.\" His smile turns sharp. \"But understand: partnership means equals. You cross me, I'll kill you. You succeed, I'll follow you out of here. Those are the terms.\"",
+          "Émile leans in close. \"I know things about this prison. Guard schedules. Shift changes. Warden's mistress. Corruption that goes all the way to the mainland. I'll share it. All of it. Because chaos benefits me as much as escape benefits you.\"\n\nHe pulls back. \"But one rule: don't try to change me. Don't expect redemption. I'm not joining because I believe in your cause. I'm joining because you're interesting. And because watching you either succeed spectacularly or fail catastrophically will be the most entertainment I've had in years.\"\n\n[ÉMILE RECRUITED - Dangerous ally, maximum information access, high risk/reward]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-030A-1.png",
+          "/images/backgrounds/B-1-030A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-031",
+      "flagChanges": {
+        "set": ["emile_recruited", "emile_full_ally", "dangerous_partnership", "guard_secrets_unlocked"]
+      },
+      "relationshipChanges": {
+        "emile": 30
+      },
+      "itemChanges": {
+        "add": ["guard_corruption_file", "emile_commitment"]
+      }
+    },
+    {
+      "id": "B-1-030B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-030B.png",
+        "text": "",
+        "pages": [
+          "Émile considers. \"Information trade. Transactional. I like it. No pretense of friendship. No moral complications. Just business.\"\n\nHe pulls out a folded piece of paper from his pocket. \"Guard shift schedule. Real one, not the posted one. Captain Moreau takes bribes. Warden has offshore accounts. Couple of guards are smuggling contraband through the dock.\"\n\nHe hands it to you. \"That's a sample. Proof I'm serious. You give me something valuable - escape routes, secret passages, whatever you're hoarding - and I'll give you more. Equal exchange.\"",
+          "\"But understand,\" Émile says, his voice cold. \"This isn't an alliance. It's a transaction. I'm not watching your back. I'm not helping you escape. I'm just... providing services for payment. If you die, I don't care. If you succeed, I expect credit.\"\n\nHe walks away, then pauses. \"One more thing, Dubois. This deal expires the moment I don't find you useful. Stay useful.\"\n\n[ÉMILE RECRUITMENT: PARTIAL - Information access granted, but no active support]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-030B-1.png",
+          "/images/backgrounds/B-1-030B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-031",
+      "flagChanges": {
+        "set": ["emile_recruitment_partial", "information_trader", "transactional_relationship"]
+      },
+      "relationshipChanges": {
+        "emile": 20
+      },
+      "itemChanges": {
+        "add": ["guard_shift_schedule"]
+      }
+    },
+    {
+      "id": "B-1-030C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-030C.png",
+        "text": "",
+        "pages": [
+          "Émile's expression hardens. \"Stay out of your way? That's not a deal, Dubois. That's capitulation. You're asking me to ignore you. To pretend you're not building something that could threaten my position.\"\n\nHe steps closer. Aggressive. \"Here's what's actually going to happen: I'm going to keep doing what I do. Running this place. And you're going to remember that I could crush you anytime I want. That I'm choosing not to - for now - because you're not worth the effort.\"",
+          "Émile's voice drops to a whisper. \"But the moment you become a problem? The moment your little alliance threatens my operations? I'll destroy you. Not quickly. Slowly. Painfully. In ways that make you wish you'd never walked into my cafeteria.\"\n\nHe walks away, dismissing you.\n\nYou've failed the Émile recruitment. Maybe that's for the best. Some enemies should stay enemies.\n\n[ÉMILE RECRUITMENT: FAILED - Seen as weak, enmity intensified]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-030C-1.png",
+          "/images/backgrounds/B-1-030C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-031",
+      "flagChanges": {
+        "set": ["emile_recruitment_failed", "emile_hostile", "made_enemy_worse"]
+      },
+      "relationshipChanges": {
+        "emile": -15
+      }
+    },
+    {
+      "id": "B-1-031",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-031.png",
+        "text": "",
+        "pages": [
+          "EVENING, DAY 5\n\nYou sit on your bunk and take stock. The recruitment phase is over. The alliances - whatever form they took - are now set.\n\nBastian watches you from across the cell. \"You've been busy these past days,\" he observes. \"Building your team. Making your moves.\"\n\nYou nod. Time to assess who you have and what they bring to the table.",
+          "Bastian pulls out a scrap of paper and a stub of pencil. \"Let's be practical. Who did you recruit? What resources do they offer? And more importantly...\" He glances at the cell door. \"...who can we trust?\"\n\nThe questions hang in the air. This is the moment. The point where individual alliances become a coordinated team. Or fall apart trying."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-031-1.png",
+          "/images/backgrounds/B-1-031-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-032",
+      "flagChanges": {
+        "set": ["team_assessment_phase", "day_5_evening"]
+      }
+    },
+    {
+      "id": "B-1-032",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-1-032.png",
+        "text": "Bastian leans forward. \"We need a secure place to meet. Somewhere the guards don't patrol regularly. Somewhere we can talk freely without being overheard.\"\n\nHe lists the options:\n\n• The chapel (after evening service, Denis's territory)\n• The workshop (Marcel's domain, lots of equipment noise for cover)\n• The yard (open, but crowds provide anonymity)\n• Right here (your cell, but Bastian warns it's risky)\n\nWhere should the first team meeting happen?",
+        "speaker": "bastian"
+      },
+      "choices": [
+        {
+          "text": "The chapel - sacred ground, guards avoid it at night",
+          "nextScene": "B-1-033A",
+          "requirements": {
+            "flags": ["denis_recruited"]
+          },
+          "flagChanges": {
+            "set": ["meeting_place_chapel"]
+          }
+        },
+        {
+          "text": "The workshop - noise covers conversation, Marcel can secure it",
+          "nextScene": "B-1-033B",
+          "requirements": {
+            "flags": ["marcel_recruited"]
+          },
+          "flagChanges": {
+            "set": ["meeting_place_workshop"]
+          }
+        },
+        {
+          "text": "The yard - during recreation, blend into the crowd",
+          "nextScene": "B-1-033C",
+          "flagChanges": {
+            "set": ["meeting_place_yard"]
+          }
+        },
+        {
+          "text": "Your cell - risky but private, Bastian can watch the door",
+          "nextScene": "B-1-033D",
+          "flagChanges": {
+            "set": ["meeting_place_cell"]
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-1-033A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-033A.png",
+        "text": "",
+        "pages": [
+          "CHAPEL - AFTER EVENING SERVICE\n\nDenis locks the chapel door from inside. \"We have one hour before the night guard comes by. They never enter, but they check the door is locked.\"\n\nThe chapel is dimly lit by candles. Your recruited allies gather in the shadows: Bastian, Denis, and whoever else you convinced to join. The pews creak as everyone settles in.",
+          "\"This feels appropriate,\" Denis says quietly. \"Planning freedom in a place meant for confession and redemption.\"\n\nBastian clears his throat. \"Let's begin. Alexandre has brought us together for a reason. Time to see if we're actually a team or just a collection of desperate men.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-033A-1.png",
+          "/images/backgrounds/B-1-033A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-034"
+    },
+    {
+      "id": "B-1-033B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-033B.png",
+        "text": "",
+        "pages": [
+          "WORKSHOP - LATE EVENING\n\nMarcel has arranged everything. The machinery runs at low speed, providing a constant background hum that masks conversation. He's positioned metal sheets to block the view from the workshop windows.\n\n\"Industrial symphony,\" Marcel says with a slight smile. \"No one can hear us over the machines. And if questioned, we're just doing maintenance.\"",
+          "Your recruited allies arrive one by one, pretending to fetch tools or check equipment. Soon you're all gathered around Marcel's workbench, huddled close.\n\nBastian looks around at the assembled group. \"Clever setup. Now let's see if we can be as clever with the actual escape plan.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-033B-1.png",
+          "/images/backgrounds/B-1-033B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-034"
+    },
+    {
+      "id": "B-1-033C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-033C.png",
+        "text": "",
+        "pages": [
+          "YARD - RECREATION HOUR\n\nThe yard is crowded. Prisoners mill about, talking, smoking, playing cards. Perfect cover.\n\nYour recruited allies drift toward the northeast corner where you're standing. No one approaches directly. Everyone maintains the appearance of casual coincidence.",
+          "Within minutes, you have your team gathered in a loose cluster. To any observer, it looks like a random group of prisoners smoking near the wall. In reality, it's a conspiracy taking shape.\n\nBastian speaks quietly, barely moving his lips. \"Talk low. Keep your eyes moving. If I say 'rain,' we scatter immediately.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-033C-1.png",
+          "/images/backgrounds/B-1-033C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-034"
+    },
+    {
+      "id": "B-1-033D",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-033D.png",
+        "text": "",
+        "pages": [
+          "YOUR CELL - LATE EVENING\n\nIt's cramped. Your cell was built for two men, not for however many allies you recruited. But it's private, and Bastian has jammed the door lock mechanism with a sliver of metal - it looks closed but can be opened from inside instantly.\n\n\"This is dangerous,\" Bastian warns. \"If a guard does a random check and finds all of us in here, we're done. But it's also secure. No one can overhear.\"",
+          "Your recruited allies squeeze into the small space, sitting on bunks, leaning against walls. The single barred window provides minimal light. Everyone speaks in whispers.\n\n\"Let's make this fast,\" someone mutters. The tension is palpable."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-033D-1.png",
+          "/images/backgrounds/B-1-033D-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-034"
+    },
+    {
+      "id": "B-1-034",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-1-034.png",
+        "text": "Bastian looks at you. \"You called this meeting. Time to lay out what you know. What resources we have. And what kind of escape you're planning.\"\n\nAll eyes turn to you. The team is assembled. The moment of truth has arrived.\n\nWhat do you reveal?",
+        "speaker": "bastian"
+      },
+      "choices": [
+        {
+          "text": "Everything - complete honesty, share all intelligence and plans",
+          "nextScene": "B-1-035A",
+          "flagChanges": {
+            "set": ["shared_everything", "full_trust"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        },
+        {
+          "text": "Most things - be open but hold back a few contingencies",
+          "nextScene": "B-1-035B",
+          "flagChanges": {
+            "set": ["shared_most", "cautious_trust"]
+          },
+          "relationshipChanges": {
+            "bastian": 5
+          }
+        },
+        {
+          "text": "Only what they need to know - compartmentalize information",
+          "nextScene": "B-1-035C",
+          "flagChanges": {
+            "set": ["shared_minimal", "controlled_information"]
+          },
+          "relationshipChanges": {
+            "bastian": -5
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-1-035A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-035A.png",
+        "text": "",
+        "pages": [
+          "You hold nothing back. You tell them about every observation you've made, every piece of intelligence gathered, every possible route you've considered. The lighthouse. The patrol patterns. The guard schedules. The weaknesses in the prison's defenses.\n\nIf you recruited Marcel, you reveal the workshop key situation. If Viktor joined, you mention the potential for creating a distraction. If Denis is here, you discuss the monastery passages. If Émile provided information, you share what you learned about guard corruption.",
+          "When you finish, there's silence. Then Bastian nods slowly. \"That's... comprehensive. You've been paying attention.\"\n\nThe mood shifts. By trusting them completely, you've earned something valuable: their full commitment. This isn't just your escape anymore. It's everyone's.\n\n[FULL DISCLOSURE - Team cohesion maximized, but also maximum vulnerability if anyone betrays you]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-035A-1.png",
+          "/images/backgrounds/B-1-035A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-036",
+      "flagChanges": {
+        "set": ["team_fully_informed", "high_trust_established"]
+      }
+    },
+    {
+      "id": "B-1-035B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-035B.png",
+        "text": "",
+        "pages": [
+          "You share most of what you know - the key observations, the important intelligence, the general outline of possible routes. But you keep a few details to yourself. Backup plans. Contingencies. Information that could be useful if things go wrong.\n\nIt's a calculated approach: trust, but verify. Give enough to coordinate effectively, but maintain some operational security.",
+          "Bastian notices. He gives you a look that says he knows you're holding something back, but he doesn't call you out on it. Maybe he even respects the caution.\n\n\"Enough to work with,\" he says finally. \"Let's build from this.\"\n\n[MEASURED DISCLOSURE - Team informed but not fully vulnerable, moderate cohesion]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-035B-1.png",
+          "/images/backgrounds/B-1-035B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-036",
+      "flagChanges": {
+        "set": ["team_partially_informed", "moderate_trust"]
+      }
+    },
+    {
+      "id": "B-1-035C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-035C.png",
+        "text": "",
+        "pages": [
+          "You share only what's necessary for coordination. Guard patrol times. Meeting schedules. Basic logistics. But you compartmentalize information - each person knows their role and immediate needs, but not the full picture.\n\nIt's the safest approach from a security standpoint. If anyone is caught or turns informant, they can't reveal what they don't know.",
+          "But you can feel the resistance in the room. Trust is a two-way street, and by withholding information, you've signaled that you don't fully trust them.\n\nBastian's jaw tightens. \"That's it? That's all you're giving us?\"\n\nThe atmosphere has cooled noticeably.\n\n[MINIMAL DISCLOSURE - Maximum security but reduced team cohesion, trust issues]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-035C-1.png",
+          "/images/backgrounds/B-1-035C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-036",
+      "flagChanges": {
+        "set": ["team_minimally_informed", "low_trust", "security_prioritized"]
+      },
+      "relationshipChanges": {
+        "marcel": -5,
+        "viktor": -5,
+        "denis": -5
+      }
+    },
+    {
+      "id": "B-1-036",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-036.png",
+        "text": "",
+        "pages": [
+          "The discussion continues for several minutes. Plans begin to take shape. Routes are debated. Roles are considered. The logistics of coordination start to emerge.\n\nThen someone new appears.",
+          "A friendly face. Claude Fontaine. Mid-30s, always smiling, the kind of prisoner who seems to know everyone and everything.\n\n\"Evening, gentlemen,\" he says cheerfully, approaching your group. \"Quite the gathering. What's the occasion? Planning the prison theater production?\"\n\nHe laughs at his own joke. But his eyes are sharp, scanning the group, noting who's present.",
+          "Bastian's hand moves to your arm. A warning grip. His voice is barely audible: \"Claude. The informant. Whatever you do, don't let him hear details.\"\n\nClaude keeps approaching, still smiling. \"Room for one more in your little club?\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-036-1.png",
+          "/images/backgrounds/B-1-036-2.png",
+          "/images/backgrounds/B-1-036-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-037",
+      "flagChanges": {
+        "set": ["claude_appeared", "informant_threat_active"]
+      }
+    },
+    {
+      "id": "B-1-037",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-1-037.png",
+        "text": "Claude stands there, waiting for a response. The entire team tenses. How you handle the informant will set the tone for everything that follows.\n\nBastian whispers: \"Your call. But remember - he reports everything to the guards for extra privileges.\"\n\nWhat do you do?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Welcome him warmly, feed him false information about a fake escape plan",
+          "nextScene": "B-1-038A",
+          "flagChanges": {
+            "set": ["claude_misdirected", "false_information_planted"]
+          },
+          "relationshipChanges": {
+            "bastian": 8
+          }
+        },
+        {
+          "text": "Politely dismiss him - claim it's a private conversation about families",
+          "nextScene": "B-1-038B",
+          "flagChanges": {
+            "set": ["claude_dismissed_politely"]
+          },
+          "relationshipChanges": {
+            "bastian": 5
+          }
+        },
+        {
+          "text": "Aggressive confrontation - make it clear he's not welcome, let Viktor intimidate him",
+          "nextScene": "B-1-038C",
+          "requirements": {
+            "flags": ["viktor_recruited"]
+          },
+          "flagChanges": {
+            "set": ["claude_intimidated", "viktor_enforcement"]
+          },
+          "relationshipChanges": {
+            "viktor": 10
+          }
+        },
+        {
+          "text": "Scatter immediately - Bastian's 'rain' signal, abort the meeting",
+          "nextScene": "B-1-038D",
+          "flagChanges": {
+            "set": ["meeting_aborted", "extreme_caution"]
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-1-038A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-038A.png",
+        "text": "",
+        "pages": [
+          "You smile broadly. \"Claude! Perfect timing. We were just discussing... well, you know how it is. Everyone dreams of escape, right?\"\n\nClaude's eyes light up. He thinks he's stumbled onto something valuable.\n\nYou proceed to spin an elaborate story about a completely fictional escape plan. You mention a nonexistent loose stone in the south wall. A guard who doesn't actually exist. A boat that will never come. You make it detailed enough to sound plausible, vague enough to be worthless.",
+          "Bastian catches on immediately and adds his own embellishments. If you recruited others, they follow your lead, each adding false details that sound convincing.\n\nClaude listens, asks a few questions, then leaves with a satisfied expression. He thinks he has gold to trade to the guards.\n\nOnce he's gone, Bastian grins. \"Brilliant. Now the guards will waste resources investigating a fantasy. And they'll think we're idiots planning something so obvious.\"\n\n[CLAUDE MISDIRECTED - False trail created, real plans protected]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-038A-1.png",
+          "/images/backgrounds/B-1-038A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-039",
+      "flagChanges": {
+        "set": ["counterintelligence_success", "guards_misdirected"]
+      }
+    },
+    {
+      "id": "B-1-038B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-038B.png",
+        "text": "",
+        "pages": [
+          "\"Sorry, Claude,\" you say politely. \"This is actually a private conversation. Bastian here is sharing news about his sister. Family matters, you understand.\"\n\nClaude's smile doesn't waver, but you see the calculation behind his eyes. He knows you're lying. But you've been polite enough that he can't push without seeming aggressive.",
+          "\"Of course, of course,\" he says smoothly. \"Family is important. I'll leave you gentlemen to it.\"\n\nHe walks away, but you notice he doesn't go far. He's trying to listen from a distance.\n\nBastian keeps his voice very low. \"He's suspicious now. We need to wrap this up quickly and be extra careful about future meetings.\"\n\n[CLAUDE DISMISSED - Immediate threat avoided but suspicion raised]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-038B-1.png",
+          "/images/backgrounds/B-1-038B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-039",
+      "flagChanges": {
+        "set": ["claude_suspicious", "increased_scrutiny"]
+      }
+    },
+    {
+      "id": "B-1-038C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-038C.png",
+        "text": "",
+        "pages": [
+          "Before you can respond, Viktor stands. He doesn't say anything. He just stands up, all considerable muscle and menace, and looks at Claude.\n\nThe message is clear: Leave. Now.\n\nClaude's smile falters. He's seen what Viktor is capable of. Everyone has. \"I... right. Well. I'll just... I have somewhere else to be.\"\n\nHe backs away quickly, practically fleeing.",
+          "Once he's gone, Viktor sits back down. \"Rat,\" he mutters with disgust. \"I hate informants more than I hate guards. At least guards are honest about being your enemy.\"\n\nBastian nods appreciatively. \"Direct. Effective. But Claude will remember this. He might tell the guards we're meeting specifically to make sure they investigate.\"\n\n\"Let them investigate,\" Viktor says. \"They won't find anything if we're smart.\"\n\n[CLAUDE INTIMIDATED - Immediate threat eliminated but guards may be alerted to suspicious behavior]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-038C-1.png",
+          "/images/backgrounds/B-1-038C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-039",
+      "flagChanges": {
+        "set": ["claude_threatened", "guards_potentially_alerted", "viktor_showed_strength"]
+      },
+      "relationshipChanges": {
+        "bastian": 5
+      }
+    },
+    {
+      "id": "B-1-038D",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-038D.png",
+        "text": "",
+        "pages": [
+          "\"Rain,\" Bastian says quietly.\n\nThe response is immediate. Your team scatters in different directions, each person finding a reason to be somewhere else. Within seconds, what was a conspiratorial gathering becomes a random collection of individual prisoners going about their business.",
+          "Claude arrives to find just you and Bastian. \"Where did everyone go?\" he asks, confused.\n\n\"Everyone?\" Bastian says innocently. \"It's just been us. Talking about the food. You know how bad the stew was tonight.\"\n\nClaude looks around, suspicious but unable to prove anything. He leaves, frustrated.\n\nLater, the team reconvenes elsewhere. \"Extreme caution,\" Bastian notes. \"Safe, but it means we didn't finish our planning. We'll need another meeting.\"\n\n[MEETING ABORTED - Complete safety but incomplete planning, another meeting required]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-038D-1.png",
+          "/images/backgrounds/B-1-038D-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-039",
+      "flagChanges": {
+        "set": ["meeting_interrupted", "need_second_meeting", "maximum_security"]
+      }
+    },
+    {
+      "id": "B-1-039",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-039.png",
+        "text": "",
+        "pages": [
+          "DAY 6 - MORNING\n\nThe team meeting (or meetings, if Claude interrupted the first) has concluded. Now comes the critical phase: finalizing the plan and assigning roles based on who you recruited.\n\nBastian spreads out a crude map drawn on scrap paper. \"Based on our team composition, we have several potential routes.\"",
+          "He points to different areas:\n\n• If DENIS was recruited successfully: \"The Chapel Route. Monastery passages, historical tunnels, secret exit. Stealthy, spiritual, requires trust in Denis's knowledge.\"\n\n• If VIKTOR was recruited: \"The Chaos Route. Create a riot as distraction, break through during confusion. Dangerous, high-casualty, relies on Viktor's strength and timing.\"\n\n• If ÉMILE gave you guard information: \"The Leverage Route. Use corruption intelligence to blackmail guards into helping. Risky, morally gray, could backfire.\"\n\n• If MARCEL passed his test: \"The Loading Dock Route. Use Marcel's lockpicking, technical knowledge, and workshop access. Methodical, requires precision timing.\"",
+          "\"We can't do all of them,\" Bastian says. \"We need to choose our primary route and our backup. The route we choose will determine everyone's role.\"\n\nHe looks at you. \"This is it, Alexandre. The point of no return. Once we commit to a plan and assign roles, we're locked in. The escape attempt becomes inevitable.\"\n\nThe weight of the decision settles over the room."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-039-1.png",
+          "/images/backgrounds/B-1-039-2.png",
+          "/images/backgrounds/B-1-039-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-1-040"
+    },
+    {
+      "id": "B-1-040",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-1-040.png",
+        "text": "Bastian looks around at the assembled team. \"Before we choose the route and assign roles, everyone needs to commit. Fully. No half-measures. No backing out.\"\n\nHe pulls out a small piece of cloth - torn from his shirt. \"Old sailor tradition. Everyone who's in, we each tear a piece of fabric and tie them together. Physical proof of commitment. A pact.\"\n\nThe makeshift rope of fabric grows as each team member adds their piece.\n\nBastian ties the final knot and holds it up. \"This is us now. Bound together. All the way to freedom or all the way to hell.\"\n\nDo you commit?",
+        "speaker": "bastian"
+      },
+      "choices": [
+        {
+          "text": "Yes - tear your sleeve and add it to the pact. All in.",
+          "nextScene": "B-1-040A",
+          "flagChanges": {
+            "set": ["committed_to_team", "pact_made", "point_of_no_return"]
+          },
+          "relationshipChanges": {
+            "bastian": 15
+          }
+        },
+        {
+          "text": "Hesitate - ask for 24 hours to be absolutely certain",
+          "nextScene": "B-1-040B",
+          "flagChanges": {
+            "set": ["commitment_hesitation", "team_doubts_raised"]
+          },
+          "relationshipChanges": {
+            "bastian": -10
+          }
+        },
+        {
+          "text": "Refuse - this feels too rushed, too risky, too dangerous",
+          "nextScene": "B-1-040C",
+          "flagChanges": {
+            "set": ["refused_commitment", "team_disbanded"]
+          },
+          "relationshipChanges": {
+            "bastian": -25
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-1-040A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-040A.png",
+        "text": "",
+        "pages": [
+          "You tear a strip from your prison uniform sleeve. The fabric rips with a satisfying sound - the sound of burning bridges, of commitment, of no turning back.\n\nYou tie it to the growing rope. Each person has added their piece: Bastian, and whoever you recruited. Marcel's steady hands. Viktor's powerful grip. Denis's gentle touch. Even Émile, if he joined, adds his piece with a sardonic smile.",
+          "Bastian holds up the completed pact. \"Brothers in desperation. Partners in hope. We're doing this.\"\n\nThe mood in the room shifts. What was theoretical is now real. The escape is no longer a distant possibility. It's an approaching certainty.\n\n\"Tomorrow,\" Bastian says, \"we finalize the route based on our team composition. Then we set the timeline. Then we execute.\"\n\nHe grips your shoulder. \"No going back now, Alexandre. We're committed.\"\n\n[TEAM FULLY COMMITTED - Escape plan activated, path to ACT 2 begins]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-040A-1.png",
+          "/images/backgrounds/B-1-040A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-001",
+      "flagChanges": {
+        "set": ["team_pact_complete", "act_1_complete", "ready_for_execution"]
+      },
+      "relationshipChanges": {
+        "marcel": 5,
+        "viktor": 5,
+        "denis": 5
+      }
+    },
+    {
+      "id": "B-1-040B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-040B.png",
+        "text": "",
+        "pages": [
+          "\"Twenty-four hours,\" you say carefully. \"I need to be absolutely certain. This is life or death. I want to commit, but I need one more day to be sure.\"\n\nSilence. Heavy, judgmental silence.\n\nBastian's expression hardens. \"One day,\" he says finally. \"But understand - every moment we wait is another chance for something to go wrong. For Claude to report something. For a guard to notice something odd. For our window to close.\"",
+          "The team disperses with visible tension. Trust has been damaged. They committed, but you hesitated. That hesitation will be remembered.\n\nThe next day, you add your piece to the pact. But the moment has passed. The magic of collective commitment is diminished by your uncertainty.\n\n[HESITANT COMMITMENT - Team formed but cohesion reduced, trust issues may surface later]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-040B-1.png",
+          "/images/backgrounds/B-1-040B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-001",
+      "flagChanges": {
+        "set": ["reluctant_commitment", "team_cohesion_damaged", "trust_issues"]
+      },
+      "relationshipChanges": {
+        "marcel": -5,
+        "viktor": -10,
+        "denis": -5
+      }
+    },
+    {
+      "id": "B-1-040C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-1-040C.png",
+        "text": "",
+        "pages": [
+          "\"No,\" you say. \"I can't. This is too rushed. Too dangerous. We haven't thought through all the contingencies. We don't have enough information. The risks are too high.\"\n\nBastian stares at you. \"Too high? We're in prison for crimes we may not have committed, sentenced to die on this rock. What risk is higher than doing nothing?\"\n\n\"I'm not saying do nothing. I'm saying we need more time. More planning. More—\"\n\n\"More excuses,\" Viktor interrupts, if he's present. \"I knew you didn't have the spine for this.\"",
+          "One by one, your recruited allies leave. The disappointment is palpable. You built these relationships, earned their trust, brought them together... and then backed out at the critical moment.\n\nBastian is the last to go. \"I believed in you,\" he says quietly. \"I thought you were different. Someone who actually had the courage to act, not just to plan.\"\n\nHe walks out, leaving you alone.\n\nThe team has disbanded. The Social Route has failed. You'll have to find another way - or accept that you'll die in this prison.\n\n[COMMITMENT REFUSED - Path B failed, relationships destroyed, need alternate route]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-1-040C-1.png",
+          "/images/backgrounds/B-1-040C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-050",
+      "flagChanges": {
+        "set": ["path_b_failed", "team_disbanded", "lost_respect", "alone_again"]
+      },
+      "relationshipChanges": {
+        "bastian": -50,
+        "marcel": -30,
+        "viktor": -30,
+        "denis": -20,
+        "emile": 10
+      }
+    }
+  ]
+}

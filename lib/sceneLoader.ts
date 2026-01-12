@@ -5,6 +5,9 @@
 import type { Scene } from '@/types';
 import sampleScenes from '@/data/scenes/sample-scenes.json';
 import act0Scenes from '@/data/scenes/act-0-opening.json';
+import pathATunnels from '@/data/scenes/path-a-tunnels.json';
+import pathBSocial from '@/data/scenes/path-b-social.json';
+import pathBChapelRoute from '@/data/scenes/path-b-chapel-route.json';
 
 /**
  * Error thrown when a scene cannot be found
@@ -35,6 +38,33 @@ function initializeSceneCache(): Map<string, Scene> {
   if (act0Scenes && Array.isArray(act0Scenes.scenes)) {
     for (const scene of act0Scenes.scenes) {
       sceneCache.set(scene.id, scene as Scene);
+    }
+  }
+
+  // Load scenes from path-a-tunnels.json (Path A scenes)
+  if (pathATunnels && Array.isArray(pathATunnels.scenes)) {
+    for (const scene of pathATunnels.scenes) {
+      if (!sceneCache.has(scene.id)) {
+        sceneCache.set(scene.id, scene as Scene);
+      }
+    }
+  }
+
+  // Load scenes from path-b-social.json (Path B scenes)
+  if (pathBSocial && Array.isArray(pathBSocial.scenes)) {
+    for (const scene of pathBSocial.scenes) {
+      if (!sceneCache.has(scene.id)) {
+        sceneCache.set(scene.id, scene as Scene);
+      }
+    }
+  }
+
+  // Load scenes from path-b-chapel-route.json (Path B Chapel Route)
+  if (pathBChapelRoute && Array.isArray(pathBChapelRoute.scenes)) {
+    for (const scene of pathBChapelRoute.scenes) {
+      if (!sceneCache.has(scene.id)) {
+        sceneCache.set(scene.id, scene as Scene);
+      }
     }
   }
 

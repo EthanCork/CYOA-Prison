@@ -1,0 +1,884 @@
+{
+  "scenes": [
+    {
+      "id": "B-2-001",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-001.png",
+        "text": "",
+        "pages": [
+          "NIGHT, DAY 7\n\nThe chapel is dark except for a few flickering candles. Your team gathers in silence: Bastian, Denis, and whoever else committed to the pact.\n\nDenis stands at the altar, his expression solemn. \"You chose the spiritual path. The way of our predecessors. The monks who built this place centuries ago knew something we've forgotten: that stone holds secrets, and faith opens doors.\"",
+          "He moves to the eastern wall, running his hand along the ancient stonework. \"When this island was Île du Silence - Isle of Silence - Cistercian monks lived here. They fled persecution, built this monastery as sanctuary. And when persecution found them again, they built... other ways.\"\n\nHis fingers find a particular stone. He presses.\n\nA section of wall shifts with a grinding sound. Behind it: darkness. A passage leading down.",
+          "\"The Chapel Route,\" Denis says quietly. \"The oldest escape from this island. Used by monks during the Terror. Sealed by prison authorities a century ago. But I've maintained it. Kept it passable. Just in case someone needed... sanctuary.\"\n\nBastian stares. \"You've known about this the entire time?\"\n\n\"I've known,\" Denis admits. \"But I only share it with those I trust absolutely. Those who understand that freedom earned through violence is no freedom at all.\"\n\n[CHAPEL ROUTE ACTIVATED - The passage awaits]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-001-1.png",
+          "/images/backgrounds/B-2-001-2.png",
+          "/images/backgrounds/B-2-001-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-002",
+      "requirements": {
+        "flags": ["committed_to_team", "denis_recruited"]
+      },
+      "flagChanges": {
+        "set": ["chapel_route_started", "act_2_begun", "passage_revealed"]
+      }
+    },
+    {
+      "id": "B-2-002",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-002.png",
+        "text": "",
+        "pages": [
+          "Denis lights a candle and leads the way into the passage. The air is cold and damp. The walls are hewn stone, rough and ancient.\n\n\"The full system,\" Denis explains as you descend, \"connects the chapel to the old monastery section, then down to natural caves beneath the island. The monks used it to reach the shore undetected.\"",
+          "He points to markings on the walls - faded symbols. \"Directional signs. The monks carved these to guide refugees in darkness. Cross means 'wrong way, danger.' Anchor means 'continue toward sea.' Dove means 'safe room, rest here.'\"\n\nThe passage splits ahead. Multiple routes branch off into darkness.",
+          "\"Three primary paths,\" Denis continues. \"The high route - monastery ruins, exposed but fastest. The middle route - natural caves, moderate difficulty. The low route - flooded sections, dangerous but least likely to have guards.\"\n\nBastian studies the passages. \"Which do you recommend?\"\n\nDenis's expression is troubled. \"Each has risks. The choice depends on what you value most: speed, safety, or secrecy.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-002-1.png",
+          "/images/backgrounds/B-2-002-2.png",
+          "/images/backgrounds/B-2-002-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-003",
+      "flagChanges": {
+        "set": ["passage_system_revealed", "monk_symbols_learned"]
+      }
+    },
+    {
+      "id": "B-2-003",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-003.png",
+        "text": "The team stands at the branching point. Three passages lead deeper into the island's hidden infrastructure.\n\nDenis holds up the candle, illuminating each option:\n\n• HIGH ROUTE: Through old monastery ruins. Partially collapsed but direct. Risk of exposure.\n• MIDDLE ROUTE: Natural cave system. Stable, winding, moderate difficulty.\n• LOW ROUTE: Flooded tunnels. Waist-deep water, pitch black, but guards never patrol here.\n\nWhich path do you choose?",
+        "speaker": "denis"
+      },
+      "choices": [
+        {
+          "text": "High route - speed is critical, we need to reach the coast quickly",
+          "nextScene": "B-2-004A",
+          "flagChanges": {
+            "set": ["chose_high_route", "monastery_ruins_path"]
+          }
+        },
+        {
+          "text": "Middle route - balance speed and safety through the caves",
+          "nextScene": "B-2-004B",
+          "flagChanges": {
+            "set": ["chose_middle_route", "cave_system_path"]
+          }
+        },
+        {
+          "text": "Low route - maximum secrecy, accept the hardship of flooded tunnels",
+          "nextScene": "B-2-004C",
+          "flagChanges": {
+            "set": ["chose_low_route", "flooded_tunnels_path"]
+          },
+          "relationshipChanges": {
+            "denis": 5
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-004A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-004A.png",
+        "text": "",
+        "pages": [
+          "HIGH ROUTE - MONASTERY RUINS\n\nYou ascend through the passage. The stone walls give way to older construction - massive blocks fitted without mortar, ancient beyond imagination.\n\nDenis leads you into what was once the monastery's chapter house. The roof is partially collapsed, letting in moonlight. Broken pews. A shattered altar. Centuries of abandonment.",
+          "\"The monks abandoned this section in 1793,\" Denis whispers. \"During the Terror. Revolutionary guards raided the island. Killed half the brothers. The survivors fled through these passages.\"\n\nHe points to dark stains on the floor. \"That's not water damage.\"\n\nYou realize: it's blood. Two hundred years old, but still visible.",
+          "Bastian finds something - a journal, preserved in a niche in the wall. Denis carefully opens it.\n\n\"Brother Matthieu's diary. He documented... everything. The raid. The escape. And...\" Denis's expression changes. \"Evidence. He writes about a falsified arrest. A political prisoner sent here in 1792. Innocent. Just like...\"\n\nHe looks at you meaningfully. Your case isn't unique. This island has held innocent men for centuries.\n\n[EVIDENCE DISCOVERED - Historical parallel to your situation]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-004A-1.png",
+          "/images/backgrounds/B-2-004A-2.png",
+          "/images/backgrounds/B-2-004A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-005",
+      "itemChanges": {
+        "add": ["brother_matthieus_journal"]
+      },
+      "flagChanges": {
+        "set": ["monastery_history_revealed", "historical_evidence_found"]
+      }
+    },
+    {
+      "id": "B-2-004B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-004B.png",
+        "text": "",
+        "pages": [
+          "MIDDLE ROUTE - CAVE SYSTEM\n\nThe passage opens into natural caverns. Stalactites hang like stone teeth. Water drips constantly, echoing in the darkness.\n\nDenis navigates with practiced ease. \"I've walked these caves a hundred times. Maintaining the route. Making sure it stays passable.\"\n\nThe caves are beautiful in a haunting way. Mineral formations glitter in candlelight. Underground pools reflect your movement.",
+          "You find carved inscriptions on the walls - not monk symbols, but older. Much older.\n\nDenis studies them. \"Celtic. Pre-Christian. This island was sacred long before the monastery. The ancients knew about these caves. Used them for... I don't know. Ritual? Refuge?\"\n\nOne inscription depicts a boat. Another shows figures fleeing. A third shows chains breaking.",
+          "\"Escape,\" Denis translates. \"The theme is escape. For millennia, people have fled from this island through these passages. We're following in very old footsteps.\"\n\nThe realization is profound: this route is ancient. Escape is woven into the island's history.\n\n[ANCIENT ROUTE DISCOVERED - Sacred path of refugees]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-004B-1.png",
+          "/images/backgrounds/B-2-004B-2.png",
+          "/images/backgrounds/B-2-004B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-005",
+      "flagChanges": {
+        "set": ["ancient_caves_explored", "celtic_inscriptions_found"]
+      },
+      "relationshipChanges": {
+        "denis": 5
+      }
+    },
+    {
+      "id": "B-2-004C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-004C.png",
+        "text": "",
+        "pages": [
+          "LOW ROUTE - FLOODED TUNNELS\n\nYou descend into water. Cold. Chest-deep. The candle barely illuminates the way ahead.\n\nDenis holds the light high. \"This section floods with high tide. We have maybe two hours before the water rises further. Move carefully. The floor is uneven.\"\n\nThe team wades forward. The water is shockingly cold. Every step is uncertain.",
+          "But Denis was right - this route is completely unguarded. The prison authorities likely don't even know it exists anymore.\n\nYou pass old gates. Rusted. Open. Denis explains: \"These were flood controls. The monks could seal sections during storms. Most are broken now.\"\n\nAhead, you see something strange - a small boat, chained to a ring in the wall. Ancient but intact.",
+          "Denis examines it with wonder. \"This must be... centuries old. The monks kept emergency boats in the tunnels. For escape when the passages flooded.\"\n\nThe boat is small - maybe holds three people. But it's seaworthy. And it's yours now.\n\n\"This changes everything,\" Bastian mutters. \"If we can get this to the coast...\"\n\n[ANCIENT BOAT DISCOVERED - Emergency escape vessel]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-004C-1.png",
+          "/images/backgrounds/B-2-004C-2.png",
+          "/images/backgrounds/B-2-004C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-005",
+      "itemChanges": {
+        "add": ["ancient_monks_boat"]
+      },
+      "flagChanges": {
+        "set": ["flooded_tunnels_navigated", "emergency_boat_found"]
+      },
+      "relationshipChanges": {
+        "denis": 8
+      }
+    },
+    {
+      "id": "B-2-005",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-005.png",
+        "text": "",
+        "pages": [
+          "The passages continue deeper into the island. Denis navigates using the monk symbols, reading the stone like a book.\n\nBastian stays close to you. \"This is incredible,\" he whispers. \"All this time, there was a way out. Right under the prison. Right under the guards.\"\n\nYou've been traveling for over an hour now. The team is tired but determined.",
+          "Denis stops suddenly. \"Listen.\"\n\nYou hear it: water. Not dripping. Rushing. Somewhere ahead, an underground river or stream.\n\n\"The passages cross a natural watercourse,\" Denis explains. \"The monks built a bridge. But I haven't been this far in years. I don't know if it's still intact.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-005-1.png",
+          "/images/backgrounds/B-2-005-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-006"
+    },
+    {
+      "id": "B-2-006",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-006.png",
+        "text": "You reach the bridge. Or what's left of it.\n\nThe stone span is partially collapsed. The center section has fallen into the rushing water below. The gap is maybe three meters - jumpable, but dangerous.\n\nDenis examines the structure. \"The supports are unstable. One person at a time, maybe. But if we all try to cross... it could collapse completely.\"\n\nBastian looks at the alternative: \"We could wade through the water. It looks waist-deep. Strong current, but manageable.\"\n\nIf you have the ancient boat from the flooded tunnels, there's a third option: lower it into the water, use it to ferry across.\n\nWhat do you do?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Jump the gap one by one - risky but keeps us dry",
+          "nextScene": "B-2-007A",
+          "flagChanges": {
+            "set": ["jumped_bridge_gap", "risky_crossing"]
+          }
+        },
+        {
+          "text": "Wade through the water - safer but slower and exhausting",
+          "nextScene": "B-2-007B",
+          "flagChanges": {
+            "set": ["waded_through_river", "safe_crossing"]
+          }
+        },
+        {
+          "text": "Use the ancient boat to ferry across - requires the boat",
+          "nextScene": "B-2-007C",
+          "requirements": {
+            "items": ["ancient_monks_boat"]
+          },
+          "flagChanges": {
+            "set": ["ferried_with_boat", "clever_solution"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-007A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-007A.png",
+        "text": "",
+        "pages": [
+          "You go first. The jump is terrifying - three meters over rushing black water. But you make it, landing hard on the far side.\n\nBastian goes next. Then Denis. Then each team member in turn.\n\nThe last person is halfway across when the bridge shudders. A support cracks with a sound like gunfire.",
+          "The team member leaps desperately, barely catching the edge. Others grab their arms, hauling them up just as the remaining bridge collapses into the water below.\n\n\"Too close,\" Bastian pants. \"Way too close.\"\n\nBut everyone made it. You're across.\n\n[OBSTACLE OVERCOME - Bridge gap cleared, team intact but shaken]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-007A-1.png",
+          "/images/backgrounds/B-2-007A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-008"
+    },
+    {
+      "id": "B-2-007B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-007B.png",
+        "text": "",
+        "pages": [
+          "You descend into the water. It's deeper than it looked - chest-deep. And the current is strong, trying to pull you downstream into darkness.\n\nDenis anchors the team, forming a human chain. \"Hold hands! Don't let go!\"\n\nThe crossing is exhausting. Fighting the current. Keeping balance on slippery stones. The water is numbingly cold.",
+          "But it's methodical. Safe. Everyone makes it across without incident.\n\nOn the far side, you emerge dripping and shivering, but unharmed.\n\n\"Smart choice,\" Denis says. \"Survival isn't about courage. It's about making the right decision at the right time.\"\n\n[OBSTACLE OVERCOME - River forded safely, team wet but intact]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-007B-1.png",
+          "/images/backgrounds/B-2-007B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-008",
+      "relationshipChanges": {
+        "denis": 5
+      }
+    },
+    {
+      "id": "B-2-007C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-007C.png",
+        "text": "",
+        "pages": [
+          "You lower the ancient boat into the water. It's small, but it floats perfectly - the monks built things to last.\n\nTwo people at a time ferry across. The boat handles beautifully despite its age. The current is strong, but manageable with coordinated rowing.\n\nWithin twenty minutes, everyone is across. The boat is retrieved and carried forward - it might be useful again.",
+          "Bastian grins. \"The monks left us everything we needed. They knew. Centuries ago, they knew people would need this escape route.\"\n\nDenis nods solemnly. \"Tools of freedom. Hidden in plain sight. Waiting for those with eyes to see.\"\n\n[OBSTACLE OVERCOME - River crossed efficiently using monk's boat, team dry and in good spirits]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-007C-1.png",
+          "/images/backgrounds/B-2-007C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-008",
+      "relationshipChanges": {
+        "denis": 8,
+        "bastian": 5
+      }
+    },
+    {
+      "id": "B-2-008",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-008.png",
+        "text": "",
+        "pages": [
+          "Beyond the river, the passages descend steeply. The air grows colder. Saltier. You're approaching sea level.\n\nDenis checks the monk symbols. \"We're close. The exit should be ahead - a sea cave that opens onto the rocks below the eastern cliffs.\"\n\nThe team's spirits lift. Freedom is close. So close you can taste it.",
+          "Then you hear something. Voices. Echoing from ahead.\n\nGuards.\n\nDenis's face goes pale. \"They shouldn't be here. This passage is supposed to be sealed. Unknown.\"\n\nBastian peers carefully around the corner. \"Two guards. With lanterns. Looks like... they're investigating something. Maybe they found evidence of the passage?\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-008-1.png",
+          "/images/backgrounds/B-2-008-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-009",
+      "flagChanges": {
+        "set": ["guards_encountered", "passage_possibly_compromised"]
+      }
+    },
+    {
+      "id": "B-2-009",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-009.png",
+        "text": "Two guards block the passage ahead. They haven't seen you yet - their lanterns are pointed away, examining the walls.\n\nBastian whispers: \"We can't go back. The tide is rising. The flooded sections will be impassable soon.\"\n\nDenis looks troubled. \"Violence was not part of the plan. But...\"\n\nYou have options:\n• Wait for them to leave (if they're just investigating, they might move on)\n• Create a distraction (lure them away from the exit)\n• Confront them directly (overpower them before they can raise alarm)\n• Use Denis's authority (he's a trusted prisoner, might be able to talk them down)\n\nWhat do you do?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Wait quietly - be patient, let them finish investigating",
+          "nextScene": "B-2-010A",
+          "flagChanges": {
+            "set": ["waited_for_guards", "patient_approach"]
+          },
+          "relationshipChanges": {
+            "denis": 10
+          }
+        },
+        {
+          "text": "Create distraction - throw a stone, lead them away from exit",
+          "nextScene": "B-2-010B",
+          "flagChanges": {
+            "set": ["distracted_guards", "clever_approach"]
+          },
+          "relationshipChanges": {
+            "bastian": 8
+          }
+        },
+        {
+          "text": "Confront directly - rush them before they can react",
+          "nextScene": "B-2-010C",
+          "requirements": {
+            "flags": ["viktor_recruited"]
+          },
+          "flagChanges": {
+            "set": ["confronted_guards", "violent_approach"]
+          },
+          "relationshipChanges": {
+            "denis": -15
+          }
+        },
+        {
+          "text": "Denis talks to them - use his reputation and authority",
+          "nextScene": "B-2-010D",
+          "flagChanges": {
+            "set": ["denis_negotiated", "peaceful_approach"]
+          },
+          "relationshipChanges": {
+            "denis": 15
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-010A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-010A.png",
+        "text": "",
+        "pages": [
+          "You wait. Motionless. Barely breathing. The team pressed against the stone walls in darkness.\n\nThe guards continue their investigation. \"...probably just old smuggler tunnels,\" one says. \"The report was probably nothing.\"\n\n\"Still,\" the other replies, \"we should seal this section. Don't want prisoners finding it.\"",
+          "They spend another agonizing ten minutes examining the passage. Then, finally, they turn back the way they came.\n\n\"Let's report to the captain. Recommend sealing this entrance tomorrow.\"\n\nTheir footsteps fade. Their lantern light disappears.\n\nYou wait five more minutes to be sure. Then Denis nods. \"Clear. But we need to move fast. If they seal this tomorrow, we'd have been trapped.\"",
+          "The team hurries forward. The passage opens into a natural sea cave. You can hear waves. See moonlight.\n\nFreedom. Right there.\n\n[GUARDS AVOIDED - Patience rewarded, Denis deeply impressed by your restraint]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-010A-1.png",
+          "/images/backgrounds/B-2-010A-2.png",
+          "/images/backgrounds/B-2-010A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-011",
+      "flagChanges": {
+        "set": ["guards_departed_peacefully", "nonviolent_escape_maintained"]
+      }
+    },
+    {
+      "id": "B-2-010B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-010B.png",
+        "text": "",
+        "pages": [
+          "Bastian finds a loose stone. He throws it down a side passage - away from the exit. It clatters loudly in the darkness.\n\nThe guards spin. \"What was that?\"\n\n\"Over there! Someone's in the passages!\"\n\nThey rush toward the sound, lanterns bobbing.",
+          "As soon as they're out of sight, your team moves. Quickly. Quietly. Past where they were standing. Toward the exit.\n\nBehind you, you hear them searching the side passage. \"Nothing here. Must have been a rat.\"\n\nBy then, you're already at the sea cave entrance. The sound of waves drowns out any noise you might make.",
+          "Bastian grins. \"Classic misdirection. Works every time.\"\n\nDenis looks relieved. \"No violence. No one hurt. This is the way.\"\n\n[GUARDS DISTRACTED - Team escaped undetected through clever tactics]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-010B-1.png",
+          "/images/backgrounds/B-2-010B-2.png",
+          "/images/backgrounds/B-2-010B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-011",
+      "flagChanges": {
+        "set": ["guards_misdirected", "tactical_escape"]
+      }
+    },
+    {
+      "id": "B-2-010C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-010C.png",
+        "text": "",
+        "pages": [
+          "Viktor moves before anyone can stop him. He rushes the guards from behind, knocking them down before they can raise alarm.\n\nThe fight is brief. Brutal. The guards don't stand a chance against Viktor's strength and surprise.\n\nWithin seconds, both guards are unconscious. Viktor binds them with their own belts.",
+          "Denis looks horrified. \"This... this wasn't the plan. Violence. You promised—\"\n\n\"They're alive,\" Viktor interrupts. \"Unconscious, but alive. We didn't kill them. That's your precious nonviolence, isn't it?\"\n\nDenis shakes his head, deeply troubled. \"The means matter as much as the ends. We've crossed a line.\"\n\nBastian intervenes. \"We can debate ethics later. Right now, we need to move. They'll wake up eventually.\"",
+          "The team hurries toward the exit. But Denis lags behind, clearly conflicted.\n\nYou've maintained your escape, but at a cost: Denis's faith in the mission is shaken.\n\n[GUARDS SUBDUED - Violent solution, Denis's trust damaged]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-010C-1.png",
+          "/images/backgrounds/B-2-010C-2.png",
+          "/images/backgrounds/B-2-010C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-011",
+      "flagChanges": {
+        "set": ["guards_attacked", "violence_used", "denis_faith_shaken"]
+      }
+    },
+    {
+      "id": "B-2-010D",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-010D.png",
+        "text": "",
+        "pages": [
+          "Denis steps forward into the lantern light. \"Brothers,\" he calls gently.\n\nThe guards spin, hands going to batons. Then they recognize him. \"Denis? What are you doing down here?\"\n\n\"I could ask you the same,\" Denis says calmly. \"These passages are sacred. The old monastery ruins. I come here to pray. For contemplation.\"",
+          "One guard looks suspicious. \"Alone? In the middle of the night?\"\n\n\"Faith keeps no schedule,\" Denis replies. \"You know me. Seven years I've been here. Have I ever caused trouble? Ever broken a rule?\"\n\nThe guards exchange looks. Everyone knows Denis. Trusts him. He's the prison's gentle soul.\n\n\"Just...\" the second guard says slowly, \"...be careful. These passages aren't stable. And keep this between us. The captain would be angry if he knew you were wandering around down here.\"",
+          "Denis bows his head. \"Thank you, brothers. I'll be more careful.\"\n\nThe guards leave. Actually leave. Denis's reputation - his years of trust - just saved everyone.\n\nOnce they're gone, Denis releases a breath. \"That was... closer than I'd have liked. But see? Trust builds bridges. Even in darkness.\"\n\n[GUARDS PEACEFULLY DISMISSED - Denis's reputation saves the day, maximum relationship gain]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-010D-1.png",
+          "/images/backgrounds/B-2-010D-2.png",
+          "/images/backgrounds/B-2-010D-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-011",
+      "flagChanges": {
+        "set": ["guards_talked_down", "denis_reputation_proved", "perfect_nonviolence"]
+      },
+      "relationshipChanges": {
+        "bastian": 10
+      }
+    },
+    {
+      "id": "B-2-011",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-011.png",
+        "text": "",
+        "pages": [
+          "THE SEA CAVE\n\nYou emerge into moonlight. The sea cave opens onto a rocky shore. Waves crash against stone. The prison looms above you on the cliffs - but you're outside. Outside the walls.\n\nThe team stands in awed silence. After so long imprisoned, the sight of open sky and open water is overwhelming.",
+          "Bastian points north. \"Bastian's sister. Cordelia. She runs a fishing boat. Passes the island twice weekly. If we can signal her...\"\n\nDenis looks at the cave entrance behind you. At the passage you just traversed. At the escape route he's maintained for years but never used.",
+          "Then Denis speaks quietly: \"This is where I leave you.\"\n\nThe team turns, shocked.\n\n\"What?\" Bastian asks.\n\nDenis smiles sadly. \"My place is not out there. My place is back in the chapel. With the men who still need guidance. Who need someone to maintain this escape route for the next person who needs sanctuary.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-011-1.png",
+          "/images/backgrounds/B-2-011-2.png",
+          "/images/backgrounds/B-2-011-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-012"
+    },
+    {
+      "id": "B-2-012",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-012.png",
+        "text": "Denis stands at the cave entrance, ready to return to the prison.\n\n\"You're serious?\" Bastian asks. \"You're going back?\"\n\n\"I was never sentenced to Stone Island,\" Denis explains. \"I chose to come here. As a chaplain. To serve those society has abandoned. My work isn't finished.\"\n\nHe looks at you. \"But you - you're innocent. You deserve freedom. Go. Live. Find justice. That's my gift to you.\"\n\nHow do you respond?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Beg him to come with you - his sacrifice is too great",
+          "nextScene": "B-2-013A",
+          "flagChanges": {
+            "set": ["begged_denis_to_leave", "emotional_farewell"]
+          },
+          "relationshipChanges": {
+            "denis": 10
+          }
+        },
+        {
+          "text": "Accept his choice with gratitude - honor his decision",
+          "nextScene": "B-2-013B",
+          "flagChanges": {
+            "set": ["accepted_denis_choice", "respectful_farewell"]
+          },
+          "relationshipChanges": {
+            "denis": 15
+          }
+        },
+        {
+          "text": "Promise to come back for him - you'll free him later",
+          "nextScene": "B-2-013C",
+          "flagChanges": {
+            "set": ["promised_to_return", "hopeful_farewell"]
+          },
+          "relationshipChanges": {
+            "denis": 12
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-013A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-013A.png",
+        "text": "",
+        "pages": [
+          "\"Don't do this,\" you plead. \"Come with us. You've given so much already. You deserve freedom too.\"\n\nDenis shakes his head gently. \"Freedom isn't a place, Alexandre. It's a state of being. I'm more free in that prison, serving others, than I would be out here running from my calling.\"",
+          "He grips your shoulder. \"But I'm grateful. Grateful you tried to save me too. That kindness... remember it. Let it guide you when you're free.\"\n\nHe turns back toward the passage. Then pauses. \"Tell the world what happens here. Tell them about the innocent men. The falsified charges. The justice denied. That's how you can help me. Help all of us.\"\n\nHe disappears into the darkness of the passage.\n\nYou're left standing on the shore, tears in your eyes.\n\n[DENIS RETURNED TO PRISON - His choice honored, your compassion noted]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-013A-1.png",
+          "/images/backgrounds/B-2-013A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-014"
+    },
+    {
+      "id": "B-2-013B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-013B.png",
+        "text": "",
+        "pages": [
+          "You bow your head in respect. \"I understand. Your path is different from mine. But thank you. For everything. For the guidance. For the passages. For believing in nonviolent escape.\"\n\nDenis smiles. \"You honored that belief. That matters more than you know. Go now. With my blessing.\"",
+          "He makes the sign of the cross over you. \"May you find justice. May you find peace. And may you never forget what you learned here: that freedom earned through conscience is the truest freedom of all.\"\n\nHe retreats into the passage. But this time, there's no sadness. Just rightness. He's returning to exactly where he belongs.",
+          "Bastian watches him go. \"He's a saint,\" he mutters. \"An actual living saint.\"\n\n\"Maybe,\" you reply. \"Or maybe just a good man who knows himself.\"\n\n[DENIS RETURNED TO PRISON - His path honored, his blessing received, maximum respect]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-013B-1.png",
+          "/images/backgrounds/B-2-013B-2.png",
+          "/images/backgrounds/B-2-013B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-014",
+      "itemChanges": {
+        "add": ["denis_blessing"]
+      }
+    },
+    {
+      "id": "B-2-013C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-013C.png",
+        "text": "",
+        "pages": [
+          "\"I'll come back,\" you promise. \"Once I'm free. Once I've cleared my name. I'll expose this prison. I'll get you out. Legitimately.\"\n\nDenis considers this. \"A noble promise. But don't risk your freedom for me. If you do come back, come with lawyers. With journalists. With the power to change the system, not just save one man.\"",
+          "He hands you something - a small wooden cross, carved by hand. \"Keep this. A reminder. Not just of me, but of everyone still trapped here.\"\n\nYou take it. The weight is minimal, but the significance is profound.\n\n\"I'll see you again,\" Denis says. Not a question. A statement of faith.\n\nHe returns to the passage. But somehow, this doesn't feel like goodbye. It feels like... a promise to be fulfilled.\n\n[DENIS RETURNED TO PRISON - Promise made, future mission established]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-013C-1.png",
+          "/images/backgrounds/B-2-013C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-014",
+      "itemChanges": {
+        "add": ["denis_wooden_cross"]
+      },
+      "flagChanges": {
+        "set": ["promised_to_save_denis", "future_prison_return_mission"]
+      }
+    },
+    {
+      "id": "B-2-014",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-014.png",
+        "text": "",
+        "pages": [
+          "ROCKY SHORE - MIDNIGHT\n\nThe team assesses the situation. You're free of the prison, but you're still on the island. You need to reach the mainland.\n\nBastian scans the horizon. \"Cordelia's boat won't pass until tomorrow afternoon. We need to hide until then. Or find another way across.\"",
+          "If you have the ancient monk's boat, it's an option - small, but seaworthy. The mainland is visible in the distance, maybe 5 kilometers across rough water.\n\nAlternatively, there's a small dock on the north side of the island where supply boats arrive. Dangerous - guards patrol it - but there might be an opportunity.",
+          "A third option: the lighthouse. It's automated now, but it has a signal system. If you could reach it, you could potentially signal passing ships.\n\nBastian looks at you. \"Your call. We're in your hands.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-014-1.png",
+          "/images/backgrounds/B-2-014-2.png",
+          "/images/backgrounds/B-2-014-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-015"
+    },
+    {
+      "id": "B-2-015",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-015.png",
+        "text": "Three options to reach the mainland:\n\n1. Use the ancient monk's boat (if you have it) - immediate departure, risky crossing\n2. Raid the supply dock - steal a boat, high danger, better vessel\n3. Signal from lighthouse - wait for rescue, safest but slowest\n4. Hide and wait for Cordelia's fishing boat - lowest risk, longest wait\n\nWhat do you choose?",
+        "speaker": "bastian"
+      },
+      "choices": [
+        {
+          "text": "Launch the monk's boat immediately - don't wait, cross now",
+          "nextScene": "B-2-016A",
+          "requirements": {
+            "items": ["ancient_monks_boat"]
+          },
+          "flagChanges": {
+            "set": ["monks_boat_launch", "immediate_crossing"]
+          }
+        },
+        {
+          "text": "Raid the supply dock - steal a proper boat",
+          "nextScene": "B-2-016B",
+          "flagChanges": {
+            "set": ["raided_supply_dock", "stolen_boat"]
+          }
+        },
+        {
+          "text": "Signal from lighthouse - use light to call for help",
+          "nextScene": "B-2-016C",
+          "flagChanges": {
+            "set": ["lighthouse_signal", "waiting_for_rescue"]
+          }
+        },
+        {
+          "text": "Hide and wait for Cordelia - patient approach, sister's boat",
+          "nextScene": "B-2-016D",
+          "flagChanges": {
+            "set": ["waiting_for_cordelia", "hiding_on_shore"]
+          },
+          "relationshipChanges": {
+            "bastian": 15
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-016A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-016A.png",
+        "text": "",
+        "pages": [
+          "MONK'S BOAT - OPEN WATER\n\nYou launch the ancient boat. It's small - cramped with everyone aboard - but it floats perfectly. The monks built it to last centuries.\n\nBastian and others row. The mainland is distant, but visible. The water is rough, but manageable.",
+          "Halfway across, you hear it: an alarm. Bells ringing from the prison. They've discovered you're gone.\n\nSearchlights sweep the water. A guard boat launches from the dock.\n\n\"Row faster!\" Bastian commands.\n\nThe chase is on.\n\n[ESCAPE IN PROGRESS - Prison alerted, pursuit begun]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-016A-1.png",
+          "/images/backgrounds/B-2-016A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-017",
+      "flagChanges": {
+        "set": ["boat_chase_active", "alarm_raised"]
+      }
+    },
+    {
+      "id": "B-2-016B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-016B.png",
+        "text": "",
+        "pages": [
+          "SUPPLY DOCK - STEALTH APPROACH\n\nYou circle around to the north side of the island. The supply dock sits beneath a cliff, weakly guarded at night.\n\nTwo guards patrol. A proper boat - motorized - is tied to the dock.\n\nBastian whispers the plan: \"Distract the guards. Cut the boat loose. Start the engine and go before they react.\"",
+          "It almost works.\n\nYou reach the boat. Start cutting the mooring rope. But one guard turns at the wrong moment.\n\n\"Hey! Prisoners! PRISONERS!\"\n\nAlarms shriek. The prison comes alive with light and noise.\n\nBut you're already in the boat. Bastian starts the engine. It roars to life.\n\nYou pull away from the dock as guards rush toward you. Bullets whine past.\n\n[ESCAPE IN PROGRESS - Violent extraction, pursuit imminent]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-016B-1.png",
+          "/images/backgrounds/B-2-016B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-017",
+      "flagChanges": {
+        "set": ["violent_boat_theft", "alarm_raised", "guards_alerted"]
+      }
+    },
+    {
+      "id": "B-2-016C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-016C.png",
+        "text": "",
+        "pages": [
+          "LIGHTHOUSE - SIGNAL ATTEMPT\n\nYou climb to the lighthouse. It's automated, but the old manual controls still work.\n\nBastian figures out the light mechanism. \"I can send an SOS pattern. Ships in the shipping lane will see it.\"\n\nHe activates the light. Brilliant. Sweeping. Three short. Three long. Three short.\n\nSOS. Save our souls.",
+          "Within minutes: a response. A cargo ship in the distance blinks its lights. It's changing course. Coming toward the island.\n\nBut the prison has noticed too. The lighthouse blazing at the wrong time. Guards are coming.\n\n\"We need to hold them off until the ship arrives,\" Bastian says grimly.\n\n[RESCUE INCOMING - But guards are converging on your position]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-016C-1.png",
+          "/images/backgrounds/B-2-016C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-017",
+      "flagChanges": {
+        "set": ["lighthouse_signal_sent", "cargo_ship_responding", "guards_approaching"]
+      }
+    },
+    {
+      "id": "B-2-016D",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-016D.png",
+        "text": "",
+        "pages": [
+          "HIDING - DAWN APPROACH\n\nYou find a cave above the shore and hide. Hours pass. The team rests, exhausted from the passage journey.\n\nAs dawn breaks, Bastian watches the sea. \"There. Right on schedule.\"\n\nA fishing boat. Small, weathered, but moving with purpose. It approaches the island from the east.",
+          "Bastian stands and waves a specific pattern - a signal only his sister would recognize.\n\nThe boat changes course. Approaches the rocky shore.\n\nA woman's voice calls across the water: \"Bastian? Mon Dieu, Bastian, is that you?\"\n\n\"Cordelia!\" Bastian shouts back. \"I'm coming home!\"\n\nThe boat pulls close. No alarms. No pursuit. The prison hasn't even discovered you're missing yet.",
+          "You board the fishing boat. Cordelia embraces her brother, tears streaming.\n\n\"Who are your friends?\" she asks.\n\n\"People who needed help,\" Bastian replies. \"People who deserve freedom.\"\n\nCordelia nods. \"Then welcome aboard. Let's get you all to the mainland.\"\n\n[PERFECT ESCAPE - No violence, no alarms, rescued by Cordelia's boat]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-016D-1.png",
+          "/images/backgrounds/B-2-016D-2.png",
+          "/images/backgrounds/B-2-016D-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-019",
+      "flagChanges": {
+        "set": ["perfect_escape", "cordelia_rescue", "no_alarms"]
+      }
+    },
+    {
+      "id": "B-2-017",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-017.png",
+        "text": "",
+        "pages": [
+          "The prison's pursuit is relentless. Guard boats. Searchlights. Rifle fire.\n\nYour team coordinates. If you have Marcel's skills, someone steers with precision. If Viktor is present, someone provides intimidating presence that makes guards hesitate. If you maintained high team cohesion, everyone works together seamlessly.",
+          "The mainland approaches. So close. But the guards are gaining.\n\nBastian makes a decision. \"I'll stay behind. Slow them down. Give you time to reach shore.\"\n\n\"No—\" you start.\n\n\"It's not negotiable,\" Bastian says. \"I'm the one who planned this. If anyone faces consequences, it should be me. Besides...\" He grins. \"I've always wanted to be a hero.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-017-1.png",
+          "/images/backgrounds/B-2-017-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-018"
+    },
+    {
+      "id": "B-2-018",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-018.png",
+        "text": "Bastian is preparing to sacrifice himself - to draw the guards' attention while you escape.\n\nDo you let him? Or do you refuse his sacrifice and insist everyone escapes together, even if it's riskier?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Accept his sacrifice - he's giving you freedom, honor it",
+          "nextScene": "B-2-019A",
+          "flagChanges": {
+            "set": ["bastian_sacrificed", "heroic_ending"]
+          },
+          "relationshipChanges": {
+            "bastian": 25
+          }
+        },
+        {
+          "text": "Refuse - no one gets left behind, we escape together",
+          "nextScene": "B-2-019B",
+          "flagChanges": {
+            "set": ["everyone_together", "risky_escape"]
+          },
+          "relationshipChanges": {
+            "bastian": 15
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-019A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-019A.png",
+        "text": "",
+        "pages": [
+          "You grip Bastian's hand. \"Thank you. For everything.\"\n\n\"Go,\" he says. \"Live free. Find justice. Tell my sister I love her.\"\n\nHe turns the boat back toward the island, drawing the guards away. You continue to shore.\n\nThe last you see of Bastian, he's surrounded by guard boats, surrendering peacefully.",
+          "MAINLAND - FREEDOM\n\nYou reach the shore. France. Solid ground. Free ground.\n\nThe team disperses quickly - everyone needs to disappear before authorities connect you to the prison break.\n\nYou're free. But the cost was high. Bastian is back in prison. Denis chose to stay. The escape succeeded, but at a profound price.",
+          "Years later, you learn: Bastian was returned to Stone Island. His sentence extended. But he never regretted it. He told everyone who would listen: \"I helped innocent men escape. If that's a crime, then I'm guilty. And proud.\"\n\nDenis continued his work. The chapel route remains. Waiting for the next person who needs sanctuary.\n\nAnd you? You published your story. Exposed the corruption. Some justice was found.\n\n[CHAPEL ROUTE: COMPLETE - Freedom with sacrifice, nonviolent escape, Bastian the hero]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-019A-1.png",
+          "/images/backgrounds/B-2-019A-2.png",
+          "/images/backgrounds/B-2-019A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E01",
+      "flagChanges": {
+        "set": ["chapel_route_complete", "bastian_hero", "mainland_reached"]
+      }
+    },
+    {
+      "id": "B-2-019B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-019B.png",
+        "text": "",
+        "pages": [
+          "\"No,\" you say firmly. \"We all escape or none of us do. That's the deal.\"\n\nBastian looks surprised, then grateful. \"Alright. Together then. Everyone row! Full speed!\"\n\nThe guards close in. Bullets whine past. But your team's coordination is perfect. Every stroke synchronized. Every decision coordinated.",
+          "The boat hits the beach. You're on French soil. The guard boats are still a hundred meters out - not enough time to stop you.\n\nThe team scatters into the mainland countryside. Free. All of you. Together.\n\nBastian grins as you run. \"You stubborn fool. You saved me when I tried to save you.\"",
+          "YEARS LATER\n\nYou all made it. Everyone who committed to the escape reached freedom.\n\nBastian reunited with his sister. The other team members found new lives.\n\nDenis remains at Stone Island, still offering guidance to prisoners. But he knows: his chapel route succeeded. And it stands ready for the next soul who needs it.\n\n[CHAPEL ROUTE: COMPLETE - Total success, everyone free, nonviolent escape achieved]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-019B-1.png",
+          "/images/backgrounds/B-2-019B-2.png",
+          "/images/backgrounds/B-2-019B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E02",
+      "flagChanges": {
+        "set": ["chapel_route_complete", "everyone_escaped", "perfect_team_escape"]
+      }
+    },
+    {
+      "id": "B-2-019",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-019.png",
+        "text": "",
+        "pages": [
+          "MAINLAND - FREEDOM ACHIEVED\n\nThe fishing boat reaches the French coast. Cordelia guides it into a small cove, hidden from official eyes.\n\n\"This is where I let you off,\" she says. \"From here, you're on your own. But you're free.\"\n\nThe team disembarks. Solid ground. French soil. Freedom.",
+          "Bastian embraces his sister one more time. \"Thank you. For everything.\"\n\n\"Go,\" Cordelia says. \"Disappear. Live. Be free. That's all I ask.\"\n\nThe team disperses into the countryside. Each person heading their own direction. Bastian stays with you for a moment.\n\n\"We did it,\" he says quietly. \"Against all odds. We actually did it.\"\n\nYou think of Denis, back at the prison by choice. Of the chapel route, waiting for the next person who needs it.",
+          "\"We did it Denis's way,\" you reply. \"No violence. No deaths. Just... sanctuary. Like the monks intended.\"\n\nBastian nods. \"The old ways. Turns out they still work.\"\n\nYou part ways. Each person to their own future. Free. Finally free.\n\n[CHAPEL ROUTE: COMPLETE - Perfect nonviolent escape via Cordelia's boat]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-019-1.png",
+          "/images/backgrounds/B-2-019-2.png",
+          "/images/backgrounds/B-2-019-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E03",
+      "flagChanges": {
+        "set": ["chapel_route_complete", "cordelia_rescue_complete", "perfect_escape"]
+      }
+    }
+  ]
+}
