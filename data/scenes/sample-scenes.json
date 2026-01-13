@@ -44,7 +44,7 @@
       "id": "A-1-001",
       "type": "choice",
       "content": {
-        "visual": "/images/backgrounds/cell-block.jpg",
+        "visual": "/images/backgrounds/A-1-001.png",
         "text": "Officer Ramirez leads you through the cell block. The eyes of dozens of inmates follow your every move. You reach your cell - a cramped space with a single bunk, a toilet, and a small barred window.",
         "speaker": null
       },
@@ -75,7 +75,7 @@
       "id": "A-1-015",
       "type": "investigation",
       "content": {
-        "visual": "/images/backgrounds/cell-interior.jpg",
+        "visual": "/images/backgrounds/A-1-015.png",
         "text": "You carefully examine every corner of your cell. Behind a loose brick near the window, you find something scratched into the wall - a series of numbers: '23-7-89'. Someone was keeping track of something here.",
         "speaker": null
       },

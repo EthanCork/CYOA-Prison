@@ -1,0 +1,582 @@
+{
+  "scenes": [
+    {
+      "id": "B-2-060",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-060.png",
+        "text": "",
+        "pages": [
+          "NIGHT, DAY 7\n\nMarcel's workshop. Technically the prison maintenance area, but everyone knows it's Marcel's domain. Tools organized with perfect precision. Each wrench, each screwdriver, each lock mechanism catalogued and understood.\n\nYour team gathers: Bastian, Marcel, and whoever else committed to the pact. Denis if present looks concerned. Viktor if present seems impatient. Émile if present watches with calculating interest.",
+          "Marcel spreads a set of keys on the workbench. Not standard keys. Copies. Perfect copies of every lock between your cells and the loading dock.\n\n\"Three months,\" Marcel explains quietly. \"That's how long it took to observe, measure, and recreate each key. The guards are careless. They leave key rings on desks. In lockers. I borrowed them. Made impressions in soap. Carved duplicates from salvaged metal.\"",
+          "He points to each key in sequence. \"Cell block master. Maintenance corridor. Exterior gate. Loading dock office. And finally...\" He holds up the last key. \"Supply boat ignition. Copied from the delivery captain's keyring when he was drinking coffee.\"\n\nBastian stares. \"You can steal a boat?\"\n\nMarcel smiles faintly. \"I can open any lock in this prison. The boat is just another lock. With this,\" he taps the ignition key, \"we don't need violence. Don't need riots. We just... walk out. Drive out. Technically.\"\n\n[LOADING DOCK ROUTE ACTIVATED - Marcel's precision plan begins]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-060-1.png",
+          "/images/backgrounds/B-2-060-2.png",
+          "/images/backgrounds/B-2-060-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-061",
+      "requirements": {
+        "flags": ["committed_to_team", "marcel_recruited"]
+      },
+      "flagChanges": {
+        "set": ["loading_dock_route_started", "act_2_begun", "keys_revealed"]
+      },
+      "itemChanges": {
+        "add": ["marcel_key_set", "boat_ignition_key"]
+      }
+    },
+    {
+      "id": "B-2-061",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-061.png",
+        "text": "",
+        "pages": [
+          "DAY 8 - PLANNING THE APPROACH\n\nMarcel lays out a hand-drawn map of the prison. From cells to loading dock. Every corridor. Every checkpoint. Every guard patrol route.\n\n\"Timing is everything,\" he says. \"Guards change shifts at midnight. There's a six-minute window where patrols overlap imperfectly. North corridor is clear for three minutes. We move then.\"",
+          "Bastian studies the map. \"Six locks between here and the dock?\"\n\n\"Seven,\" Marcel corrects. \"But I can pick the seventh faster than using a key. The loading dock office has an antique tumbler lock. Pre-war French manufacture. I've practiced on similar mechanisms for years.\"\n\nHe points to critical junctures. \"Here's where we're vulnerable. Courtyard crossing - forty meters of open space. Guard tower has line of sight. We need darkness. Clouds. Or distraction.\"",
+          "\"And the boat?\" you ask.\n\nMarcel produces a maintenance log. \"Supply boat arrives every Thursday. Docks overnight. Captain sleeps in the guard barracks. Boat stays moored, unguarded, until 06:00 departure. We take it at 00:30. Five and a half hours before anyone notices.\"\n\nViktor, if present: \"Too many variables. One missed step, we're caught.\"\n\nMarcel nods. \"True. That's why we practice. Every step. Every lock. Until it's muscle memory.\"\n\n[PLAN DETAILED - Precision required, practice essential]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-061-1.png",
+          "/images/backgrounds/B-2-061-2.png",
+          "/images/backgrounds/B-2-061-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-062"
+    },
+    {
+      "id": "B-2-062",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-062.png",
+        "text": "DAY 10, THURSDAY NIGHT - 00:00 HOURS\n\nThe escape begins. Marcel moves to your cell. Unlocks it silently. Bastian and the others emerge from their cells simultaneously.\n\n\"First checkpoint,\" Marcel whispers. \"Cell block master gate. We move as one. Quietly. If anyone makes noise, abort immediately.\"\n\nYou have seconds to decide: how does the team coordinate movement?\n\nBastian suggests: \"Single file. I lead, Marcel brings up rear.\"\n\nMarcel counters: \"Pairs. Faster. Less suspicious if spotted.\"\n\nViktor, if present: \"Or we split. Half team scouts, half team waits. Safer.\"\n\nWhat formation do you choose?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Single file - slower but most controlled, Marcel can see everyone",
+          "nextScene": "B-2-063A",
+          "flagChanges": {
+            "set": ["single_file_formation", "cautious_movement"]
+          },
+          "relationshipChanges": {
+            "marcel": 10
+          }
+        },
+        {
+          "text": "Pairs - faster, more natural if spotted, balanced risk",
+          "nextScene": "B-2-063B",
+          "flagChanges": {
+            "set": ["pairs_formation", "balanced_movement"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        },
+        {
+          "text": "Split scout - half ahead to check, safest but slowest",
+          "nextScene": "B-2-063C",
+          "flagChanges": {
+            "set": ["split_scout_formation", "maximum_caution"]
+          },
+          "relationshipChanges": {
+            "viktor": 10
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-063A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-063A.png",
+        "text": "",
+        "pages": [
+          "SINGLE FILE FORMATION\n\nYou move like a train. Bastian leads, you follow, others behind, Marcel brings up the rear. Each person can see the person ahead. Perfect communication through hand signals.\n\nFirst lock: Cell block master gate. Marcel approaches with the key. His movements are precise. Practiced. The lock clicks open. No noise. No hesitation.\n\n\"Through,\" he whispers. \"Quietly.\"",
+          "The team files through. Marcel locks it behind you. \"Never leave an unlocked door. Guards check. An open lock means escape attempt. A locked door means nothing.\"\n\nProfessional. Methodical. You're not breaking out. You're... navigating. Like solving a mechanical puzzle.\n\nAhead: maintenance corridor. Long. Dark. No windows. Perfect concealment but claustrophobic.",
+          "The formation works. Each person moves when the previous person signals. No gaps. No delays. You're a machine. A coordinated machine.\n\nTwo minutes elapsed. Four minutes before patrol overlap ends. You're ahead of schedule.\n\nMarcel's plan is working.\n\n[FIRST LOCK CLEARED - Single file proven effective, time buffer maintained]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-063A-1.png",
+          "/images/backgrounds/B-2-063A-2.png",
+          "/images/backgrounds/B-2-063A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-064",
+      "flagChanges": {
+        "set": ["first_lock_cleared", "ahead_of_schedule", "formation_working"]
+      }
+    },
+    {
+      "id": "B-2-063B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-063B.png",
+        "text": "",
+        "pages": [
+          "PAIRS FORMATION\n\nYou pair with Bastian. Marcel pairs with another team member. If spotted, you look like maintenance workers. Guards heading somewhere. Less suspicious than a single file line.\n\nFirst lock: Cell block master gate. Marcel unlocks while you and Bastian keep watch. The key turns smoothly. Perfect fit. Three months of precise craftsmanship paying off.\n\n\"Next pair,\" Marcel whispers. \"Move.\"",
+          "You and Bastian go through first. Then the next pair. Faster than single file. More natural movement. If a guard rounds the corner, you're just... walking. Not escaping.\n\nMaintenance corridor ahead. Marcel's pair catches up. \"Two minutes thirty seconds. We're on schedule. Courtyard crossing next. That's the exposure point.\"\n\nBastian nods. \"We stick to walls. Move fast but not running. Running attracts attention.\"",
+          "The pairs formation is working. Flexible. Adaptive. You can split if needed, regroup if safe. Marcel's preference for speed over maximum control is proving smart.\n\nThree minutes elapsed. Three minutes left in the window. Tight but doable.\n\n[FIRST LOCK CLEARED - Pairs formation effective, on schedule]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-063B-1.png",
+          "/images/backgrounds/B-2-063B-2.png",
+          "/images/backgrounds/B-2-063B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-064",
+      "flagChanges": {
+        "set": ["first_lock_cleared", "on_schedule", "flexible_formation"]
+      }
+    },
+    {
+      "id": "B-2-063C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-063C.png",
+        "text": "",
+        "pages": [
+          "SPLIT SCOUT FORMATION\n\nViktor and Bastian go first. Scouts. They check the corridor, signal back. You and Marcel follow with the rest of the team.\n\nFirst lock: Cell block master gate. Viktor watches while Marcel unlocks. Bastian covers the other direction. Maximum security. Zero chance of surprise.\n\n\"Clear,\" Viktor whispers. \"Move through.\"",
+          "The team advances. Scouts ahead, main group behind. It's slow. Methodical. But safe. Very safe. No guard could ambush you. No patrol could catch you unaware.\n\nMaintenance corridor ahead. Bastian and Viktor scout it first. Long pause. Then the all-clear signal.\n\nYou advance. The corridor is empty. Safe. But you're burning time.",
+          "Four minutes elapsed. Two minutes left in the window. You're behind schedule. The caution is costing speed.\n\nMarcel whispers: \"We need to accelerate. Or stick to original timing and risk patrol overlap.\"\n\nViktor shakes his head: \"Safety over speed. We adjust the plan.\"\n\nThe split scout formation is working. But it's slow. Very slow.\n\n[FIRST LOCK CLEARED - Maximum safety maintained, but behind schedule]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-063C-1.png",
+          "/images/backgrounds/B-2-063C-2.png",
+          "/images/backgrounds/B-2-063C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-064",
+      "flagChanges": {
+        "set": ["first_lock_cleared", "behind_schedule", "maximum_caution"]
+      }
+    },
+    {
+      "id": "B-2-064",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-064.png",
+        "text": "",
+        "pages": [
+          "THE COURTYARD CROSSING\n\nYou reach the maintenance door. Through it: open courtyard. Forty meters to the opposite side. Guard tower has partial line of sight. Searchlight sweeps every ninety seconds.\n\nMarcel checks his watch. \"Searchlight just passed. We have seventy seconds. Can't stop. Can't hesitate. Once we're exposed, we commit.\"\n\nSecond lock: Exterior maintenance door. Marcel's key slides in. Turns. Opens.",
+          "The courtyard is bathed in moonlight. Too bright. But clouds are approaching. Twenty seconds until they cover the moon.\n\n\"Wait,\" Marcel whispers. \"Wait for darkness.\"\n\nThe clouds move. Moonlight fades. The courtyard goes black.\n\n\"Now. Move.\"\n\nThe team crosses. Fast walk. Not running. Running creates noise, attracts attention. But fast enough to clear the space before the searchlight returns.",
+          "Thirty seconds. You're halfway across. The guard tower is silent. No shouts. No alarms.\n\nForty-five seconds. Three-quarters across. Almost safe.\n\nSixty seconds. You reach the far wall. The next door. The searchlight sweeps behind you, illuminating empty space.\n\nYou made it.\n\nMarcel exhales slowly. \"That was the hard part. Everything else is enclosed. Safer.\"\n\n[COURTYARD CROSSED - Most exposed section cleared successfully]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-064-1.png",
+          "/images/backgrounds/B-2-064-2.png",
+          "/images/backgrounds/B-2-064-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-065",
+      "flagChanges": {
+        "set": ["courtyard_crossed", "most_dangerous_point_passed", "still_undetected"]
+      }
+    },
+    {
+      "id": "B-2-065",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-065.png",
+        "text": "",
+        "pages": [
+          "CORRIDOR DELTA - APPROACHING THE DOCK\n\nThird lock: Secondary corridor gate. Marcel works faster now. Confidence building. The key turns. Click. Through.\n\nFourth lock: Storage room bypass. This one sticks. The key doesn't want to turn. Marcel applies pressure. Careful pressure. Too much force and the key breaks. Too little and it won't unlock.",
+          "\"Come on,\" he mutters. Sweat on his forehead. First sign of stress.\n\nThe key turns. Finally. The lock opens.\n\n\"Cheap Russian manufacturing,\" Marcel whispers. \"They replaced the original French locks three years ago. Budget cuts. Inferior tolerances.\"\n\nThrough the storage room. Shelves of supplies. Cleaning products. Maintenance equipment. And there, in the back: a window. View of the loading dock.",
+          "Marcel peers through. \"Supply boat is there. Moored. Dark. No one on deck.\"\n\nBastian checks the time. \"00:23. Seven minutes ahead of schedule. We're doing this.\"\n\nTwo more locks. Then you're at the dock. Then you're on a boat. Then you're free.\n\nMarcel's hand is steady now. \"Two locks left. These are the big ones. Office and dock gate. But I've practiced them a hundred times. We're ready.\"\n\n[APPROACHING DOCK - Multiple locks cleared, confidence high]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-065-1.png",
+          "/images/backgrounds/B-2-065-2.png",
+          "/images/backgrounds/B-2-065-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-066"
+    },
+    {
+      "id": "B-2-066",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-066.png",
+        "text": "",
+        "pages": [
+          "NEAR DISCOVERY\n\nFifth lock: Loading dock office door. Marcel inserts the key. But before he can turn it, you hear voices. Guards. Two of them. Walking this direction.\n\n\"...supposed to check the dock every hour. But the captain said the boat's secure. Waste of time if you ask me.\"\n\n\"Just doing our job. Five minutes, we're back to the barracks. Come on.\"",
+          "Marcel freezes. The key is in the lock but not turned. If he turns it now, the click will be audible. If he removes it, the metallic sound of extraction will carry.\n\nThe team presses against the wall. Shadows. Darkness. Hoping the guards don't look closely.\n\nThe guards are twenty meters away. Fifteen. Ten.",
+          "Bastian's hand goes to his pocket. He has something - a tool? A weapon? Ready to act if discovered.\n\nBut Marcel shakes his head slightly. Trust the darkness. Trust the stillness. Don't move.\n\nFive meters. The guards walk past. Oblivious. Talking about football. About their families. About anything except the escaped prisoners standing three feet away.\n\nThey round the corner. Gone.",
+          "Marcel waits. Thirty seconds. Sixty. Making absolutely sure they're not coming back.\n\nThen he turns the key. The lock opens. Silent as death.\n\n\"Inside,\" he whispers. \"Quickly.\"\n\n[NEAR DISCOVERY - Guards passed within meters, team undetected through stillness]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-066-1.png",
+          "/images/backgrounds/B-2-066-2.png",
+          "/images/backgrounds/B-2-066-3.png",
+          "/images/backgrounds/B-2-066-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-067",
+      "flagChanges": {
+        "set": ["near_discovery", "guards_passed_close", "stillness_saved_team"]
+      }
+    },
+    {
+      "id": "B-2-067",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-067.png",
+        "text": "",
+        "pages": [
+          "MARCEL'S MASTERWORK - THE FINAL LOCK\n\nSixth lock: Loading dock gate. But Marcel doesn't use a key for this one. He pulls out lock picks. Two thin pieces of metal. Tension wrench and pick.\n\n\"This lock,\" he says quietly, \"is a 1947 French naval-grade tumbler. Seven pins. Highest security they had at the time. The prison installed it thinking it was unbreakable.\"\n\nHe inserts the tools. Closes his eyes. Listens.",
+          "\"Each pin makes a different sound when it sets. You have to hear it. Feel it. The vibration travels through the pick to your fingers. It's not sight. It's... intuition.\"\n\nClick. First pin.\n\nClick. Second pin.\n\nThe team watches in silence. This is Marcel's art. His profession. What he did before prison. What he's doing now to escape it.",
+          "Click. Third. Fourth. Fifth.\n\n\"These last two,\" Marcel whispers, \"are security pins. They have false sets. You think they're locked when they're not. You have to push past the resistance.\"\n\nClick. Sixth.\n\nClick. Seventh.\n\nThe lock turns. Opens. Marcel opens his eyes. Smiles slightly.\n\n\"Thirty-four seconds. I've done it in twenty-eight. But not bad under pressure.\"",
+          "The loading dock gate swings open. Beyond it: the dock itself. The boat. Freedom.\n\nBastian grips Marcel's shoulder. \"You're an artist.\"\n\nMarcel nods. \"I'm a locksmith. Let's go steal a boat.\"\n\n[FINAL LOCK OPENED - Marcel's skill proven, direct access to boat achieved]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-067-1.png",
+          "/images/backgrounds/B-2-067-2.png",
+          "/images/backgrounds/B-2-067-3.png",
+          "/images/backgrounds/B-2-067-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-068",
+      "flagChanges": {
+        "set": ["final_lock_opened", "marcel_masterwork_complete", "dock_access_gained"]
+      },
+      "relationshipChanges": {
+        "marcel": 20
+      }
+    },
+    {
+      "id": "B-2-068",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-068.png",
+        "text": "",
+        "pages": [
+          "THE LOADING DOCK\n\nYou step onto the dock. Cold night air. Salt water smell. The ocean stretches dark and infinite ahead.\n\nThe supply boat: a medium cargo vessel. Maybe fifteen meters. Twin diesel engines. Reinforced hull. Built for rough water. Perfect for escape.\n\nMarcel boards first. Checks the deck. \"Clear. No one aboard. Captain's definitely in the barracks.\"",
+          "The team boards. Quietly. Carefully. Each person finds a position. Bastian checks the mooring ropes. Others secure cargo that might shift. Professional. Efficient.\n\nMarcel descends to the cabin. The ignition is there. Along with controls. Navigation equipment. Radio (which you'll leave off).\n\nHe inserts the copied ignition key. But doesn't turn it yet.\n\n\"Once I start this engine,\" he says, \"we're committed. It's loud. Very loud. Guards will hear it immediately. We'll have maybe ninety seconds before alarm. Two minutes before guards reach the dock. We need to be gone by then.\"",
+          "He looks at you. At Bastian. At the team. \"Everyone ready? Once this starts, there's no going back.\"\n\nViktor, if present, grins. \"Do it.\"\n\nDenis, if present, crosses himself. \"May God protect us.\"\n\nÉmile, if present, just nods. \"We didn't come this far to hesitate.\"\n\nYou nod to Marcel. \"Start it. We're ready.\"\n\n[ABOARD THE BOAT - Final moment before engine start, team positioned]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-068-1.png",
+          "/images/backgrounds/B-2-068-2.png",
+          "/images/backgrounds/B-2-068-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-073"
+    },
+    {
+      "id": "B-2-073",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-073.png",
+        "text": "",
+        "pages": [
+          "ENGINE START\n\nMarcel turns the key. The engine roars to life. Diesel thunder. Vibration through the deck. Smoke from the exhaust.\n\nLOUD. So loud. Every guard within two hundred meters can hear it.\n\n\"CAST OFF!\" Bastian shouts. He and others throw the mooring ropes. The boat drifts from the dock. Marcel engages the throttle. The boat surges forward.",
+          "ALARMS. Shrieking through the night. Searchlights sweep toward the dock. Guards pour from the barracks. Shouting. Grabbing weapons.\n\nBut you're already moving. The boat picks up speed. Ten knots. Fifteen. The loading dock recedes behind you.\n\nA guard reaches the dock. Raises his rifle. Shouts something. Then fires. CRACK. The shot goes wide. Hits water.",
+          "More guards arrive. More rifles. More shots. But the boat is accelerating. Twenty knots now. Distance increasing. The shots are getting wilder. Less accurate.\n\nMarcel steers with one hand, checking instruments with the other. \"Engine temperature good. Fuel three-quarters full. Navigation clear. We're doing it. We're actually doing it.\"\n\nThe prison shrinks behind you. Stone Island. Your cell. Your cage. Getting smaller. Smaller. Gone.\n\n[ESCAPE IN PROGRESS - Boat launched, guards firing but missing, distance increasing]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-073-1.png",
+          "/images/backgrounds/B-2-073-2.png",
+          "/images/backgrounds/B-2-073-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-074",
+      "flagChanges": {
+        "set": ["engine_started", "alarm_raised", "under_fire", "escaping"]
+      }
+    },
+    {
+      "id": "B-2-074",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-074.png",
+        "text": "You're half a kilometer from the island when you see it: the prison's patrol boat. Launching from the north dock. Faster than your cargo vessel. Guards aboard. Rifles. Maybe even a mounted gun.\n\nMarcel sees it too. \"They're gaining. This boat is built for cargo, not speed. They'll catch us in... ten minutes. Maybe fifteen.\"\n\nBastian checks the map. \"Nearest mainland port is twenty kilometers. We won't make it before they catch us.\"\n\nViktor, if present: \"Then we fight. When they board, we overwhelm them.\"\n\nDenis, if present: \"No. There must be another way. Rocks? Shallow water they can't follow?\"\n\nWhat do you do?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Head for the rocks - dangerous for us but more dangerous for them",
+          "nextScene": "B-2-075A",
+          "flagChanges": {
+            "set": ["chose_rocks", "risky_navigation"]
+          },
+          "relationshipChanges": {
+            "marcel": 10
+          }
+        },
+        {
+          "text": "Full speed to mainland - race them, hope we make it",
+          "nextScene": "B-2-075B",
+          "flagChanges": {
+            "set": ["chose_speed", "straight_race"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        },
+        {
+          "text": "Kill the lights, change course - try to lose them in darkness",
+          "nextScene": "B-2-075C",
+          "flagChanges": {
+            "set": ["chose_stealth", "darkness_evasion"]
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-075A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-075A.png",
+        "text": "",
+        "pages": [
+          "ROCK NAVIGATION\n\nMarcel turns toward the coast. Not the port. The rocks. Sharp, jagged formations where coastline meets ocean. Dangerous. Ship-killing dangerous.\n\n\"This boat has reinforced hull,\" Marcel says, studying the instruments. \"Cargo vessels are built tough. Their patrol boat? Lightweight. Fast but fragile.\"\n\nYou enter the rock field. Water churns white. Hidden stones lurk just below surface. Marcel navigates by instinct and moonlight.",
+          "The patrol boat follows. Then slows. Their captain is smart - he sees the danger. But he's committed. They can't turn back without looking like cowards.\n\nCRUNCH. The patrol boat hits something. Not fatal. But you hear the impact. Damage. They're slowing.\n\nMarcel threads through the rocks. Left. Right. Reading the water like a book. This is why cargo captains are professionals. This is expertise.\n\nThe patrol boat falls behind. Then stops. Too damaged to continue. They're not sinking, but they're not catching you either.",
+          "You emerge from the rocks on the far side. Clear water ahead. Mainland visible. The patrol boat is stuck behind you, assessing damage.\n\n\"That was insane,\" Bastian mutters. \"Brilliant but insane.\"\n\nMarcel shrugs. \"Calculated risk. I knew this boat could handle it. Theirs couldn't.\"\n\n[PURSUIT EVADED - Rock navigation successful, patrol boat disabled]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-075A-1.png",
+          "/images/backgrounds/B-2-075A-2.png",
+          "/images/backgrounds/B-2-075A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-077",
+      "flagChanges": {
+        "set": ["evaded_via_rocks", "patrol_boat_damaged", "marcel_navigation_skill"]
+      }
+    },
+    {
+      "id": "B-2-075B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-075B.png",
+        "text": "",
+        "pages": [
+          "FULL SPEED RACE\n\nMarcel pushes the throttle to maximum. The engine roars. The boat shudders but accelerates. Twenty-five knots. Nearly its limit.\n\n\"How fast is their boat?\" you ask.\n\n\"Thirty knots,\" Marcel admits. \"But they're heavier loaded. Guards. Equipment. That slows them. And this engine...\" He pats the control panel. \"It's old. But it's been maintained. The captain takes good care of it.\"",
+          "The patrol boat gains. Slowly. Meter by meter. But the mainland is approaching too. You can see lights. The port. Civilization.\n\nThe question: who reaches the mainland first?\n\nFifteen kilometers. Twelve. Ten. The patrol boat is two hundred meters behind. One hundred fifty. One hundred.",
+          "Eight kilometers. The patrol boat is close enough you can see individual guards. They're preparing to board. Grappling hooks. Weapons.\n\nSix kilometers. Seventy-five meters behind. Almost alongside.\n\nFour kilometers. You enter territorial waters. The patrol boat... slows. Stops.\n\nThey can't pursue into civilian waters. Not without international incident. Not without paperwork. The bureaucracy of imprisonment saves you.\n\nYou made it. Barely. But you made it.\n\n[PURSUIT EVADED - Speed race won by entering civilian waters]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-075B-1.png",
+          "/images/backgrounds/B-2-075B-2.png",
+          "/images/backgrounds/B-2-075B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-077",
+      "flagChanges": {
+        "set": ["evaded_via_speed", "reached_civilian_waters", "bureaucracy_win"]
+      }
+    },
+    {
+      "id": "B-2-075C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-075C.png",
+        "text": "",
+        "pages": [
+          "DARKNESS EVASION\n\nMarcel kills all lights. The boat goes dark. Navigation lights. Cabin lights. Everything. You're invisible. A ghost ship in the night.\n\nThen he turns hard to port. Ninety degrees from your previous heading. The patrol boat continues straight - they're chasing where you were, not where you are.\n\n\"They'll figure it out,\" Marcel whispers. \"But it buys us minutes. And minutes are everything.\"",
+          "The patrol boat sweeps its searchlight. Looking for you. But the ocean is vast. Dark. You could be anywhere.\n\nYou drift. Engine at minimum. Barely moving. Silent. The patrol boat circles. Searching. Frustrated.\n\nTen minutes pass. Fifteen. Their searchlight sweeps past you twice. Close. So close. But not quite finding you in the darkness.",
+          "Finally, the patrol boat gives up. Turns back toward the island. They've lost you. Failed the pursuit. You're gone.\n\nMarcel waits another five minutes. Then restarts navigation lights. Turns toward the mainland.\n\n\"Stealth,\" he says with satisfaction. \"Sometimes the best escape is the one they don't see.\"\n\n[PURSUIT EVADED - Stealth tactics successful, patrol boat gave up search]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-075C-1.png",
+          "/images/backgrounds/B-2-075C-2.png",
+          "/images/backgrounds/B-2-075C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-077",
+      "flagChanges": {
+        "set": ["evaded_via_stealth", "patrol_boat_lost_trail", "ghost_ship_tactic"]
+      }
+    },
+    {
+      "id": "B-2-077",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-077.png",
+        "text": "",
+        "pages": [
+          "OPEN WATER\n\nThe patrol boat is behind you. Gone. The island is a distant shadow. Ahead: the mainland. France. Freedom.\n\nThe team emerges from hiding positions. Exhausted. Relieved. Alive. Marcel maintains course while others rest.\n\nBastian sits beside you. \"We did it. We actually did it. Marcel's plan worked.\"\n\nYou look back at Stone Island. \"Some plans work because they're perfect. Marcel's worked because he made it perfect. Three months of preparation. Every key copied. Every lock practiced. That's not luck. That's dedication.\"",
+          "Marcel calls from the cabin: \"Mainland port in twenty minutes. We need to decide: do we dock at the port or find a quieter beach?\"\n\nViktor, if present: \"Port is risky. Authorities. Questions.\"\n\nDenis, if present: \"But a beach means no help. No transportation. We'd be stranded.\"\n\nBastian suggests: \"My sister. Cordelia. Her fishing village is thirty kilometers north. Small beach. No authorities. She'll help.\"",
+          "The team discusses. You're free, but freedom requires planning. Where you land determines what happens next.\n\nMarcel waits for consensus. The boat churns forward through dark water. The coast approaches. Decision time.\n\n[OPEN WATER NAVIGATION - Pursuit ended, destination choice ahead]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-077-1.png",
+          "/images/backgrounds/B-2-077-2.png",
+          "/images/backgrounds/B-2-077-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-078"
+    },
+    {
+      "id": "B-2-078",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-078.png",
+        "text": "The boat approaches the French coast. You need to decide where to land.\n\nThree options:\n\n• MAIN PORT - Official dock, transportation available, but authorities present\n• QUIET BEACH - Isolated, no authorities, but no immediate help or transport\n• CORDELIA'S VILLAGE - Bastian's sister, safe house, but 30km detour north\n\nMarcel can navigate to any of them. The boat has enough fuel. What do you choose?",
+        "speaker": "marcel"
+      },
+      "choices": [
+        {
+          "text": "Main port - risk authorities but get immediate transportation",
+          "nextScene": "B-2-079A",
+          "flagChanges": {
+            "set": ["landed_main_port", "authority_risk"]
+          }
+        },
+        {
+          "text": "Quiet beach - avoid authorities, figure out transport later",
+          "nextScene": "B-2-079B",
+          "flagChanges": {
+            "set": ["landed_quiet_beach", "isolated_start"]
+          }
+        },
+        {
+          "text": "Cordelia's village - safe house with Bastian's sister, best option",
+          "nextScene": "B-2-079C",
+          "flagChanges": {
+            "set": ["landed_cordelia_village", "family_sanctuary"]
+          },
+          "relationshipChanges": {
+            "bastian": 20
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-079A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-079A.png",
+        "text": "",
+        "pages": [
+          "MAIN PORT LANDING\n\nMarcel navigates into the main harbor. Early morning. Few people around. The boat docks at a public pier.\n\n\"We look like cargo delivery,\" Marcel says. \"Act natural. We're workers. Nothing suspicious.\"\n\nThe team disembarks. Prison uniforms left on the boat. You're in civilian clothes stolen from the boat's storage. Not perfect fits, but good enough.",
+          "A harbormaster approaches. \"Unscheduled arrival?\"\n\nMarcel hands him fabricated papers. \"Engine trouble. Had to divert. Temporary dock until repairs.\"\n\nThe harbormaster examines the documents. They're fake, but professionally fake. Marcel's work. He nods. \"Slip 12. Don't stay long.\"\n\nYou're through. In a public port. Free.\n\nThe team disperses quickly. Bastian heads to the bus station. Others melt into the morning crowd. Marcel stays with the boat briefly, then abandons it.",
+          "Three hours later, you're on a train heading to Paris. Free. Officially free. The port accepted you. No one questioned. No one suspected.\n\nMarcel's precision worked all the way to the end.\n\n[LANDED AT PORT - Official entry, authorities fooled, immediate transportation secured]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-079A-1.png",
+          "/images/backgrounds/B-2-079A-2.png",
+          "/images/backgrounds/B-2-079A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-079-END",
+      "flagChanges": {
+        "set": ["port_landing_complete", "authorities_fooled", "transport_secured"]
+      }
+    },
+    {
+      "id": "B-2-079B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-079B.png",
+        "text": "",
+        "pages": [
+          "QUIET BEACH LANDING\n\nMarcel beaches the boat on a isolated stretch of sand. Early morning. No one around. Perfect.\n\n\"We walk from here,\" he says. \"Nearest town is five kilometers inland. We'll need to find transportation. Steal a car if necessary.\"\n\nThe team wades ashore. The boat is left abandoned. Evidence. But by the time authorities find it, you'll be long gone.",
+          "You hike inland. Through coastal brush. Past farmland. The sun rises. You're exhausted but free. France. Solid ground. No bars. No walls.\n\nA small village. You find a car. Marcel picks the lock. Hot-wires the ignition. \"Sorry,\" he mutters to the absent owner. \"But we need this more than you do.\"\n\nThe team piles in. Marcel drives. Hours pass. You reach a city. Abandon the car. Disappear into crowds.",
+          "It's not clean. Not official. But it's freedom. Rough. Improvised. Exactly what you needed.\n\n[LANDED ON BEACH - Isolated start, improvised transport, rough but free]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-079B-1.png",
+          "/images/backgrounds/B-2-079B-2.png",
+          "/images/backgrounds/B-2-079B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-079-END",
+      "flagChanges": {
+        "set": ["beach_landing_complete", "improvised_transport", "rough_start"]
+      }
+    },
+    {
+      "id": "B-2-079C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-079C.png",
+        "text": "",
+        "pages": [
+          "CORDELIA'S VILLAGE\n\nMarcel navigates north. Thirty additional kilometers. Dawn breaks as you approach a small fishing village. Bastian points to a specific dock.\n\n\"There. That's her boat. The blue one. She's already out on morning run.\"\n\nMarcel moors the stolen boat at the village dock. You wait. An hour. Two. Then: a fishing boat returns. The blue one.\n\nCordelia sees Bastian. Her eyes go wide. \"Mon Dieu. BASTIAN!\"",
+          "She rushes from her boat. Embraces her brother. Years of separation. Tears. Joy. Relief.\n\nThen she sees the rest of you. The stolen boat. The prison bearing. She understands immediately.\n\n\"Inside,\" she says quickly. \"Before neighbors see. Hurry.\"\n\nHer cottage. Small. Warm. Safe. Real food. Soft chairs. Things you haven't experienced in years.\n\n\"You can stay as long as you need,\" Cordelia says. \"I'll help. New identities. Documents. My refugee network handles this regularly.\"",
+          "The team settles in. Exhausted. Safe. Free.\n\nMarcel finds you later. \"Perfect landing. Perfect plan. From keys to coast, everything worked. That's... rare.\"\n\nYou nod. \"You made it work. Your skill. Your preparation. This escape is yours, Marcel.\"\n\nHe smiles faintly. \"No. It's ours. Team effort. But thank you.\"\n\n[LANDED AT CORDELIA'S - Safe house secured, family help, perfect ending]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-079C-1.png",
+          "/images/backgrounds/B-2-079C-2.png",
+          "/images/backgrounds/B-2-079C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-079-END",
+      "flagChanges": {
+        "set": ["cordelia_landing_complete", "safe_house_secured", "perfect_landing"]
+      },
+      "relationshipChanges": {
+        "bastian": 25,
+        "marcel": 15
+      }
+    },
+    {
+      "id": "B-2-079-END",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-079-END.png",
+        "text": "",
+        "pages": [
+          "EPILOGUE - THE LOCKSMITH'S ESCAPE\n\nMarcel Laurent. Age 52. Professional locksmith. Former burglar. Current escapee.\n\nHis escape from Stone Island became legendary. Not through violence. Not through chaos. Through precision. Every lock opened. Every key perfect. Every step planned.\n\nThe prison investigated. How did prisoners steal a supply boat? They found Marcel's workshop. The key impressions. The practice locks. Evidence of three months of meticulous preparation.",
+          "\"We underestimated him,\" the warden admitted. \"We saw an old locksmith. Harmless. But he was conducting a masterclass. Every day. Building toward this.\"\n\nMarcel never spoke publicly about the escape. But in certain circles - among locksmiths, security experts, professional thieves - his work is studied. Analyzed. Admired.\n\nZero violence. Zero casualties. Perfect execution. From cell to coast in under two hours. That's not escape. That's art.",
+          "You stayed in contact with Marcel. He opened a legitimate locksmith shop under his new identity. Helps people who've locked themselves out. Installs security systems. Ironic career for an escaped prisoner.\n\nBut sometimes, late at night, he shows trusted friends his collection: seven keys. Copies of the locks he opened that night. His masterwork. His escape. His freedom.\n\n\"Every lock has a key,\" he says. \"You just have to be patient enough to find it. Or skilled enough to make it.\"\n\n[LOADING DOCK ROUTE: COMPLETE - Perfect technical escape, zero violence, Marcel's masterpiece]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-079-END-1.png",
+          "/images/backgrounds/B-2-079-END-2.png",
+          "/images/backgrounds/B-2-079-END-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E04",
+      "flagChanges": {
+        "set": ["loading_dock_route_complete", "marcel_masterpiece", "technical_perfection"]
+      }
+    }
+  ]
+}

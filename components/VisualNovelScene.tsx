@@ -37,6 +37,9 @@ export default function VisualNovelScene({
   const hasPages = scene.content.pages && scene.content.pages.length > 0;
   const totalPages = hasPages ? scene.content.pages!.length : 1;
   const currentText = hasPages ? scene.content.pages![currentPage] : scene.content.text;
+  const currentVisual = scene.content.pageVisuals && scene.content.pageVisuals[currentPage]
+    ? scene.content.pageVisuals[currentPage]
+    : scene.content.visual;
   const isLastPage = currentPage === totalPages - 1;
 
   const hasChoices = scene.choices && scene.choices.length > 0;
@@ -115,10 +118,10 @@ export default function VisualNovelScene({
       onClick={handleBackgroundClick}
     >
       {/* Background image */}
-      {scene.content.visual ? (
+      {currentVisual ? (
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${scene.content.visual})` }}
+          style={{ backgroundImage: `url(${currentVisual})` }}
         />
       ) : (
         // Fallback gradient if no image specified

@@ -1,0 +1,3141 @@
+{
+  "scenes": [
+    {
+      "id": "A-1-001",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-001.png",
+        "text": "",
+        "pages": [
+          "NIGHT 16\n\nYou've made your choice. The Tunnels. The engineering path.\n\nBastian sleeps below, his breathing slow and steady. The lighthouse beam sweeps past your window every thirty seconds, like clockwork.",
+          "You slide down from your bunk, careful not to wake your cellmate. Behind the small table, exactly where you found it two weeks ago, is the loose stone.\n\nYou press it gently. It shifts. Someone has definitely been working on this. But who? And when?",
+          "The stone is loose enough now that you could remove it completely. But what's behind it? A hiding place? A passage? Or just another dead end?"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-001-1.png",
+          "/images/backgrounds/A-1-001-2.png",
+          "/images/backgrounds/A-1-001-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-001B",
+      "flagChanges": {
+        "set": ["path_a_started", "night_16"]
+      },
+      "requirements": {
+        "flags": {
+          "path_tunnels": true
+        }
+      }
+    },
+    {
+      "id": "A-1-001B",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-001B.png",
+        "text": "Your heart pounds. This is it. The first step down a path you can't turn back from.\n\nYou could remove the stone now. Or you could search the cell more thoroughly first - maybe there are tools hidden somewhere. Or you could wake Bastian. If he's been working on this stone, maybe he's an ally. If not... well, you need to know that too.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Remove the loose stone immediately",
+          "nextScene": "A-1-002",
+          "flagChanges": {
+            "set": ["removed_stone_immediately", "acting_impulsively"]
+          }
+        },
+        {
+          "text": "Search the cell for tools first",
+          "nextScene": "A-1-002A",
+          "flagChanges": {
+            "set": ["searched_for_tools", "acting_methodically"]
+          }
+        },
+        {
+          "text": "Wake Bastian and ask about the stone",
+          "nextScene": "A-1-002B",
+          "flagChanges": {
+            "set": ["woke_bastian", "seeking_alliance"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-1-002",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002.png",
+        "text": "",
+        "pages": [
+          "You work the stone carefully, wiggling it back and forth. Years of mortar crumble away. Finally, it comes free in your hands.\n\nBehind it: darkness. A cavity in the wall, about the size of a shoebox. Your engineer's mind immediately calculates - this isn't just a hiding space. This hole goes deeper than it should.",
+          "You reach inside carefully. Your fingers touch something. Paper? No - cloth. You pull it out.\n\nA small canvas bundle, wrapped tight and tied with string. Whatever's inside is hard, angular. You unwrap it in the dim light.",
+          "A rusted spoon, filed to a sharp edge. A stub of pencil. Three matches wrapped in wax paper. And a folded piece of paper with a crude map drawn on it.\n\nAt the bottom of the map, two words: 'THE CATACOMBS'"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-002-1.png",
+          "/images/backgrounds/A-1-002-2.png",
+          "/images/backgrounds/A-1-002-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-003",
+      "itemChanges": {
+        "add": ["sharpened_spoon", "pencil_stub", "matches", "catacomb_map"]
+      },
+      "flagChanges": {
+        "set": ["found_escape_cache", "has_catacomb_map"]
+      }
+    },
+    {
+      "id": "A-1-002A",
+      "type": "investigation",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002A.png",
+        "text": "",
+        "pages": [
+          "You search methodically, the way an engineer approaches a problem. Every surface. Every seam. Every possible hiding place.\n\nUnder your thin mattress: nothing. Behind the bucket: nothing. Along the windowsill: wait.",
+          "A small chip in the concrete. You dig at it with your fingernail. Something's wedged inside. You work it loose.\n\nA thin piece of wire, maybe four inches long. Bent at one end. Someone made this into a lockpick.",
+          "You pocket the wire and turn your attention back to the loose stone. Time to see what's behind it."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-002A-1.png",
+          "/images/backgrounds/A-1-002A-2.png",
+          "/images/backgrounds/A-1-002A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Remove the stone",
+          "nextScene": "A-1-002"
+        }
+      ],
+      "itemChanges": {
+        "add": ["wire_lockpick"]
+      },
+      "flagChanges": {
+        "set": ["found_lockpick", "thorough_searcher"]
+      }
+    },
+    {
+      "id": "A-1-002B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002B.png",
+        "text": "",
+        "pages": [
+          "You shake Bastian's shoulder gently. He wakes instantly, eyes alert - the survival instinct of a longtime prisoner.\n\n\"Alexandre?\" he whispers. \"What is it?\"",
+          "You point to the loose stone. Bastian's eyes widen, then narrow. His expression is unreadable in the darkness.",
+          "\"So. You found it.\" His voice is carefully neutral. \"I wondered if you would. That stone has been loose for years. Three prisoners before you. None of them brave enough - or foolish enough - to actually remove it.\""
+        ],
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [
+        {
+          "text": "\"Did you loosen it?\"",
+          "nextScene": "A-1-002B1",
+          "requirements": {
+            "flags": {
+              "bastian_trusts_player": true
+            }
+          }
+        },
+        {
+          "text": "\"What's behind it?\"",
+          "nextScene": "A-1-002B2"
+        },
+        {
+          "text": "\"Are you going to report me?\"",
+          "nextScene": "A-1-002B3",
+          "requirements": {
+            "flags": {
+              "bastian_neutral": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-1-002B1",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002B1.png",
+        "text": "Bastian nods slowly. \"I did. Years ago, when I first arrived. I was... younger then. More hopeful.\"\n\nHe sits up on his bunk. \"Behind that stone is a cache. Tools. A map. Left by a prisoner who died trying to escape through the catacombs beneath this fortress.\"\n\n\"I've kept it hidden. Waiting for someone I could trust. Someone smart enough to make it work.\" He meets your eyes. \"You're an engineer, Alexandre. You might actually have a chance.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [
+        {
+          "text": "\"Will you come with me?\"",
+          "nextScene": "A-1-002B1A"
+        },
+        {
+          "text": "\"Why didn't you go yourself?\"",
+          "nextScene": "A-1-002B1B"
+        }
+      ],
+      "flagChanges": {
+        "set": ["bastian_revealed_cache", "bastian_supportive"]
+      }
+    },
+    {
+      "id": "A-1-002B1A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002B1A.png",
+        "text": "Bastian shakes his head. \"I'm too old for crawling through tunnels, my friend. And my escape... it won't be through the catacombs. I have other plans.\"\n\nHe stands and removes the loose stone himself, pulling out the canvas bundle. \"But you? You have the skills. The determination. Take these. Use them wisely.\"\n\n\"And Alexandre? When you make it out... expose Marchand. Tell the world what he did. That's all I ask.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "A-1-002C",
+      "itemChanges": {
+        "add": ["sharpened_spoon", "pencil_stub", "matches", "catacomb_map"]
+      },
+      "flagChanges": {
+        "set": ["bastian_gave_tools", "bastian_ally", "promised_to_expose_marchand"]
+      },
+      "relationshipChanges": {
+        "bastian": 10
+      }
+    },
+    {
+      "id": "A-1-002B1B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002B1B.png",
+        "text": "\"Because I'm not an engineer,\" Bastian says simply. \"The map shows the way into the catacombs, but after that? Collapsed passages. Flooded chambers. Structural failures waiting to happen.\"\n\n\"A political philosopher has no business trying to navigate that death trap.\" He smiles grimly. \"But you? You can read a building like I read people. You might actually survive it.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "A-1-002C",
+      "itemChanges": {
+        "add": ["sharpened_spoon", "pencil_stub", "matches", "catacomb_map"]
+      },
+      "flagChanges": {
+        "set": ["bastian_explained_choice", "bastian_ally"]
+      },
+      "relationshipChanges": {
+        "bastian": 8
+      }
+    },
+    {
+      "id": "A-1-002B2",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002B2.png",
+        "text": "\"Tools,\" Bastian says flatly. \"And a map to the catacombs. Left by a man who died trying to escape through them.\"\n\nHe watches you carefully. \"You're planning to try, aren't you? The tunnel route.\"\n\nHe sighs. \"Take the tools if you want. I have no use for them. But know this: three men have tried the catacombs in the last decade. None returned.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [
+        {
+          "text": "\"I'm willing to take that risk\"",
+          "nextScene": "A-1-002B2A"
+        },
+        {
+          "text": "\"Thank you for the warning\"",
+          "nextScene": "A-1-002B2B"
+        }
+      ],
+      "flagChanges": {
+        "set": ["bastian_warned_of_danger"]
+      }
+    },
+    {
+      "id": "A-1-002B2A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002B2A.png",
+        "text": "Bastian nods. \"Brave. Or foolish. Sometimes it's hard to tell the difference.\"\n\nHe removes the stone and hands you the bundle. \"Good luck, engineer. You'll need it.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "A-1-002C",
+      "itemChanges": {
+        "add": ["sharpened_spoon", "pencil_stub", "matches", "catacomb_map"]
+      },
+      "flagChanges": {
+        "set": ["bastian_gave_tools_reluctantly"]
+      },
+      "relationshipChanges": {
+        "bastian": 3
+      }
+    },
+    {
+      "id": "A-1-002B2B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002B2B.png",
+        "text": "\"Smart,\" Bastian says. \"But you're going anyway, aren't you? I can see it in your eyes.\"\n\nHe removes the stone and pulls out the bundle. \"Then at least go prepared. Take these. And Alexandre? Be careful.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "A-1-002C",
+      "itemChanges": {
+        "add": ["sharpened_spoon", "pencil_stub", "matches", "catacomb_map"]
+      },
+      "flagChanges": {
+        "set": ["bastian_gave_tools_cautiously"]
+      },
+      "relationshipChanges": {
+        "bastian": 5
+      }
+    },
+    {
+      "id": "A-1-002B3",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002B3.png",
+        "text": "Bastian looks at you for a long moment. \"Report you? No, Alexandre. Whatever else I am, I'm not a collaborator.\"\n\nHe gestures to the stone. \"Take what's in there if you want it. I won't stop you. I won't help you either. Your escape is your own business.\"\n\n\"Just... don't get me killed in the process.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "A-1-002",
+      "flagChanges": {
+        "set": ["bastian_staying_neutral"]
+      }
+    },
+    {
+      "id": "A-1-002C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-002C.png",
+        "text": "You unwrap the bundle carefully. A sharpened spoon. Matches. A pencil stub. And the map.\n\nYou study it by the faint moonlight. The fortress layout. Cell blocks. Guard towers. And beneath it all, marked in fading ink: a network of tunnels.\n\n\"The catacombs,\" Bastian whispers. \"Medieval smuggler tunnels that predate the prison by three hundred years. They connect to the old wine cellars, then to a drainage system that runs under the walls.\"\n\n\"If you can navigate them without getting lost, crushed, or drowned... you might just make it to the coast.\"",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-003",
+      "flagChanges": {
+        "set": ["bastian_explained_catacombs", "knows_tunnel_route"]
+      }
+    },
+    {
+      "id": "A-1-003",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-003.png",
+        "text": "",
+        "pages": [
+          "You stare at the map for a long time. The entrance to the catacombs is marked clearly: the old chapel basement. That's on the other side of the prison yard.\n\nGetting there means crossing open ground. Dodging the lighthouse beam. Timing the guard patrols perfectly. And that's before you even reach the tunnels themselves.",
+          "Your engineering mind starts calculating. Distances. Timing. Risk factors. This isn't impossible. Difficult, yes. Dangerous, absolutely. But not impossible.",
+          "The Path of the Tunnels stretches before you. Lonely. Technical. Methodical.\n\nExactly as you chose.\n\nYou carefully hide the tools under your mattress and climb back into your bunk. Tomorrow, you'll begin reconnaissance of the chapel. Tomorrow, the real work begins.\n\nBut tonight, for the first time since you were convicted, you feel something you thought you'd lost forever:\n\nHope."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-003-1.png",
+          "/images/backgrounds/A-1-003-2.png",
+          "/images/backgrounds/A-1-003-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-004",
+      "flagChanges": {
+        "set": ["path_a_cell_escape_complete", "has_hope", "planning_chapel_route"]
+      }
+    },
+    {
+      "id": "A-1-004",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-004.png",
+        "text": "",
+        "pages": [
+          "NIGHT 20 - THE CHAPEL\n\nFour nights of observation. Four nights of timing the lighthouse, counting guard rotations, mapping the yard in your mind.\n\nNow: the moment of truth.",
+          "You slip out of your cell during the seventeen-minute gap. The corridor is empty. Your heart hammers as you move through shadows, timing each step to the rhythm you've memorized.",
+          "The chapel looms ahead. Gothic stone, older than the prison itself. The basement entrance is around the back - a heavy wooden door with a rusted padlock.\n\nThis is where your lockpick earns its keep."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-004-1.png",
+          "/images/backgrounds/A-1-004-2.png",
+          "/images/backgrounds/A-1-004-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-005",
+      "flagChanges": {
+        "set": ["night_20", "reached_chapel"]
+      }
+    },
+    {
+      "id": "A-1-005",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-005.png",
+        "text": "The basement door creaks open. Below: total darkness. A stone staircase descending into blackness.\n\nYou have three matches. Three precious sources of light. Once they're gone, you'll be navigating by touch alone.\n\nOr you could try descending in darkness now, saving your matches for when you truly need them. The stairs are stone - you can feel your way down. Probably.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Light a match and descend safely (-1 match)",
+          "nextScene": "A-1-006A",
+          "resourceChanges": {
+            "matches": -1
+          },
+          "flagChanges": {
+            "set": ["used_match_stairs", "saw_basement"]
+          },
+          "requirements": {
+            "resources": {
+              "matches": 1
+            }
+          }
+        },
+        {
+          "text": "Descend in darkness, save the matches",
+          "nextScene": "A-1-006B",
+          "flagChanges": {
+            "set": ["descended_in_dark", "conserved_matches"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-1-006A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-006A.png",
+        "text": "",
+        "pages": [
+          "You strike the match. Sulfur flares. Sudden orange light reveals a narrow staircase - twenty steps down into a stone basement.\n\nThe match illuminates everything: wine racks (empty for decades), moldering crates, a collapsed section of ceiling. And there, at the far end: a hole in the wall where the stones have fallen away.",
+          "You memorize the layout before the match burns your fingers. You drop it, stamp it out.\n\nDarkness returns. But you know the way now. Straight ahead, fifteen paces, slight left turn."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-006A-1.png",
+          "/images/backgrounds/A-1-006A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-007",
+      "flagChanges": {
+        "set": ["memorized_basement_layout", "safe_descent"]
+      }
+    },
+    {
+      "id": "A-1-006B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-006B.png",
+        "text": "",
+        "pages": [
+          "You descend in blackness. One hand on the cold stone wall. Feet feeling for each step.\n\nThirteen steps. Fourteen. Your foot finds empty air - you stumble, catch yourself. That could have been bad.",
+          "Finally: solid ground. You're in the basement. But where exactly? You know the entrance to the catacombs is somewhere ahead, but in this absolute darkness, you'll have to search by touch.\n\nUnless you light a match now."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-006B-1.png",
+          "/images/backgrounds/A-1-006B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-007B",
+      "flagChanges": {
+        "set": ["stumbled_in_dark", "uncertain_position"]
+      }
+    },
+    {
+      "id": "A-1-007",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-007.png",
+        "text": "You navigate by memory in the darkness. Fifteen paces. Turn left. Your hands find the broken stones.\n\nBeyond this wall lie the catacombs. Medieval smuggler tunnels that haven't seen light in centuries.\n\nYou have two matches left. You'll need them.\n\nYou squeeze through the gap in the wall and into the unknown.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-008",
+      "flagChanges": {
+        "set": ["entered_catacombs", "phase_1_complete"]
+      }
+    },
+    {
+      "id": "A-1-007B",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-007B.png",
+        "text": "You're in total darkness. The basement is maybe thirty paces across, but you don't know which direction leads to the catacombs entrance.\n\nYou could search blindly - feeling along walls, hoping to find the gap in the stones. It might take precious minutes, and you might knock something over, make noise.\n\nOr you could light a match. Get your bearings. But that's another match gone.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Light a match to find the entrance (-1 match)",
+          "nextScene": "A-1-007B1",
+          "resourceChanges": {
+            "matches": -1
+          },
+          "flagChanges": {
+            "set": ["used_match_basement"]
+          },
+          "requirements": {
+            "resources": {
+              "matches": 1
+            }
+          }
+        },
+        {
+          "text": "Search blindly in the dark",
+          "nextScene": "A-1-007B2",
+          "flagChanges": {
+            "set": ["searched_blindly"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-1-007B1",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-007B1.png",
+        "text": "Another match. Another precious second of light.\n\nThe basement reveals itself: you're only three paces from the catacombs entrance. You were closer than you thought.\n\nThe match dies. You move quickly through the gap while the afterimage still burns in your eyes.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-008",
+      "flagChanges": {
+        "set": ["entered_catacombs", "phase_1_complete"]
+      }
+    },
+    {
+      "id": "A-1-007B2",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-007B2.png",
+        "text": "",
+        "pages": [
+          "You feel your way through the darkness. Left wall. Follow it. Your hands touch rotting wood, cold stone, something that crumbles to dust.",
+          "Minutes pass. How many? Five? Ten? You're losing track of time.\n\nThen: a gap. Cool air flowing through. This is it.",
+          "You squeeze through into an even deeper darkness. The catacombs.\n\nYou've conserved your matches, but the journey took longer than it should have. Somewhere above, a guard might be making his rounds. Might notice your cell door isn't quite latched.\n\nNo time to worry about that now. You're committed."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-007B2-1.png",
+          "/images/backgrounds/A-1-007B2-2.png",
+          "/images/backgrounds/A-1-007B2-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-008",
+      "flagChanges": {
+        "set": ["entered_catacombs", "phase_1_complete", "took_too_long", "increased_risk"]
+      }
+    },
+    {
+      "id": "A-1-008",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-008.png",
+        "text": "The catacombs.\n\nThe air is cold and damp. Water drips somewhere in the darkness. The silence is absolute - no guards, no prisoners, no lighthouse beam. Just you and the ancient stone.\n\nYou pull out the map. In the darkness, it's useless. You'll need light to read it. Or you could try to navigate by feel, following the left wall.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-009",
+      "flagChanges": {
+        "set": ["in_catacombs", "total_darkness"]
+      }
+    },
+    {
+      "id": "A-1-009",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-009.png",
+        "text": "You need to make a decision. The map shows the route, but reading it means using a match. Or you could trust your engineer's instincts and navigate blind.\n\nHow many matches do you have left? You try to remember. Did you use one? Two? The darkness makes it hard to think clearly.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Light a match and check the map (-1 match)",
+          "nextScene": "A-1-009A",
+          "resourceChanges": {
+            "matches": -1
+          },
+          "flagChanges": {
+            "set": ["read_map_catacombs"]
+          },
+          "requirements": {
+            "resources": {
+              "matches": 1
+            }
+          }
+        },
+        {
+          "text": "Navigate blind, follow the left wall",
+          "nextScene": "A-1-009B",
+          "flagChanges": {
+            "set": ["navigating_blind"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-1-009A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-009A.png",
+        "text": "Match flare. The map comes into focus.\n\nYou're at the entrance. The main passage runs straight for about fifty meters, then splits. Left leads to the old wine cellars (collapsed). Right leads deeper into the smuggler tunnels toward the drainage system.\n\nRight is the way. You memorize the route before the match dies.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-010A",
+      "flagChanges": {
+        "set": ["knows_correct_route", "confident_navigation"]
+      }
+    },
+    {
+      "id": "A-1-009B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-009B.png",
+        "text": "You press your left hand against the cold stone wall and start walking. Slow. Careful. Counting your paces.\n\nFifteen. Twenty. Thirty. The passage seems straight. Your engineering mind tries to build a mental map, but without visual reference points, it's guesswork.\n\nForty paces. Fifty. The wall curves slightly. Or does it? In absolute darkness, even your sense of direction becomes unreliable.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-010B",
+      "flagChanges": {
+        "set": ["uncertain_navigation", "counting_paces"]
+      }
+    },
+    {
+      "id": "A-1-010A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-010A.png",
+        "text": "",
+        "pages": [
+          "You move through the darkness with purpose. Fifty paces straight. The passage is narrow - barely shoulder-width. Your hands brush both walls.",
+          "Sixty paces. Seventy. Your foot touches something - debris. You step carefully over it. The map showed this passage was mostly intact, but 'mostly' isn't the same as 'completely.'",
+          "Eighty paces. The passage widens slightly. You should be approaching the junction soon."
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-011",
+      "flagChanges": {
+        "set": ["safe_passage", "approaching_junction"]
+      }
+    },
+    {
+      "id": "A-1-010B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-010B.png",
+        "text": "",
+        "pages": [
+          "Sixty paces. Seventy. Your foot catches on something in the darkness - a fallen stone, a piece of timber. You stumble but catch yourself.\n\nYour hand scrapes against rough stone. Sharp pain. You feel warm blood. Not serious, but it stings.",
+          "Eighty paces. Ninety. You're not sure if you're still going straight. The left wall technique works in theory, but in practice, in absolute darkness, every irregularity in the wall makes you second-guess.",
+          "You hear something. Water. Distant, but definitely water. Dripping? Flowing? You can't tell. But water means the drainage system is nearby. Or it means you're approaching a flooded section.\n\nBoth possibilities exist on the map."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-1-010B-1.png",
+          "/images/backgrounds/A-1-010B-2.png",
+          "/images/backgrounds/A-1-010B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-011",
+      "flagChanges": {
+        "set": ["injured_hand", "heard_water", "uncertain_position"]
+      }
+    },
+    {
+      "id": "A-1-011",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-011.png",
+        "text": "The junction.\n\nYour hands find the opening - the passage splits here. Left or right. In the darkness, they feel identical. Cold stone, damp air, absolute silence.\n\nThe map showed this junction clearly. The right path leads toward the old drainage system and eventually to the catacombs' outer wall. The left path circles back into the prison's foundation - a dead end.\n\nBut knowing the map and following it in total darkness are different things.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Take the right passage (toward freedom)",
+          "nextScene": "A-1-012",
+          "flagChanges": {
+            "set": ["chose_right_path"]
+          }
+        },
+        {
+          "text": "Take the left passage",
+          "nextScene": "A-1-013",
+          "flagChanges": {
+            "set": ["chose_left_path"]
+          }
+        },
+        {
+          "text": "Use a match to check the map one more time (-1 match)",
+          "nextScene": "A-1-011A",
+          "resourceChanges": {
+            "matches": -1
+          },
+          "requirements": {
+            "resources": {
+              "matches": 1
+            }
+          }
+        }
+      ],
+      "flagChanges": {
+        "set": ["at_junction"]
+      }
+    },
+    {
+      "id": "A-1-011A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-011A.png",
+        "text": "One more match. Your last one.\n\nSulfur flares. Orange light floods the junction. The map confirms it - right leads to the drainage system, left curves back.\n\nBut the brief light reveals something else: ancient markings on the right passage wall. Scratches. Arrows pointing forward. Someone else found this route. Long ago.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-012",
+      "flagChanges": {
+        "set": ["used_last_match", "no_matches_left", "saw_ancient_markings", "confirmed_right_path"]
+      }
+    },
+    {
+      "id": "A-1-012",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-012.png",
+        "text": "You take the right passage. The air grows colder, damper. You can hear water now - not dripping, but flowing. A stream or drainage channel somewhere ahead.\n\nThe passage slopes downward. Your feet splash through shallow puddles. The ancient stones beneath are slick with moisture and algae.\n\nThen: another junction. You feel it with your hands - the passage splits three ways. Three different routes forward.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-013",
+      "flagChanges": {
+        "set": ["reached_second_junction", "descending_deeper"]
+      }
+    },
+    {
+      "id": "A-1-013",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-013.png",
+        "text": "THREE PASSAGES.\n\nLeft passage: Dry air. Smells of dust and old stone. Narrow opening.\n\nCenter passage: The sound of water is loudest here. Cool, damp air rushing past. Wide enough to walk upright.\n\nRight passage: Warmer air. Odd smell - not unpleasant, but strange. Organic. The passage feels larger.\n\nYou need to scout these routes before committing. But scouting in total darkness means risk.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Scout the left passage (dry, narrow)",
+          "nextScene": "A-1-014A",
+          "flagChanges": {
+            "set": ["scouting_left_passage"]
+          }
+        },
+        {
+          "text": "Scout the center passage (water sounds)",
+          "nextScene": "A-1-014B",
+          "flagChanges": {
+            "set": ["scouting_center_passage"]
+          }
+        },
+        {
+          "text": "Scout the right passage (warm, strange smell)",
+          "nextScene": "A-1-014C",
+          "flagChanges": {
+            "set": ["scouting_right_passage"]
+          }
+        }
+      ],
+      "flagChanges": {
+        "set": ["at_three_way_junction", "must_scout"]
+      }
+    },
+    {
+      "id": "A-1-014A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-014A.png",
+        "text": "You squeeze into the left passage. It's tight - shoulder-width at best. The walls press close on both sides.\n\nTwenty paces in, it gets tighter. You have to turn sideways. Thirty paces, and you can barely fit. Your chest scrapes one wall, your back against the other.\n\nForty paces. You can't go further without getting stuck. And you feel something under your fingers - a crack in the wall. Wide enough to get your hand through. Empty space beyond.\n\nA branching tunnel? A cavity? You can't tell in the darkness. But this passage is too narrow. Not viable for escape.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-015",
+      "flagChanges": {
+        "set": ["scouted_left_passage", "left_passage_too_narrow", "found_crack_in_wall"]
+      }
+    },
+    {
+      "id": "A-1-014B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-014B.png",
+        "text": "You follow the sound of water into the center passage. The air is cold and damp. The walls are slick with moisture.\n\nTen paces. Twenty. The water sound grows louder. Your foot touches something - you kneel and feel.\n\nA channel cut into the floor. Water flowing through it. Fast-moving. Cold as ice. This is the drainage system - exactly what the map showed.\n\nYou follow the channel for thirty more paces. The passage is stable, well-constructed. This route leads somewhere. But the water is rising. It's already ankle-deep in places.\n\nA rainstorm above ground would flood this tunnel completely.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-015",
+      "flagChanges": {
+        "set": ["scouted_center_passage", "found_drainage_system", "flood_risk_identified"]
+      }
+    },
+    {
+      "id": "A-1-014C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-014C.png",
+        "text": "You enter the right passage. It's warmer here. The strange organic smell is stronger.\n\nTen paces. Twenty. Your foot touches something soft. You kneel and feel - vegetation? Moss? Something growing down here in the dark.\n\nThirty paces. The passage opens into what feels like a larger space. A chamber or cavern. You can't feel walls on either side. The air moves differently here.\n\nThen: a sound. Soft. Rhythmic.\n\nBreathing.\n\nSomething else is down here with you.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-014C1",
+      "flagChanges": {
+        "set": ["scouted_right_passage", "found_chamber", "something_alive"]
+      }
+    },
+    {
+      "id": "A-1-014C1",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-014C1.png",
+        "text": "The breathing is slow. Heavy. Not human.\n\nYou freeze. Your engineer's mind races - what could survive down here? Rats, certainly. Bats, maybe. But this sounds larger.\n\nThe breathing continues. Whatever it is, it hasn't noticed you. Or it's waiting.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Back away slowly and quietly",
+          "nextScene": "A-1-015",
+          "flagChanges": {
+            "set": ["retreated_from_creature", "right_passage_dangerous"]
+          }
+        },
+        {
+          "text": "Make noise to scare it away",
+          "nextScene": "A-1-014C2",
+          "flagChanges": {
+            "set": ["provoked_creature"]
+          }
+        },
+        {
+          "text": "Move forward cautiously to investigate",
+          "nextScene": "A-1-014C3",
+          "flagChanges": {
+            "set": ["investigating_creature"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-1-014C2",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-014C2.png",
+        "text": "You shout. Your voice echoes in the chamber.\n\nIMMEDIATE RESPONSE.\n\nScrabbling claws on stone. Multiple creatures - not one, but several. They scatter, fleeing deeper into the chamber with squeals and hisses.\n\nRats. Large ones, from the sound. Maybe feral dogs that found their way into the catacombs years ago. Either way, they're gone now.\n\nYour heart hammers. But the passage is clear. And you found something else - in the brief chaos, you felt a wooden crate against the wall. Supplies? Left by smugglers?",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-014C4",
+      "flagChanges": {
+        "set": ["scared_creatures_away", "found_storage_chamber"]
+      }
+    },
+    {
+      "id": "A-1-014C3",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-014C3.png",
+        "text": "You move forward, one careful step at a time. Your hands outstretched.\n\nThe breathing stops.\n\nSilence.\n\nThen: movement. Fast. Something rushes past you in the darkness - fur brushing your leg. Claws skittering on stone.\n\nRats. Or possibly feral cats. Whatever they are, they're fleeing from you now. You're the intruder in their domain.\n\nYour foot touches something - you kneel and feel. A wooden crate. Old, rotting, but still intact. Inside: glass bottles. Most broken. But one remains whole.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-014C4",
+      "flagChanges": {
+        "set": ["creatures_fled", "found_storage_chamber", "cautious_approach"]
+      },
+      "itemChanges": {
+        "add": ["glass_bottle"]
+      }
+    },
+    {
+      "id": "A-1-014C4",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-014C4.png",
+        "text": "You explore the chamber carefully. It's large - maybe ten meters across. The walls are natural rock, not cut stone. This was a natural cavern that the smugglers incorporated into their tunnel system.\n\nBesides the crate, you find: rotted rope, rusted metal hooks, and what feels like an old oil lantern (no oil, unfortunately).\n\nThis chamber connects to another passage on the far side. The air flowing through smells fresher. This route might lead outside.\n\nBut the creatures could return. And you'd be navigating through their territory.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-015",
+      "flagChanges": {
+        "set": ["explored_storage_chamber", "right_passage_viable_but_risky", "found_exit_passage"]
+      },
+      "itemChanges": {
+        "add": ["old_lantern"]
+      }
+    },
+    {
+      "id": "A-1-015",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-015.png",
+        "text": "You return to the three-way junction. Your scouting is complete.\n\nLeft passage: Too narrow. Dead end or branches into unknown smaller tunnels.\n\nCenter passage: The drainage system. Stable, well-constructed, but flood risk is high. If it rains above ground, you'd drown.\n\nRight passage: Natural cavern system. Creatures living there, but they can be scared off. Appears to have an exit route. Risky but potentially the best option.\n\nYou need to choose. And choose now. You've been down here for... how long? An hour? Two? The guards will notice your absence eventually.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-016",
+      "flagChanges": {
+        "set": ["all_passages_scouted", "must_choose_route"]
+      }
+    },
+    {
+      "id": "A-1-016",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-016.png",
+        "text": "DECISION POINT.\n\nWhich route will you take?\n\nThe drainage system (center) is the most direct route to the outer walls. But the water level is concerning.\n\nThe cavern system (right) is dangerous and unpredictable, but you found supplies and detected fresher air from the far passage.\n\nOr... you could try to squeeze through the narrow left passage and see where that crack in the wall leads. Risky, claustrophobic, but unexplored.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Take the drainage system route (center) - direct but flood risk",
+          "nextScene": "A-1-017A",
+          "flagChanges": {
+            "set": ["chose_drainage_route", "route_decision_made"]
+          }
+        },
+        {
+          "text": "Take the cavern system route (right) - dangerous but promising",
+          "nextScene": "A-1-017B",
+          "flagChanges": {
+            "set": ["chose_cavern_route", "route_decision_made"]
+          }
+        },
+        {
+          "text": "Risk the narrow passage (left) - explore the crack in the wall",
+          "nextScene": "A-1-017C",
+          "flagChanges": {
+            "set": ["chose_narrow_route", "route_decision_made"]
+          },
+          "requirements": {
+            "flags": ["found_crack_in_wall"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-1-017A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-017A.png",
+        "text": "You commit to the drainage route.\n\nThe water is ankle-deep when you enter. Cold. Fast-moving. You follow the channel carved into the floor, using it as a guide in the darkness.\n\nFifty paces. The passage is stable. Well-constructed by engineers who knew their craft.\n\nSeventy paces. The water rises to your shins. You're descending deeper.\n\nOne hundred paces. Knee-deep now. The current is stronger. You have to brace yourself against the walls to avoid being swept off your feet.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-018A",
+      "flagChanges": {
+        "set": ["in_drainage_system", "water_rising"]
+      }
+    },
+    {
+      "id": "A-1-017B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-017B.png",
+        "text": "You commit to the cavern route.\n\nBack through the right passage. Into the chamber. The creatures are gone - or hiding. You can't hear breathing anymore.\n\nYou navigate by touch to the far side where you detected the fresher air. Your hands find the continuation: a passage carved through natural rock. Rougher than the constructed tunnels, but wide and stable.\n\nThe air is definitely fresher here. You can smell... earth. Trees? Impossible. You're underground. But the scent is unmistakable.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-018B",
+      "flagChanges": {
+        "set": ["in_cavern_system", "following_fresh_air"]
+      }
+    },
+    {
+      "id": "A-1-017C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-017C.png",
+        "text": "You return to the narrow left passage.\n\nSqueeze sideways. Twenty paces. Thirty. The walls press against your chest and back. Forty paces - you reach the crack.\n\nYou feel through it. Empty space beyond. Cool air flowing through.\n\nYou work at the crack, pulling loose stones. Your fingers bleed. Five minutes of work. Ten. The opening widens.\n\nFinally: large enough to squeeze through. Barely.\n\nYou push yourself into the crack. For a terrible moment, you're stuck - trapped between walls of ancient stone. Then: you force yourself through and tumble into the space beyond.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-018C",
+      "flagChanges": {
+        "set": ["in_narrow_passage", "forced_through_crack", "bleeding_hands"]
+      }
+    },
+    {
+      "id": "A-1-018A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-018A.png",
+        "text": "The water reaches your waist.\n\nYou're committed now. Turning back means fighting against the current. Forward is the only option.\n\nOne hundred twenty paces. The passage levels out. The water stays waist-deep but stops rising.\n\nThen you hear it: a roaring sound ahead. Louder than the current. Something big. A waterfall? An outlet?\n\nYou push forward through the cold water. The roaring grows deafening.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-019A",
+      "flagChanges": {
+        "set": ["deep_in_drainage", "approaching_outlet"]
+      }
+    },
+    {
+      "id": "A-1-018B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-018B.png",
+        "text": "The natural passage winds upward. You're ascending now - a good sign. The smell of earth grows stronger.\n\nYour hands find tree roots pushing through the ceiling. Small ones at first, then thicker. The passage is being invaded by the forest above.\n\nYou navigate around them. Thirty paces. Fifty. The air is definitely fresher. You can feel temperature changes - warmer air mixing with the cold underground draft.\n\nThen: a sound. Not creatures. Not water.\n\nVoices.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-019B",
+      "flagChanges": {
+        "set": ["ascending_through_cavern", "tree_roots_present", "voices_ahead"]
+      }
+    },
+    {
+      "id": "A-1-018C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-018C.png",
+        "text": "You're in a different tunnel system. Older. Much older.\n\nThe walls are rough-hewn stone. Medieval, perhaps earlier. This isn't part of the prison's foundation - this is something ancient that existed long before Île de Pierre became a fortress.\n\nYou follow the passage. It's narrow but navigable. Fifty paces. One hundred. The air is stale. No one has been here in centuries.\n\nYour foot touches something - you kneel and feel. Bones.\n\nHuman bones.\n\nA skeleton, still wearing the remnants of old clothing. How long has this person been here? Who were they?",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-019C",
+      "flagChanges": {
+        "set": ["in_ancient_tunnels", "found_skeleton"]
+      }
+    },
+    {
+      "id": "A-1-019A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-019A.png",
+        "text": "Light.\n\nGray. Faint. But unmistakably light.\n\nThe drainage channel empties through a grate into the ocean. You can see it now - moonlight filtering through iron bars. The Atlantic crashing against rocks below.\n\nYou've reached the outer wall of the prison island. The exit is right here. Ten meters of tunnel and a grate separating you from freedom.\n\nBut the grate is solid iron. Three inches thick. Locked from the outside. You can't break through it without tools.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-020",
+      "flagChanges": {
+        "set": ["reached_drainage_outlet", "found_grate", "saw_ocean"]
+      }
+    },
+    {
+      "id": "A-1-019B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-019B.png",
+        "text": "The voices are above you. You're directly beneath... the prison yard? No. The tone is different. Casual conversation. Laughter.\n\nA guard station. Or the barracks.\n\nYou freeze. Moving forward risks making noise. They might hear you through the stone. But you can't go back now.\n\nYou wait. Five minutes. Ten. The voices fade - they've moved away.\n\nYou continue forward carefully. The passage ends at a vertical shaft. Looking up, you can see a faint square of moonlight. A trapdoor? A ventilation grate?\n\nThis route leads up into the prison complex. Not to freedom, but to a different part of the fortress. That might be useful... or deadly.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-020",
+      "flagChanges": {
+        "set": ["reached_vertical_shaft", "under_guard_area", "found_internal_access"]
+      }
+    },
+    {
+      "id": "A-1-019C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-019C.png",
+        "text": "You search the skeleton carefully. Old clothing - 17th century, maybe. A leather pouch at the belt.\n\nInside the pouch: a key. Iron. Ancient but intact.\n\nA key to what?\n\nYou continue past the skeleton. The tunnel slopes upward. After another hundred paces, you find: a door.\n\nWooden. Reinforced with iron bands. Very old but remarkably preserved in the dry tunnel air.\n\nThe key fits the lock. It turns with a grinding sound.\n\nThe door opens.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-020",
+      "flagChanges": {
+        "set": ["found_ancient_key", "unlocked_old_door", "discovered_secret_route"]
+      },
+      "itemChanges": {
+        "add": ["ancient_iron_key"]
+      }
+    },
+    {
+      "id": "A-1-020",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-020.png",
+        "text": "You've scouted the catacombs. You've found routes. You've discovered secrets.\n\nBut this is just reconnaissance. You need to return to your cell before the guards notice your absence. This escape will take planning. Multiple trips. Tools. Preparation.\n\nYou've learned the layout. Now you need to decide: which route will be your path to freedom?\n\nYou begin the long journey back through the darkness toward the chapel basement.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-021",
+      "flagChanges": {
+        "set": ["scouting_mission_complete", "must_return_to_cell", "routes_identified"]
+      }
+    },
+    {
+      "id": "A-1-021",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-021.png",
+        "text": "The return journey is easier. You know the way now. Through the catacombs, through the basement, through the chapel.\n\nYou emerge into the prison yard during the seventeen-minute gap. The lighthouse beam sweeps past. You slip through shadows, back to your cell block.\n\nBastian is awake when you return. He says nothing, but his eyes ask questions.\n\nYou don't answer. Not yet.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-022",
+      "flagChanges": {
+        "set": ["returned_safely", "bastian_knows_something"]
+      }
+    },
+    {
+      "id": "A-1-022",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-022.png",
+        "text": "NIGHT 25 - FIVE NIGHTS LATER\n\nYou've spent every moment planning. The route is clear in your mind. But you need tools. Equipment. Resources.\n\nThe grate at the drainage outlet is iron. Three inches thick. You'll need cutting tools - a hacksaw at minimum, ideally a file and metal shears.\n\nOr you could focus on the ancient tunnels. That door you unlocked leads somewhere. But navigating without light is suicide. You need a reliable light source.\n\nOr the vertical shaft under the guard barracks. That trapdoor could give you access to areas of the prison you've never seen. But it's the riskiest route.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-023",
+      "flagChanges": {
+        "set": ["night_25", "planning_phase"]
+      }
+    },
+    {
+      "id": "A-1-023",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-1-023.png",
+        "text": "Three routes. Three different preparations needed.\n\nDRAINAGE ROUTE: Need cutting tools for the grate. The prison kitchen has equipment. Dangerous to steal, but possible.\n\nANCIENT TUNNEL ROUTE: Need reliable light and supplies. That smuggler's cache might have more. Or you could barter in the prison black market.\n\nVERTICAL SHAFT ROUTE: Need intel on what's above. Guard schedules. Room layouts. A way to blend in if discovered.\n\nWhich route will you commit to?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Commit to the drainage route - steal tools from the kitchen",
+          "nextScene": "A-1-024A",
+          "flagChanges": {
+            "set": ["committed_drainage_route", "need_kitchen_tools"]
+          },
+          "requirements": {
+            "flags": ["reached_drainage_outlet"]
+          }
+        },
+        {
+          "text": "Commit to the ancient tunnel route - gather supplies",
+          "nextScene": "A-1-024B",
+          "flagChanges": {
+            "set": ["committed_ancient_route", "need_supplies"]
+          },
+          "requirements": {
+            "flags": ["unlocked_old_door"]
+          }
+        },
+        {
+          "text": "Commit to the vertical shaft route - gather intelligence",
+          "nextScene": "A-1-024C",
+          "flagChanges": {
+            "set": ["committed_shaft_route", "need_intelligence"]
+          },
+          "requirements": {
+            "flags": ["reached_vertical_shaft"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-1-024A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-024A.png",
+        "text": "The drainage route. Direct. Engineering-focused. Exactly your skillset.\n\nThe grate is the only obstacle. Get through it, and you're in the Atlantic. A strong swimmer could make it to the mainland. Or at least to the fishing routes where you could signal a boat.\n\nBut first: tools.\n\nThe prison kitchen. You've never worked there, but you've observed it during meals. Industrial equipment. Meat saws. Cleavers. Exactly what you need.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-025A",
+      "flagChanges": {
+        "set": ["planning_kitchen_theft"]
+      }
+    },
+    {
+      "id": "A-1-024B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-024B.png",
+        "text": "The ancient tunnel route. Mysterious. Unknown. Full of potential.\n\nThat door opened to... what? You didn't explore beyond it during your scouting. The skeleton suggests someone tried this route centuries ago and failed.\n\nBut you're an engineer. You have advantages they didn't. Maps. Planning. Knowledge.\n\nYou need supplies. Rope, definitely. Food and water for potentially days underground. And light - multiple light sources.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-025B",
+      "flagChanges": {
+        "set": ["planning_supply_gathering"]
+      }
+    },
+    {
+      "id": "A-1-024C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-024C.png",
+        "text": "The vertical shaft route. Bold. Insane, perhaps.\n\nThat shaft leads directly into the prison complex. Not to freedom - to danger. But what if you could access areas prisoners never see? The warden's office. The guard armory. Files. Evidence.\n\nThis isn't just about escaping. This is about understanding the prison's secrets. About finding proof of Marchand's conspiracy.\n\nBut you need information first. Guard schedules. Room layouts. What's at the top of that shaft.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-1-025C",
+      "flagChanges": {
+        "set": ["planning_intelligence_gathering"]
+      }
+    },
+    {
+      "id": "A-1-025A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-025A.png",
+        "text": "You approach Bastian the next morning.\n\n\"I need to get assigned to kitchen duty,\" you tell him quietly.\n\nHe doesn't ask why. He just nods. \"Émile Beaumont controls work assignments. Everything in this prison goes through him. You'll need to pay.\"\n\n\"With what?\"\n\nBastian smiles grimly. \"Everyone has something to trade. Information. Favors. Skills. What can you offer an organization run by criminals?\"\n\nAn engineer's expertise. Your ability to fix things, build things, understand complex systems.\n\nYou're about to make a deal with the prison's most dangerous man.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001",
+      "flagChanges": {
+        "set": ["drainage_route_chosen", "must_deal_with_emile", "act_1_phase_1_complete"]
+      }
+    },
+    {
+      "id": "A-1-025B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-025B.png",
+        "text": "The smuggler's cache in the cavern. That's where you start.\n\nYou return to the catacombs that night. Through the chapel, through the basement, through the darkness you're beginning to know like the back of your hand.\n\nThe chamber with the creatures. They scatter when you enter - they've learned you're not prey.\n\nThe wooden crate. You search it thoroughly this time. Besides the glass bottle and lantern, you find:\n\nRotted rope (useless). A rusted knife (corroded but maybe salvageable). And underneath everything: a leather-wrapped bundle.\n\nYou unwrap it. Inside: oil. Lamp oil. Still liquid after decades in the sealed container.\n\nYour lantern has fuel.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001",
+      "flagChanges": {
+        "set": ["ancient_route_chosen", "found_lamp_oil", "lantern_functional", "act_1_phase_1_complete"]
+      },
+      "itemChanges": {
+        "add": ["lamp_oil", "rusted_knife"]
+      }
+    },
+    {
+      "id": "A-1-025C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-025C.png",
+        "text": "You need information. And in prison, information flows through one source: the black market.\n\nÉmile Beaumont's network knows everything. Guard schedules. Room layouts. Contraband. Secrets.\n\nBut approaching Émile directly is dangerous. You're nobody. A new prisoner. Why would he talk to you?\n\nUnless you have something he wants.\n\nYou think about your engineering skills. Your ability to understand complex systems. The prison's infrastructure - electrical, plumbing, structural.\n\nWhat if you could offer him something valuable? Access to areas he can't reach? Information about the prison's vulnerabilities?\n\nIt's risky. But this entire escape is risky.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-030",
+      "flagChanges": {
+        "set": ["shaft_route_chosen", "must_deal_with_emile", "offering_engineering_expertise", "act_1_phase_1_complete"]
+      }
+    },
+    {
+      "id": "A-1-026",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-026.png",
+        "text": "ALTERNATE ROUTE - TUNNEL EXPLORATION\n\nThis scene would be reached if the player chose a different path during the three-way junction scouting.\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-027",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-027.png",
+        "text": "ALTERNATE ROUTE - TUNNEL EXPLORATION (CONTINUED)\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-028",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-028.png",
+        "text": "ALTERNATE ROUTE - TUNNEL EXPLORATION (CONTINUED)\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-029",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-029.png",
+        "text": "ALTERNATE ROUTE - TUNNEL EXPLORATION (CONTINUED)\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-030",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-030.png",
+        "text": "ALTERNATE ROUTE - TUNNEL EXPLORATION (FINAL)\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-031",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-031.png",
+        "text": "ALTERNATE ROUTE - LIGHTHOUSE/GUARD AREA\n\nThis scene would be reached if the player chose a different path during the three-way junction scouting.\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-032",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-032.png",
+        "text": "ALTERNATE ROUTE - LIGHTHOUSE/GUARD AREA (CONTINUED)\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-033",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-033.png",
+        "text": "ALTERNATE ROUTE - LIGHTHOUSE/GUARD AREA (CONTINUED)\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-034",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-034.png",
+        "text": "ALTERNATE ROUTE - LIGHTHOUSE/GUARD AREA (CONTINUED)\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-1-035",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-1-035.png",
+        "text": "ALTERNATE ROUTE - LIGHTHOUSE/GUARD AREA (FINAL)\n\nReserved for future development.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-001"
+    },
+    {
+      "id": "A-2-001",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-001.png",
+        "text": "",
+        "pages": [
+          "NIGHT 27\n\nSeven nights since you committed to the drainage route. Seven nights of planning. Seven nights of working with Émile Beaumont to secure your kitchen duty assignment.\n\nThe cost? Information. Intelligence about the guard rotations. A mental map of the prison's blind spots. Things Émile could use for his own schemes.",
+          "But tonight, it's worth it. You're assigned to kitchen cleanup duty - the late shift, after the dinner service ends. The perfect cover to steal the tools you need: a sturdy knife, waterproof cloth, maybe some rope if you're lucky.",
+          "Chef Pierre Dubois runs the kitchen like a military operation. Nothing goes missing. Nothing gets wasted. If you're caught stealing, you won't just lose kitchen privileges - you'll lose Émile's trust, and possibly your only route to freedom."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-001-1.png",
+          "/images/backgrounds/A-2-001-2.png",
+          "/images/backgrounds/A-2-001-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-002",
+      "flagChanges": {
+        "set": ["act_2_started", "night_27", "kitchen_duty_assigned"]
+      },
+      "requirements": {
+        "flags": ["chose_drainage_route", "dealt_with_emile"]
+      }
+    },
+    {
+      "id": "A-2-002",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-002.png",
+        "text": "The kitchen is massive - industrial ovens, stainless steel counters, rows of hanging pots and pans. The smell of tonight's stew still lingers in the air: watery vegetables and mystery meat.\n\nChef Pierre stands at the far end, reviewing tomorrow's menu with his assistant. Two other inmates scrub pots at the washing station. A guard leans against the doorway, bored, checking his watch every thirty seconds.\n\nYou've been assigned to the prep station - cleaning cutting boards, organizing utensils, wiping down surfaces. Simple work. Mindless work. The perfect cover.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-003"
+    },
+    {
+      "id": "A-2-003",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-003.png",
+        "text": "You survey your options:\n\nThe knife rack is directly in Chef Pierre's line of sight, but he's distracted with paperwork. The utility closet near the loading dock has rope and cloth - but the guard watches that area intermittently. The washing station has the other inmates, but they're focused on their work.\n\nYou need to time this perfectly. One mistake, and everything falls apart.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Study the guard's patrol pattern first - be methodical",
+          "nextScene": "A-2-004A",
+          "flagChanges": {
+            "set": ["studied_guard_pattern", "methodical_approach"]
+          }
+        },
+        {
+          "text": "Create a distraction and grab what you need - be bold",
+          "nextScene": "A-2-004B",
+          "flagChanges": {
+            "set": ["created_distraction", "bold_approach"]
+          }
+        },
+        {
+          "text": "Befriend the other inmates and ask for help - be social",
+          "nextScene": "A-2-004C",
+          "flagChanges": {
+            "set": ["befriended_inmates", "social_approach"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-004A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-004A.png",
+        "text": "",
+        "pages": [
+          "You work slowly, deliberately, watching the guard out of the corner of your eye.\n\nEvery 90 seconds, he walks to the loading dock entrance and peers outside. Checks his watch. Returns to his post. Every third rotation, he stops at the water cooler for a drink - that's when his back is fully turned.\n\nChef Pierre, meanwhile, follows a different rhythm. He inspects the ovens every ten minutes, reviews inventory every twenty, and steps into his office - a small glass-walled room overlooking the kitchen - periodically to make phone calls.",
+          "The other two inmates are predictable: one washes, one rinses, they rotate every few minutes. Neither pays attention to anything but their task. Good workers. Complacent workers.\n\nYou've identified a 45-second window: when the guard is at the water cooler AND Chef Pierre is in his office making a call. It'll happen in approximately six minutes.",
+          "Six minutes to prepare. Six minutes to position yourself. Six minutes to decide exactly what you're going for.\n\nThe knife? The rope? The cloth? You probably only have time to grab one thing safely. Two if you're fast. All three if you're reckless."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-004A-1.png",
+          "/images/backgrounds/A-2-004A-2.png",
+          "/images/backgrounds/A-2-004A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-005A"
+    },
+    {
+      "id": "A-2-004B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-004B.png",
+        "text": "",
+        "pages": [
+          "Sometimes the best plan is chaos.\n\nYou 'accidentally' knock over a tray of utensils near the washing station. The clatter echoes through the kitchen - forks, spoons, knives scattering across the tile floor.\n\nThe guard's head snaps up. Chef Pierre turns from his paperwork. The two inmates at the washing station jump back, startled.",
+          "\"Merde!\" Chef Pierre barks, striding toward you. \"What kind of amateur—\"\n\n\"Sorry, Chef,\" you say quickly, dropping to your knees to gather the scattered utensils. \"My hand slipped.\"\n\nThe guard takes a step forward, then stops - this isn't worth his attention. Just another clumsy inmate. He returns to his post.\n\nChef Pierre looms over you, scowling. \"Clean this up. Now. And if you drop anything else tonight, you're done in my kitchen. Compris?\"",
+          "But while everyone's attention was on the fallen utensils, you had a brief moment - maybe three, four seconds - where no one was watching your hands.\n\nDid you grab something? Could you have palmed a small knife, stuffed a cloth into your waistband, pocketed something from the scattered pile?\n\nYou're still on the floor, gathering utensils, Chef Pierre glaring down at you. Whatever you grabbed - if you grabbed anything - it's done now. No going back."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-004B-1.png",
+          "/images/backgrounds/A-2-004B-2.png",
+          "/images/backgrounds/A-2-004B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-005B"
+    },
+    {
+      "id": "A-2-004C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-004C.png",
+        "text": "You approach the washing station casually, carrying a stack of cutting boards.\n\n\"Need any help?\" you ask the nearest inmate - a wiry man with nervous eyes named Carlos.\n\nHe glances at you, suspicious. \"We're fine.\"\n\n\"I'm just saying,\" you continue, setting down the boards, \"if you ever needed someone to, I don't know, keep Chef Pierre distracted for a minute, I could probably manage that.\"\n\nCarlos's hands stop moving. The other inmate - a heavyset man called Tomás - looks over.\n\n\"Why would we need that?\" Tomás asks quietly.\n\nYou shrug. \"No reason. Just thinking out loud.\"",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-005C"
+    },
+    {
+      "id": "A-2-005A",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-005A.png",
+        "text": "The window is approaching. The guard heads for the water cooler. Chef Pierre's phone rings - he steps into his office.\n\nNow.\n\nYou move toward your target. Your heart pounds. Every second counts.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Grab the knife - essential for the drainage grate",
+          "nextScene": "A-2-006A",
+          "itemChanges": {
+            "add": ["kitchen_knife"]
+          },
+          "flagChanges": {
+            "set": ["stole_knife"]
+          }
+        },
+        {
+          "text": "Grab the waterproof cloth - essential for the flooded passages",
+          "nextScene": "A-2-006B",
+          "itemChanges": {
+            "add": ["waterproof_cloth"]
+          },
+          "flagChanges": {
+            "set": ["stole_cloth"]
+          }
+        },
+        {
+          "text": "Grab the rope - useful for climbing",
+          "nextScene": "A-2-006C",
+          "itemChanges": {
+            "add": ["kitchen_rope"]
+          },
+          "flagChanges": {
+            "set": ["stole_rope"]
+          }
+        },
+        {
+          "text": "Be greedy - grab the knife AND the cloth (risky)",
+          "nextScene": "A-2-006D",
+          "itemChanges": {
+            "add": ["kitchen_knife", "waterproof_cloth"]
+          },
+          "flagChanges": {
+            "set": ["stole_multiple_items", "took_risk"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-005B",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-005B.png",
+        "text": "You stand up, utensils gathered, Chef Pierre still watching you with suspicion.\n\nDid you manage to grab anything during the distraction? Your hand moved so fast, you're not even sure yourself. But you feel... something. A weight in your pocket. A bulge in your waistband.\n\nChef Pierre is still staring at you. If you did grab something, and he searches you now, it's over.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "You grabbed a small paring knife during the chaos",
+          "nextScene": "A-2-007A",
+          "itemChanges": {
+            "add": ["paring_knife"]
+          },
+          "flagChanges": {
+            "set": ["grabbed_knife_during_distraction"]
+          }
+        },
+        {
+          "text": "You grabbed a folded cloth during the chaos",
+          "nextScene": "A-2-007B",
+          "itemChanges": {
+            "add": ["kitchen_cloth"]
+          },
+          "flagChanges": {
+            "set": ["grabbed_cloth_during_distraction"]
+          }
+        },
+        {
+          "text": "You didn't grab anything - too risky with Chef Pierre watching",
+          "nextScene": "A-2-007C",
+          "flagChanges": {
+            "set": ["played_it_safe"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-005C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-005C.png",
+        "text": "",
+        "pages": [
+          "There's a long silence. Then Carlos speaks, barely above a whisper:\n\n\"Tomorrow night. Same shift. We need a five-minute distraction.\"\n\n\"What for?\" you ask.\n\nTomás shakes his head. \"Don't ask questions. Just... if you can do it, we can make sure you get what you came here for.\"\n\nHe gestures subtly toward the utility closet. He knows. They both know. You're not the first person to try to steal from Chef Pierre's kitchen.",
+          "\"I can do it,\" you say. \"But I need something tonight. Just one item. Something small.\"\n\nCarlos and Tomás exchange a glance. Then Carlos nods slowly.\n\n\"Finish your work. When the guard does his loading dock check in ten minutes, we'll cover you. One item. That's all.\"\n\nYou nod. An alliance formed in whispers over a washing station. In El Palo de Queso, this is how trust is built - not through words, but through mutually assured risk."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-005C-1.png",
+          "/images/backgrounds/A-2-005C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-008"
+    },
+    {
+      "id": "A-2-006A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-006A.png",
+        "text": "You slide the knife from the rack - a sturdy chef's knife, eight inches long, sharp as a promise. It disappears into your waistband, hidden under your shirt.\n\n30 seconds left.\n\nYou return to the prep station, force yourself to breathe normally. The guard returns from the water cooler. Chef Pierre steps out of his office.\n\nNeither of them noticed. The knife presses cold against your skin. Success.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-009",
+      "flagChanges": {
+        "set": ["successful_theft"]
+      }
+    },
+    {
+      "id": "A-2-006B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-006B.png",
+        "text": "You move to the utility closet, grab a folded square of waterproof canvas - the kind used for covering supplies on the loading dock. It's compact, durable, perfect for protecting items in the flooded drainage tunnels.\n\nYou stuff it inside your shirt, flatten it against your chest.\n\n25 seconds left.\n\nBack to the prep station. Breathe. Act natural. The guard returns. Chef Pierre emerges from his office.\n\nYou did it. The cloth is hidden. No one saw.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-009",
+      "flagChanges": {
+        "set": ["successful_theft"]
+      }
+    },
+    {
+      "id": "A-2-006C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-006C.png",
+        "text": "The rope hangs on a hook near the loading dock - twenty feet of sturdy hemp, used for securing supply crates. You coil it quickly, stuff it under your shirt.\n\nIt's bulky. Obvious. If anyone looks at you closely, they'll see the bulge.\n\n20 seconds left.\n\nYou hurry back to the prep station, trying to position yourself so the rope's bulk isn't visible. The guard returns. Chef Pierre steps out of his office.\n\nYour shirt looks strange. Lumpy. But no one's looking directly at you. Not yet.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-009",
+      "flagChanges": {
+        "set": ["successful_theft", "obvious_bulge"]
+      }
+    },
+    {
+      "id": "A-2-006D",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-006D.png",
+        "text": "",
+        "pages": [
+          "Greedy. You're being greedy. But you need both.\n\nKnife first - into the waistband. Then the cloth - stuffed inside your shirt. Your movements are fast, practiced, but the window is closing.\n\n15 seconds left.\n\nYou turn back toward the prep station. The guard is still at the water cooler, but he's finishing his drink. Chef Pierre is ending his call.",
+          "10 seconds.\n\nYou're halfway across the kitchen when it happens:\n\nThe knife shifts. The blade - you forgot to position it correctly - presses against your belt, and the handle protrudes slightly above your waistband.\n\n5 seconds.\n\nChef Pierre steps out of his office. His eyes sweep the kitchen - and stop. On you.\n\nHe saw something. Maybe just a flicker of movement. Maybe the knife handle. You can't be sure."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-006D-1.png",
+          "/images/backgrounds/A-2-006D-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-010"
+    },
+    {
+      "id": "A-2-007A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-007A.png",
+        "text": "The paring knife is small - four inches, easy to conceal. During the chaos of the dropped utensils, you palmed it and slipped it into your sock.\n\nChef Pierre finally stops glaring at you. \"Get back to work,\" he mutters, returning to his paperwork.\n\nThe guard has already lost interest. The other inmates have returned to washing.\n\nYou finish gathering the utensils, heart pounding. The knife presses against your ankle. Small, but sharp. It'll have to be enough.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-009",
+      "flagChanges": {
+        "set": ["successful_theft"]
+      }
+    },
+    {
+      "id": "A-2-007B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-007B.png",
+        "text": "The cloth was folded near the scattered utensils - a small kitchen towel, absorbent and durable. Not waterproof canvas, but it'll help.\n\nYou stuffed it into your waistband while everyone was focused on the fallen silverware.\n\nChef Pierre dismisses you with a wave. \"Back to work. And be more careful.\"\n\nThe guard yawns. The inmates return to their tasks.\n\nYou stand up, the cloth hidden beneath your shirt. Not perfect, but better than nothing.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-009",
+      "flagChanges": {
+        "set": ["successful_theft"]
+      }
+    },
+    {
+      "id": "A-2-007C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-007C.png",
+        "text": "You didn't grab anything. Too risky. Chef Pierre was watching too closely, and getting caught would've meant losing everything - the kitchen access, Émile's trust, the entire plan.\n\nSometimes the smart play is the patient play.\n\nChef Pierre eventually turns back to his paperwork. The guard returns to his post. The kitchen settles back into routine.\n\nYou'll have to try again. Find another opportunity. Another window.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-011",
+      "flagChanges": {
+        "set": ["failed_theft_attempt", "need_another_plan"]
+      }
+    },
+    {
+      "id": "A-2-008",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-008.png",
+        "text": "Ten minutes later, right on schedule, the guard steps through the loading dock door for his routine check outside.\n\nCarlos and Tomás immediately start a loud conversation about tomorrow's menu, drawing Chef Pierre's attention to the washing station.\n\nYou have maybe 90 seconds. One item. Choose wisely.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Take a knife from the utility closet",
+          "nextScene": "A-2-009",
+          "itemChanges": {
+            "add": ["utility_knife"]
+          },
+          "flagChanges": {
+            "set": ["successful_theft", "inmates_helped"]
+          }
+        },
+        {
+          "text": "Take waterproof cloth from the supply shelf",
+          "nextScene": "A-2-009",
+          "itemChanges": {
+            "add": ["waterproof_cloth"]
+          },
+          "flagChanges": {
+            "set": ["successful_theft", "inmates_helped"]
+          }
+        },
+        {
+          "text": "Take rope from the loading dock hook",
+          "nextScene": "A-2-009",
+          "itemChanges": {
+            "add": ["kitchen_rope"]
+          },
+          "flagChanges": {
+            "set": ["successful_theft", "inmates_helped"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-009",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-009.png",
+        "text": "The rest of the shift passes without incident. You clean, organize, follow Chef Pierre's barked instructions. The stolen item stays hidden - pressed against your skin, tucked in your clothes, concealed in the folds of your uniform.\n\nWhen the shift ends, you file out with the other inmates. The guard does a cursory pat-down at the kitchen exit, but it's perfunctory - he's tired, ready for his shift to end. He doesn't feel the knife in your waistband, doesn't notice the cloth under your shirt, doesn't check your socks.\n\nYou're through. Back into the main cell block. The item is yours.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-012"
+    },
+    {
+      "id": "A-2-010",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-010.png",
+        "text": "Chef Pierre walks toward you. His eyes are sharp, calculating.\n\n\"You,\" he says, voice low. \"Come here.\"\n\nYour heart hammers. The knife is hidden, but barely. The cloth creates a subtle bulge. If he searches you, if he pats you down, it's over.\n\nThe guard watches with mild interest. The other inmates have stopped working, sensing drama.",
+        "speaker": "Chef Pierre Dubois"
+      },
+      "choices": [
+        {
+          "text": "Act confused and innocent - \"Is something wrong, Chef?\"",
+          "nextScene": "A-2-013A",
+          "flagChanges": {
+            "set": ["played_innocent"]
+          }
+        },
+        {
+          "text": "Create another distraction before he reaches you",
+          "nextScene": "A-2-013B",
+          "flagChanges": {
+            "set": ["created_second_distraction"]
+          }
+        },
+        {
+          "text": "Drop the items now and accept failure",
+          "nextScene": "A-2-013C",
+          "itemChanges": {
+            "remove": ["kitchen_knife", "waterproof_cloth"]
+          },
+          "flagChanges": {
+            "set": ["abandoned_theft"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-011",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-011.png",
+        "text": "The shift ends empty-handed. You return to your cell with nothing to show for the risk you took - or rather, the risk you didn't take.\n\nBastian is awake when you arrive, sitting on his bunk.\n\n\"How was kitchen duty?\" he asks.\n\nYou shrug. \"Uneventful.\"\n\nHe studies you for a moment, then nods. \"There's always tomorrow night.\"\n\nHe's right. You still have kitchen access. You can try again. But time is running out, and Émile won't wait forever for results.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-014",
+      "flagChanges": {
+        "set": ["need_second_attempt"]
+      }
+    },
+    {
+      "id": "A-2-012",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-012.png",
+        "text": "",
+        "pages": [
+          "Back in your cell, you hide your prize in the small cache behind the loose stone. The same cache where you found the map of the catacombs. The same cache that's been waiting for someone - anyone - brave enough to use it.\n\nBastian is asleep. He doesn't know what you've done tonight. Maybe that's better. The fewer people who know, the safer you are.",
+          "You've taken your first real step toward the drainage route escape. The tools are acquired. The path is clear.\n\nBut you can't help thinking about Chef Pierre's kitchen - the precision, the discipline, the way he runs his operation. And you think about Carlos and Tomás, if you worked with them. Inmates helping inmates. A rare thing in El Palo de Queso.\n\nMaybe there's more than one way to survive this place. Maybe there's more than one kind of escape."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-012-1.png",
+          "/images/backgrounds/A-2-012-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-014"
+    },
+    {
+      "id": "A-2-013A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-013A.png",
+        "text": "\"Is something wrong, Chef?\" you ask, your voice steady despite the panic rising in your chest.\n\nChef Pierre stops a few feet away. His eyes scan your face, your posture, looking for tells.\n\n\"I thought I saw...\" He pauses. \"Never mind. Get back to work.\"\n\nHe turns away, returning to his office. Was it your tone? Your expression? Or did he simply decide you weren't worth the trouble?\n\nYou'll never know. But you're safe. The items are still hidden. You survived.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-009",
+      "flagChanges": {
+        "set": ["successful_bluff"]
+      }
+    },
+    {
+      "id": "A-2-013B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-013B.png",
+        "text": "Before Chef Pierre reaches you, you 'accidentally' stumble into the prep counter, sending a stack of plates sliding toward the edge.\n\nYou catch them - barely - and the guard actually applauds sarcastically.\n\n\"Bravo,\" he says. \"Very graceful.\"\n\nChef Pierre stops, sighs heavily, and waves you away. \"Just... finish your work without breaking anything else.\"\n\nThe distraction worked. Your heart is pounding, but the stolen items remain hidden. You're safe. For now.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-009",
+      "flagChanges": {
+        "set": ["successful_second_distraction"]
+      }
+    },
+    {
+      "id": "A-2-013C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-013C.png",
+        "text": "You can't risk it. Not with Chef Pierre staring at you like that.\n\nYou let the knife slip from your waistband, catch it, and pretend you were just adjusting your shirt. The cloth falls to the floor.\n\n\"I was just... cleaning up,\" you say lamely, holding up the cloth.\n\nChef Pierre's eyes narrow, but he can't prove anything. You technically didn't steal - you just picked up items and then put them down.\n\n\"Back. To. Work,\" he says, each word clipped.\n\nYou nod, returning to the prep station empty-handed. Failure. But at least you're not in solitary.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-011"
+    },
+    {
+      "id": "A-2-014",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-014.png",
+        "text": "NIGHT 28\n\nThe drainage route plan continues. You have your tools - or you're planning your next attempt. Either way, the path forward is clear.\n\nThe flooded tunnels beneath the prison await. The ocean grate is out there, somewhere in the darkness, waiting to be opened.\n\nBut first, you need to prepare. Study the guard rotations. Test your tools. Make sure everything is ready.\n\nBecause once you enter those tunnels for real - not just for scouting, but for escape - there's no turning back.\n\n[END OF KITCHEN ROUTE ACT 2 - Scene continues to next phase]",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-015",
+      "flagChanges": {
+        "set": ["kitchen_route_complete", "ready_for_drainage_escape"]
+      }
+    },
+    {
+      "id": "A-2-015",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-015.png",
+        "text": "",
+        "pages": [
+          "NIGHT 32\n\nFour nights of preparation. Four nights of memorizing the guard schedules, testing your stolen tools, making sure everything is ready.",
+          "Tonight is the night. The chapel will be empty. The guard rotation creates a twelve-minute window. The drainage tunnels are waiting.",
+          "Bastian is asleep. He doesn't know. He can't know. If this fails, if you're caught, you need him to have deniability.\n\nYou slip down from your bunk, silent as a shadow. The loose stone behind the table comes free easily now. Behind it: your cache. Your map. Your tools.\n\nTime to go."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-015-1.png",
+          "/images/backgrounds/A-2-015-2.png",
+          "/images/backgrounds/A-2-015-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-016",
+      "flagChanges": {
+        "set": ["night_32", "final_escape_begun"]
+      },
+      "requirements": {
+        "flags": ["kitchen_route_complete"]
+      }
+    },
+    {
+      "id": "A-2-016",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-016.png",
+        "text": "",
+        "pages": [
+          "The chapel basement is exactly as you remember it. Dark. Cold. The stairs descending into blackness.",
+          "But this time, you're prepared. You have your knife. Your waterproof cloth. Your determination.",
+          "The darkness swallows you as you descend. Your hand trails along the stone wall, counting steps. Fifteen. Twenty. Twenty-five.\n\nAt the bottom, you pause. Listen.\n\nWater. Dripping. Echoing. And something else - a faint sound, like wind through distant passages."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-016-1.png",
+          "/images/backgrounds/A-2-016-2.png",
+          "/images/backgrounds/A-2-016-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-017"
+    },
+    {
+      "id": "A-2-017",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-017.png",
+        "text": "You navigate by memory now. The catacombs are familiar - you've scouted them before. Right at the first junction. Straight through the ossuary. Left at the carved angel.\n\nBut as you move deeper, you notice something new.\n\nMarks on the walls. Scratched symbols. Not random - deliberate. Arrows. Crosses. A series of three vertical lines.\n\nSmuggler signs. Someone else has used these tunnels. Recently, judging by how fresh the markings look.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-018"
+    },
+    {
+      "id": "A-2-018",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-018.png",
+        "text": "You reach the three-way junction where you chose the drainage route during your scouting mission. The symbols continue down the center passage - the one leading to the flooded drainage system.\n\nThe arrows point forward. Toward the ocean grate. Toward freedom.\n\nBut the crosses... crosses usually mean danger. Warning. And those three vertical lines appear repeatedly, always before the crosses.\n\nWhat do they mean? Water levels? Time markers? Smuggler codes you don't understand?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Follow the smuggler signs - they know these tunnels",
+          "nextScene": "A-2-019A",
+          "flagChanges": {
+            "set": ["followed_smuggler_signs"]
+          }
+        },
+        {
+          "text": "Ignore the signs - stick to your own route",
+          "nextScene": "A-2-019B",
+          "flagChanges": {
+            "set": ["ignored_smuggler_signs"]
+          }
+        },
+        {
+          "text": "Study the signs more carefully before deciding",
+          "nextScene": "A-2-019C",
+          "flagChanges": {
+            "set": ["studied_smuggler_signs"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-019A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-019A.png",
+        "text": "You follow the arrows. The smugglers know these tunnels better than you ever could. If they marked this route, there's a reason.\n\nThe passage slopes downward. The sound of water grows louder. Your feet splash through shallow puddles, then deeper water - ankle-deep, then knee-deep.\n\nThe arrows continue, scratched at regular intervals. And then you see it:\n\nA different symbol. A circle with a line through it. Scratched large and deep into the stone, impossible to miss.\n\nAnd beyond it, the tunnel is completely flooded. Dark water, still and silent, disappearing into the blackness ahead.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-020",
+      "flagChanges": {
+        "set": ["reached_flooded_section"]
+      }
+    },
+    {
+      "id": "A-2-019B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-019B.png",
+        "text": "You ignore the symbols. They're smuggler codes - useful for criminals running contraband, but you're an engineer. You trust your own observations, your own maps.\n\nYou take the route you scouted before. The drainage tunnel angles downward, water trickling along the channel you remember.\n\nBut something's different. The water is higher than before. Much higher. What was a trickle is now a steady flow.\n\nAnd as you wade deeper, the flow becomes a current. The water rises from your ankles to your knees to your waist.\n\nYou're in trouble.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-020",
+      "flagChanges": {
+        "set": ["ignored_warning", "caught_in_current"]
+      }
+    },
+    {
+      "id": "A-2-019C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-019C.png",
+        "text": "",
+        "pages": [
+          "You stop. Study the symbols carefully. Think like an engineer.\n\nThree vertical lines. They appear before every cross. Before every warning.\n\nThree lines. Three... hours? Three feet? Three...\n\nWait.",
+          "You look at the water in the drainage channel. It's flowing. Steady. But the level is marked on the walls - you can see the stains, the mineral deposits showing where the water reaches at different times.\n\nTidal. The drainage system is tidal. It connects to the ocean, which means it rises and falls with the tide.",
+          "Three vertical lines. High tide. The smugglers are warning that this route floods completely at high tide.\n\nAnd based on the current water level... high tide is coming. Soon."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-019C-1.png",
+          "/images/backgrounds/A-2-019C-2.png",
+          "/images/backgrounds/A-2-019C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-021",
+      "flagChanges": {
+        "set": ["understood_tidal_warning", "gained_timing_knowledge"]
+      }
+    },
+    {
+      "id": "A-2-020",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-020.png",
+        "text": "The water is chest-deep now. Cold. The current pulls at your legs, trying to sweep you off your feet.\n\nYou can see the drainage outlet ahead - maybe fifty meters. The ocean grate is there, waiting. But the water is rising. Fast.\n\nYou have your waterproof cloth. You can protect your tools, your map. But can you make it through before the tunnel floods completely?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Push forward - you're almost there",
+          "nextScene": "A-2-022A",
+          "flagChanges": {
+            "set": ["pushed_through_flood"]
+          },
+          "requirements": {
+            "items": ["waterproof_cloth"]
+          }
+        },
+        {
+          "text": "Push forward - risk it even without protection",
+          "nextScene": "A-2-022B",
+          "flagChanges": {
+            "set": ["risked_flood_unprotected"]
+          },
+          "requirements": {
+            "notItems": ["waterproof_cloth"]
+          }
+        },
+        {
+          "text": "Turn back - this is suicide",
+          "nextScene": "A-2-022C",
+          "flagChanges": {
+            "set": ["turned_back_from_flood"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-021",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-021.png",
+        "text": "You understand now. The drainage route is passable, but only at low tide. You have maybe thirty minutes before high tide floods these tunnels completely.\n\nThirty minutes to reach the ocean grate. Thirty minutes to cut through it or pry it open. Thirty minutes to escape.\n\nOr you could wait. Find shelter in one of the side chambers. Let high tide pass, then navigate the route at low tide when it's safer.\n\nBut waiting means spending hours down here. Hours when the guards might discover you're missing. Hours when your window of opportunity could close.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Race against the tide - you have thirty minutes",
+          "nextScene": "A-2-023A",
+          "flagChanges": {
+            "set": ["racing_tide", "time_pressure"]
+          }
+        },
+        {
+          "text": "Wait for low tide - take the safe approach",
+          "nextScene": "A-2-023B",
+          "flagChanges": {
+            "set": ["waiting_for_low_tide", "patient_approach"]
+          }
+        },
+        {
+          "text": "Look for an alternative route - avoid the drainage entirely",
+          "nextScene": "A-2-023C",
+          "flagChanges": {
+            "set": ["seeking_alternative"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-022A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-022A.png",
+        "text": "",
+        "pages": [
+          "You wrap your tools and map in the waterproof cloth, seal it tight, and wade forward. The current is strong, but you're stronger.\n\nThe water rises to your shoulders. Your neck. You're swimming now, one hand holding the waterproof bundle above your head, the other pulling yourself along the tunnel wall.",
+          "The ceiling drops lower. Only inches of air space left. Your lungs burn. The current pulls harder.\n\nAnd then - light. Faint. Grey. Moonlight filtering through the ocean grate ahead.",
+          "You surge forward with your last strength. Your head breaks the surface in a small air pocket at the grate. You made it. Barely.\n\nBut now comes the hard part: getting through."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-022A-1.png",
+          "/images/backgrounds/A-2-022A-2.png",
+          "/images/backgrounds/A-2-022A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-024",
+      "flagChanges": {
+        "set": ["reached_grate", "tools_protected"]
+      }
+    },
+    {
+      "id": "A-2-022B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-022B.png",
+        "text": "",
+        "pages": [
+          "You push forward without protection. The water rises. Your tools are in your pockets, your map clutched in your hand.\n\nChest-deep. Shoulder-deep. The map dissolves in your fingers, ink bleeding away into the dark water. Your first mistake.",
+          "The current strengthens. You're swimming now, fighting to keep your head above water. The tunnel ceiling drops. Inches of air left.\n\nYour knife slips from your pocket. Gone. Your second mistake.",
+          "You reach the grate with nothing but your determination and your failing strength. The moonlight filtering through the iron bars mocks you.\n\nYou're here. But you've lost everything you needed to get through."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-022B-1.png",
+          "/images/backgrounds/A-2-022B-2.png",
+          "/images/backgrounds/A-2-022B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-025",
+      "itemChanges": {
+        "remove": ["kitchen_knife", "paring_knife"]
+      },
+      "flagChanges": {
+        "set": ["reached_grate_unprepared", "lost_tools"]
+      }
+    },
+    {
+      "id": "A-2-022C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-022C.png",
+        "text": "You turn back. It's not cowardice - it's survival. The water is rising too fast. You'd drown before reaching the grate.\n\nYou fight against the current, pulling yourself back toward the junction. The water follows you, rising, but you're faster moving upstream.\n\nYou reach the three-way junction just as the drainage tunnel floods completely behind you. That was close. Too close.\n\nYou're back where you started. Wet. Cold. But alive.\n\nTime to reconsider your options.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-026",
+      "flagChanges": {
+        "set": ["retreated_from_flood", "drainage_route_failed"]
+      }
+    },
+    {
+      "id": "A-2-023A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-023A.png",
+        "text": "",
+        "pages": [
+          "Thirty minutes. You can do this.\n\nYou move fast, splashing through the rising water. The drainage tunnel slopes downward. The water is ankle-deep, then knee-deep, but the current is manageable. Yet.",
+          "Fifteen minutes. The water is waist-deep. You can see the tide markers on the walls rising past you. The ocean is coming in.\n\nTen minutes. Chest-deep. The current pulls harder. Your progress slows.",
+          "Five minutes. You can see the grate ahead. Moonlight. Freedom. But the water is at your shoulders now, and rising.\n\nYou have maybe three minutes of air left before this tunnel becomes a death trap."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-023A-1.png",
+          "/images/backgrounds/A-2-023A-2.png",
+          "/images/backgrounds/A-2-023A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-024",
+      "flagChanges": {
+        "set": ["made_timing_challenge", "reached_grate"]
+      }
+    },
+    {
+      "id": "A-2-023B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-023B.png",
+        "text": "",
+        "pages": [
+          "Patience. Patience is what separates the living from the dead down here.\n\nYou find a side chamber - one of the old storage rooms you discovered during scouting. High enough that the tide won't reach it. You settle in to wait.",
+          "Hours pass. You hear the water rising in the main tunnel, filling the passages, flooding the drainage route completely. You made the right choice.\n\nEventually, the sound changes. The water stops rising. Begins to recede. The tide is turning.",
+          "You wait until you hear the dripping slow. Until the echo of flowing water fades to a trickle. Then you emerge.\n\nThe drainage tunnel is passable now. Low tide. Safe passage.\n\nBut the prison above will be waking soon. Dawn is coming. Your window is closing."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-023B-1.png",
+          "/images/backgrounds/A-2-023B-2.png",
+          "/images/backgrounds/A-2-023B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-027",
+      "flagChanges": {
+        "set": ["waited_for_low_tide", "safe_passage", "dawn_approaching"]
+      }
+    },
+    {
+      "id": "A-2-023C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-023C.png",
+        "text": "You study the junction again. Three routes. You chose the drainage route, but the other two are still there.\n\nThe narrow passage to the left - the crack you could barely squeeze through during scouting. It led to ancient tunnels, away from the ocean. Not an escape route... or is it?\n\nThe right passage - the one that led up toward the guard area, the vertical shaft. Dangerous, but it avoided the water entirely.\n\nMaybe the drainage route isn't the only way. Maybe there's an alternative you haven't considered.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-028",
+      "flagChanges": {
+        "set": ["reconsidering_route"]
+      }
+    },
+    {
+      "id": "A-2-024",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-024.png",
+        "text": "",
+        "pages": [
+          "The ocean grate is iron. Old. Rusted from decades of salt water. Strong enough to keep prisoners in, but maybe not strong enough to keep a desperate engineer out.",
+          "You examine it in the faint moonlight. The bars are thick, but the mortar holding them in place is crumbling. Years of tidal pressure have weakened the foundation.",
+          "You have your knife - if you didn't lose it. You have your strength. You have minutes before the water rises to cover the air pocket completely.\n\nTime to work."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-024-1.png",
+          "/images/backgrounds/A-2-024-2.png",
+          "/images/backgrounds/A-2-024-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-029",
+      "flagChanges": {
+        "set": ["examining_grate"]
+      }
+    },
+    {
+      "id": "A-2-025",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-025.png",
+        "text": "You cling to the grate, gasping for air. Your tools are gone. Your map is destroyed. You have nothing but your bare hands.\n\nYou try to pull the bars loose. They don't budge. You try to dig at the mortar with your fingers. It crumbles, but too slowly. You need hours, and you have minutes.\n\nThe water rises. The air pocket shrinks. Your last breaths count down.\n\nThis is how it ends. Not in the prison. Not in a cell. But here, in the dark, so close to freedom you can taste the salt air.\n\nYou failed.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-029",
+      "flagChanges": {
+        "set": ["failed_at_grate", "critical_failure"]
+      }
+    },
+    {
+      "id": "A-2-026",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-026.png",
+        "text": "You're back at the three-way junction. Wet. Frustrated. But not defeated.\n\nThe drainage route failed. But you still have options:\n\nThe narrow passage to the left - the ancient tunnels. Unknown. Unexplored beyond your initial scouting. But dry.\n\nThe right passage - leading up toward the guard area. Dangerous. But it avoids the water.\n\nOr you could return to your cell. Wait for another night. Plan better. Time the tides.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Try the ancient tunnel route instead",
+          "nextScene": "A-2-028",
+          "flagChanges": {
+            "set": ["switched_to_ancient_route"]
+          }
+        },
+        {
+          "text": "Try the vertical shaft route instead",
+          "nextScene": "A-2-028",
+          "flagChanges": {
+            "set": ["switched_to_shaft_route"]
+          }
+        },
+        {
+          "text": "Return to your cell - try again another night",
+          "nextScene": "A-2-029",
+          "flagChanges": {
+            "set": ["aborted_escape_attempt"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-027",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-027.png",
+        "text": "The drainage tunnel at low tide is exactly as you mapped it. Water trickling along the channel. Walls slick with algae. The smell of salt and stone.\n\nYou move quickly but carefully. Your footsteps splash quietly through shallow puddles. The ocean grate is ahead - you can hear the waves beyond it.\n\nNo time pressure now. No racing current. Just you, your tools, and the barrier between imprisonment and freedom.\n\nYou reach the grate as the first grey light of dawn begins to filter through. You have maybe an hour before the prison wakes. Before your absence is discovered.\n\nTime to work.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-029",
+      "flagChanges": {
+        "set": ["reached_grate_at_low_tide", "optimal_timing"]
+      }
+    },
+    {
+      "id": "A-2-028",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-028.png",
+        "text": "You choose a different path. The drainage route proved too dangerous, too unpredictable. But you're an engineer - adaptability is survival.\n\nThe alternative route stretches before you. Unknown. Challenging. But perhaps it leads somewhere the drainage tunnel never could.\n\nSometimes the path to freedom isn't the one you planned. Sometimes it's the one you discover when your first plan fails.\n\n[This scene branches to alternative escape routes - to be developed in future acts]",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-3-001",
+      "flagChanges": {
+        "set": ["alternative_route_chosen"]
+      }
+    },
+    {
+      "id": "A-2-029",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-029.png",
+        "text": "",
+        "pages": [
+          "The grate. The final barrier. Between you and the Atlantic Ocean. Between imprisonment and escape.",
+          "You work the knife into the mortar. Chip. Scrape. Pry. The old mortar crumbles. Decades of salt water have done most of the work - you're just finishing what the ocean started.",
+          "One bar loosens. Then another. You can squeeze through now - barely. The ocean beckons. Cold. Dark. Free.\n\nThis is it. The moment you've been planning for. The moment that will define everything that comes after.\n\nDo you take it?\n\n[END OF TUNNEL ROUTE ACT 2 - Escape sequence continues in Act 3]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-029-1.png",
+          "/images/backgrounds/A-2-029-2.png",
+          "/images/backgrounds/A-2-029-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-3-001",
+      "flagChanges": {
+        "set": ["tunnel_route_complete", "grate_opened", "ready_for_ocean"]
+      }
+    },
+    {
+      "id": "A-2-030",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-030.png",
+        "text": "",
+        "pages": [
+          "NIGHT 29\n\nTwo nights since you discovered the vertical shaft during your scouting mission. Two nights of studying the guard rotations near the lighthouse. Two nights of planning.",
+          "The shaft leads up, not out. But up means access to the guard levels. The armory. The communications room. And most importantly - the lighthouse itself.",
+          "The lighthouse sits on the highest point of the island. Every night, its beam sweeps across the Atlantic, warning ships away from the rocks.\n\nBut what if that beam could send a different message? What if someone was watching?"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-030-1.png",
+          "/images/backgrounds/A-2-030-2.png",
+          "/images/backgrounds/A-2-030-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-031",
+      "flagChanges": {
+        "set": ["night_29", "lighthouse_route_begun"]
+      },
+      "requirements": {
+        "flags": ["shaft_route_chosen"]
+      }
+    },
+    {
+      "id": "A-2-031",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-031.png",
+        "text": "But first, you need information. The guard schedules. The lighthouse keeper's routines. Access codes if there are any.\n\nYou have three potential sources:\n\nBastian might know something. He's been here longer than you, and he's observant. But sharing your plan means trusting him completely.\n\nÉmile Beaumont's network definitely knows. But his information comes with a price - and obligations you might not want.\n\nOr you could observe and gather intelligence yourself. Slower. Riskier. But it keeps the plan entirely in your control.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Ask Bastian for help - trust your cellmate",
+          "nextScene": "A-2-032A",
+          "flagChanges": {
+            "set": ["asked_bastian_for_help"]
+          },
+          "requirements": {
+            "relationships": {
+              "bastian": 5
+            }
+          }
+        },
+        {
+          "text": "Deal with Émile - get professional intel",
+          "nextScene": "A-2-032B",
+          "flagChanges": {
+            "set": ["dealt_with_emile_for_intel"]
+          }
+        },
+        {
+          "text": "Gather intelligence yourself - stay independent",
+          "nextScene": "A-2-032C",
+          "flagChanges": {
+            "set": ["solo_intelligence_gathering"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-032A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-032A.png",
+        "text": "",
+        "pages": [
+          "That night, after lights out, you tell Bastian everything.\n\nThe vertical shaft. The lighthouse plan. Your engineering calculations about signal distances and boat response times.",
+          "He listens without interrupting. When you finish, he's quiet for a long moment.\n\n\"You're serious,\" he finally says. Not a question. An observation.",
+          "\"There's someone,\" Bastian continues slowly. \"A woman. Cordelia Beaumont - Émile's cousin, ironically. She runs a fishing boat along the coast. She's helped prisoners before. For the right price.\"\n\nHe pauses. \"I can get a message to her. But Alexandre... if this fails, if we're caught, they'll put us in isolation. Or worse.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-032A-1.png",
+          "/images/backgrounds/A-2-032A-2.png",
+          "/images/backgrounds/A-2-032A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-033",
+      "flagChanges": {
+        "set": ["bastian_shared_cordelia_info", "bastian_is_ally"]
+      },
+      "relationshipChanges": {
+        "bastian": 10
+      }
+    },
+    {
+      "id": "A-2-032B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-032B.png",
+        "text": "",
+        "pages": [
+          "You find Émile in the yard during exercise hour. He's surrounded by his people, as always. Watching. Calculating.",
+          "\"I need information,\" you tell him directly. \"Guard schedules for the lighthouse. Keeper routines. Access patterns.\"\n\nÉmile studies you with cold eyes. \"And what does an engineer want with the lighthouse?\"",
+          "You don't answer. He doesn't need to know your plan.\n\n\"Information costs,\" Émile says. \"You want my network's intelligence? You work for me. Three jobs. Whatever I need. Structural assessments, electrical work, lock picking.\"\n\nHe leans closer. \"And if you're planning what I think you're planning... I want 20% of whatever money you're hiding on the outside.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-032B-1.png",
+          "/images/backgrounds/A-2-032B-2.png",
+          "/images/backgrounds/A-2-032B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-034",
+      "flagChanges": {
+        "set": ["emile_demands_payment", "owes_emile_jobs"]
+      },
+      "relationshipChanges": {
+        "emile": 5
+      }
+    },
+    {
+      "id": "A-2-032C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-032C.png",
+        "text": "You spend five nights watching. Observing. Learning.\n\nThe lighthouse keeper - an old guard named Marcel - follows a precise routine. Up the stairs at 1900 hours. Maintenance check at 2200 hours. Down at 0600 hours.\n\nBut there's a gap. Every third night, Marcel descends at 0200 hours to refill the fuel reservoir from the ground-level storage. Twenty minutes. Alone. Vulnerable.\n\nThe shaft you discovered leads to a maintenance corridor that connects to the lighthouse base. If you could reach it during Marcel's fuel run, you'd have access to the tower.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-035",
+      "flagChanges": {
+        "set": ["observed_marcel_routine", "found_timing_window"]
+      }
+    },
+    {
+      "id": "A-2-033",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-033.png",
+        "text": "\"Can you really get a message to Cordelia?\" you ask.\n\nBastian nods. \"Father Michel. The chaplain. He delivers letters to the mainland sometimes - officially for family contact, unofficially for... other purposes.\"\n\n\"Cordelia won't come for free,\" Bastian warns. \"She'll want 500 francs. Cash. Waiting for her at a dead drop location.\"\n\n500 francs. You don't have that kind of money. But maybe you could promise it. Or find another way to convince her.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Promise Cordelia the money - deal with it later",
+          "nextScene": "A-2-036A",
+          "flagChanges": {
+            "set": ["promised_cordelia_payment"]
+          }
+        },
+        {
+          "text": "Offer Cordelia information instead - leverage what you know",
+          "nextScene": "A-2-036B",
+          "flagChanges": {
+            "set": ["offered_cordelia_information"]
+          }
+        },
+        {
+          "text": "Ask Bastian to come with you - split the cost",
+          "nextScene": "A-2-036C",
+          "flagChanges": {
+            "set": ["invited_bastian_to_escape"]
+          },
+          "relationshipChanges": {
+            "bastian": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-034",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-034.png",
+        "text": "Émile's terms are harsh. But his intelligence is reliable.\n\n\"Fine,\" you say. \"Three jobs. But I want the information first.\"\n\nÉmile smiles. Not warmly. \"You'll get your information when I get my first job completed. There's a storage room in the west wing. The lock is broken but the guards don't know. I need you to map the electrical conduits - I'm planning something.\"\n\nHe hands you a small piece of paper. \"Guard schedules. Lighthouse access. Everything you need. But remember, engineer - you owe me now.\"",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Accept Émile's terms - you need the intel",
+          "nextScene": "A-2-037A",
+          "flagChanges": {
+            "set": ["accepted_emile_deal", "first_job_pending"]
+          }
+        },
+        {
+          "text": "Refuse the deal - find another way",
+          "nextScene": "A-2-037B",
+          "flagChanges": {
+            "set": ["refused_emile_deal"]
+          },
+          "relationshipChanges": {
+            "emile": -10
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-035",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-035.png",
+        "text": "Your observations have paid off. You know Marcel's routine. You know the timing window. You know the route.\n\nBut you're alone. No backup. No external contact. If something goes wrong, there's no one to help.\n\nThe lighthouse has signal equipment - the beam itself, plus emergency flares for maritime distress. If you could send a signal, ships might respond. But you'd need to know what signal to send. And you'd need someone willing to pick up an escaped prisoner.\n\nThis route is possible. But it's dangerous. More dangerous than the drainage route, perhaps. Because it relies entirely on hope - hope that someone will see your signal and respond.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-038",
+      "flagChanges": {
+        "set": ["solo_route_confirmed", "relying_on_hope"]
+      }
+    },
+    {
+      "id": "A-2-036A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-036A.png",
+        "text": "\"I'll get her the money,\" you lie. \"There's a deposit box. Family funds. I can access it once I'm free.\"\n\nBastian looks skeptical but doesn't challenge you. He writes the message carefully: coordinates, timing, signal pattern.\n\nFather Michel accepts the letter without questions. He's done this before.\n\nThree days later, Bastian receives a reply. A single word, scratched on the back of a prayer card: \"OUI.\"\n\nCordelia will be waiting. Off the northwest coast. Watching for your signal.\n\nNow you just need to reach the lighthouse and send it.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-039",
+      "flagChanges": {
+        "set": ["cordelia_agreed", "lied_about_money"]
+      }
+    },
+    {
+      "id": "A-2-036B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-036B.png",
+        "text": "\"I can't pay cash,\" you admit. \"But I know things. About Marchand. About the train crash conspiracy. Information that could be valuable to the right people.\"\n\nBastian considers this. Then he writes a different letter.\n\nFather Michel delivers it. The response takes a week.\n\nWhen it comes, it's longer than before. Cordelia wants specifics. Names. Dates. Evidence.\n\n\"She's interested,\" Bastian translates. \"But she wants proof you're not bluffing. Can you provide documentation?\"\n\nYou think about the papers you've memorized. The testimony you could give. It might be enough.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-039",
+      "flagChanges": {
+        "set": ["cordelia_wants_information", "information_trade"]
+      }
+    },
+    {
+      "id": "A-2-036C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-036C.png",
+        "text": "",
+        "pages": [
+          "\"Come with me,\" you say. \"We split the cost. Split the risk. Two men have a better chance than one.\"\n\nBastian goes very still. You see something in his eyes - hope? Fear? Both?",
+          "\"I've been in here for eight years,\" he says quietly. \"Eight years of watching men try to escape. Most of them die. The ones who don't... they get caught within days.\"\n\nHe looks at you. Really looks at you.",
+          "\"But you're different. You actually have a plan. Engineering. Precision.\" He takes a breath. \"Yes. I'll come. And I'll handle Cordelia's payment. I have... resources. People on the outside.\"\n\nYour cellmate is now your partner. The escape is no longer a solo mission."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-036C-1.png",
+          "/images/backgrounds/A-2-036C-2.png",
+          "/images/backgrounds/A-2-036C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-040",
+      "flagChanges": {
+        "set": ["bastian_escaping_with_player", "cordelia_payment_handled", "two_person_escape"]
+      },
+      "relationshipChanges": {
+        "bastian": 15
+      }
+    },
+    {
+      "id": "A-2-037A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-037A.png",
+        "text": "You take Émile's paper. The information is detailed - guard names, shift changes, access codes.\n\nThe lighthouse keeper, Marcel, follows a precise schedule. Every third night, he descends at 0200 hours for fuel. Twenty-minute window.\n\nBut Émile's intelligence comes with strings attached. You owe him three jobs. And 20% of money you don't have.\n\nYou'll deal with that later. For now, you have what you need to reach the lighthouse.\n\nThe question is: what happens when you get there?",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-041",
+      "flagChanges": {
+        "set": ["emile_intel_received", "debt_to_emile"]
+      }
+    },
+    {
+      "id": "A-2-037B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-037B.png",
+        "text": "\"No deal,\" you say. \"I don't owe you anything.\"\n\nÉmile's expression doesn't change, but his eyes go cold.\n\n\"Everyone owes someone in here, engineer. You'll learn that.\"\n\nHe walks away. His people close ranks around him.\n\nYou're on your own now. No Émile. No intelligence network. Just you and whatever you can observe yourself.\n\nIt's going to be harder. Much harder. But at least you won't be in debt to a criminal.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-035",
+      "flagChanges": {
+        "set": ["refused_emile", "made_enemy"]
+      }
+    },
+    {
+      "id": "A-2-038",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/A-2-038.png",
+        "text": "NIGHT 35\n\nThe third night of Marcel's fuel run cycle. Your window.\n\nYou've mapped the route: chapel basement, through the catacombs, up the vertical shaft, through the maintenance corridor, into the lighthouse base.\n\nYou have your tools. You have your timing. You have your plan.\n\nBut you don't have a boat. You don't have outside contact. If you send a signal, you're hoping - praying - that someone sees it and responds.\n\nIt's a gamble. The biggest gamble of your life.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Proceed with the lighthouse climb - take the gamble",
+          "nextScene": "A-2-042A",
+          "flagChanges": {
+            "set": ["climbing_lighthouse", "taking_gamble"]
+          }
+        },
+        {
+          "text": "Abort the plan - this is too risky without backup",
+          "nextScene": "A-2-042B",
+          "flagChanges": {
+            "set": ["aborted_lighthouse_plan"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A-2-039",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-039.png",
+        "text": "NIGHT 35\n\nCordelia's boat will be offshore. Waiting. Watching for your signal.\n\nThe plan: Climb the lighthouse. Send the signal pattern - three long flashes, two short, three long. SOS variant that Cordelia will recognize.\n\nShe'll approach the northwest rocks. You'll have to swim. Maybe 200 meters in Atlantic water. Cold. Dark. Dangerous.\n\nBut it's your best chance. Better than the drainage grate. Better than hoping for random ships.\n\nCordelia is expecting you. The question is: can you reach the lighthouse?",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-042A",
+      "flagChanges": {
+        "set": ["cordelia_waiting", "signal_pattern_known"]
+      }
+    },
+    {
+      "id": "A-2-040",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-040.png",
+        "text": "",
+        "pages": [
+          "NIGHT 35\n\nYou and Bastian move in silence through the chapel basement. Two men. One plan.",
+          "Bastian is slower than you - older, less fit. But he's determined. Eight years of imprisonment have given him something you don't have yet: absolute commitment to freedom.",
+          "\"When we reach the lighthouse,\" Bastian whispers as you climb through the shaft, \"you send the signal. I'll watch for Marcel. If he comes back early, I'll delay him.\"\n\n\"How?\" you ask.\n\nBastian smiles grimly. \"I taught philosophy. I can talk a man to death if needed.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-040-1.png",
+          "/images/backgrounds/A-2-040-2.png",
+          "/images/backgrounds/A-2-040-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-042A",
+      "flagChanges": {
+        "set": ["bastian_accompanying", "two_person_climb"]
+      }
+    },
+    {
+      "id": "A-2-041",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-041.png",
+        "text": "NIGHT 35\n\nÉmile's information was accurate. Marcel descended at exactly 0200 hours. The maintenance corridor is clear.\n\nBut you're alone. And Émile's debt hangs over you like a guillotine blade.\n\nWhen you escape - if you escape - he'll come collecting. Three jobs. 20% of phantom money. Maybe more.\n\nBut that's a problem for tomorrow. Tonight, you have twenty minutes to reach the lighthouse, send a signal, and hope someone responds.\n\nTime to move.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-042A",
+      "flagChanges": {
+        "set": ["emile_debt_pending"]
+      }
+    },
+    {
+      "id": "A-2-042A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-042A.png",
+        "text": "",
+        "pages": [
+          "The lighthouse rises above you. One hundred and twenty feet of stone and iron. The beam sweeps endlessly across the Atlantic.",
+          "You climb. Hand over hand. The spiral staircase winds upward. Your legs burn. Your lungs ache. But you keep climbing.",
+          "At the top, the signal equipment awaits. The massive Fresnel lens. The shutter controls. The emergency flare gun.\n\nYou have the tools. You have the knowledge. You have the plan.\n\nNow you just need the courage to execute it."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-042A-1.png",
+          "/images/backgrounds/A-2-042A-2.png",
+          "/images/backgrounds/A-2-042A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-043"
+    },
+    {
+      "id": "A-2-042B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-042B.png",
+        "text": "You turn back. This is madness. Climbing the lighthouse without outside contact, without a boat waiting, without any guarantee of rescue.\n\nYou're an engineer. You calculate risks. And this risk is too high.\n\nYou return to your cell before anyone notices you're gone. Bastian stirs as you climb into your bunk.\n\n\"Couldn't do it?\" he asks quietly.\n\n\"Not tonight,\" you reply.\n\nBut there will be other nights. Other plans. Other chances.\n\n[Route aborted - returns to planning phase]",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-2-044",
+      "flagChanges": {
+        "set": ["lighthouse_route_aborted"]
+      }
+    },
+    {
+      "id": "A-2-043",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-043.png",
+        "text": "",
+        "pages": [
+          "You manipulate the shutter controls. The beam pattern changes.\n\nThree long flashes. Two short. Three long.\n\nThe signal cuts through the night. Visible for miles across the black Atlantic.",
+          "If Cordelia is watching, she'll see it. If any ship is watching, they'll see it. If the guards are watching...\n\nYou don't think about that.",
+          "You send the signal three times. Then you wait.\n\nAnd in the darkness off the northwest coast, you see it: a small light. Flashing once. Twice. Three times.\n\nResponse.\n\nSomeone is coming.\n\n[END OF LIGHTHOUSE ROUTE ACT 2 - Escape sequence continues in Act 3]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/A-2-043-1.png",
+          "/images/backgrounds/A-2-043-2.png",
+          "/images/backgrounds/A-2-043-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-3-001",
+      "flagChanges": {
+        "set": ["lighthouse_route_complete", "signal_sent", "boat_responding"]
+      }
+    },
+    {
+      "id": "A-2-044",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-2-044.png",
+        "text": "Sometimes wisdom is knowing when to retreat. Sometimes survival means accepting that tonight is not the night.\n\nYou'll try again. Better prepared. Better connected. With more certainty.\n\nFor now, you're still a prisoner. But you're a prisoner with a plan. And plans can be refined. Improved. Perfected.\n\nThe lighthouse will still be there tomorrow night. And the night after. And the night after that.\n\nYou have time. You hope.\n\n[Lighthouse route postponed - player can attempt again with better preparation]",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "A-3-001",
+      "flagChanges": {
+        "set": ["lighthouse_route_postponed", "needs_better_preparation"]
+      }
+    },
+    {
+      "id": "A-5-D01",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-D01.png",
+        "text": "",
+        "pages": [
+          "The loading dock is chaos. Guards shouting. Searchlights sweeping. The supply boat rocking against the pier.\n\nYou gripped the sharpened spoon in your hand - a pathetic weapon against rifles. But you were desperate. Cornered.",
+          "\"Drop it!\" the guard captain shouted.\n\nYou lunged forward instead.\n\nThe gunshots were deafening. Three. Four. Five.",
+          "You don't feel the bullets at first. Just the impact. The force throwing you backward.\n\nThen you're falling. The cold Atlantic water rushes up to meet you. The last thing you see is the fortress walls, towering above. Still a prisoner. Forever.",
+          "DEATH ENDING\n\nSHOT AT THE DOCK\n\nYou died attempting to fight armed guards at the loading dock. The sea claimed your body. No one will remember your name.\n\nSometimes courage is not enough. Sometimes the system is too strong. Sometimes rebellion ends in cold water and silence.\n\nYour conspiracy against Francois Marchand dies with you. He will never face justice.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-D01-1.png",
+          "/images/endings/A-5-D01-2.png",
+          "/images/endings/A-5-D01-3.png",
+          "/images/endings/A-5-D01-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["death_ending", "ending_shot_at_dock", "ending_reached"]
+      }
+    },
+    {
+      "id": "A-5-D02",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-D02.png",
+        "text": "",
+        "pages": [
+          "The tunnel is flooding faster than you calculated. The water is already at your chest. Your waist. Your neck.\n\nYou miscalculated the tide. Or the drainage rate. Or both. Engineer's hubris. You thought you could predict nature.",
+          "The ceiling is three inches from the waterline now. Two inches. One.\n\nYou press your face against the rough stone, gasping for the last pockets of air. The water tastes of salt and rust and centuries of darkness.",
+          "No air left. Only water. Your lungs burn. Your vision darkens at the edges.\n\nYou think of Sophie. The train. Forty-seven dead. Now forty-eight.",
+          "DEATH ENDING\n\nDROWNED UNDERGROUND\n\nYou died in the flooded catacombs beneath Île de Pierre. Your body will never be found. The tide will carry your bones through ancient tunnels, deep into the bedrock.\n\nThe prisoners above will notice you're missing at morning count. The guards will search for a week. Then you'll be listed as escaped. An unsolved mystery.\n\nFrancois Marchand will read about your disappearance in the newspaper. He will smile.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-D02-1.png",
+          "/images/endings/A-5-D02-2.png",
+          "/images/endings/A-5-D02-3.png",
+          "/images/endings/A-5-D02-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["death_ending", "ending_drowned_underground", "ending_reached"]
+      }
+    },
+    {
+      "id": "A-5-D03",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-D03.png",
+        "text": "",
+        "pages": [
+          "The boat is sinking. You felt it take on water an hour ago - a slow leak, growing steadily worse. Now it's undeniable.\n\nThe Atlantic stretches in every direction. Black water. Black sky. No lights. No land. No rescue.",
+          "You tried to bail. You tried to patch the leak. But the boat is old, the wood rotten, and the sea is merciless.\n\nThe water is at your knees now. Then your waist. The boat lists heavily to starboard.",
+          "You slide into the ocean. The cold is shocking. Paralyzing. You try to swim, but hypothermia is already setting in. Your limbs feel heavy. Distant.\n\nYou float on your back, looking up at the stars. They're beautiful. You haven't seen stars in months.",
+          "Your eyes close. The sea is actually quite peaceful, you think. Quite gentle.\n\nThe Atlantic has claimed thousands of bodies. What's one more?\n\nDEATH ENDING\n\nLOST AT SEA\n\nYou died of exposure and drowning in the Atlantic Ocean, miles from shore. Your body will wash up on a beach in Cornwall three weeks later, unidentifiable.\n\nThe prison will report you as escaped. Technically true. You did escape the fortress.\n\nBut freedom was only a brief, cold dream.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-D03-1.png",
+          "/images/endings/A-5-D03-2.png",
+          "/images/endings/A-5-D03-3.png",
+          "/images/endings/A-5-D03-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["death_ending", "ending_lost_at_sea", "ending_reached"]
+      }
+    },
+    {
+      "id": "A-5-D04",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-D04.png",
+        "text": "",
+        "pages": [
+          "The rope is fraying. You can feel it. Each fiber snapping, one by one. The lighthouse is a hundred feet tall. You're halfway down.\n\nYou should have checked the rope more carefully. Should have tested it. Should have been more methodical.",
+          "The rope jerks. A sickening lurch. More fibers breaking.\n\nYou try to grip the stone wall, find a handhold, slow your descent. But the lighthouse exterior is smooth, weathered by centuries of Atlantic wind.",
+          "The rope snaps.\n\nFor a moment, you're weightless. Falling through the darkness. The stars above. The rocks below.",
+          "SNAP.\n\nDEATH ENDING\n\nFALL FROM LIGHTHOUSE\n\nYou died falling from the prison lighthouse. Your body struck the rocks at the base with fatal force. Death was instantaneous.\n\nA guard patrol found you at dawn. They assumed you climbed the lighthouse to attempt suicide. Another prisoner broken by the system. They've seen it before.\n\nYou'll be buried in the prison cemetery on the northeast corner of the island. No marker. No name. Just a number.\n\nFrancois Marchand will never know how close you came to exposing him.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-D04-1.png",
+          "/images/endings/A-5-D04-2.png",
+          "/images/endings/A-5-D04-3.png",
+          "/images/endings/A-5-D04-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["death_ending", "ending_fall_from_lighthouse", "ending_reached"]
+      }
+    },
+    {
+      "id": "A-5-C01",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-C01.png",
+        "text": "",
+        "pages": [
+          "Chef Pierre stands in the doorway, arms crossed. His eyes are cold. Behind him: three guards.\n\n\"I knew something was wrong,\" Pierre says quietly. \"Too many questions about the loading dock. Too much interest in the guard rotations. I've been running this kitchen for fifteen years, Alexandre. I know when someone's planning something.\"",
+          "The guards move fast. Professional. Efficient. They drag you from the kitchen before you can even think about resistance.\n\nYou see the other inmates watching. Some look sympathetic. Most look relieved it wasn't them.",
+          "The hole. That's what they call it. Solitary confinement in the basement levels. No light. No sound. Just stone walls and your own thoughts.\n\nThe Warden visits on the third day. Or maybe the fourth. Time has no meaning in the darkness.",
+          "\"Twenty more years added to your sentence,\" he says. \"Attempted escape. Theft of prison property. Conspiracy.\"\n\nHe pauses at the door. \"You should have just served your time, Dubois. Now you'll die here. In the dark.\"\n\nCAPTURE ENDING\n\nCAUGHT IN KITCHEN\n\nYour escape attempt failed before it truly began. Pierre's vigilance, the prison's security, and your own impatience conspired against you.\n\nYou'll spend the next three months in solitary. When you emerge, every guard will know your face. Every privilege will be revoked. The other prisoners will avoid you - association with an escape attempt brings scrutiny.\n\nÎle de Pierre has crushed better men than you. The fortress never lets go.\n\nFrancois Marchand will never face justice. You'll die forgotten in this place.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-C01-1.png",
+          "/images/endings/A-5-C01-2.png",
+          "/images/endings/A-5-C01-3.png",
+          "/images/endings/A-5-C01-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["capture_ending", "ending_caught_in_kitchen", "ending_reached", "solitary_confinement"]
+      }
+    },
+    {
+      "id": "A-5-C02",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-C02.png",
+        "text": "",
+        "pages": [
+          "The searchlight finds you halfway to the boat.\n\nYou freeze. Every instinct screams RUN, but there's nowhere to go. The loading dock is open ground. The boat is fifty feet away. The searchlight pins you like an insect.",
+          "\"DON'T MOVE!\"\n\nGuards pour from three directions. You counted their patrol patterns. You timed the gaps. But you missed something. A fourth guard. A backup rotation. One small miscalculation.",
+          "They don't go easy on you. The first guard's rifle butt catches you in the stomach. You go down hard on the stone dock. Then the boots start.\n\nYou curl up, trying to protect your head and ribs. It doesn't matter. They're professionals. They know how to hurt you without leaving permanent damage.",
+          "Three weeks in the infirmary. Two cracked ribs. Concussion. Bruises that paint your entire torso purple and black.\n\nThen six months in solitary confinement.\n\nThe Warden makes an example of you at morning assembly when you finally emerge. \"This is what happens to those who try to leave us,\" he announces to five hundred prisoners.\n\nCAPTURE ENDING\n\nCAUGHT AT DOCK\n\nYou came so close. Fifty feet from the boat. Fifty feet from freedom. But the prison's security proved stronger than your planning.\n\nThe beating has left you with a permanent limp. Your left eye doesn't focus quite right anymore. And every prisoner knows your face as \"the engineer who tried and failed.\"\n\nYour reputation for planning and intelligence is destroyed. No one will trust you with another escape plan. You're a marked man.\n\nÎle de Pierre keeps its prisoners. Always.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-C02-1.png",
+          "/images/endings/A-5-C02-2.png",
+          "/images/endings/A-5-C02-3.png",
+          "/images/endings/A-5-C02-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["capture_ending", "ending_caught_at_dock", "ending_reached", "beaten_by_guards", "permanent_injury"]
+      }
+    },
+    {
+      "id": "A-5-C03",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-C03.png",
+        "text": "",
+        "pages": [
+          "You've been in the boat for three hours. The island is a dark shadow behind you. The coast of France is somewhere ahead in the darkness.\n\nThen you see the light. Not a lighthouse. Not a fishing boat. A spotlight. Powerful. Sweeping. Military.\n\nThe coast guard cutter cuts through the waves like a knife. Fast. Unstoppable.",
+          "\"HEAVE TO! KILL YOUR ENGINE!\"\n\nYou consider running. But where? They're faster. Better equipped. You have a stolen fishing boat with a sputtering motor. They have a patrol vessel designed for exactly this scenario.",
+          "They haul you aboard like cargo. Rough hands. Metal cuffs. No words. Just professional efficiency.\n\nThe captain looks at you with something like pity. \"Île de Pierre?\" he asks. You nod. He sighs. \"They always try. They never make it.\"",
+          "The return to the island is worse than the original arrival. You know what's waiting.\n\nThe Warden stands on the dock, hands behind his back, watching as they drag you off the coast guard vessel. He doesn't look angry. He looks satisfied.\n\n\"Welcome back, Dubois,\" he says. \"We've prepared your new accommodations. I think you'll find them... memorable.\"\n\nCAPTURE ENDING\n\nCAUGHT AT SEA\n\nYou tasted freedom for three hours. You felt the wind and saw the stars. You almost made it.\n\nAlmost doesn't matter.\n\nOne year in solitary confinement. Then transfer to the maximum security block. No more work assignments. No more privileges. Twenty-three hours a day in a cell measuring six feet by eight feet.\n\nThe other prisoners will hear the story. \"The engineer who got caught at sea.\" A cautionary tale. A reminder that the fortress never lets go.\n\nFrancois Marchand will read about your recapture in the newspaper. He will sleep well knowing the truth died with your freedom.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-C03-1.png",
+          "/images/endings/A-5-C03-2.png",
+          "/images/endings/A-5-C03-3.png",
+          "/images/endings/A-5-C03-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["capture_ending", "ending_caught_at_sea", "ending_reached", "recaptured", "maximum_security_transfer"]
+      }
+    },
+    {
+      "id": "A-5-E01",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-E01.png",
+        "text": "",
+        "pages": [
+          "You wake to sunlight. Real sunlight, not filtered through prison bars. The rocking motion has stopped.\n\nYou're in the back of the supply truck, hidden among crates of vegetables and flour sacks. The engine is silent. You hear voices outside - dock workers, casual conversation, not the clipped commands of guards.",
+          "You peek through a gap in the canvas. A port. Marseille, maybe? Or Brest? You're not sure. But you're on the mainland. You're off the island.\n\nYou wait until the voices fade, then slip out the back of the truck. No alarms. No shouts. Just morning workers going about their day.",
+          "You walk. One foot in front of the other. Trying to look casual. Trying not to run. Every person you pass could recognize you from newspapers. Every policeman could be looking for escapees.\n\nBut no one stops you. No one even looks twice.\n\nYou're just another dock worker. Another tired face in the morning crowd.",
+          "ESCAPE ENDING\n\nTHE SUPPLY TRUCK\n\nYou escaped Île de Pierre hidden in a supply truck. Simple. Practical. The engineer's solution.\n\nNo dramatic boat chase. No gunfight. No heroic last stand. You hid among vegetables and rode to freedom.\n\nNow comes the hard part: staying free. Building a new identity. Finding evidence to expose Francois Marchand. Bringing justice for Sophie and the forty-seven dead.\n\nThe prison is behind you. But the fight for truth has just begun.\n\nYou are Alexandre Dubois. You are an engineer. You are wrongfully convicted.\n\nAnd you are free.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-E01-1.png",
+          "/images/endings/A-5-E01-2.png",
+          "/images/endings/A-5-E01-3.png",
+          "/images/endings/A-5-E01-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["escape_ending", "ending_supply_truck", "ending_reached", "escaped_prison", "on_mainland"]
+      }
+    },
+    {
+      "id": "A-5-E02",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-E02.png",
+        "text": "",
+        "pages": [
+          "The fishing boat cuts through the early morning waves. Behind you, Île de Pierre is a dark smudge on the horizon. Growing smaller. Disappearing.\n\nYou stole this boat from the loading dock. Cut the mooring lines. Started the engine. Left before anyone realized what you were doing.",
+          "The fuel gauge shows half a tank. Maybe enough to reach the coast. Maybe not. You don't have charts. Don't know the currents. Don't know which direction is safest.\n\nYou're an engineer, not a sailor. But you're free. That's what matters.",
+          "The sun rises. Golden light spreads across the Atlantic. You see the French coast ahead - rocky cliffs, small villages, church steeples.\n\nYou beach the boat in a small cove. No one sees you. You climb the rocks, soaking wet, exhausted, but alive.",
+          "ESCAPE ENDING\n\nTHE STOLEN BOAT\n\nYou escaped Île de Pierre by stealing a fishing boat. Bold. Dangerous. Desperate.\n\nYou could have drowned. Could have been caught. Could have run out of fuel and drifted back to the island. But you didn't.\n\nNow you stand on French soil, a fugitive with no money, no identity papers, no allies. Just the clothes on your back and the knowledge that Francois Marchand must face justice.\n\nThe boat theft will make headlines. Your face will be in every newspaper. Finding you will be a priority.\n\nBut you're free. And for now, that's enough.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-E02-1.png",
+          "/images/endings/A-5-E02-2.png",
+          "/images/endings/A-5-E02-3.png",
+          "/images/endings/A-5-E02-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["escape_ending", "ending_stolen_boat", "ending_reached", "escaped_prison", "high_profile_escape", "fugitive_status"]
+      }
+    },
+    {
+      "id": "A-5-E03",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-E03.png",
+        "text": "",
+        "pages": [
+          "You crawl onto the beach, coughing seawater. Your lungs burn. Your muscles scream. You've been swimming for what feels like hours.\n\nThe tunnel exit was exactly where the map said it would be. But the tide was wrong. Or your timing was off. Or both. The water nearly killed you.",
+          "You lie on the rocky shore, gasping. Above you: stars. Real stars. Not seen through prison bars. The sound of waves. The smell of salt and seaweed and freedom.\n\nYou almost didn't make it. Three times you thought about turning back. Three times you pushed forward anyway.",
+          "You check yourself. Cuts and bruises. Hypothermia setting in. Exhausted beyond measure. But alive. Impossibly, incredibly alive.\n\nYou stand on shaking legs. The prison is somewhere behind you, across black water. You don't look back.",
+          "ESCAPE ENDING\n\nTHE NARROW ESCAPE\n\nYou escaped Île de Pierre through the smuggler tunnels. Barely.\n\nYou survived by luck as much as planning. The water nearly drowned you. The cold nearly killed you. But you kept swimming. Kept pushing. Kept fighting.\n\nEngineers calculate risks. You calculated this one and went anyway, knowing the odds were against you.\n\nNow you're free, but marked by the experience. You'll have nightmares of drowning in darkness. You'll flinch at enclosed spaces. The tunnels left scars you can't see.\n\nBut you're free. And that's worth everything.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-E03-1.png",
+          "/images/endings/A-5-E03-2.png",
+          "/images/endings/A-5-E03-3.png",
+          "/images/endings/A-5-E03-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["escape_ending", "ending_narrow_escape", "ending_reached", "escaped_prison", "traumatized", "tunnel_survivor"]
+      }
+    },
+    {
+      "id": "A-5-E04",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-E04.png",
+        "text": "",
+        "pages": [
+          "You're free. You made it off the island. You're standing on a quiet street in a coastal town, watching the sunrise.\n\nBut your hands won't stop shaking.\n\nThe guard at the loading dock. You didn't mean to kill him. You just needed him to stop, to be quiet, to let you pass. But he reached for his whistle, and you had the sharpened spoon, and—",
+          "It happened so fast. One moment he was standing. The next he was on the ground, blood spreading across the stones, eyes wide and confused and accusing.\n\nYou didn't stop to check if he was dead. You just ran.\n\nBut you know. You felt the blade go in. You heard him fall. You saw the blood.",
+          "Forty-seven people died because of Francois Marchand's greed. You were wrongfully convicted for their deaths. And now you've added one more death to the count.\n\nA guard. Just doing his job. Maybe he had a family. Maybe he had children. You'll never know.",
+          "ESCAPE ENDING\n\nBLOOD ON YOUR HANDS\n\nYou escaped Île de Pierre. But the price was a man's life.\n\nYou told yourself it was self-defense. Survival. Necessary. But late at night, when you close your eyes, you see his face. The surprise. The pain. The accusation.\n\nYou wanted to prove your innocence. To expose Marchand. To get justice for Sophie and the forty-seven dead.\n\nBut now you're not innocent anymore. Now you're guilty of exactly what you were convicted of: causing death through your actions.\n\nYou're free. But you'll never be free of this.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-E04-1.png",
+          "/images/endings/A-5-E04-2.png",
+          "/images/endings/A-5-E04-3.png",
+          "/images/endings/A-5-E04-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["escape_ending", "ending_blood_on_hands", "ending_reached", "escaped_prison", "killed_guard", "moral_compromise", "guilty"]
+      }
+    },
+    {
+      "id": "A-5-E05",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-E05.png",
+        "text": "",
+        "pages": [
+          "The fisherman found you at dawn, clinging to wreckage from the boat. You were barely conscious. Hypothermic. Minutes from death.\n\nHe pulled you aboard without a word. Wrapped you in blankets. Gave you hot coffee. Didn't ask questions.",
+          "\"Île de Pierre?\" he finally asks, once you can speak.\n\nYou nod. Waiting for him to turn the boat around. To radio the coast guard. To collect the reward money.\n\nInstead, he nods. \"My brother was there. Ten years. Said he was innocent too.\" He pauses. \"He died in that place. 1919. Tuberculosis.\"",
+          "The fisherman takes you to a small village. Gives you clothes, money, papers with a new name. \"My brother's identity,\" he says. \"He won't be needing it.\"\n\nYou try to thank him. He waves it away. \"Just... don't waste it. The freedom. My brother never got his. You make it count.\"",
+          "ESCAPE ENDING\n\nTHE FISHERMAN'S MERCY\n\nYou escaped Île de Pierre through the kindness of a stranger.\n\nJean-Baptiste Laurent. A fisherman who lost his brother to the prison system. A quiet man who saw you dying in the water and chose mercy over reward.\n\nHe gave you his brother's identity. A new name. A second chance.\n\nYou can never repay him. Can never find him again - he made sure of that. But you can honor his gift. Make your freedom matter. Expose Marchand. Get justice for Sophie.\n\nYou escaped with your life and your conscience intact. The fisherman saved both.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-E05-1.png",
+          "/images/endings/A-5-E05-2.png",
+          "/images/endings/A-5-E05-3.png",
+          "/images/endings/A-5-E05-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["escape_ending", "ending_fishermans_mercy", "ending_reached", "escaped_prison", "new_identity", "helped_by_stranger", "clean_escape"]
+      }
+    },
+    {
+      "id": "A-5-E06",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-E06.png",
+        "text": "",
+        "pages": [
+          "The smugglers found you in their tunnels. You expected them to kill you. Or turn you in. Instead, they laughed.\n\n\"Another one from the fortress,\" the leader said. \"You're the third this year. The tunnels always find the desperate ones.\"",
+          "They offered you a choice: join them, or take your chances alone in the dark. You chose the smugglers.\n\nThey got you off the island. Gave you clothes, papers, money. But nothing is free. Now you work for them. Running contraband. Bribing officials. Doing things you swore you'd never do.",
+          "You're free, but trapped in a different kind of prison. The smuggler network has its own rules. Its own hierarchy. Its own punishments for those who betray it.\n\nSophie's face is starting to fade from your memory. The train crash feels like someone else's tragedy. Francois Marchand seems very far away.",
+          "ESCAPE ENDING\n\nTHE SMUGGLER NETWORK\n\nYou escaped Île de Pierre by joining the criminals who use its tunnels.\n\nYou're free from the prison. But you've traded one cage for another. The smugglers own you now. You move their goods, do their jobs, keep their secrets.\n\nYou wanted to prove your innocence. To get justice. To honor Sophie's memory. Instead, you've become exactly what they accused you of being: a criminal.\n\nSometimes, late at night, you think about walking away. Finding Marchand. Exposing the truth. But the smugglers made it clear: once you're in the network, you're in for life.\n\nAt least you're not in a cell. That's something. Isn't it?\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-E06-1.png",
+          "/images/endings/A-5-E06-2.png",
+          "/images/endings/A-5-E06-3.png",
+          "/images/endings/A-5-E06-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["escape_ending", "ending_smuggler_network", "ending_reached", "escaped_prison", "joined_criminals", "moral_compromise", "trapped_by_debt"]
+      }
+    },
+    {
+      "id": "A-5-E07",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-E07.png",
+        "text": "",
+        "pages": [
+          "The boat appears exactly when Bastian said it would. Every Thursday at 3 AM, his sister Cordelia passes close to the northwest rocks. \"If she sees the lighthouse signal,\" he told you, \"she'll come.\"\n\nYou climbed the lighthouse. Sent the signal. Three long, two short, three long. The code Bastian taught you.",
+          "Now you're on her boat, wrapped in blankets, drinking hot soup. Cordelia looks like her brother - same sharp eyes, same quiet competence.\n\n\"Bastian talked about you in his letters,\" she says. \"Said you were smart. Kind. That you deserved better than that place.\" She pauses. \"He made me promise to watch for the signal. Every Thursday. For as long as it took.\"",
+          "You ask about getting Bastian out too. Cordelia shakes her head sadly. \"He won't leave. He's got other plans. But he wanted you to make it. Said you could actually prove your innocence. That you could do something with your freedom.\"\n\nShe hands you an envelope. \"He wanted you to have this.\" Inside: documents. Names. Evidence. Things Bastian collected over years. Things that point to Marchand.",
+          "ESCAPE ENDING\n\nBASTIAN'S SISTER\n\nYou escaped Île de Pierre with help from your cellmate's sister.\n\nBastian Laurent spent years planning your escape, not his own. He trusted you with his sister's life. Gave you his evidence. Sacrificed his own chance at freedom to ensure yours.\n\nYou owe him everything. And he'll never leave that prison.\n\nCordelia takes you to a safe house. Gives you money, papers, contacts. \"My brother believes in you,\" she says. \"Don't waste it. Get the truth out there. Make his faith worth something.\"\n\nYou have the evidence. You have your freedom. You have allies.\n\nNow you have to finish what you started. For Sophie. For Bastian. For the truth.\n\nThis is the best way out of the fortress. You didn't do it alone.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-E07-1.png",
+          "/images/endings/A-5-E07-2.png",
+          "/images/endings/A-5-E07-3.png",
+          "/images/endings/A-5-E07-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "requirements": {
+        "relationships": {
+          "bastian": 80
+        }
+      },
+      "flagChanges": {
+        "set": ["escape_ending", "ending_bastians_sister", "ending_reached", "escaped_prison", "best_night_ending", "has_evidence", "has_allies", "bastian_helped"]
+      }
+    },
+    {
+      "id": "A-5-E08",
+      "type": "ending",
+      "content": {
+        "visual": "/images/endings/A-5-E08.png",
+        "text": "",
+        "pages": [
+          "You walk out the front gate at 6:47 AM, during the guard shift change. Timing perfect. Uniform perfect. Forged papers perfect.\n\nThe guard at the gate barely glances at your transfer documents. \"Another reassignment to the mainland? Third one this month.\"\n\nYou nod, say nothing. Keep your face neutral. Keep your breathing steady.",
+          "He waves you through. Just like that. The gate opens. You walk across the causeway to the dock. Board the supply boat with the other guards rotating off duty. Sit in the back. Don't make eye contact.\n\nNo alarms. No chase. No dramatic escape. You're a ghost. A clerical error. A man who was never really there.",
+          "The prison doesn't realize you're gone until evening count. By then you're three hundred miles away, your guard uniform burned, your face clean-shaven, your gait changed. Alexandre Dubois the prisoner no longer exists.\n\nThey'll search for weeks. Investigate the guards. Question everyone. But they'll never understand how you did it.",
+          "ESCAPE ENDING\n\nTHE FRONT DOOR\n\nYou escaped Île de Pierre by walking out the front gate in a guard uniform.\n\nThe hardest escape. The most audacious. Perfect timing. Perfect disguise. Perfect nerve.\n\nYou spent months memorizing guard schedules, forging documents, stealing uniform pieces one at a time. Any mistake would have meant death or solitary confinement.\n\nBut there were no mistakes. You're an engineer. Engineers don't leave variables to chance.\n\nYou're free, and they don't even know you're gone yet. You have a head start. Resources. Time.\n\nTime to find Marchand. Time to gather evidence. Time to prove your innocence and expose the truth about Sophie's death and the forty-seven lives lost.\n\nYou walked out of hell like you owned the place.\n\nNow make it count.\n\nTHE END"
+        ],
+        "pageVisuals": [
+          "/images/endings/A-5-E08-1.png",
+          "/images/endings/A-5-E08-2.png",
+          "/images/endings/A-5-E08-3.png",
+          "/images/endings/A-5-E08-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "flagChanges": {
+        "set": ["escape_ending", "ending_front_door", "ending_reached", "escaped_prison", "hardest_path_a_ending", "perfect_stealth", "perfect_disguise", "maximum_head_start"]
+      }
+    },
+    {
+      "id": "A-3-001",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/A-3-001.png",
+        "text": "ACT 3: FINAL EXECUTION\n\n[This is a placeholder scene for Act 3 development]\n\nYou've completed Act 2. Act 3 will contain the final escape execution scenes that lead to the various endings based on your choices, relationships, and route.\n\nThis placeholder allows Act 1 and Act 2 to be fully playable while Act 3 is under construction.\n\nComing soon:\n- Kitchen route final execution (A-3-001 to A-3-015)\n- Tunnel route final execution (A-3-016 to A-3-030)\n- Lighthouse route final execution (A-3-031 to A-3-045)\n- Branching paths to all 15 endings\n\n[End of Act 2 - Act 3 Under Construction]",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "[DEMO] View Supply Truck Ending",
+          "nextScene": "A-5-E01"
+        },
+        {
+          "text": "[DEMO] View Bastian's Sister Ending",
+          "nextScene": "A-5-E07"
+        },
+        {
+          "text": "[DEMO] View Death Ending",
+          "nextScene": "A-5-D02"
+        }
+      ],
+      "flagChanges": {
+        "set": ["act_3_placeholder"]
+      }
+    }
+  ]
+}

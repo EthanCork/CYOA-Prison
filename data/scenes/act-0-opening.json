@@ -57,6 +57,11 @@
           "The prison fortress that will be your home. Perhaps your tomb.\n\nYou're chained to four other prisoners. None of them meet your eyes. They know what awaits on Stone Island.",
           "A guard walks down the narrow aisle between benches, checking restraints. He stops at your row, reading from a manifest."
         ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-004-1.png",
+          "/images/backgrounds/X-0-004-2.png",
+          "/images/backgrounds/X-0-004-3.png"
+        ],
         "speaker": null
       },
       "choices": [],
@@ -66,11 +71,15 @@
       "id": "X-0-005",
       "type": "dialogue",
       "content": {
-        "visual": "/images/characters/X-0-005.png",
+        "visual": "/images/backgrounds/X-0-005.png",
         "text": "",
         "pages": [
           "Alexandre Dubois. The train engineer. First time on the island? You still have that look - like you think someone will realize there's been a mistake.",
           "Let me give you advice, engineer: forget your old life. Forget justice. On Île de Pierre, there is only survival."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-005-1.png",
+          "/images/backgrounds/X-0-005-2.png"
         ],
         "speaker": "Guard Captain Legrand"
       },
@@ -108,12 +117,12 @@
       "id": "X-0-006A",
       "type": "dialogue",
       "content": {
-        "visual": "/images/characters/X-0-006A.png",
+        "visual": "/images/backgrounds/X-0-006A.png",
         "text": "Practical. Smart. Most newcomers waste breath protesting innocence. Listen well: Stay clear of Émile Beaumont and his men - they rule the yard. Don't trust anyone who offers help for free. And whatever you do, don't attract Warden Beauregard's attention. Invisible men survive here.",
         "speaker": "Guard Captain Legrand"
       },
       "choices": [],
-      "nextScene": "X-0-007",
+      "nextScene": "X-0-006D",
       "flagChanges": {
         "set": ["legrand_gave_advice", "learned_about_emile"]
       }
@@ -122,12 +131,12 @@
       "id": "X-0-006B",
       "type": "dialogue",
       "content": {
-        "visual": "/images/characters/X-0-006B.png",
+        "visual": "/images/backgrounds/X-0-006B.png",
         "text": "Innocent? They all say that. The murderers, the thieves, the traitors. You know what I care about your innocence? Nothing. The judge said you're guilty. Forty-seven people are dead because of you. You want to survive? Drop the righteous act. Nobody here gives a damn about your story.",
         "speaker": "Guard Captain Legrand"
       },
       "choices": [],
-      "nextScene": "X-0-007",
+      "nextScene": "X-0-006D",
       "flagChanges": {
         "set": ["legrand_angered"]
       }
@@ -136,34 +145,573 @@
       "id": "X-0-006C",
       "type": "dialogue",
       "content": {
-        "visual": "/images/characters/X-0-006C.png",
+        "visual": "/images/backgrounds/X-0-006C.png",
         "text": "The silent type. Not stupid, then. In here, the less you say, the less trouble finds you. Remember this: eyes open, mouth shut, head down. That's how you survive Île de Pierre, engineer.",
         "speaker": "Guard Captain Legrand"
       },
       "choices": [],
-      "nextScene": "X-0-007",
+      "nextScene": "X-0-006D",
       "flagChanges": {
         "set": ["legrand_respects_silence"]
       }
     },
     {
-      "id": "X-0-007",
+      "id": "X-0-006D",
       "type": "narrative",
       "content": {
-        "visual": "/images/backgrounds/X-0-007.png",
+        "visual": "/images/backgrounds/X-0-006D.png",
         "text": "",
         "pages": [
           "The boat lurches against the stone dock. Guards shout orders in rapid French. You're pulled to your feet, chains rattling, and herded down the gangplank onto slick, sea-worn stones.",
           "The fortress looms above you - ancient stone walls topped with newer iron bars and guard towers. This is real. This is happening.",
-          "You are Alexandre Dubois. Railway engineer. Wrongfully convicted.\n\nAnd you take your first steps onto Île de Pierre as prisoner number 1247."
+          "You are Alexandre Dubois. Railway engineer. Wrongfully convicted. Prisoner number 1247."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-006D-1.png",
+          "/images/backgrounds/X-0-006D-2.png",
+          "/images/backgrounds/X-0-006D-3.png"
         ],
         "speaker": null
       },
       "choices": [],
-      "nextScene": "A-1-001",
+      "nextScene": "X-0-007"
+    },
+    {
+      "id": "X-0-007",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/X-0-007.png",
+        "text": "",
+        "pages": [
+          "Legrand leads you through cold stone corridors to a heavy wooden door. Inside, Warden Beauregard sits behind an imposing desk. He's a thin man with sharp features and cold eyes that study you like a specimen.",
+          "\"Alexandre Dubois. The train engineer who killed forty-seven people.\" His voice is measured, clinical. \"Welcome to Île de Pierre. Here, you will serve your sentence. Here, you will be forgotten.\"\n\nHe opens a file on his desk. Your file."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-007-1.png",
+          "/images/backgrounds/X-0-007-2.png"
+        ],
+        "speaker": "Warden Beauregard"
+      },
+      "choices": [
+        {
+          "text": "\"I was framed. Francois Marchand is behind this.\"",
+          "nextScene": "X-0-008A",
+          "flagChanges": {
+            "set": ["accused_marchand_to_warden", "warden_hostile"]
+          }
+        },
+        {
+          "text": "\"I accept my punishment, Warden.\"",
+          "nextScene": "X-0-008B",
+          "flagChanges": {
+            "set": ["submitted_to_warden", "warden_neutral"]
+          }
+        },
+        {
+          "text": "Say nothing. Just stare at him.",
+          "nextScene": "X-0-008C",
+          "flagChanges": {
+            "set": ["silent_with_warden", "warden_intrigued"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "X-0-008A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/X-0-008A.png",
+        "text": "\"Francois Marchand?\" The warden's expression doesn't change, but something flickers in his eyes. \"Monsieur Marchand is a respected industrialist and benefactor of this institution. You dare accuse him?\"\n\nHe closes your file with deliberate slowness. \"Your delusions will not serve you here, Dubois. In fact, I'll personally ensure your stay is... educational. Take him to isolation, Legrand.\"",
+        "speaker": "Warden Beauregard"
+      },
+      "choices": [],
+      "nextScene": "X-0-009",
       "flagChanges": {
-        "set": ["arrived_at_prison", "act_0_complete", "prisoner_1247"]
+        "set": ["warden_connected_to_marchand", "sent_to_isolation"]
       }
+    },
+    {
+      "id": "X-0-008B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/X-0-008B.png",
+        "text": "\"Acceptance. How... refreshing.\" The warden leans back in his chair. \"Most prisoners waste years protesting their innocence. You show wisdom, Dubois.\"\n\nHe makes a note in your file. \"You'll be assigned to the standard block. Follow the rules, keep your head down, and your time here will pass. Cause trouble, and you'll learn why they call this Stone Island.\"",
+        "speaker": "Warden Beauregard"
+      },
+      "choices": [],
+      "nextScene": "X-0-009",
+      "flagChanges": {
+        "set": ["warden_approves", "standard_treatment"]
+      }
+    },
+    {
+      "id": "X-0-008C",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/X-0-008C.png",
+        "text": "The silence stretches. The warden studies you, and for the first time, you see genuine interest in those cold eyes.\n\n\"Defiant silence. Not the tears and protestations I usually see.\" He makes a note. \"You're either very stupid or very dangerous, Dubois. I haven't decided which. Legrand, standard block. But I'll be watching this one.\"",
+        "speaker": "Warden Beauregard"
+      },
+      "choices": [],
+      "nextScene": "X-0-009",
+      "flagChanges": {
+        "set": ["warden_watching", "marked_as_interesting"]
+      }
+    },
+    {
+      "id": "X-0-009",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-009.png",
+        "text": "",
+        "pages": [
+          "Legrand escorts you through the cell block. Iron doors slam shut behind you with echoing finality. Prisoners watch from their cells, measuring you. Judging you.",
+          "Your cell is small - barely six paces across. A single barred window high on the wall. Two bunks, a bucket, a small table. And a man sitting on the lower bunk, reading a worn book.",
+          "He looks up as Legrand locks the door. Middle-aged, weathered face, intelligent eyes. \"Bastian Laurent,\" he says in accented French. \"Former professor. And you must be the famous train engineer.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-009-1.png",
+          "/images/backgrounds/X-0-009-2.png",
+          "/images/backgrounds/X-0-009-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-010",
+      "flagChanges": {
+        "set": ["met_bastian", "in_cell"]
+      }
+    },
+    {
+      "id": "X-0-010",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/X-0-010.png",
+        "text": "Night falls. Bastian has given you the upper bunk and gone to sleep. Through the window, you can see the lighthouse beam sweeping the yard. The prison is quieter now, but not silent. Footsteps echo. Distant voices murmur.\n\nYou can't sleep. Your first night in Île de Pierre.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Examine the cell walls carefully",
+          "nextScene": "X-0-010A",
+          "flagChanges": {
+            "set": ["explored_walls"]
+          }
+        },
+        {
+          "text": "Watch the lighthouse pattern from the window",
+          "nextScene": "X-0-010B",
+          "flagChanges": {
+            "set": ["observed_lighthouse"]
+          }
+        },
+        {
+          "text": "Listen to the guard patrol patterns",
+          "nextScene": "X-0-010C",
+          "flagChanges": {
+            "set": ["learned_patrol_pattern"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "X-0-010A",
+      "type": "investigation",
+      "content": {
+        "visual": "/images/backgrounds/X-0-010A.png",
+        "text": "You run your hands along the stone walls, feeling every crack and crevice. Years of prisoners have left their marks - scratches, crude drawings, desperate messages.\n\nBehind the small table, you find something. A stone that shifts slightly when you press it. Not loose enough to remove yet, but someone has been working on it. Bastian? A previous occupant?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Continue exploring",
+          "nextScene": "X-0-010",
+          "requirements": {
+            "notFlags": ["observed_lighthouse", "learned_patrol_pattern"]
+          }
+        },
+        {
+          "text": "Try to sleep",
+          "nextScene": "X-0-011",
+          "requirements": {
+            "flags": ["observed_lighthouse", "learned_patrol_pattern"]
+          }
+        }
+      ],
+      "flagChanges": {
+        "set": ["explored_walls", "found_loose_stone", "investigated_cell"]
+      }
+    },
+    {
+      "id": "X-0-010B",
+      "type": "investigation",
+      "content": {
+        "visual": "/images/backgrounds/X-0-010B.png",
+        "text": "The lighthouse beam sweeps across the yard every thirty seconds. For a brief moment, you can see everything - the guard towers, the exercise yard, the high walls.\n\nBut there's a blind spot. A shadow behind the chapel where the light never reaches. Ten seconds of darkness before the beam returns. Not much, but maybe enough for someone who knew what they were doing.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Continue exploring",
+          "nextScene": "X-0-010",
+          "requirements": {
+            "notFlags": ["explored_walls", "learned_patrol_pattern"]
+          }
+        },
+        {
+          "text": "Try to sleep",
+          "nextScene": "X-0-011",
+          "requirements": {
+            "flags": ["explored_walls", "learned_patrol_pattern"]
+          }
+        }
+      ],
+      "flagChanges": {
+        "set": ["observed_lighthouse", "found_lighthouse_blind_spot", "observed_yard"]
+      }
+    },
+    {
+      "id": "X-0-010C",
+      "type": "investigation",
+      "content": {
+        "visual": "/images/backgrounds/X-0-010C.png",
+        "text": "You lie still, listening. The guards make their rounds like clockwork. Footsteps on stone. Keys jangling. Doors being checked.\n\nYour block: every twenty minutes. The guard walks the length of the corridor, checks each door, then returns to his station. Three minutes for the complete circuit. That means seventeen minutes between checks when the corridor is empty.",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Continue exploring",
+          "nextScene": "X-0-010",
+          "requirements": {
+            "notFlags": ["explored_walls", "observed_lighthouse"]
+          }
+        },
+        {
+          "text": "Try to sleep",
+          "nextScene": "X-0-011",
+          "requirements": {
+            "flags": ["explored_walls", "observed_lighthouse"]
+          }
+        }
+      ],
+      "flagChanges": {
+        "set": ["learned_patrol_pattern", "mapped_guard_patrol", "timing_knowledge"]
+      }
+    },
+    {
+      "id": "X-0-011",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-011.png",
+        "text": "You finally close your eyes as dawn light begins to creep through the window. You've learned more in one night than most prisoners learn in months.\n\nÎle de Pierre is a fortress, yes. But every fortress has weaknesses. You just need to find them.\n\nBelow you, Bastian stirs. \"Morning, engineer,\" he says quietly. \"Ready for your first full day in hell?\"",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-012",
+      "flagChanges": {
+        "set": ["survived_first_night"]
+      }
+    },
+    {
+      "id": "X-0-012",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/X-0-012.png",
+        "text": "",
+        "pages": [
+          "You both sit in silence for a moment as pale morning light filters through the window. Bastian closes his book and studies you with those intelligent eyes.",
+          "\"So, engineer. What did you do to end up in this place? And don't tell me you're innocent - everyone here claims that.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-012-1.png",
+          "/images/backgrounds/X-0-012-2.png"
+        ],
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [
+        {
+          "text": "\"I was framed for a train disaster. Forty-seven people died.\"",
+          "nextScene": "X-0-012A",
+          "relationshipChanges": {
+            "bastian": 5
+          },
+          "flagChanges": {
+            "set": ["told_bastian_truth", "bastian_conversation_honest"]
+          }
+        },
+        {
+          "text": "\"Does it matter? I'm here now, like you.\"",
+          "nextScene": "X-0-012B",
+          "relationshipChanges": {
+            "bastian": 2
+          },
+          "flagChanges": {
+            "set": ["deflected_bastian", "bastian_conversation_evasive"]
+          }
+        },
+        {
+          "text": "\"What about you? What's a professor doing in prison?\"",
+          "nextScene": "X-0-012C",
+          "relationshipChanges": {
+            "bastian": -3
+          },
+          "flagChanges": {
+            "set": ["avoided_bastian_question", "bastian_conversation_deflected"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "X-0-012A",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/X-0-012A.png",
+        "text": "",
+        "pages": [
+          "Bastian's expression shifts. The casual curiosity is replaced by something deeper - recognition, perhaps. Or sympathy.",
+          "\"The Marseille derailment. I remember reading about it. Francois Marchand's railway company, wasn't it?\" He pauses. \"And you were the scapegoat.\"",
+          "\"I've seen this pattern before, Alexandre. Powerful men don't face consequences - they manufacture them for others.\" He stands and stretches. \"The question is: what are you going to do about it?\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-012A-1.png",
+          "/images/backgrounds/X-0-012A-2.png",
+          "/images/backgrounds/X-0-012A-3.png"
+        ],
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "X-0-013",
+      "flagChanges": {
+        "set": ["bastian_knows_marchand", "bastian_trusts_player"]
+      }
+    },
+    {
+      "id": "X-0-012B",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/X-0-012B.png",
+        "text": "\"Fair enough.\" Bastian nods slowly. \"Privacy is a rare commodity in here. I respect that.\"\n\nHe stands and walks to the window, looking out at the yard below. \"Just remember, Alexandre - in a place like this, allies matter. And allies need trust.\"",
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "X-0-013",
+      "flagChanges": {
+        "set": ["bastian_neutral"]
+      }
+    },
+    {
+      "id": "X-0-012C",
+      "type": "dialogue",
+      "content": {
+        "visual": "/images/backgrounds/X-0-012C.png",
+        "text": "",
+        "pages": [
+          "Bastian's eyes narrow. The warmth drains from his expression.",
+          "\"Deflection. How unoriginal.\" He picks up his book again, clearly done with the conversation. \"I taught political philosophy at the Sorbonne. I wrote articles criticizing the government. They didn't like that.\"",
+          "\"But you didn't answer my question, which tells me everything I need to know about you.\" He opens his book. \"The guards come in twenty minutes. Get ready.\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-012C-1.png",
+          "/images/backgrounds/X-0-012C-2.png",
+          "/images/backgrounds/X-0-012C-3.png"
+        ],
+        "speaker": "Bastian Laurent"
+      },
+      "choices": [],
+      "nextScene": "X-0-013",
+      "flagChanges": {
+        "set": ["bastian_distrusts_player", "bastian_offended"]
+      }
+    },
+    {
+      "id": "X-0-013",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-013.png",
+        "text": "The heavy clang of metal on metal echoes through the cell block. A guard's baton dragging across the bars.\n\n\"WAKE UP! BREAKFAST IN FIFTEEN MINUTES!\"\n\nYour first morning in Île de Pierre prison. The real test begins now.",
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-014",
+      "flagChanges": {
+        "set": ["first_morning_complete"]
+      }
+    },
+    {
+      "id": "X-0-014",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-014.png",
+        "text": "",
+        "pages": [
+          "TWO WEEKS LATER\n\nYou've learned the rhythms of Île de Pierre. The clanging bell at dawn. The shuffle of hundreds of feet to the cafeteria. The endless hours in the yard under the watchful eyes of guards in towers.",
+          "You've learned faces. Guard Captain Legrand, who runs the cell blocks with brutal efficiency. Émile Beaumont, the prisoner who controls the black market and settles disputes with his fists. Father Michel, the prison chaplain who seems to genuinely care.",
+          "You've learned the invisible rules. Where you can stand in the yard. Which guards accept bribes. How to survive without attracting attention.\n\nBut survival isn't enough. You didn't cause that train crash. Francois Marchand did. And somehow, you need to prove it."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-014-1.png",
+          "/images/backgrounds/X-0-014-2.png",
+          "/images/backgrounds/X-0-014-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-015",
+      "flagChanges": {
+        "set": ["two_weeks_passed", "learned_prison_life", "met_key_figures"]
+      }
+    },
+    {
+      "id": "X-0-015",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-015.png",
+        "text": "",
+        "pages": [
+          "NIGHT 15\n\nYou lie awake in your bunk, watching moonlight filter through the bars. Bastian snores softly below. Outside, the lighthouse beam sweeps endlessly across the yard.",
+          "Fifteen days. That's how long you've been here. Fifteen days of thinking, planning, watching. Fifteen days of realizing a terrible truth:",
+          "If you want justice, you'll have to escape this island. And if you want to escape, you'll need to choose your path carefully.\n\nThree possibilities have emerged. Three different ways forward. Each dangerous. Each requiring sacrifice."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-015-1.png",
+          "/images/backgrounds/X-0-015-2.png",
+          "/images/backgrounds/X-0-015-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "X-0-016",
+      "flagChanges": {
+        "set": ["night_15_realization"]
+      }
+    },
+    {
+      "id": "X-0-016",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/X-0-016.png",
+        "text": "Tomorrow, you'll choose your path. Tonight, you review your options:\n\nPATH A - THE TUNNELS: Use your engineering knowledge to map the prison's infrastructure. Find the old smuggler tunnels beneath the fortress. Methodical. Technical. Lonely.\n\nPATH B - THE CONSPIRACY: Investigate Warden Beauregard's connection to Marchand. Gather evidence. Build alliances. Expose the truth from within. Political. Dangerous. Complex.\n\nPATH C - THE VIOLENCE: Join Émile Beaumont's organization. Rise through the prison hierarchy. Take what you need by force. Brutal. Effective. Corrupting.\n\nWhich path will you choose?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "PATH A: The Tunnels - Engineer your escape through the underground",
+          "nextScene": "X-0-016A",
+          "flagChanges": {
+            "set": ["considering_path_tunnels"]
+          }
+        },
+        {
+          "text": "PATH B: The Conspiracy - Expose Marchand and prove your innocence",
+          "nextScene": "X-0-016B",
+          "flagChanges": {
+            "set": ["considering_path_conspiracy"]
+          }
+        },
+        {
+          "text": "PATH C: The Violence - Seize power and force your way out",
+          "nextScene": "X-0-016C",
+          "flagChanges": {
+            "set": ["considering_path_violence"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "X-0-016A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-016A.png",
+        "text": "",
+        "pages": [
+          "You think about the loose stone you found behind the table. The blind spot in the lighthouse beam. The seventeen-minute gap between guard patrols.",
+          "You're an engineer. You understand structures, stress points, load-bearing walls. This fortress is old - built in the 1700s on even older foundations. There will be weaknesses. Tunnels. Ways through.",
+          "This path means working alone. Trusting no one. Moving in darkness and silence. It means using your mind, not your fists or your words.\n\nIt means becoming invisible until the moment you disappear entirely."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-016A-1.png",
+          "/images/backgrounds/X-0-016A-2.png",
+          "/images/backgrounds/X-0-016A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Commit to Path A: The Tunnels",
+          "nextScene": "A-1-001",
+          "flagChanges": {
+            "set": ["path_tunnels", "path_chosen", "act_0_complete", "committed_to_engineering"]
+          }
+        },
+        {
+          "text": "Reconsider your options",
+          "nextScene": "X-0-016"
+        }
+      ]
+    },
+    {
+      "id": "X-0-016B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-016B.png",
+        "text": "",
+        "pages": [
+          "You think about the warden's reaction when you mentioned Marchand's name. That flicker in his eyes. The warden knows something - or he's part of it.",
+          "Father Michel seems genuinely kind. Bastian is intelligent and well-connected. Even some of the guards might be convinced to help, for the right price or the right leverage.",
+          "This path means playing politics. Building alliances. Gathering evidence piece by piece. Finding proof that Marchand orchestrated the train crash and your conviction.\n\nIt means exposing the conspiracy from within before you can escape. Justice first, then freedom."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-016B-1.png",
+          "/images/backgrounds/X-0-016B-2.png",
+          "/images/backgrounds/X-0-016B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Commit to Path B: The Conspiracy",
+          "nextScene": "A-2-001",
+          "flagChanges": {
+            "set": ["path_conspiracy", "path_chosen", "act_0_complete", "committed_to_investigation"]
+          }
+        },
+        {
+          "text": "Reconsider your options",
+          "nextScene": "X-0-016"
+        }
+      ]
+    },
+    {
+      "id": "X-0-016C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/X-0-016C.png",
+        "text": "",
+        "pages": [
+          "You think about Émile Beaumont. The way other prisoners defer to him. The guards who look the other way when he conducts his business. The power he wields behind these walls.",
+          "You're not a violent man. You're an engineer. But you're also wrongfully imprisoned, and sometimes survival requires becoming someone you're not.",
+          "This path means joining Émile's organization. Rising through the ranks. Learning to fight, to intimidate, to take what you need. Building the resources and connections to force your way out.\n\nIt means getting your hands dirty. Perhaps bloodied. It means risking becoming the monster they already think you are."
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/X-0-016C-1.png",
+          "/images/backgrounds/X-0-016C-2.png",
+          "/images/backgrounds/X-0-016C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Commit to Path C: The Violence",
+          "nextScene": "A-3-001",
+          "flagChanges": {
+            "set": ["path_violence", "path_chosen", "act_0_complete", "committed_to_power"]
+          }
+        },
+        {
+          "text": "Reconsider your options",
+          "nextScene": "X-0-016"
+        }
+      ]
     }
   ]
 }

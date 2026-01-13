@@ -1,0 +1,799 @@
+{
+  "scenes": [
+    {
+      "id": "B-2-020",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-020.png",
+        "text": "",
+        "pages": [
+          "NIGHT, DAY 7\n\nThe yard. After lights out. Viktor Kozlov stands in shadow near the weight area, surrounded by a small group of inmates. Hardcore men. Violent men. The kind who see prison as war.\n\nYour team gathers: Bastian stays close, tense. If you recruited others - Denis, Marcel, or even managed Émile - they hang back, uncertain.\n\nViktor addresses the group: \"Chaos Route. That's what we're calling it. Not subtle. Not quiet. Not the monk's way.\" He glances at Denis if present. \"Direct action. We create a riot. Guards focus on containing it. We use the chaos to breach the outer wall.\"",
+          "He unfolds a crude map scratched on metal. \"Yard riot draws guards here. Kitchen fires create secondary panic. During the chaos, we hit the east wall - weakest point, under renovation. Four minutes of controlled mayhem. Then we're over the wall, down the cliff, into the water.\"\n\nBastian speaks quietly: \"Viktor, riots kill people. Guards. Inmates. This isn't—\"\n\n\"This is war,\" Viktor interrupts. \"Stone Island is war. The guards declared it the day they locked us in here. I'm just accepting their terms.\"",
+          "Viktor looks at you directly. \"You recruited me. You asked for my strength. This is what strength means: the willingness to do what others won't. To accept that freedom has a price. Sometimes that price is blood.\"\n\nDenis, if present, looks horrified. \"This isn't what we agreed to. Violence begets violence. If we go down this path—\"\n\n\"Then don't come,\" Viktor says bluntly. \"This route isn't for the gentle. It's for survivors.\"\n\n[CHAOS ROUTE BEGINS - Viktor's plan revealed, moral line drawn]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-020-1.png",
+          "/images/backgrounds/B-2-020-2.png",
+          "/images/backgrounds/B-2-020-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-021",
+      "requirements": {
+        "flags": ["committed_to_team", "viktor_recruited"]
+      },
+      "flagChanges": {
+        "set": ["chaos_route_started", "act_2_begun", "riot_plan_revealed"]
+      }
+    },
+    {
+      "id": "B-2-021",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-021.png",
+        "text": "Viktor's plan is brutal. Effective. Dangerous.\n\nDenis, if present, speaks: \"There must be another way. Violence will bring military response. Bloodshed. Deaths. Is freedom worth that cost?\"\n\nViktor responds: \"Yes. Unambiguously yes. Every day in here is death. Slow death. If we have to spill blood to stop it, so be it.\"\n\nYou must decide: commit fully to Viktor's chaos plan, or try to modify it to reduce violence. But understand: challenging Viktor risks losing his support entirely.\n\nWhat do you choose?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Commit fully to Viktor's plan - accept the violence, trust his leadership",
+          "nextScene": "B-2-022A",
+          "flagChanges": {
+            "set": ["chaos_plan_accepted", "violence_embraced", "viktor_fully_trusted"]
+          },
+          "relationshipChanges": {
+            "viktor": 15,
+            "denis": -20
+          }
+        },
+        {
+          "text": "Modify the plan - minimize casualties, add safety measures",
+          "nextScene": "B-2-022B",
+          "flagChanges": {
+            "set": ["chaos_plan_modified", "violence_minimized", "compromise_attempted"]
+          },
+          "relationshipChanges": {
+            "viktor": -5,
+            "denis": 10
+          }
+        },
+        {
+          "text": "Refuse the chaos route - this is too much, find another way",
+          "nextScene": "B-2-022C",
+          "flagChanges": {
+            "set": ["chaos_route_refused", "viktor_plan_rejected"]
+          },
+          "relationshipChanges": {
+            "viktor": -30,
+            "denis": 20
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-022A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-022A.png",
+        "text": "",
+        "pages": [
+          "\"I trust you, Viktor,\" you say. \"You've survived in here longer than most. If you say this is what it takes, then we do it your way.\"\n\nViktor nods, something like respect in his eyes. \"Good. No second-guessing. No hesitation. When the moment comes, you act.\"\n\nDenis, if present, stands slowly. \"Then I cannot be part of this. I won't help orchestrate violence. I'll return to the chapel. If you survive, if you escape... may God forgive what you're about to do.\"\n\nHe leaves. The team watches him go.",
+          "\"He'll talk,\" one of Viktor's men mutters.\n\n\"No,\" Bastian says firmly. \"Denis doesn't betray. He'll stay silent out of compassion, even for people choosing paths he disagrees with. That's who he is.\"\n\nViktor accepts this. \"Then we proceed. Tomorrow night. I need everyone positioned. Bastian, you're with the kitchen team - start the fires. Marcel, if present, you're on the cell locks - free the hardcore block. Alexandre...\" Viktor looks at you. \"You're with me. At the wall. When chaos peaks, we breach.\"",
+          "The team disperses. You're left with Viktor.\n\n\"You just committed to violence,\" he says quietly. \"Some men will die tomorrow. Maybe guards. Maybe inmates. Maybe you. Make peace with that now, or you'll freeze when it matters.\"\n\n[CHAOS PLAN ACCEPTED - Full commitment, Denis departed, violence inevitable]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-022A-1.png",
+          "/images/backgrounds/B-2-022A-2.png",
+          "/images/backgrounds/B-2-022A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-023",
+      "flagChanges": {
+        "set": ["denis_departed", "full_violence_committed", "viktor_leadership_accepted"]
+      }
+    },
+    {
+      "id": "B-2-022B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-022B.png",
+        "text": "",
+        "pages": [
+          "\"Viktor, I'm with you,\" you say. \"But I want modifications. Target property, not people. Set fires for distraction, not casualties. Create chaos without creating deaths.\"\n\nViktor's expression hardens. \"You're weakening the plan.\"\n\n\"No,\" you counter. \"I'm making it sustainable. A riot with deaths brings military response. Helicopters. Armed soldiers. We won't get fifty meters. But a riot that's just chaos - just prisoners venting rage at walls and equipment - guards handle it internally. We get our window.\"",
+          "Viktor considers this. Finally: \"You might be right. Restraint could work. But only if everyone commits. Half measures in a riot get you killed.\"\n\nDenis, if present, looks less horrified. \"Property damage. I can... I can accept that. It's still violence, but violence against things, not people. That's a line worth maintaining.\"\n\nViktor grunts. \"Fine. Modified plan. Create chaos. Minimize casualties. But understand: if it comes down to a guard's life or your freedom, you don't hesitate. Agreed?\"\n\nYou nod. It's a compromise. Neither perfectly violent nor perfectly peaceful.",
+          "\"Tomorrow night,\" Viktor continues. \"Kitchen team starts fires - target equipment, not staff. Cell block team releases prisoners - but tells them to trash cells, not attack guards. We breach the wall during the confusion. Four-minute window.\"\n\nThe team disperses. You've maintained some moral ground. But you've also accepted that chaos inevitably includes risk.\n\n[CHAOS PLAN MODIFIED - Violence minimized, Denis remains, compromise achieved]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-022B-1.png",
+          "/images/backgrounds/B-2-022B-2.png",
+          "/images/backgrounds/B-2-022B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-023",
+      "flagChanges": {
+        "set": ["denis_stayed", "violence_reduced", "modified_riot_plan"]
+      },
+      "relationshipChanges": {
+        "denis": 5,
+        "viktor": 5
+      }
+    },
+    {
+      "id": "B-2-022C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-022C.png",
+        "text": "",
+        "pages": [
+          "\"No,\" you say firmly. \"I asked for your help, Viktor. Not for a massacre. This plan is too much. Too dangerous. Too likely to end in deaths that aren't necessary.\"\n\nViktor's expression goes cold. \"You recruited me knowing what I am. A violent man. You wanted strength. But now you're squeamish about how strength gets used?\"\n\n\"There are other routes,\" you argue. \"Denis's chapel passages. Marcel's lock-picking. We don't need a riot—\"",
+          "\"Then use them,\" Viktor interrupts. \"Go play in your monk tunnels. Pick your locks. I'm done.\"\n\nHe turns to his crew. \"We're out. Dubois doesn't have the steel for what needs to be done. Find me when you're serious about escape instead of daydreaming.\"\n\nViktor walks away. His team follows. You've lost his support entirely.\n\nBastian sighs. \"Well. That's that. No chaos route for us. We'll need to pursue one of the other options.\"",
+          "Denis, if present, approaches. \"You made the right choice. Violence is easy. Building something without it - that's the real strength. Viktor can't see that. But you can.\"\n\nYou're left with reduced options. No riot. No chaos. But also no blood on your hands.\n\n[CHAOS ROUTE REFUSED - Viktor departed, must use alternative escape routes]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-022C-1.png",
+          "/images/backgrounds/B-2-022C-2.png",
+          "/images/backgrounds/B-2-022C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-001",
+      "flagChanges": {
+        "set": ["viktor_departed", "chaos_route_abandoned", "must_use_alternative"]
+      },
+      "relationshipChanges": {
+        "viktor": -50,
+        "denis": 25
+      }
+    },
+    {
+      "id": "B-2-023",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-023.png",
+        "text": "",
+        "pages": [
+          "DAY 8 - FINAL PREPARATIONS\n\nThe prison feels different today. Tension in the air. Even guards seem on edge, though they don't know why.\n\nViktor moves through the yard, positioning allies. Quiet words. Subtle signals. He's orchestrating something massive.\n\nBastian finds you during lunch. \"Kitchen team is ready. We've identified four ovens we can sabotage. Grease fires. Smoky, dramatic, but controllable. As long as we get the timing right.\"",
+          "Marcel, if present and recruited, reports: \"Cell locks on D-block can be released simultaneously. I've modified the master mechanism. One turn, twenty cells open. That'll create confusion.\"\n\nViktor pulls you aside. \"Tonight. 22:00 hours. Lights out is 21:30. We wait thirty minutes for guards to settle into routine. Then we move.\"\n\nHe hands you something - a shiv. Crude but effective. \"You might need this. Hope you don't. But hope isn't a strategy.\"",
+          "The day passes slowly. Every moment weighted with anticipation. You're about to trigger a riot. About to turn Stone Island into a warzone.\n\nEvening comes. Dinner. Final meal. You catch Bastian's eye across the cafeteria. He nods once. Ready.\n\nViktor sits with his crew, eating calmly. As if it's just another day. But you see his hand - absolutely steady. No tremor. No fear.\n\nThe man has done this before. In the ring. In the street. Violence is his language.\n\nTonight, you'll learn to speak it too.\n\n[FINAL PREPARATIONS COMPLETE - All teams positioned, riot imminent]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-023-1.png",
+          "/images/backgrounds/B-2-023-2.png",
+          "/images/backgrounds/B-2-023-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-024",
+      "flagChanges": {
+        "set": ["riot_preparation_complete", "teams_positioned", "day_8_evening"]
+      }
+    },
+    {
+      "id": "B-2-024",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-024.png",
+        "text": "",
+        "pages": [
+          "22:00 HOURS - THE RIOT BEGINS\n\nYou're in your cell, watching through the bars. The prison is quiet. Too quiet. Then:\n\nSMOKE. From the kitchen direction. Thick, black smoke billowing into the corridor.\n\nAlarm bells SHRILL. Guards rush toward the kitchen, shouting. \"FIRE! FIRE IN THE KITCHEN!\"\n\nThen: CRASH. The sound of twenty cell doors slamming open simultaneously. D-block erupts. Prisoners flood into corridors, shouting, chaos immediate.",
+          "Viktor appears at your cell door. He forces the lock with brute strength - the mechanism Marcel weakened earlier. Your door swings open.\n\n\"Move,\" Viktor commands. \"Four minutes until backup arrives. We go now.\"\n\nYou follow him through chaos. Prisoners are everywhere. Some are fighting guards. Others are just running, confused, opportunistic. The riot is spreading faster than anticipated.\n\nYou see a young guard - barely twenty - backed against a wall by three inmates. He's terrified. About to be beaten.",
+          "Viktor doesn't stop. \"Not our problem. Keep moving.\"\n\nBut you have seconds to decide. Help the guard and risk losing Viktor's team? Or ignore human suffering in pursuit of freedom?\n\n[RIOT ERUPTS - Chaos begins, moral choice imminent]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-024-1.png",
+          "/images/backgrounds/B-2-024-2.png",
+          "/images/backgrounds/B-2-024-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-025"
+    },
+    {
+      "id": "B-2-025",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-025.png",
+        "text": "The young guard is about to be beaten, possibly killed. Three inmates surround him, enraged by years of imprisonment.\n\nViktor is already twenty meters ahead, moving toward the yard. The team is following him.\n\nYou have seconds. Help the guard? Or prioritize escape?\n\nBastian is beside you, torn. \"What do we do?\"",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Help the guard - intervene, stop the beating",
+          "nextScene": "B-2-026A",
+          "flagChanges": {
+            "set": ["helped_guard", "moral_choice_mercy", "delayed_escape"]
+          },
+          "relationshipChanges": {
+            "viktor": -10,
+            "denis": 20
+          }
+        },
+        {
+          "text": "Keep moving - Viktor's right, not our problem",
+          "nextScene": "B-2-026B",
+          "flagChanges": {
+            "set": ["ignored_guard", "moral_choice_pragmatic", "kept_schedule"]
+          },
+          "relationshipChanges": {
+            "viktor": 10
+          }
+        },
+        {
+          "text": "Create distraction - draw inmates away without direct confrontation",
+          "nextScene": "B-2-026C",
+          "flagChanges": {
+            "set": ["distracted_attackers", "moral_choice_clever", "minimal_delay"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-026A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-026A.png",
+        "text": "",
+        "pages": [
+          "You rush forward. \"STOP!\"\n\nThe inmates turn. One - a man named Serge, in for murder - sneers. \"Dubois? You want some too?\"\n\n\"He's a kid,\" you say, positioning yourself between them and the guard. \"Beating him doesn't change anything. Doesn't free us. Just creates another casualty.\"\n\nSerge raises his fist. But Bastian steps up beside you. Then, surprisingly, Denis appears from somewhere in the chaos. Even in a riot, the chaplain couldn't stay away.",
+          "\"Stand down,\" Denis says with quiet authority. \"Violence for violence's sake is what they expect from us. Prove them wrong.\"\n\nThe inmates hesitate. Then, grudgingly, move on. They're here for chaos, not specific vengeance.\n\nThe young guard stares at you, stunned. \"Why—\"\n\n\"Go,\" you say. \"Get out of here. Remember this. Not all prisoners are monsters.\"\n\nHe runs.",
+          "Viktor is waiting at the yard entrance, furious. \"You just cost us thirty seconds. In a riot, that's an eternity.\"\n\n\"A man's life was worth thirty seconds,\" you reply.\n\nViktor's jaw tightens. But he doesn't abandon you. \"Move. Double time. We've lost our margin.\"\n\n[GUARD SAVED - Moral high ground maintained, but riot timing compromised]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-026A-1.png",
+          "/images/backgrounds/B-2-026A-2.png",
+          "/images/backgrounds/B-2-026A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-027",
+      "flagChanges": {
+        "set": ["timing_compromised", "guard_remembers_you", "denis_witnessed_mercy"]
+      }
+    },
+    {
+      "id": "B-2-026B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-026B.png",
+        "text": "",
+        "pages": [
+          "You keep moving. Following Viktor. The guard's cries fade behind you.\n\nBastian looks back once, troubled. But he follows too. Survival over morality. That's the choice you made.\n\nYou reach the yard. The riot is spreading. Prisoners are everywhere - some fighting, some just running in confusion. Fire alarms shriek. Smoke pours from multiple buildings.\n\nViktor assesses the chaos with professional efficiency. \"Perfect. Guards are overwhelmed. All attention on the main buildings. The east wall is clear.\"",
+          "He leads your team toward the wall. The renovation scaffolding is still up - exactly as intel indicated. You start climbing.\n\nBehind you, the prison is tearing itself apart. You don't look back. You can't. If you think too hard about what you're leaving behind - the violence, the casualties, the young guard who might be dead by now - you'll freeze.\n\nViktor was right: in chaos, hesitation kills. You chose action over conscience.",
+          "The wall is ahead. Freedom is ahead. That's all that matters now.\n\n[GUARD IGNORED - Maintained schedule, moral burden accepted, escape proceeds on time]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-026B-1.png",
+          "/images/backgrounds/B-2-026B-2.png",
+          "/images/backgrounds/B-2-026B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-027",
+      "flagChanges": {
+        "set": ["guard_fate_unknown", "moral_burden_carried", "schedule_maintained"]
+      },
+      "relationshipChanges": {
+        "bastian": -5
+      }
+    },
+    {
+      "id": "B-2-026C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-026C.png",
+        "text": "",
+        "pages": [
+          "You grab a metal tray from the floor and BANG it against the bars. LOUD. ECHOING.\n\n\"GUARDS IN THE WEST CORRIDOR!\" you shout. \"THEY'RE COMING WITH BATONS!\"\n\nThe inmates attacking the guard spin, alarmed. They run toward the west corridor, leaving the guard behind.\n\nThe guard scrambles to his feet and flees in the opposite direction.\n\nTotal time lost: fifteen seconds. Bastian grins. \"Nice.\"",
+          "You catch up to Viktor. He glances back. \"Clever. Minimized delay, satisfied your conscience. Might actually work in a soldier.\"\n\nThe team reaches the yard. Chaos is spreading exactly as planned. Fire. Confusion. Guards rushing in all directions.\n\n\"East wall,\" Viktor commands. \"Now. While they're distracted.\"\n\nYou've maintained both your schedule and your humanity. Small victories in a night of chaos.",
+          "The wall looms ahead. Freedom. So close.\n\n[GUARD SAVED VIA DISTRACTION - Clever solution, minimal delay, team cohesion maintained]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-026C-1.png",
+          "/images/backgrounds/B-2-026C-2.png",
+          "/images/backgrounds/B-2-026C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-027",
+      "flagChanges": {
+        "set": ["clever_distraction_used", "guard_saved_quickly", "team_impressed"]
+      },
+      "relationshipChanges": {
+        "viktor": 5,
+        "bastian": 5
+      }
+    },
+    {
+      "id": "B-2-027",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-027.png",
+        "text": "",
+        "pages": [
+          "THE EAST WALL\n\nRenovation scaffolding climbs the stone like a skeleton. Viktor reaches it first, testing the structure. \"Solid enough. Climb fast. Don't look down.\"\n\nThe team starts ascending. You're fifty meters from the ground when you hear it:\n\nGUNFIRE. From the main yard. Not rubber bullets. Real shots. The situation has escalated.\n\nBastian freezes halfway up. \"They're shooting prisoners. This is—\"",
+          "\"KEEP CLIMBING,\" Viktor roars. \"If we stop now, we're targets too!\"\n\nYou climb. Hand over hand. The scaffolding sways with each movement. Below, the riot rages. Above, the wall's edge. Beyond that: cliff. Ocean. Freedom.\n\nYou're ten meters from the top when searchlights sweep across the wall. A guard tower.\n\n\"WE'VE GOT CLIMBERS! EAST WALL! REPEAT, CLIMBERS ON EAST WALL!\"\n\nViktor reaches the top first. He turns back, extending his hand. \"COME ON! MOVE!\"",
+          "Bullets ping off stonework. Close. Too close. Marcel, if present, takes a hit in the shoulder - non-fatal but he cries out, losing his grip momentarily.\n\nYou grab him. Hold him steady. \"I've got you!\"\n\nThe team reaches the top. You're on the wall. The cliff drops away on the other side - twenty meters of sheer rock to crashing waves below.\n\n\"We jump,\" Viktor says. \"On three. One—\""
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-027-1.png",
+          "/images/backgrounds/B-2-027-2.png",
+          "/images/backgrounds/B-2-027-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-028",
+      "flagChanges": {
+        "set": ["reached_wall_top", "under_fire", "cliff_jump_imminent"]
+      }
+    },
+    {
+      "id": "B-2-028",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-028.png",
+        "text": "You're on top of the wall. Twenty-meter drop to ocean. Guards closing in behind. Bullets whining past.\n\nViktor is ready to jump. \"This is it. We jump together, stay together. The current will pull us away from the island. Swim for the rocks north of here.\"\n\nBut someone in your team - Marcel if wounded, or another ally - is hesitating. Fear. Or injury. Or both.\n\nDo you wait for them? Or jump now before guards reach you?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Jump immediately - Viktor's right, timing is everything",
+          "nextScene": "B-2-029A",
+          "flagChanges": {
+            "set": ["jumped_immediately", "left_hesitant_behind"]
+          },
+          "relationshipChanges": {
+            "viktor": 10
+          }
+        },
+        {
+          "text": "Wait for everyone - no one gets left behind",
+          "nextScene": "B-2-029B",
+          "flagChanges": {
+            "set": ["waited_for_team", "risked_capture"]
+          },
+          "relationshipChanges": {
+            "viktor": -10,
+            "bastian": 15
+          }
+        },
+        {
+          "text": "Viktor goes first - he creates distraction while others prepare",
+          "nextScene": "B-2-029C",
+          "flagChanges": {
+            "set": ["viktor_sacrificial_jump", "team_follows_after"]
+          },
+          "relationshipChanges": {
+            "viktor": 20
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-029A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-029A.png",
+        "text": "",
+        "pages": [
+          "\"Jump!\" you shout, and leap.\n\nThe fall is terrifying. Wind screaming. Stone wall blurring past. Twenty meters feels like forever.\n\nYou hit water. The impact drives breath from your lungs. Cold. Shocking cold. The ocean swallows you.\n\nYou surface, gasping. Viktor is beside you, already swimming. Bastian surfaces a moment later.\n\nBut behind you, on the wall - someone didn't jump. Marcel, or another team member. Still frozen in fear. Guards reaching them.",
+          "\"We have to go back—\" Bastian starts.\n\n\"NO,\" Viktor snaps. \"Current is already pulling us. We can't swim against it. They made their choice. We made ours.\"\n\nYou watch as guards grab whoever hesitated. They're captured. Alive, but caught.\n\nViktor swims hard for the rocks. \"SWIM! Don't think, just swim!\"\n\nYou follow. What choice do you have? The person you left behind will face consequences. Solitary. Extended sentence. But alive.",
+          "You reach the rocks. Haul yourself onto stone. Exhausted. Free.\n\nBut diminished. Someone didn't make it. Their face will haunt you.\n\n[ESCAPED VIA IMMEDIATE JUMP - Freedom achieved, but team member captured]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-029A-1.png",
+          "/images/backgrounds/B-2-029A-2.png",
+          "/images/backgrounds/B-2-029A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-030",
+      "flagChanges": {
+        "set": ["team_member_captured", "reduced_team", "guilt_carried"]
+      }
+    },
+    {
+      "id": "B-2-029B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-029B.png",
+        "text": "",
+        "pages": [
+          "\"Wait!\" you command. \"Everyone together!\"\n\nViktor growls in frustration but holds position. You reach back, grab the hesitant team member. Marcel or another ally. They're shaking.\n\n\"Look at me,\" you say firmly. \"We jump together. On three. I won't let go.\"\n\nGuards are ten meters away now. Shouting. Raising weapons.\n\n\"ONE. TWO. THREE!\"\n\nYou jump together. Your hand locked around their wrist.",
+          "The fall. The impact. The shocking cold.\n\nYou surface, still holding them. \"SWIM! KICK!\"\n\nThe team stays together. Viktor leads, Bastian helps the injured, you keep the frightened moving. It's slower. Harder. But everyone is accounted for.\n\nBullets hit the water around you. Close. The current pulls you away from the wall, toward the rocks.\n\nYou reach stone. Haul everyone up. Check the group.",
+          "Everyone made it. Exhausted. Some injured. But alive. Together.\n\nViktor is bleeding from a graze wound. \"That was stupid. Reckless. Could've gotten us all killed.\"\n\nThen he grins. \"But we made it. Crazy bastards, we actually made it.\"\n\n[ESCAPED WITH FULL TEAM - Everyone survived, unity maintained, harder escape]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-029B-1.png",
+          "/images/backgrounds/B-2-029B-2.png",
+          "/images/backgrounds/B-2-029B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-030",
+      "flagChanges": {
+        "set": ["full_team_escaped", "unity_maintained", "no_one_left_behind"]
+      },
+      "relationshipChanges": {
+        "all": 10
+      }
+    },
+    {
+      "id": "B-2-029C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-029C.png",
+        "text": "",
+        "pages": [
+          "Viktor sees the hesitation. The fear. The guards closing in.\n\nHe makes a decision.\n\n\"I jump first,\" he says. \"Draw their fire. You follow ten seconds after. They'll track me, not you.\"\n\n\"Viktor, that's—\" you start.\n\n\"Not negotiable,\" he interrupts. He looks at you directly. \"Get them out. All of them. That's an order.\"\n\nHe leaps. A roar of defiance as he falls.",
+          "Guards spin, tracking his fall. Searchlights follow. Rifles aim down.\n\nBullets spray the water where Viktor surfaces. He's swimming, but they're targeting him specifically.\n\n\"NOW!\" you shout to the team. \"JUMP NOW!\"\n\nYou leap. The team follows. The guards are too focused on Viktor to notice immediately.\n\nYou surface. Viktor is ahead, still swimming, bullets churning water around him. He's drawing all their attention. Deliberately.",
+          "\"SWIM FOR THE ROCKS!\" Viktor bellows. \"DON'T WAIT FOR ME!\"\n\nThe team swims. Viktor is holding the guards' focus. Giving you time. Giving you distance.\n\nYou reach the rocks. Turn back.\n\nViktor is still in the water. Still under fire. Then: silence. The shooting stops.\n\nViktor's not moving. Floating. The water around him is dark.\n\n[VIKTOR'S SACRIFICE - He held the line, team escaped, Viktor's fate uncertain]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-029C-1.png",
+          "/images/backgrounds/B-2-029C-2.png",
+          "/images/backgrounds/B-2-029C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-030",
+      "flagChanges": {
+        "set": ["viktor_sacrificed", "viktor_fate_unknown", "team_escaped_via_sacrifice"]
+      },
+      "relationshipChanges": {
+        "bastian": 15
+      }
+    },
+    {
+      "id": "B-2-030",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-030.png",
+        "text": "",
+        "pages": [
+          "THE ROCKS - NORTH OF STONE ISLAND\n\nYou huddle on cold stone. Waves crash around you. The prison looms behind, lit up like a nightmare - fires, searchlights, chaos.\n\nThe riot is still raging. You can hear it even from here. Screams. Alarms. The sound of Stone Island tearing itself apart.\n\nBastian checks the team. If Viktor survived, he's being treated for wounds. If someone was captured, you're dealing with the guilt. If everyone made it, you're counting unlikely blessings.",
+          "\"We need to move,\" Bastian says. \"Guards will patrol the shoreline once they contain the riot. We've got maybe an hour to get to the mainland.\"\n\nIf you have the monk's boat from the chapel route, it's hidden nearby. If not, you'll need to swim or find driftwood to float on.\n\nMarcel, if present and able, speaks: \"There's a fishing village five kilometers north. Bastian's sister's territory. If we can reach it before dawn, we can hide.\"\n\nViktor, if alive, is standing at the edge of the rocks, staring back at the prison. \"We did it. We actually did it. Through violence and chaos and will, we broke free.\"",
+          "Denis, if he was part of the chaos route somehow, would say: \"At what cost? How many died in that riot? How many guards? Prisoners? Was freedom worth all that blood?\"\n\nBut Denis wasn't here. He chose a different path. And you chose this one.\n\n[ESCAPED THE ISLAND - On the rocks, mainland ahead, riot behind]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-030-1.png",
+          "/images/backgrounds/B-2-030-2.png",
+          "/images/backgrounds/B-2-030-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-031"
+    },
+    {
+      "id": "B-2-031",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-031.png",
+        "text": "You're on the rocks. The mainland is visible in the distance. You need to cross five kilometers of open water.\n\nOptions:\n• Swim immediately - risky, exhausting, but fast\n• Find floating debris - safer, slower, depends on luck\n• Use monk's boat if you have it - safest, fastest\n• Wait for Bastian's sister's fishing route - safest but morning is hours away\n\nWhat do you do?",
+        "speaker": "bastian"
+      },
+      "choices": [
+        {
+          "text": "Swim immediately - we're strong enough, let's not wait",
+          "nextScene": "B-2-032A",
+          "flagChanges": {
+            "set": ["chose_to_swim", "immediate_departure"]
+          }
+        },
+        {
+          "text": "Find floating debris - build makeshift raft from driftwood",
+          "nextScene": "B-2-032B",
+          "flagChanges": {
+            "set": ["makeshift_raft", "debris_collection"]
+          }
+        },
+        {
+          "text": "Use monk's boat - if available from chapel route",
+          "nextScene": "B-2-032C",
+          "requirements": {
+            "items": ["ancient_monks_boat"]
+          },
+          "flagChanges": {
+            "set": ["used_monks_boat", "safest_crossing"]
+          }
+        },
+        {
+          "text": "Wait for Cordelia - hide until fishing boat passes at dawn",
+          "nextScene": "B-2-032D",
+          "flagChanges": {
+            "set": ["waiting_for_cordelia", "dawn_rescue"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-032A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-032A.png",
+        "text": "",
+        "pages": [
+          "\"We swim,\" you decide. \"Now. While we still have strength.\"\n\nThe team enters the water. Cold. So cold after the adrenaline of escape. But swimming generates heat. Movement keeps hypothermia at bay.\n\nViktor, if present, leads with powerful strokes. Former boxer's discipline translating to swimming endurance. Bastian stays with the weaker swimmers, encouraging them.\n\nThe mainland is distant. Five kilometers in open ocean. In darkness. After a riot and wall jump.",
+          "Halfway across, someone starts struggling. Exhaustion. Cramping. The cold is winning.\n\n\"Keep going!\" you shout. \"We're halfway! Don't stop!\"\n\nBut they're sinking. Going under. You grab them, shift to a lifeguard carry. Now you're swimming for two.\n\nYour shoulders burn. Lungs scream. Every stroke is agony.\n\nViktor circles back. \"Give them to me. I'll carry them. You're burning out.\"\n\nYou transfer the struggling swimmer to Viktor. He takes them with barely a change in pace. The man is a machine.",
+          "The mainland approaches. Meter by meter. Stroke by stroke.\n\nYou reach shore. Collapse on sand. Gasping. Alive.\n\nThe team drags themselves onto the beach. Everyone made it. Barely. But you're here.\n\nFrance. Freedom. Solid ground.\n\n[MAINLAND REACHED VIA SWIMMING - Exhausting but successful, team intact]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-032A-1.png",
+          "/images/backgrounds/B-2-032A-2.png",
+          "/images/backgrounds/B-2-032A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-035",
+      "flagChanges": {
+        "set": ["mainland_reached_swimming", "exhausted_team", "everyone_survived"]
+      }
+    },
+    {
+      "id": "B-2-032B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-032B.png",
+        "text": "",
+        "pages": [
+          "\"Find debris,\" you order. \"Anything that floats. Driftwood. Barrels. We build a raft.\"\n\nThe team scours the rocks. After twenty minutes: success. Old fishing floats. Planks from a broken dock. Rope tangled in seaweed.\n\nMarcel, if present, uses his mechanical skills to lash it together. \"It's not pretty. But it'll float. Maybe.\"\n\nViktor tests it skeptically. \"This thing will break apart in rough water.\"",
+          "\"Then we pray for calm seas,\" Bastian replies.\n\nYou launch the makeshift raft. It does float. Barely. The team climbs aboard carefully, distributing weight.\n\nYou paddle with hands and debris. Slow. Ungainly. But moving.\n\nThe crossing takes two hours. The raft threatens to break apart multiple times. You constantly shift weight, patch leaks with clothing, bail water.\n\nBut it holds. Just barely. It holds.",
+          "You reach the mainland. The raft disintegrates the moment you step off - it gave everything it had.\n\n\"Well,\" Viktor says, looking at the wreckage. \"That was lucky.\"\n\n\"That was skill,\" Marcel corrects. \"And teamwork.\"\n\nYou're on French soil. Free. Alive. Together.\n\n[MAINLAND REACHED VIA RAFT - Clever solution, slow but safe, team intact]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-032B-1.png",
+          "/images/backgrounds/B-2-032B-2.png",
+          "/images/backgrounds/B-2-032B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-035",
+      "flagChanges": {
+        "set": ["mainland_reached_raft", "clever_solution", "team_coordination"]
+      }
+    },
+    {
+      "id": "B-2-032C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-032C.png",
+        "text": "",
+        "pages": [
+          "You retrieve the ancient monk's boat from where you hid it. Centuries old. Built to last. The monks knew refugees would need it.\n\nThe team boards. It's small - cramped with everyone - but seaworthy. Proven.\n\nViktor rows with powerful strokes. Bastian and others help. The boat cuts through waves like it was designed for this exact escape.\n\nBecause it was. Hundreds of years ago, monks fleeing persecution used this exact vessel. You're following in very old footsteps.",
+          "\"The monks,\" Bastian says quietly, \"they built this knowing people would need escape routes. Century after century. They built sanctuary into the island itself.\"\n\n\"And we used it,\" you reply. \"Violence to get to the wall. But this boat - this is the peaceful part. The monks' contribution to our chaos.\"\n\nViktor grunts. \"I'll take any help. From monks. From violence. From luck. Freedom doesn't care where its tools come from.\"",
+          "The mainland approaches quickly. The boat is efficient, stable, perfect.\n\nYou beach it on French shore. The team disembarks. Someone suggests taking the boat with you, but Bastian shakes his head.\n\n\"Leave it. Someone else might need it someday. That's how the monks would want it.\"\n\nYou pull the boat back into the water. Let it drift. Maybe it'll find its way back to the island. Maybe it'll help the next desperate soul.\n\n[MAINLAND REACHED VIA MONK'S BOAT - Fastest route, team rested, perfect crossing]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-032C-1.png",
+          "/images/backgrounds/B-2-032C-2.png",
+          "/images/backgrounds/B-2-032C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-035",
+      "flagChanges": {
+        "set": ["mainland_reached_boat", "monks_boat_used", "team_fresh"]
+      }
+    },
+    {
+      "id": "B-2-032D",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-032D.png",
+        "text": "",
+        "pages": [
+          "\"We wait,\" you decide. \"Bastian's sister passes at dawn. We hide until then.\"\n\nThe team finds a cave in the rocks. Cold. Damp. But concealed. You huddle together for warmth.\n\nHours pass. The prison behind you is still lit up. Sirens. Searchlights. The riot is being contained, but it's taking time.\n\nViktor, if present, keeps watch. Even exhausted, he won't sleep until everyone is safe. That's who he is. A fighter. A protector in his own violent way.",
+          "Dawn comes slowly. Gray light spreading across water.\n\nBastian stands, scanning the horizon. \"There. Right on schedule.\"\n\nA fishing boat. Small, weathered. Moving with purpose toward the island's fishing grounds.\n\nBastian waves a specific pattern - a signal only his sister would recognize.\n\nThe boat changes course. Approaches the rocks.\n\nCordelia's voice across the water: \"Bastian? Mon Dieu, you're alive! I heard about the riot on the radio!\"",
+          "\"I'm fine!\" Bastian calls back. \"We need extraction. Multiple passengers.\"\n\nCordelia pulls the boat close. Sees the group. Sees the prison uniforms. Understands immediately.\n\n\"Get aboard,\" she says quietly. \"All of you. Quickly. Before patrol boats launch.\"\n\nThe team boards. Cordelia doesn't ask questions. Just starts the engine and heads for open water.\n\nYou're saved. By Bastian's sister. By family. By the bonds that even Stone Island couldn't break.\n\n[MAINLAND REACHED VIA CORDELIA - Safest route, family rescue, perfect extraction]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-032D-1.png",
+          "/images/backgrounds/B-2-032D-2.png",
+          "/images/backgrounds/B-2-032D-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-035",
+      "flagChanges": {
+        "set": ["mainland_reached_cordelia", "family_rescue", "safest_extraction"]
+      },
+      "relationshipChanges": {
+        "bastian": 20
+      }
+    },
+    {
+      "id": "B-2-035",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-035.png",
+        "text": "",
+        "pages": [
+          "MAINLAND - FREEDOM\n\nYou're on French soil. Or in Cordelia's boat approaching shore. Either way: free. Outside Stone Island's walls.\n\nThe team is exhausted. Some injured. All traumatized by what you just did. The riot. The violence. The escape.\n\nBastian speaks quietly: \"We need to scatter. Authorities will be looking for escaped prisoners. If we stay together, we're easier to find.\"",
+          "Viktor, if he survived, nods. \"Smart. Separate immediately. No contact for at least a month. Then, if you need me, there's a boxing gym in Marseille. Tell the owner you're looking for 'Kozlov's friend.' He'll get a message to me.\"\n\nMarcel, if present: \"I have contacts in Paris. People who can create new identities. I'll disappear into the city. Become someone else.\"\n\nBastian looks at you. \"What will you do? Where will you go?\"",
+          "That's the question, isn't it? You're free. But you're also a fugitive. Wanted. Hunted. The riot killed people - guards, prisoners, maybe both. You're complicit.\n\nDenis was right: violence begets violence. Freedom earned through blood carries weight.\n\nBut you're alive. You're FREE. That has to count for something.\n\n[CHAOS ROUTE COMPLETE - Escaped via riot, casualties occurred, freedom achieved through violence]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-035-1.png",
+          "/images/backgrounds/B-2-035-2.png",
+          "/images/backgrounds/B-2-035-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-036"
+    },
+    {
+      "id": "B-2-036",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-036.png",
+        "text": "You're free. But what kind of freedom?\n\nThe news will report the riot. Deaths. Damage. Escaped prisoners. You'll be hunted.\n\nYou have choices:\n• Disappear completely - new identity, new life, never look back\n• Seek justice - prove your innocence, expose the prison's corruption\n• Help others escape - return someday to free those still trapped\n• Live quietly - rural hiding, simple life, just survive\n\nViktor, if present: \"I'm disappearing. Starting over. You should too.\"\nBastian: \"I'm going to find a lawyer. Clear my name. It'll take years, but it's the right way.\"\n\nWhat path do you choose?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Disappear completely - new identity, new life",
+          "nextScene": "B-2-037A",
+          "flagChanges": {
+            "set": ["chose_disappearance", "new_identity_path"]
+          }
+        },
+        {
+          "text": "Seek justice - prove innocence, expose corruption",
+          "nextScene": "B-2-037B",
+          "flagChanges": {
+            "set": ["chose_justice", "legal_battle_path"]
+          }
+        },
+        {
+          "text": "Help others escape - return to free the trapped",
+          "nextScene": "B-2-037C",
+          "flagChanges": {
+            "set": ["chose_liberation", "return_mission_path"]
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-037A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-037A.png",
+        "text": "",
+        "pages": [
+          "You choose disappearance. New name. New face. New life.\n\nMarcel, if present, connects you with forgers. Within a week, you have papers. Identity. History. You're someone else now.\n\nYou move to a small town in the south. Take a manual labor job. Keep your head down. Never talk about your past.\n\nYears pass. The riot fades from news. The search for escaped prisoners winds down. You survive.",
+          "But you never forget. Stone Island lives in your nightmares. The violence. The chaos. The faces of those who didn't make it.\n\nViktor was right: freedom has a price. You paid it in blood and conscience.\n\nBut you're alive. Some nights, that's enough.\n\n[ENDING: DISAPPEARANCE - New identity, quiet life, survivor's guilt]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-037A-1.png",
+          "/images/backgrounds/B-2-037A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E01",
+      "flagChanges": {
+        "set": ["chaos_route_ending_disappearance", "new_identity_created"]
+      }
+    },
+    {
+      "id": "B-2-037B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-037B.png",
+        "text": "",
+        "pages": [
+          "You choose justice. Risky. Dangerous. But necessary.\n\nBastian helps you find a lawyer. Someone who specializes in wrongful convictions. You present your case: falsified evidence. Corrupt trial. Political motivation.\n\nThe riot complicates things. \"You're wanted for prison break,\" the lawyer warns. \"This will be an uphill battle.\"\n\nBut you persist. Years of legal fighting. Appeals. Evidence gathering. Testimonies.",
+          "Eventually: success. Your conviction is overturned. The evidence of corruption is made public. Stone Island's administration is investigated.\n\nYou're pardoned for the escape due to wrongful imprisonment. Free. Legally free.\n\nBut the cost was high. Years of hiding. Fighting. Living in fear.\n\nStill. You proved your innocence. That matters.\n\n[ENDING: JUSTICE ACHIEVED - Legal vindication, corruption exposed, hard-won freedom]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-037B-1.png",
+          "/images/backgrounds/B-2-037B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E02",
+      "flagChanges": {
+        "set": ["chaos_route_ending_justice", "legal_vindication_achieved"]
+      }
+    },
+    {
+      "id": "B-2-037C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-037C.png",
+        "text": "",
+        "pages": [
+          "You choose liberation. Not just for yourself. For everyone still trapped.\n\nYou spend years planning. Building resources. Recruiting allies. Creating an underground network.\n\nDenis's chapel route becomes part of a larger system. You help political prisoners escape. Wrongfully convicted inmates. People the system abandoned.\n\nIt's dangerous. You're constantly hunted. But you're making a difference.",
+          "Viktor, if he survived, joins your cause. \"I escaped for me,\" he says. \"Now I fight for others. Strange how freedom changes a man.\"\n\nYou never return to Stone Island directly. But you help dozens escape it. Continuing the work Denis started. That the monks began centuries ago.\n\nSanctuary. That's what you provide. Not just escape. Sanctuary.\n\n[ENDING: LIBERATION - Continued resistance, helping others escape, legacy of freedom]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-037C-1.png",
+          "/images/backgrounds/B-2-037C-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E05",
+      "flagChanges": {
+        "set": ["chaos_route_ending_liberation", "freedom_fighter_path"]
+      }
+    },
+    {
+      "id": "B-2-038",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-038.png",
+        "text": "",
+        "pages": [
+          "EPILOGUE - VIKTOR'S LEGACY\n\nIf Viktor survived the chaos route, he becomes a different man. The riot changed him. Not softened - Viktor will never be soft. But focused.\n\nHe opens a gym for at-risk youth. Teaching boxing. Discipline. How to channel violence into purpose.\n\n\"I spent my life being strong,\" he tells students. \"But strength without direction is just destruction. You want to fight? Fight for something that matters.\"",
+          "If Viktor died during the escape - sacrificed himself on the wall - his legacy is different but equally powerful.\n\nThe prisoners who escaped tell his story. The man who held the line. Who drew fire so others could be free.\n\nViktor Kozlov. Former boxer. Convicted killer. Prison revolutionary.\n\nHero? Villain? Both? Neither?\n\nHistory will decide. But you'll never forget him.",
+          "The man who taught you that strength has many forms. That violence, used precisely, can create space for mercy.\n\nThat freedom is never free. It's earned. Through courage. Through sacrifice. Through the willingness to do what must be done.\n\nViktor understood that better than anyone.\n\n[VIKTOR'S LEGACY HONORED - His role in escape remembered, impact lasting]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-038-1.png",
+          "/images/backgrounds/B-2-038-2.png",
+          "/images/backgrounds/B-2-038-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-039"
+    },
+    {
+      "id": "B-2-039",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-039.png",
+        "text": "",
+        "pages": [
+          "THE RIOT'S AFTERMATH\n\nStone Island was never the same after the chaos route.\n\nFive guards died. Fourteen prisoners. Seventeen injured. Property damage in the millions.\n\nThe government launched investigations. Reforms were promised. The warden was replaced.\n\nBut Stone Island remained. Prisons always remain.",
+          "Denis, still inside, continued his work. The chapel route was never discovered. He kept it secret, maintained it, waiting for the next soul who needed sanctuary.\n\n\"Violence begets violence,\" he told new prisoners. \"But mercy begets mercy. Choose wisely.\"\n\nÉmile, if he survived and remained, became more dangerous. The riot proved chaos works. He learned that lesson well.",
+          "And you? You're free. But freedom earned through violence carries weight.\n\nEvery anniversary of the riot, you remember. The faces. The choices. The cost.\n\nViktor was right: freedom has a price. Sometimes that price is blood.\n\nDenis was right: violence begets violence. Every action has consequences.\n\nBoth were right. That's the hardest truth.\n\n[CHAOS ROUTE: COMPLETE - Freedom achieved through riot, moral complexity acknowledged, consequences accepted]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-039-1.png",
+          "/images/backgrounds/B-2-039-2.png",
+          "/images/backgrounds/B-2-039-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E05",
+      "flagChanges": {
+        "set": ["chaos_route_complete", "riot_consequences_shown", "moral_complexity_explored"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,649 @@
+{
+  "scenes": [
+    {
+      "id": "B-2-040",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-040.png",
+        "text": "",
+        "pages": [
+          "NIGHT, DAY 7\n\nYour cell. Dark except for moonlight through the barred window. Émile Beaumont sits on your bunk like he owns it. Which, in a sense, he does. Everything in Stone Island belongs to someone. Violence. Information. Fear.\n\nBastian stands by the door, keeping watch. The team committed to the pact, but when you chose the Leverage Route, some reacted with suspicion. Denis, if present, looked troubled. Viktor scoffed.\n\nÉmile unfolds a piece of paper. Not contraband maps or escape plans. A list. Names. Dates. Amounts.",
+          "\"Three years,\" Émile says quietly. \"That's how long I've been documenting this place. Guard schedules. Who takes bribes. Who beats prisoners. Who smuggles contraband. The warden's private deals with mainland suppliers.\"\n\nHe hands you the list. It's damning. Captain Moreau takes money from drug smugglers. Guard Sergeant Laurent falsifies reports. The warden himself has offshore accounts fed by prison labor exploitation.",
+          "\"This,\" Émile continues, \"is leverage. Not violence. Not tunnels. Information. The kind that destroys careers. Ruins families. Sends people to prison themselves - the ultimate irony.\"\n\nBastian studies the list over your shoulder. \"This is... comprehensive. How did you—\"\n\n\"I pay attention,\" Émile interrupts. \"While Viktor lifts weights and Denis prays, I watch. I listen. I collect.\"\n\nHe looks at you directly. \"Now we use it. Not to escape. To walk out. Legally. Officially. Because we'll own them.\"\n\n[LEVERAGE ROUTE ACTIVATED - Information warfare begins]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-040-1.png",
+          "/images/backgrounds/B-2-040-2.png",
+          "/images/backgrounds/B-2-040-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-041",
+      "requirements": {
+        "flags": ["committed_to_team", "emile_recruited"]
+      },
+      "flagChanges": {
+        "set": ["leverage_route_started", "act_2_begun", "corruption_evidence_revealed"]
+      },
+      "itemChanges": {
+        "add": ["emile_corruption_list"]
+      }
+    },
+    {
+      "id": "B-2-041",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-041.png",
+        "text": "Émile's list is powerful. But incomplete. To blackmail the captain and warden effectively, you need more than documents. You need witnesses. Proof. Evidence they can't deny.\n\nÉmile identifies three targets:\n\n• CAPTAIN MOREAU - Takes bribes from drug smugglers. If you can catch him in the act, photograph the exchange, that's leverage.\n\n• SERGEANT LAURENT - Falsifies reports, especially after prisoner beatings. If you can steal originals before he alters them, that's proof.\n\n• WARDEN DUBOIS (no relation) - Has offshore accounts. If you can access his office, find wire transfer receipts, that's ammunition.\n\nBastian warns: \"Each attempt is risky. We might only get one shot before they realize we're investigating.\"\n\nWhich target do you prioritize?",
+        "speaker": "bastian"
+      },
+      "choices": [
+        {
+          "text": "Captain Moreau - catch him taking a bribe, maximum leverage on guard captain",
+          "nextScene": "B-2-042A",
+          "flagChanges": {
+            "set": ["targeting_captain", "drug_bribe_investigation"]
+          }
+        },
+        {
+          "text": "Sergeant Laurent - steal original reports, prove systematic abuse",
+          "nextScene": "B-2-042B",
+          "flagChanges": {
+            "set": ["targeting_sergeant", "report_theft_investigation"]
+          }
+        },
+        {
+          "text": "Warden Dubois - access his office, find financial records",
+          "nextScene": "B-2-042C",
+          "flagChanges": {
+            "set": ["targeting_warden", "financial_investigation"]
+          },
+          "relationshipChanges": {
+            "emile": 10
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-042A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-042A.png",
+        "text": "",
+        "pages": [
+          "TARGETING CAPTAIN MOREAU\n\nÉmile provides the intelligence: \"Moreau meets his contact every Thursday at 21:30. Loading dock. The smuggler delivers drugs disguised as medical supplies. Moreau takes his cut - 30% cash, delivered in an envelope.\"\n\nYour job: photograph the exchange. Marcel, if present, rigged a camera from salvaged parts. Crude, but functional.\n\nDay 9, Thursday. You're hiding behind crates at the loading dock. Bastian and Émile keep watch from different positions.",
+          "21:25. A van arrives. Unmarked. The driver - a man in his 40s - unloads boxes labeled \"MEDICAL SUPPLIES - AUTHORIZED DELIVERY.\"\n\n21:30. Captain Moreau appears. He's alone. No other guards. That's suspicious in itself.\n\nThey talk quietly. You can't hear words. But you see it: an envelope. Cash exchanging hands. Moreau pockets it without looking inside.",
+          "You photograph it. Click. The flash is disabled but the lens catches moonlight. Did Moreau notice?\n\nHe doesn't react. The smuggler loads back into the van. Drives away. Moreau walks toward the guard barracks, counting money.\n\nYou have it. Photographic evidence of a senior officer taking a bribe. This is leverage.\n\n[CAPTAIN MOREAU EVIDENCE OBTAINED - Blackmail material secured]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-042A-1.png",
+          "/images/backgrounds/B-2-042A-2.png",
+          "/images/backgrounds/B-2-042A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-043",
+      "itemChanges": {
+        "add": ["moreau_bribe_photo"]
+      },
+      "flagChanges": {
+        "set": ["captain_evidence_obtained", "photo_evidence_secured"]
+      }
+    },
+    {
+      "id": "B-2-042B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-042B.png",
+        "text": "",
+        "pages": [
+          "TARGETING SERGEANT LAURENT\n\nÉmile explains: \"Laurent keeps two versions of incident reports. Original in his desk. Modified version in official files. The originals document excessive force. Broken bones. Concussions. The official versions? 'Prisoner fell' or 'Resisted compliance.'\"\n\nYour job: steal the originals before he destroys them. Marcel, if present, can pick the desk lock. Otherwise, you need creativity.",
+          "Day 10. Laurent's office is empty during evening yard time - 18:00 to 19:00. One hour window.\n\nMarcel picks the lock in forty seconds. You're inside. The office is sparse. Military efficient. No personal items. Just work.\n\nHis desk: locked. Marcel works on it. \"Three-pin tumbler. Easy.\"\n\nClick. Open.\n\nInside: a folder labeled \"INCIDENT ORIGINALS - DESTROY BY MONTH END.\" You photograph every page. Twelve reports. Twelve instances of guards beating prisoners. Documented. Signed. Before Laurent sanitized them.",
+          "One report stands out: Prisoner Henri Moreau (relation to captain?) beaten unconscious. Official report: \"Fell in shower.\" Original: \"Excessive force applied by Guard Beauchamp. Recommend investigation.\"\n\nThat investigation never happened. Instead, Laurent buried it.\n\nYou take the originals. Leave the office exactly as you found it. Laurent won't notice for days. By then, you'll have used them.\n\n[SERGEANT LAURENT EVIDENCE OBTAINED - Systematic abuse documented]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-042B-1.png",
+          "/images/backgrounds/B-2-042B-2.png",
+          "/images/backgrounds/B-2-042B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-043",
+      "itemChanges": {
+        "add": ["laurent_original_reports"]
+      },
+      "flagChanges": {
+        "set": ["sergeant_evidence_obtained", "abuse_documented"]
+      },
+      "relationshipChanges": {
+        "marcel": 10
+      }
+    },
+    {
+      "id": "B-2-042C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-042C.png",
+        "text": "",
+        "pages": [
+          "TARGETING WARDEN DUBOIS\n\nÉmile grins. \"Bold choice. The warden's office is the most protected location in the prison. But it's also where he keeps everything. Financial records. Offshore accounts. Evidence of labor exploitation.\"\n\nYour job: access his office during the one time it's vulnerable - Sunday morning when he attends mainland church services. Two-hour window.\n\nDay 11, Sunday. The warden's car leaves the island at 09:00. You have until 11:00.",
+          "The office is in the administrative building. Guards patrol, but Émile has their schedule. \"Ten-minute gaps. You'll have three opportunities to cross the courtyard. Miss all three, abort.\"\n\nFirst gap: now. You move. Cross the courtyard. Reach the administrative building. Marcel, if present, picks the outer lock. Inside.\n\nWarden's office: second floor. You climb stairs. Every creak is deafening. Reach the office door. It's... unlocked.\n\nToo easy? Or arrogant security?",
+          "Inside: the warden's sanctum. Mahogany desk. Leather chair. Paintings of colonial prisons. And filing cabinets.\n\nYou search systematically. Financial records in the third drawer. Wire transfers to Cayman Islands account. Amounts: significant. Source: prison labor contracts. He's been skimming.\n\nYou photograph everything. Dates. Amounts. Account numbers. This isn't just corruption. It's embezzlement. Fraud. Career-ending.\n\nFootsteps in the hallway. Someone's coming. Early.\n\nYou grab the photos and move to the window. Fire escape. You descend just as the door opens behind you.\n\nClose. Too close. But you have what you need.\n\n[WARDEN EVIDENCE OBTAINED - Financial crimes exposed]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-042C-1.png",
+          "/images/backgrounds/B-2-042C-2.png",
+          "/images/backgrounds/B-2-042C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-043",
+      "itemChanges": {
+        "add": ["warden_financial_records"]
+      },
+      "flagChanges": {
+        "set": ["warden_evidence_obtained", "embezzlement_exposed", "near_discovery"]
+      },
+      "relationshipChanges": {
+        "emile": 15
+      }
+    },
+    {
+      "id": "B-2-043",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-043.png",
+        "text": "",
+        "pages": [
+          "DAY 12 - PREPARATION FOR CONFRONTATION\n\nYour cell. The team assembles. You have evidence. Powerful, damning evidence. But evidence alone isn't enough. You need to use it correctly.\n\nÉmile lays out the plan: \"We don't confront the warden directly. Too dangerous. He has ultimate authority. Instead, we go to Captain Moreau. Show him what we have on him. Force him to become our ally.\"",
+          "Bastian objects: \"Moreau will arrest us. Throw us in solitary. Destroy the evidence.\"\n\n\"He can't,\" Émile counters. \"Because we're not giving him the originals. We're giving him copies. And we tell him: the originals are on the mainland. With someone who will release them if we don't check in weekly.\"\n\nIt's a bluff. But a credible one. Moreau doesn't know you don't have mainland contacts.",
+          "Denis, if present, speaks up: \"This is coercion. Blackmail. It's morally questionable at best—\"\n\n\"It's survival,\" Émile interrupts. \"The guards have been coercing and blackmailing prisoners for years. We're just speaking their language.\"\n\nYou must decide: how hard do you push? Moreau is corrupt, but he's also dangerous. Push too hard and he might decide killing you is easier than cooperating.",
+          "Viktor, if present, has a different concern: \"What if he calls our bluff? What if he says 'go ahead, release it'? Then what?\"\n\nÉmile smiles coldly. \"Then we release it. And his career ends. His family's reputation destroyed. He goes to prison himself. He won't call the bluff. Trust me.\"\n\n[CONFRONTATION PLANNED - Blackmail strategy finalized]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-043-1.png",
+          "/images/backgrounds/B-2-043-2.png",
+          "/images/backgrounds/B-2-043-3.png",
+          "/images/backgrounds/B-2-043-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-044"
+    },
+    {
+      "id": "B-2-044",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-044.png",
+        "text": "You're about to confront Captain Moreau with evidence of his corruption. This is the most dangerous moment of the leverage route.\n\nÉmile advises: \"Control the meeting. Don't let him dictate terms. But don't threaten him directly either. Make him think cooperation is his idea.\"\n\nBastian adds: \"Have an exit strategy. If this goes wrong, we need to scatter fast.\"\n\nHow do you approach the confrontation?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Aggressive approach - make it clear you own him, demand immediate compliance",
+          "nextScene": "B-2-045A",
+          "flagChanges": {
+            "set": ["confrontation_aggressive", "maximum_pressure"]
+          },
+          "relationshipChanges": {
+            "emile": 10
+          }
+        },
+        {
+          "text": "Diplomatic approach - frame it as mutual benefit, offer him a way out",
+          "nextScene": "B-2-045B",
+          "flagChanges": {
+            "set": ["confrontation_diplomatic", "collaborative_framing"]
+          },
+          "relationshipChanges": {
+            "bastian": 10
+          }
+        },
+        {
+          "text": "Cautious approach - reveal evidence slowly, gauge his reaction carefully",
+          "nextScene": "B-2-045C",
+          "flagChanges": {
+            "set": ["confrontation_cautious", "measured_reveal"]
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-045A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-045A.png",
+        "text": "",
+        "pages": [
+          "AGGRESSIVE CONFRONTATION\n\nYou request a meeting with Captain Moreau. Official. In his office. He's suspicious but agrees - prisoners requesting formal meetings is unusual but not unheard of.\n\nDay 13. His office. Moreau sits behind his desk, arms crossed. Defensive posture. \"You have five minutes, Dubois. Make it count.\"\n\nYou slide the photograph across the desk. Him. The envelope. The smuggler. Thursday night.\n\nMoreau's face goes pale. Then red. Anger. \"Where did you—\"",
+          "\"Doesn't matter,\" you interrupt. \"What matters is what happens next. You have two choices: cooperate with me, or watch your career burn.\"\n\nMoreau stands. Furious. \"You're threatening me? You're a prisoner! I could have you in solitary in sixty seconds!\"\n\n\"Do it,\" you challenge. \"And tomorrow, this photo reaches the mainland. Your family. Your superiors. Internal Affairs. Everyone.\"\n\nHis hand hovers over the phone. But he doesn't pick it up.",
+          "\"What do you want?\" Moreau asks finally. Defeated.\n\n\"Simple. My team and I walk out of here. Officially released. Paperwork processed. Legitimate.\"\n\n\"Impossible,\" Moreau says. \"The warden—\"\n\n\"We have evidence on the warden too,\" you lie smoothly. Émile taught you well. \"This goes all the way up. You cooperate, or everyone burns. Your choice.\"\n\nMoreau sits heavily. \"How?\"\n\nYou've won. But at what cost?\n\n[MOREAU DOMINATED - Forced cooperation, hostile ally]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-045A-1.png",
+          "/images/backgrounds/B-2-045A-2.png",
+          "/images/backgrounds/B-2-045A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-046",
+      "flagChanges": {
+        "set": ["moreau_dominated", "hostile_cooperation", "maximum_leverage_used"]
+      },
+      "relationshipChanges": {
+        "emile": 15
+      }
+    },
+    {
+      "id": "B-2-045B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-045B.png",
+        "text": "",
+        "pages": [
+          "DIPLOMATIC CONFRONTATION\n\nYou request a private conversation with Captain Moreau. Informal. In the chapel - neutral ground. He agrees, curious.\n\nDay 13. Chapel. Moreau enters warily. \"This better not be a waste of time, Dubois.\"\n\nYou show him the photograph. Not aggressively. Just... factually. \"I found this. I thought you should know it exists.\"\n\nMoreau stares. His jaw tightens. \"What do you want? Money? Privileges?\"",
+          "\"Freedom,\" you say simply. \"Not escape. Not violence. Just... legitimate release. For me and my team. Paperwork says we're being transferred to another facility. We disappear into the mainland. You never hear from us again.\"\n\nMoreau studies you. \"And the photo?\"\n\n\"Destroyed. Along with everything else we found. We're not blackmailers, Captain. We're innocent men trapped in a corrupt system. We just want out.\"",
+          "Moreau sits on a pew. Exhausted. \"I didn't want this job. I was a good officer once. Then... compromises. Small ones at first. Then bigger. Until I was in too deep to stop.\"\n\nHe looks at the photo again. \"If I help you, if this works... can I trust you to actually destroy the evidence?\"\n\nYou meet his eyes. \"Yes. We don't want revenge. Just freedom.\"\n\nHe nods slowly. \"Then let's figure out how to make this work. Together.\"\n\n[MOREAU COOPERATING - Reluctant ally gained, mutual benefit established]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-045B-1.png",
+          "/images/backgrounds/B-2-045B-2.png",
+          "/images/backgrounds/B-2-045B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-046",
+      "flagChanges": {
+        "set": ["moreau_cooperating", "mutual_benefit", "diplomatic_success"]
+      },
+      "relationshipChanges": {
+        "bastian": 15,
+        "denis": 10
+      }
+    },
+    {
+      "id": "B-2-045C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-045C.png",
+        "text": "",
+        "pages": [
+          "CAUTIOUS CONFRONTATION\n\nYou approach Captain Moreau during his rounds. Casual. Not in his office where he has power. In the yard where prisoners watch.\n\n\"Captain,\" you say quietly. \"I need to speak with you. Privately. It's... sensitive.\"\n\nHe's immediately suspicious. \"About what?\"\n\n\"Thursday nights. Loading dock. Medical supplies that aren't medical.\"\n\nHis face goes rigid. \"Follow me.\"",
+          "He leads you to an empty storage room. Closes the door. \"Talk.\"\n\nYou reveal the evidence piece by piece. Not everything at once. Testing his reactions. The photograph. The dates. The smuggler's identity.\n\nMoreau's responses tell you everything: he's afraid. Not of you. Of exposure. His entire life built on compromises is one revelation away from collapse.\n\n\"How many people know?\" he asks finally.\n\n\"Just my team,\" you admit. \"We're not trying to destroy you, Captain. We just want a way out.\"",
+          "Moreau calculates. You can see him weighing options. Arrest you? Too risky - you might have backups. Kill you? Even riskier - someone knows. Cooperate? That's his best option and he knows it.\n\n\"What's the plan?\" he asks. Resigned.\n\nYou outline it. Fake transfer papers. A midnight boat. He arranges everything, you disappear, everyone wins.\n\n\"And the evidence gets destroyed?\" Moreau presses.\n\n\"Completely,\" you assure him.\n\nHe nods. \"I'll make it work. But if you betray me—\"\n\n\"We won't,\" you interrupt. \"We just want to leave.\"\n\n[MOREAU CAUTIOUSLY ALLIED - Calculated cooperation, stable arrangement]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-045C-1.png",
+          "/images/backgrounds/B-2-045C-2.png",
+          "/images/backgrounds/B-2-045C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-046",
+      "flagChanges": {
+        "set": ["moreau_cautiously_allied", "calculated_cooperation", "stable_arrangement"]
+      },
+      "relationshipChanges": {
+        "emile": 5,
+        "bastian": 5
+      }
+    },
+    {
+      "id": "B-2-046",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-046.png",
+        "text": "",
+        "pages": [
+          "DAY 14 - INSIDE HELP ARRANGED\n\nMoreau calls you to his office. Not as prisoner and guard. As... conspirators.\n\n\"Here's how this works,\" he says, spreading documents on his desk. \"Transfer papers. Officially, you're being moved to a mainland facility for 'specialized medical treatment.' Bastian and up to three others can go with you.\"\n\nYou examine the papers. They look legitimate. Official stamps. Signatures. Warden's seal (forged, but perfect).",
+          "\"The boat comes Thursday night,\" Moreau continues. \"Same dock where I take deliveries. But this time, it's a legitimate prison transfer vessel. Or at least, it'll look like one.\"\n\n\"Won't the warden question this?\" Bastian asks.\n\nMoreau smiles grimly. \"The warden is away Thursday. Mainland conference. By the time he returns Friday, you'll be gone. The paperwork will be buried in his backlog. He might not even notice for weeks.\"",
+          "\"And if he does notice?\" you press.\n\nMoreau shrugs. \"Then I tell him the truth: I processed a routine transfer. How was I supposed to know it was irregular? I followed standard procedure.\"\n\nIt's plausible. Barely. But plausible.\n\nÉmile, if present, nods approval. \"This could work. Provided Moreau doesn't betray us at the last minute.\"\n\nMoreau looks at Émile directly. \"I won't. Because if this fails, we all go down. You with evidence of corruption. Me with evidence of aiding escape. We're in this together now.\"\n\nAn uneasy alliance. But an alliance nonetheless.\n\n[INSIDE HELP SECURED - Moreau preparing official escape]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-046-1.png",
+          "/images/backgrounds/B-2-046-2.png",
+          "/images/backgrounds/B-2-046-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-047",
+      "itemChanges": {
+        "add": ["transfer_papers_forged"]
+      },
+      "flagChanges": {
+        "set": ["inside_help_secured", "official_escape_planned", "moreau_committed"]
+      }
+    },
+    {
+      "id": "B-2-047",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-047.png",
+        "text": "",
+        "pages": [
+          "DAY 16, THURSDAY - THE ESCAPE\n\nEvening. The prison goes through its usual routine. Dinner. Yard time. Count. Lock-in.\n\nBut tonight is different. Tonight, you walk out.\n\n21:00 hours. Captain Moreau appears at your cell. \"Prisoner Dubois. Transfer processing. Come with me.\"\n\nThe other prisoners watch. Some jealous. Some curious. Émile's crew knows what's happening - they helped plan it. But they stay silent.",
+          "You're escorted to processing. Bastian and your chosen team members are already there. Each is given back their civilian clothes - the ones confiscated upon arrival. Symbolic. You're no longer prisoners. Legally, at least.\n\nMoreau hands you the transfer papers. \"Sign these. You're acknowledging voluntary transfer to Mainland Medical Facility for psychiatric evaluation.\"\n\nPsychiatric evaluation. The perfect cover. No one questions moving \"unstable\" prisoners.",
+          "21:30. You're led to the loading dock. A boat is there. Not a prison vessel. A medical transport. Red cross painted on the side. Legitimate.\n\nThe captain - not Moreau, an actual boat captain - checks the paperwork. \"Four transfers? That's unusual.\"\n\n\"Budget cuts,\" Moreau says smoothly. \"They're consolidating transport routes.\"\n\nThe captain shrugs. Doesn't care enough to question. \"Board.\"\n\nYou step onto the boat. Bastian follows. Then the others. You're leaving Stone Island. Officially. Legally. Through manipulation and blackmail and leverage.\n\nBut you're leaving.\n\n[WALKING OUT OFFICIALLY - Legitimate escape via corruption]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-047-1.png",
+          "/images/backgrounds/B-2-047-2.png",
+          "/images/backgrounds/B-2-047-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-048"
+    },
+    {
+      "id": "B-2-048",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-048.png",
+        "text": "",
+        "pages": [
+          "THE CHECKPOINT\n\nThe boat pulls away from Stone Island. But you're not free yet. Not truly. Because there's one more obstacle: the mainland checkpoint.\n\nEvery vessel leaving Stone Island is logged. Inspected. Questioned. Standard procedure. Usually routine. Tonight? It's the moment everything could fall apart.\n\nThe boat approaches the checkpoint dock. Mainland security - not prison guards, but port authority - waits.",
+          "An officer boards. Middle-aged. Bored. \"Transfer papers?\"\n\nThe boat captain hands them over. The officer examines them with practiced eyes. Checking signatures. Stamps. Dates.\n\nHe looks at you. Then at Bastian. Then at the others.\n\n\"Four psychiatric transfers?\" His tone is skeptical. \"All at once?\"\n\n\"Budget consolidation,\" the captain repeats. \"Check with Stone Island if you want.\"\n\nThe officer considers. Then picks up his radio.",
+          "Your heart stops. If he calls Stone Island, if the warden happens to be there, if someone notices the irregularity...\n\nThe radio crackles. \"Port Authority to Stone Island, confirm transfer of prisoners Dubois, Mercier, and two others. Over.\"\n\nSilence. Thirty seconds that feel like hours.\n\nThen: a voice. Captain Moreau's voice. \"Stone Island confirms. Four prisoners transferred per standing orders. All documentation approved. Over.\"\n\nThe officer nods. Hands back the papers. \"Proceed.\"\n\nThe boat continues to the mainland.\n\nYou're free.\n\n[CHECKPOINT PASSED - Moreau kept his word, escape successful]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-048-1.png",
+          "/images/backgrounds/B-2-048-2.png",
+          "/images/backgrounds/B-2-048-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-049",
+      "flagChanges": {
+        "set": ["checkpoint_passed", "moreau_confirmed", "almost_free"]
+      }
+    },
+    {
+      "id": "B-2-049",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-049.png",
+        "text": "The boat docks at a mainland medical facility. The official endpoint of your \"transfer.\"\n\nBut you're not going inside. That was never the plan. The moment the boat docks, the moment the captain's paperwork is filed, you disappear.\n\nÉmile, if present, has mainland contacts. People who can provide new identities. Transportation. Money.\n\nBastian has his sister Cordelia. A safe house. A way to disappear.\n\nMarcel, if present, knows forgers. People who can create documents that make you legally invisible.\n\nWhat do you do?",
+        "speaker": null
+      },
+      "choices": [
+        {
+          "text": "Use Émile's contacts - fastest but most dangerous, connected to criminals",
+          "nextScene": "B-2-050A",
+          "flagChanges": {
+            "set": ["used_emile_contacts", "criminal_network_path"]
+          },
+          "relationshipChanges": {
+            "emile": 20
+          }
+        },
+        {
+          "text": "Go to Cordelia - safest, family help, legitimate disappearance",
+          "nextScene": "B-2-050B",
+          "flagChanges": {
+            "set": ["used_cordelia_network", "family_help_path"]
+          },
+          "relationshipChanges": {
+            "bastian": 20
+          }
+        },
+        {
+          "text": "Marcel's forgers - new identity, complete reinvention, solo path",
+          "nextScene": "B-2-050C",
+          "requirements": {
+            "flags": ["marcel_recruited"]
+          },
+          "flagChanges": {
+            "set": ["used_marcel_forgers", "new_identity_path"]
+          },
+          "relationshipChanges": {
+            "marcel": 20
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-050A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-050A.png",
+        "text": "",
+        "pages": [
+          "ÉMILE'S NETWORK\n\nYou follow Émile into the mainland city. Not the respectable districts. The underworld. Where criminals and fugitives trade in identities and silence.\n\nA warehouse. Men with weapons. Émile knows them. Nods. They let you through.\n\nInside: a businessman. Expensive suit. Cold eyes. \"These are the Stone Island escapees?\"\n\n\"Not escapees,\" Émile corrects. \"Legitimate transfers. But we need to disappear nonetheless.\"",
+          "The businessman names his price. High. Very high. \"New identities. Passports. Housing. Employment history. Complete reinvention. But it's expensive.\"\n\n\"How expensive?\" Bastian asks.\n\n\"Twenty thousand euros. Each.\"\n\nYou don't have that money. Not yet. But the businessman smiles. \"I can arrange payment plans. Services rendered. Jobs completed. You work off the debt.\"\n\nÉmile warned you: his network has prices. Freedom isn't free. It's just a different kind of prison.",
+          "But the alternative is being caught. Returned to Stone Island. Or worse.\n\n\"We'll do it,\" you say. Committing to debt. To criminal obligations. To a future owned by others.\n\nThe businessman nods. \"Smart. Your new identities will be ready in forty-eight hours. Until then, you stay here. Under my protection.\"\n\nProtection. Or captivity. Time will tell.\n\n[ÉMILE'S NETWORK USED - Freedom with criminal obligations]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-050A-1.png",
+          "/images/backgrounds/B-2-050A-2.png",
+          "/images/backgrounds/B-2-050A-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-055",
+      "flagChanges": {
+        "set": ["criminal_debt_incurred", "identity_pending", "warehouse_sanctuary"]
+      }
+    },
+    {
+      "id": "B-2-050B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-050B.png",
+        "text": "",
+        "pages": [
+          "CORDELIA'S SAFE HOUSE\n\nBastian leads you to a small fishing village north of the city. His sister Cordelia owns a cottage here. Legitimate. Off any prisoner watch lists.\n\nShe opens the door. Sees Bastian. Her eyes well with tears. \"Mon Dieu. You're alive. You're actually alive.\"\n\nThey embrace. Years of separation. Years of her thinking she'd never see her brother again.",
+          "Cordelia looks at you and the team. \"Come inside. Quickly. Before neighbors see.\"\n\nThe cottage is small but warm. Real food. Soft beds. Things you haven't experienced in years. Stone Island was cold stone and thin gruel. This is... life.\n\n\"You can stay here,\" Cordelia says. \"As long as you need. But eventually, you'll need proper identities. Documentation. I can help with that - I have contacts in the refugee network. People who help political prisoners disappear.\"",
+          "\"We're not political prisoners,\" Bastian starts.\n\n\"You're innocent men imprisoned by a corrupt system,\" Cordelia interrupts. \"That's political enough. The network will help. It'll take time - weeks, maybe months. But it'll be legitimate. Legal. You won't owe criminals. Won't be looking over your shoulder.\"\n\nSlow. Safe. Clean. The long way to freedom. But the right way.\n\n[CORDELIA'S NETWORK USED - Slow but legitimate freedom]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-050B-1.png",
+          "/images/backgrounds/B-2-050B-2.png",
+          "/images/backgrounds/B-2-050B-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-055",
+      "flagChanges": {
+        "set": ["cordelia_sanctuary", "legitimate_network", "long_process_ahead"]
+      },
+      "relationshipChanges": {
+        "bastian": 25
+      }
+    },
+    {
+      "id": "B-2-050C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-050C.png",
+        "text": "",
+        "pages": [
+          "MARCEL'S FORGERS\n\nMarcel knows people. Not criminals. Not activists. Professionals. Forgers who create identities so complete, so perfect, that governments never question them.\n\n\"My old network,\" Marcel explains as you walk through a quiet suburb. \"From before prison. When I worked in document security, I met people who... worked the other side.\"\n\nA house. Ordinary. A woman answers. Middle-aged. Looks like a schoolteacher. \"Marcel. You're out?\"\n\n\"Transferred,\" Marcel says carefully. \"We need the full package. Four people. Complete histories.\"",
+          "The woman - calls herself Madame Rousseau - examines each of you. \"Photographs. Biometrics. Personal histories. I'll need three days and thirty thousand euros.\"\n\nThirty thousand. But Émile, if he escaped with you, has resources. Stolen funds. Smuggled assets. \"I can cover it,\" he says. \"Consider it investment in our freedom.\"\n\nMadame Rousseau works with professional precision. New names. New birthplaces. New employment histories. She even creates paper trails going back years - school records, medical files, tax documents.",
+          "\"When I'm done,\" she says, \"you won't just have identities. You'll have lives. Complete lives. You can get jobs. Open bank accounts. Travel. As far as any government database is concerned, you've always existed as these people.\"\n\nIt's the most expensive option. But also the most complete.\n\nThree days later, you're someone else. Legally. Officially. Irreversibly.\n\n[MARCEL'S FORGERS USED - Complete identity reinvention]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-050C-1.png",
+          "/images/backgrounds/B-2-050C-2.png",
+          "/images/backgrounds/B-2-050C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-055",
+      "flagChanges": {
+        "set": ["complete_identity_created", "professional_forgery", "highest_cost_paid"]
+      },
+      "relationshipChanges": {
+        "marcel": 25
+      }
+    },
+    {
+      "id": "B-2-055",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-055.png",
+        "text": "",
+        "pages": [
+          "THREE WEEKS LATER\n\nYou're reading a newspaper at a mainland café. Free. Truly free for the first time since your wrongful conviction.\n\nThe headline catches your eye: \"STONE ISLAND CORRUPTION SCANDAL - CAPTAIN ARRESTED.\"\n\nYou read the article. Captain Moreau was arrested last week. Anonymous evidence sent to internal affairs. Photographs. Documents. Everything you promised to destroy.",
+          "The evidence wasn't destroyed by you. Someone else released it. Émile, perhaps? He never actually promised anything. He just let you promise Moreau.\n\nOr maybe it was Denis, if he was part of the team. Unable to let corruption go unpunished, even if it meant breaking his word by proxy.\n\nOr the evidence was intercepted. Stolen. Used by someone else for their own purposes.",
+          "The result: Moreau is in prison now. The corrupt guard became the prisoner. Poetic justice? Or betrayal?\n\nBastian sees you reading. \"We promised to destroy that evidence.\"\n\n\"We did,\" you say carefully. \"Our copies are destroyed. What happened to the originals... that was out of our control.\"\n\nIt's a rationalization. But it's also true. The leverage route was always about control through information. You controlled the information just long enough to escape. What happened after? That's the price of dealing with leverage.\n\n[MOREAU'S FATE REVEALED - Corruption exposed despite promises]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-055-1.png",
+          "/images/backgrounds/B-2-055-2.png",
+          "/images/backgrounds/B-2-055-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-056"
+    },
+    {
+      "id": "B-2-056",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-2-056.png",
+        "text": "Six months have passed. You've built a new life under your new identity. Employment. Housing. Normalcy.\n\nBut freedom through leverage comes with complications. Moreau is in prison because of evidence you collected. The warden is under investigation. Stone Island's entire administrative structure is collapsing.\n\nAnd you? You're free. But was it worth the cost?\n\nBastian asks: \"Do you regret it? The blackmail? The manipulation?\"\n\nHow do you respond?",
+        "speaker": "bastian"
+      },
+      "choices": [
+        {
+          "text": "No regrets - we used the system's corruption against itself, perfect justice",
+          "nextScene": "B-2-057A",
+          "flagChanges": {
+            "set": ["no_regrets", "pragmatic_view"]
+          }
+        },
+        {
+          "text": "Mixed feelings - freedom was necessary, but methods were morally gray",
+          "nextScene": "B-2-057B",
+          "flagChanges": {
+            "set": ["mixed_feelings", "moral_complexity"]
+          },
+          "relationshipChanges": {
+            "denis": 10
+          }
+        },
+        {
+          "text": "Deep regrets - we became what we fought against, compromised our souls",
+          "nextScene": "B-2-057C",
+          "flagChanges": {
+            "set": ["deep_regrets", "moral_burden"]
+          },
+          "relationshipChanges": {
+            "denis": 20
+          }
+        }
+      ],
+      "nextScene": ""
+    },
+    {
+      "id": "B-2-057A",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-057A.png",
+        "text": "",
+        "pages": [
+          "\"No regrets,\" you say firmly. \"Moreau was corrupt. The warden was corrupt. The entire system was broken. We just used their own weapons against them. That's not wrong. That's justice.\"\n\nÉmile, if he's with you, nods approval. \"Exactly. The strong prey on the weak. We became strong. We won. That's how the world works.\"\n\nBastian looks troubled. \"But we promised to destroy the evidence—\"",
+          "\"We promised nothing,\" Émile interrupts. \"Moreau assumed. We let him assume. That's negotiation, not lying. Besides, he's where he belongs. Prison. Just like we were.\"\n\nYou've fully embraced the leverage philosophy. Information is power. Manipulation is strategy. Morality is subjective. You're free, and that justifies everything.\n\nYour new life is built on this foundation: pragmatism over principle. Results over righteousness. And you sleep soundly. No guilt. No second-guessing.\n\n[ENDING: PRAGMATIC FREEDOM - No moral burden, pure survival]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-057A-1.png",
+          "/images/backgrounds/B-2-057A-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-059",
+      "flagChanges": {
+        "set": ["leverage_fully_embraced", "morality_rejected", "pure_pragmatism"]
+      }
+    },
+    {
+      "id": "B-2-057B",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-057B.png",
+        "text": "",
+        "pages": [
+          "\"Mixed feelings,\" you admit. \"We did what we had to do. Survival required leverage. But... I'm not proud of the manipulation. Of the promises we made and broke.\"\n\nBastian nods. \"I feel the same. Freedom was necessary. But the methods... they left marks.\"\n\nDenis, if he's part of your group, speaks: \"Moral compromises always do. The question is: will you learn from this? Or will you justify it forever?\"",
+          "You think about that. About Moreau in prison. About the leverage you used. About the difference between justice and revenge.\n\n\"I'll live with it,\" you say finally. \"The guilt. The moral ambiguity. But I'll also remember it. Next time - if there is a next time - maybe I'll find a cleaner way.\"\n\nIt's not perfect resolution. But it's honest. You're free, and that freedom came at a moral cost. You acknowledge the cost without being destroyed by it.\n\nThat's growth. Imperfect, complicated growth.\n\n[ENDING: CONFLICTED FREEDOM - Moral awareness maintained]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-057B-1.png",
+          "/images/backgrounds/B-2-057B-2.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-059",
+      "flagChanges": {
+        "set": ["moral_complexity_acknowledged", "growth_potential", "guilt_managed"]
+      }
+    },
+    {
+      "id": "B-2-057C",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-057C.png",
+        "text": "",
+        "pages": [
+          "\"Deep regrets,\" you say quietly. \"We became exactly what we fought against. Moreau was corrupt, so we used corruption to fight him. The warden manipulated people, so we manipulated Moreau. We didn't win. We just... became them.\"\n\nDenis, if present, puts a hand on your shoulder. \"Recognizing that is the first step. Many never do. They justify. Rationalize. You're seeing clearly.\"\n\nBastian asks: \"So what do we do? We can't undo what happened. We can't go back.\"",
+          "\"We can do better going forward,\" you reply. \"We're free now. We have a chance to build something good. Something honest. We can help others without compromising our souls.\"\n\nIt's a heavy burden. The guilt of manipulation. The knowledge that Moreau is in prison partially because you broke a promise. But you carry it consciously. Use it as weight to keep you grounded.\n\nFreedom earned through moral compromise is still freedom. But it's tainted. And you'll spend your free life trying to balance the scales.",
+          "Years later, you volunteer at a legal aid clinic. Helping wrongfully convicted people. Using legitimate means. Legal means. You're trying to redeem the methods you used at Stone Island.\n\nIt doesn't erase what you did. But it's something.\n\n[ENDING: REDEMPTIVE FREEDOM - Seeking to balance moral debt]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-057C-1.png",
+          "/images/backgrounds/B-2-057C-2.png",
+          "/images/backgrounds/B-2-057C-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-2-059",
+      "flagChanges": {
+        "set": ["seeking_redemption", "moral_burden_heavy", "future_volunteer_work"]
+      }
+    },
+    {
+      "id": "B-2-059",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-2-059.png",
+        "text": "",
+        "pages": [
+          "EPILOGUE - THE LEVERAGE ROUTE\n\nStone Island's corruption scandal made national news. Captain Moreau. Sergeant Laurent. The warden himself. All arrested. Tried. Convicted.\n\nThe prison was restructured. New administration. Oversight committees. Reform. Your blackmail - intended just to secure your freedom - triggered systemic change.\n\nIronic. The leverage route, built on manipulation and moral compromise, ultimately delivered justice. Not just for you. For everyone.",
+          "Émile, wherever he is now, probably appreciates the irony. He taught you that information is power. That leverage is the ultimate tool. That morality is negotiable.\n\nYou proved him right. And maybe proved him wrong. Because the information didn't just free you. It freed everyone. It broke the corrupt system.\n\nBastian, living under his new identity, sometimes sends you messages. Encrypted. Careful. \"We did something good,\" he writes. \"Even if the methods were questionable.\"",
+          "You think about Stone Island. About the prisoners still there. About the new administration trying to rebuild trust. About Moreau in a cell, experiencing what his victims experienced.\n\nThe leverage route was never about violence. Never about physical escape. It was about using the system's own corruption against itself. Information as weapon. Truth as leverage.\n\nYou're free. Morally complicated. But free.\n\nAnd Stone Island? It's changing. Slowly. Imperfectly. But changing.\n\nAll because you learned to play the game. And won.\n\n[LEVERAGE ROUTE: COMPLETE - Freedom through information warfare, systemic change triggered]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-2-059-1.png",
+          "/images/backgrounds/B-2-059-2.png",
+          "/images/backgrounds/B-2-059-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "B-5-E07",
+      "flagChanges": {
+        "set": ["leverage_route_complete", "systemic_change_triggered", "morally_complex_victory"]
+      }
+    }
+  ]
+}

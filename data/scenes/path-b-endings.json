@@ -1,0 +1,477 @@
+{
+  "scenes": [
+    {
+      "id": "B-5-D01",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-D01.png",
+        "text": "",
+        "pages": [
+          "ENDING: BETRAYED AND SHOT\n\nYou never saw Claude watching from the shadows. You never knew he was already talking to the guards, mapping out every move you made, every ally you recruited.",
+          "The rendezvous point. The team is gathering. You're checking the perimeter when you hear the crack of rifle fire.\n\nPain explodes in your chest. You fall. The world tilts sideways.",
+          "Guards pour from the darkness. Your allies scatter, scream, fight. But it's over. You know it's over.\n\nYour last thought: Claude. He sold us out.\n\nYour last sight: The prison walls. You never left them.\n\n[DEATH ENDING - Betrayed and Shot]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-D01-1.png",
+          "/images/backgrounds/B-5-D01-2.png",
+          "/images/backgrounds/B-5-D01-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_death", "betrayed_by_claude", "shot_by_guards"]
+      }
+    },
+    {
+      "id": "B-5-D02",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-D02.png",
+        "text": "",
+        "pages": [
+          "ENDING: LEFT BEHIND\n\nThe boat is pulling away. You can see it from where you're pinned down by guard fire. The team had to make a choice: wait for you and risk everyone, or leave now and save themselves.",
+          "They chose survival. You would have done the same.\n\nBut knowing that doesn't stop the hollow ache as the boat disappears into the fog. Free. They're all free.",
+          "A guard's bullet finds your leg. You fall. The stones are cold and wet beneath you.\n\nYour last thought: At least some of us made it.\n\nYour last sight: The empty sea. Freedom, sailing away without you.\n\n[DEATH ENDING - Left Behind]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-D02-1.png",
+          "/images/backgrounds/B-5-D02-2.png",
+          "/images/backgrounds/B-5-D02-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_death", "left_behind", "team_escaped_without_you"]
+      }
+    },
+    {
+      "id": "B-5-D03",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-D03.png",
+        "text": "",
+        "pages": [
+          "ENDING: CAUGHT IN CROSSFIRE\n\nViktor's riot worked too well. The entire prison exploded into violence. Guards firing into crowds. Prisoners throwing themselves at armed men. Blood on every stone.",
+          "You were trying to reach the rendezvous point when the bullet hit. Not aimed at you. Just... there. Wrong place, wrong time.",
+          "You fall in the chaos. Prisoners run past you. Guards advance. The riot rages on, and you're just another body on the ground.\n\nYour last thought: This wasn't the plan.\n\nYour last sight: Viktor, still fighting. Still holding the line. At least someone is free.\n\n[DEATH ENDING - Caught in Crossfire]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-D03-1.png",
+          "/images/backgrounds/B-5-D03-2.png",
+          "/images/backgrounds/B-5-D03-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_death", "crossfire_casualty", "riot_chaos"]
+      }
+    },
+    {
+      "id": "B-5-C01",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-C01.png",
+        "text": "",
+        "pages": [
+          "ENDING: BETRAYED BY CLAUDE\n\nThe guards are waiting at every exit. Every passage. Every route you planned. They knew. They knew everything.",
+          "Claude steps out of the shadows, smiling that thin smile. \"I told them everything, Alexandre. Every meeting. Every ally. Every plan.\"\n\nThe warden approaches. \"Take them all to solitary. I want them separated. Forever.\"\n\nYou're dragged away. Your allies scream, struggle, but there are too many guards. The plan is shattered. The escape is over.",
+          "Six months later, you're still in solitary. No windows. No visitors. No hope.\n\nClaude walks free. The warden got a promotion. And you rot in darkness.\n\n[CAPTURE ENDING - Betrayed by Claude]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-C01-1.png",
+          "/images/backgrounds/B-5-C01-2.png",
+          "/images/backgrounds/B-5-C01-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_capture", "betrayed_by_claude", "solitary_confinement"]
+      }
+    },
+    {
+      "id": "B-5-C02",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-C02.png",
+        "text": "",
+        "pages": [
+          "ENDING: PLAN FAILED\n\nToo many variables. Too many moving parts. Too many things that could go wrong.\n\nAnd they all went wrong at once.",
+          "The guard patrol changed. The timing shifted. Someone made a noise. The door that was supposed to be unlocked wasn't. The boat that was supposed to be there had engine trouble.\n\nOne failure cascaded into another. The plan collapsed like a house of cards.",
+          "They rounded you up one by one. Methodically. Efficiently. The warden doesn't even look angry—just satisfied.\n\n\"Solitary confinement for all conspirators. They'll never see each other again.\"\n\nThe cell door slams shut. Darkness. Silence. Forever.\n\n[CAPTURE ENDING - Plan Failed]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-C02-1.png",
+          "/images/backgrounds/B-5-C02-2.png",
+          "/images/backgrounds/B-5-C02-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_capture", "plan_failed", "multiple_failures"]
+      }
+    },
+    {
+      "id": "B-5-C03",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-C03.png",
+        "text": "",
+        "pages": [
+          "ENDING: ÉMILE BROKE\n\nÉmile is gone. You see the boat in the distance, one figure aboard. He used your plan to escape alone.",
+          "The guards are closing in. Your team realizes what happened at the same moment you do. Émile Beaumont—the monster who killed twelve people—used you all as a distraction.",
+          "He probably planned it from the start. Helped you recruit. Helped you plan. Then took the boat himself while guards swarmed your position.\n\nYou're caught. All of you. And Émile is free.",
+          "Six months later, you hear news: Émile killed three more people in Marseille. The press calls him \"The Stone Island Escapee.\"\n\nYou helped a serial killer go free. That guilt will haunt you forever.\n\n[CAPTURE ENDING - Émile Broke]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-C03-1.png",
+          "/images/backgrounds/B-5-C03-2.png",
+          "/images/backgrounds/B-5-C03-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_capture", "emile_betrayed", "emile_escaped_alone"]
+      }
+    },
+    {
+      "id": "B-5-C04",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-C04.png",
+        "text": "",
+        "pages": [
+          "ENDING: VIKTOR'S RAMPAGE\n\nViktor's riot brought too much attention. The entire prison exploded. Guards called for backup. Backup called for more backup.",
+          "Now you hear the sound: military trucks. Soldiers. The French Army has been called to Stone Island.\n\nViktor is still fighting somewhere in the chaos, but you know it's over. There's no escape now. There are too many guns, too many soldiers.",
+          "They round up everyone involved. The warden personally identifies you. \"That one. He started this.\"\n\nYou're thrown into a cell deeper than before. No windows. No light. They call it \"the tomb.\"\n\nViktor is somewhere nearby—you can hear him singing sometimes. Still defiant. Still unbroken.\n\nBut you'll never leave this place.\n\n[CAPTURE ENDING - Viktor's Rampage]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-C04-1.png",
+          "/images/backgrounds/B-5-C04-2.png",
+          "/images/backgrounds/B-5-C04-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_capture", "military_called", "riot_too_big"]
+      }
+    },
+    {
+      "id": "B-5-E01",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E01.png",
+        "text": "",
+        "pages": [
+          "ENDING: SOLO SURVIVOR\n\nYou made it. You're on the mainland. You're breathing free air for the first time in months.",
+          "But you're alone. The team is gone. Captured. Maybe dead. You don't know. You couldn't wait to find out.\n\nYou did what you had to do. Survival required sacrifice. They would have done the same.",
+          "But that knowledge doesn't stop the hollow ache in your chest every time you think about them. Bastian. Marcel. Viktor. Denis. The people who trusted you.\n\nYou're free. But freedom tastes like ash when everyone else is still inside.\n\nYou walk into the sunrise, alone. Forever wondering: was it worth it?\n\n[ESCAPE ENDING - Solo Survivor]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E01-1.png",
+          "/images/backgrounds/B-5-E01-2.png",
+          "/images/backgrounds/B-5-E01-3.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "solo_survivor", "guilty_freedom"]
+      }
+    },
+    {
+      "id": "B-5-E02",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E02.png",
+        "text": "",
+        "pages": [
+          "ENDING: EVERYONE LIVES\n\nYou count them. Bastian. Marcel. Viktor. Denis. Everyone you recruited. Everyone who trusted you. All here. All free.",
+          "This is the hardest ending. Perfect execution. No betrayals. No sacrifices. No one left behind. Against all odds, you did the impossible.",
+          "On the mainland, you split up. Too dangerous to stay together. But before you part ways, Bastian grips your shoulder. \"Family,\" he says simply.",
+          "Marcel tips his hat. Viktor bear-hugs you. Denis blesses you. Even if you recruited Émile, he nods with something like respect.\n\nYou're free. All of you. A family forged in desperation, bound by survival, scattered by necessity.",
+          "Three years later, you receive a letter. No signature. Just an address in Lyon, a date, and a time.\n\nYou go. They're all there. Smiling.\n\nFamily reunites.\n\n[ESCAPE ENDING - Everyone Lives] ★ PERFECT ENDING ★"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E02-1.png",
+          "/images/backgrounds/B-5-E02-2.png",
+          "/images/backgrounds/B-5-E02-3.png",
+          "/images/backgrounds/B-5-E02-4.png",
+          "/images/backgrounds/B-5-E02-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "everyone_lives", "perfect_ending", "family_forever"]
+      }
+    },
+    {
+      "id": "B-5-E03",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E03.png",
+        "text": "",
+        "pages": [
+          "ENDING: BROTHERS IN ARMS\n\nYou and Bastian made it. The boat is heading toward the mainland, cutting through morning fog. The others didn't make it. You don't know if they're captured or dead.",
+          "Bastian sits beside you in silence. He doesn't need to speak. You've shared a cell for months. You planned this together. You executed it together.",
+          "Whatever happens next, you face it together. Some bonds can't be broken—not by prison walls, not by time, not by distance.",
+          "Ten years later, you and Bastian run a small boat repair shop in Marseille. His sister Cordelia visits every month. You never talk about Stone Island.\n\nBut sometimes, late at night, you see him staring at the sea. Thinking about the others. Wondering what happened to them.",
+          "You put a hand on his shoulder. He nods. Brothers. Forever.\n\n[ESCAPE ENDING - Brothers in Arms]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E03-1.png",
+          "/images/backgrounds/B-5-E03-2.png",
+          "/images/backgrounds/B-5-E03-3.png",
+          "/images/backgrounds/B-5-E03-4.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "bastian_escaped", "lifelong_bond"]
+      }
+    },
+    {
+      "id": "B-5-E04",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E04.png",
+        "text": "",
+        "pages": [
+          "ENDING: THE LOCKSMITH'S ESCAPE\n\nMarcel's masterpiece. Seven gates. Seven locks. Thirty-four seconds on the final one. Not a single guard alerted. Not a single alarm triggered.",
+          "The boat slides away from the dock in perfect silence. Marcel at the controls, steady hands that opened every lock now guiding you to freedom.",
+          "Behind you, Stone Island's lights fade into the fog. No sirens. No shouts. No pursuit. They won't even know you're gone until morning roll call.",
+          "Marcel allows himself a small smile. \"Three years of planning. Forty-seven keys. One perfect night.\"\n\nYou're free. The team is free. And not a single person was hurt.\n\nMarcel's legend will be told in prisons for decades: The Locksmith who opened the unopenable.",
+          "Years later, you hear rumors: Marcel started a legitimate locksmith business in Paris. He donates to wrongful conviction charities.\n\nSome locks are meant to be opened.\n\n[ESCAPE ENDING - The Locksmith's Escape]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E04-1.png",
+          "/images/backgrounds/B-5-E04-2.png",
+          "/images/backgrounds/B-5-E04-3.png",
+          "/images/backgrounds/B-5-E04-4.png",
+          "/images/backgrounds/B-5-E04-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "marcel_masterpiece", "perfect_technical_escape"]
+      }
+    },
+    {
+      "id": "B-5-E05",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E05.png",
+        "text": "",
+        "pages": [
+          "ENDING: VIKTOR'S REDEMPTION\n\nYou're running. The boat is ahead. Guards are behind. And Viktor is standing at the junction, blocking the passage with his massive frame.",
+          "\"GO!\" he roars. \"I'LL HOLD THEM!\"\n\n\"Viktor, there are too many—\"\n\n\"I SAID GO!\"\n\nYou run. You have to. If you don't, his sacrifice means nothing.",
+          "Behind you, you hear Viktor's battle cry. The crash of bodies. Guards shouting. Gunfire. More shouting. Then... silence.\n\nThe boat reaches the mainland. You're free. But Viktor is gone. Probably dead. Definitely captured.",
+          "Five years later, you receive a letter. It's from Viktor. He's alive. Transferred to a mainland prison. Solitary confinement, but alive.\n\nHe writes: \"Worth it. You better be living free enough for both of us.\"\n\nYou are, Viktor. You are.\n\n[ESCAPE ENDING - Viktor's Redemption]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E05-1.png",
+          "/images/backgrounds/B-5-E05-2.png",
+          "/images/backgrounds/B-5-E05-3.png",
+          "/images/backgrounds/B-5-E05-4.png",
+          "/images/backgrounds/B-5-E05-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "viktor_sacrifice", "redeemed_by_courage"]
+      }
+    },
+    {
+      "id": "B-5-E06",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E06.png",
+        "text": "",
+        "pages": [
+          "ENDING: DENIS'S BLESSING\n\nThe ancient passage leads to the coastline. Denis guided you through every step, every turn, every hidden door that monks used centuries ago.",
+          "At the final exit, Denis stops. \"This is where I leave you.\"\n\n\"What? Denis, come with us. You're free!\"\n\nHe shakes his head gently. \"My work is here, Alexandre. The prisoners need someone who still believes in redemption. Who still offers sanctuary.\"",
+          "He places a hand on your head. A blessing. \"Go with God. Live well. Prove that escape is possible—not just from prison, but from the past.\"\n\nYou emerge onto the beach. Denis walks back into the darkness.",
+          "Ten years later, you read about a prison chaplain who started a reform movement. Father Denis Michel—advocating for the wrongfully convicted, challenging corruption, changing lives.\n\nHe found his freedom. Just not the kind you expected.\n\n[ESCAPE ENDING - Denis's Blessing]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E06-1.png",
+          "/images/backgrounds/B-5-E06-2.png",
+          "/images/backgrounds/B-5-E06-3.png",
+          "/images/backgrounds/B-5-E06-4.png",
+          "/images/backgrounds/B-5-E06-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "denis_stayed", "blessed_by_priest"]
+      }
+    },
+    {
+      "id": "B-5-E07",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E07.png",
+        "text": "",
+        "pages": [
+          "ENDING: POLITICAL ESCAPE\n\nYou walked out the front door. In daylight. With official transfer papers. The guards saluted as you passed.",
+          "Émile's leverage worked perfectly. Captain Moreau had no choice. The warden looked away. The system that imprisoned you became the system that freed you.",
+          "On the mainland, you read the newspapers: \"Stone Island Corruption Scandal.\" Captain Moreau arrested. Warden under investigation. The entire prison administration dismantled.",
+          "Émile sends you a message: \"Information is power. We used their corruption against them. Enjoy your freedom.\"\n\nYou should feel guilty about the blackmail. The manipulation. The broken promises.",
+          "But you don't. You're free. The corrupt guards are imprisoned. Sometimes the system needs to be beaten with its own rules.\n\nJustice isn't always clean. But it's still justice.\n\n[ESCAPE ENDING - Political Escape]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E07-1.png",
+          "/images/backgrounds/B-5-E07-2.png",
+          "/images/backgrounds/B-5-E07-3.png",
+          "/images/backgrounds/B-5-E07-4.png",
+          "/images/backgrounds/B-5-E07-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "political_escape", "leverage_success", "corruption_exposed"]
+      }
+    },
+    {
+      "id": "B-5-E08",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E08.png",
+        "text": "",
+        "pages": [
+          "ENDING: THE FAMILY\n\nThree of you made it. Maybe four. Maybe more. You're together on the mainland, scattered across a safe house that Bastian's contacts arranged.",
+          "You're not blood family. You're something stronger: a family forged in desperation, bound by survival, tested by impossible odds.",
+          "Over the next months, you scatter. Too dangerous to stay together. But you keep in contact through coded letters, careful phone calls, occasional meetings.",
+          "Marcel opens a locksmith shop. Viktor works at a dock. Denis (if he came) volunteers at a church. Bastian fishes with his sister. You rebuild railways, the honest way this time.",
+          "Every year on the anniversary of your escape, you meet. Never the same place twice. Always careful. Always watching.\n\nBut always together. Because family doesn't abandon family. Not anymore.",
+          "You escaped Stone Island. But more importantly, you found something you lost the day you were convicted: people who believe in you.\n\n[ESCAPE ENDING - The Family]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E08-1.png",
+          "/images/backgrounds/B-5-E08-2.png",
+          "/images/backgrounds/B-5-E08-3.png",
+          "/images/backgrounds/B-5-E08-4.png",
+          "/images/backgrounds/B-5-E08-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "family_escape", "multiple_survivors"]
+      }
+    },
+    {
+      "id": "B-5-E09",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E09.png",
+        "text": "",
+        "pages": [
+          "ENDING: CORDELIA'S CREW\n\nThe fishing boat cuts through morning fog. Bastian's sister Cordelia stands at the wheel, grinning like this is the most fun she's had in years.",
+          "\"My brother said you were trouble,\" she laughs. \"Looks like he was right.\"\n\nBehind her, your team—three, four, maybe five escaped prisoners—huddle together. Exhausted. Battered. But free.",
+          "Cordelia has done this before. She knows the safe routes, the quiet coves, the places to land where authorities don't ask questions. She's part of an underground network that helps the wrongfully convicted.",
+          "Over the next weeks, she helps each of you disappear. New identities. New lives. New chances.\n\nShe refuses payment. \"My brother believes in you. That's enough for me.\"",
+          "Five years later, Bastian tells you: Cordelia has helped seventeen more escape. She's a legend in the resistance movement.\n\nSome heroes don't carry swords. Some carry fishing nets.\n\n[ESCAPE ENDING - Cordelia's Crew]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E09-1.png",
+          "/images/backgrounds/B-5-E09-2.png",
+          "/images/backgrounds/B-5-E09-3.png",
+          "/images/backgrounds/B-5-E09-4.png",
+          "/images/backgrounds/B-5-E09-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "cordelia_rescue", "underground_network"]
+      }
+    },
+    {
+      "id": "B-5-E10",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E10.png",
+        "text": "",
+        "pages": [
+          "ENDING: THE PRIEST'S WAY\n\nThe ancient passages that monks used to flee persecution now carry you to freedom. Denis led the way, calm and certain, every step a prayer.",
+          "You emerge in the chapel cellar of a coastal village. The local priest is waiting—part of a network Denis never mentioned. How many has he helped escape over the years?",
+          "\"God's sanctuary knows no walls,\" Denis says simply. \"These passages were built for exactly this purpose: to offer refuge to those unjustly persecuted.\"",
+          "Your team—minimal violence, maximum stealth, guided by faith—is safe. The priest arranges documents, passage, new identities. All quietly. All without violence.",
+          "Weeks later, you're settled in a new city. You receive a letter from Denis. He's still at Stone Island, still offering spiritual guidance to prisoners.\n\nHe writes: \"You were never guilty. The walls were the crime, not the escape.\"",
+          "Some prisons are meant to be broken. Some exits are sacred.\n\n[ESCAPE ENDING - The Priest's Way]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E10-1.png",
+          "/images/backgrounds/B-5-E10-2.png",
+          "/images/backgrounds/B-5-E10-3.png",
+          "/images/backgrounds/B-5-E10-4.png",
+          "/images/backgrounds/B-5-E10-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "sacred_escape", "priest_network"]
+      }
+    },
+    {
+      "id": "B-5-E11",
+      "type": "narrative",
+      "content": {
+        "visual": "/images/backgrounds/B-5-E11.png",
+        "text": "",
+        "pages": [
+          "ENDING: BITTERSWEET FREEDOM\n\nYou're free. The mainland stretches before you. Sunlight on your face. No walls. No guards. No bars.",
+          "But someone you cared about didn't make it. You don't know if they're captured or dead. You just know they're not here.",
+          "You think about them every day. Bastian's quiet loyalty. Marcel's precision. Viktor's strength. Denis's faith. Whoever stayed behind haunts every moment of freedom.",
+          "You rebuild your life. New identity. New job. New city. But there's a hollow space inside that nothing fills. Some part of you is still in Stone Island, locked in a cell with the person who didn't escape.",
+          "Years pass. You're successful. Respected. Free. But incomplete.\n\nAt night, you dream about prison. In those dreams, you made a different choice. In those dreams, everyone made it out.",
+          "You wake up alone. Still free. Still incomplete. Some victories cost more than you can afford.\n\n[ESCAPE ENDING - Bittersweet Freedom]"
+        ],
+        "pageVisuals": [
+          "/images/backgrounds/B-5-E11-1.png",
+          "/images/backgrounds/B-5-E11-2.png",
+          "/images/backgrounds/B-5-E11-3.png",
+          "/images/backgrounds/B-5-E11-4.png",
+          "/images/backgrounds/B-5-E11-5.png"
+        ],
+        "speaker": null
+      },
+      "choices": [],
+      "nextScene": "",
+      "flagChanges": {
+        "set": ["ending_escape", "bittersweet_freedom", "survivor_guilt"]
+      }
+    }
+  ]
+}

@@ -24,6 +24,8 @@ export interface SceneContent {
   speaker?: string;
   /** Optional pages for multi-page dialogue (if present, text is ignored) */
   pages?: string[];
+  /** Optional per-page visuals (if present, overrides visual for each page) */
+  pageVisuals?: string[];
 }
 
 /**
@@ -46,6 +48,12 @@ export interface Choice {
     add?: string[];
     remove?: string[];
   };
+  /** Resource changes that occur when this choice is selected */
+  resourceChanges?: {
+    matches?: number;
+    health?: number;
+    currency?: number;
+  };
   /** Relationship changes that occur when this choice is selected */
   relationshipChanges?: {
     [characterId: string]: number;
@@ -65,8 +73,14 @@ export interface ChoiceRequirements {
   items?: string[];
   /** Items that must NOT be in the player's inventory */
   notItems?: string[];
+  /** Minimum resource amounts required */
+  resources?: {
+    matches?: number;
+    health?: number;
+    currency?: number;
+  };
   /** Flags that must be set to true */
-  flags?: string[];
+  flags?: string | string[];
   /** Flags that must NOT be set */
   notFlags?: string[];
   /** Minimum relationship scores required with characters */
@@ -259,6 +273,18 @@ export interface GameStats {
 }
 
 /**
+ * Consumable resources (Path A mechanics)
+ */
+export interface Resources {
+  /** Number of matches remaining (Path A) */
+  matches: number;
+  /** Health/stamina (Path C) */
+  health?: number;
+  /** Money/currency for bribes */
+  currency?: number;
+}
+
+/**
  * Represents the current state of the game
  */
 export interface GameState {
@@ -274,6 +300,8 @@ export interface GameState {
   workAssignment: WorkAssignment | null;
   /** Items in the player's inventory */
   inventory: string[];
+  /** Consumable resources (matches, health, currency) */
+  resources: Resources;
   /** Relationship scores with all characters */
   relationships: {
     [characterId: string]: number;

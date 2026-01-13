@@ -59,16 +59,13 @@ scene3.choices.forEach((choice, index) => {
 });
 console.log();
 
-// Test 7: Load an investigation scene
-console.log('Test 7: Load investigation scene (A-1-015)');
-const scene4 = loadScene('A-1-015');
+// Test 7: Load an investigation scene (X-0-010A from Act 0)
+console.log('Test 7: Load investigation scene (X-0-010A)');
+const scene4 = loadScene('X-0-010A');
 console.log(`✓ Scene ID: ${scene4.id}`);
 console.log(`✓ Scene Type: ${scene4.type}`);
-if (scene4.itemChanges?.add) {
-  console.log(`✓ Items added: ${scene4.itemChanges.add.join(', ')}`);
-}
-if (scene4.choices[0].evidenceChanges?.add) {
-  console.log(`✓ Evidence can be collected: ${scene4.choices[0].evidenceChanges.add.join(', ')}`);
+if (scene4.flagChanges?.set) {
+  console.log(`✓ Flags set: ${scene4.flagChanges.set.join(', ')}`);
 }
 console.log();
 

@@ -1863,7 +1863,7 @@
         "speaker": null
       },
       "choices": [],
-      "nextScene": "B-2-001",
+      "nextScene": "B-1-041",
       "flagChanges": {
         "set": ["team_pact_complete", "act_1_complete", "ready_for_execution"]
       },
@@ -1890,7 +1890,7 @@
         "speaker": null
       },
       "choices": [],
-      "nextScene": "B-2-001",
+      "nextScene": "B-1-041",
       "flagChanges": {
         "set": ["reluctant_commitment", "team_cohesion_damaged", "trust_issues"]
       },
@@ -1917,9 +1917,9 @@
         "speaker": null
       },
       "choices": [],
-      "nextScene": "X-0-050",
+      "nextScene": "",
       "flagChanges": {
-        "set": ["path_b_failed", "team_disbanded", "lost_respect", "alone_again"]
+        "set": ["path_b_failed", "team_disbanded", "lost_respect", "alone_again", "path_b_abandoned"]
       },
       "relationshipChanges": {
         "bastian": -50,
@@ -1928,6 +1928,73 @@
         "denis": -20,
         "emile": 10
       }
+    },
+    {
+      "id": "B-1-041",
+      "type": "choice",
+      "content": {
+        "visual": "/images/backgrounds/B-1-041.png",
+        "text": "DAY 7 - THE CHOICE OF METHOD\n\nThe team has committed. The pact is made. Now comes the critical question: HOW do you escape?\n\nDifferent allies offer different approaches:\n\nDENIS (if recruited): \"The chapel route. Ancient passages built by monks. Peaceful. Nonviolent. I can guide you through sanctuary itself.\"\n\nVIKTOR (if recruited): \"Chaos. A riot. Overwhelming force. We create a distraction so massive the guards can't contain it. Then we breach the wall.\"\n\nÉMILE (if recruited): \"Leverage. Blackmail. I have evidence on the guards. We force them to let us walk out. Officially. Legally. No violence. No tunnels. Just... corruption used against itself.\"\n\nMARCEL (if recruited): \"The loading dock. I have keys. We slip out during supply delivery. Quiet. Technical. Requires precision.\"\n\nBastian looks at you. \"You're the one who brought us together. You choose the method.\"\n\nWhat route do you take?",
+        "speaker": "bastian"
+      },
+      "choices": [
+        {
+          "text": "Chapel Route - Denis's peaceful passages through monk tunnels",
+          "nextScene": "B-2-001",
+          "requirements": {
+            "flags": ["denis_recruited"]
+          },
+          "flagChanges": {
+            "set": ["chose_chapel_route", "nonviolent_path"]
+          },
+          "relationshipChanges": {
+            "denis": 20,
+            "viktor": -10
+          }
+        },
+        {
+          "text": "Chaos Route - Viktor's riot plan, violence and overwhelming force",
+          "nextScene": "B-2-020",
+          "requirements": {
+            "flags": ["viktor_recruited"]
+          },
+          "flagChanges": {
+            "set": ["chose_chaos_route", "violent_path"]
+          },
+          "relationshipChanges": {
+            "viktor": 20,
+            "denis": -15
+          }
+        },
+        {
+          "text": "Leverage Route - Émile's blackmail plan, walk out with inside help",
+          "nextScene": "B-2-040",
+          "requirements": {
+            "flags": ["emile_recruited"]
+          },
+          "flagChanges": {
+            "set": ["chose_leverage_route", "information_warfare_path"]
+          },
+          "relationshipChanges": {
+            "emile": 20,
+            "denis": -10
+          }
+        },
+        {
+          "text": "Loading Dock Route - Marcel's keys and precision, boat theft with team",
+          "nextScene": "B-2-060",
+          "requirements": {
+            "flags": ["marcel_recruited"]
+          },
+          "flagChanges": {
+            "set": ["chose_loading_dock_route", "technical_path"]
+          },
+          "relationshipChanges": {
+            "marcel": 20
+          }
+        }
+      ],
+      "nextScene": ""
     }
   ]
 }

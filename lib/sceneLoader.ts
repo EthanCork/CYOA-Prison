@@ -8,6 +8,10 @@ import act0Scenes from '@/data/scenes/act-0-opening.json';
 import pathATunnels from '@/data/scenes/path-a-tunnels.json';
 import pathBSocial from '@/data/scenes/path-b-social.json';
 import pathBChapelRoute from '@/data/scenes/path-b-chapel-route.json';
+import pathBChaosRoute from '@/data/scenes/path-b-chaos-route.json';
+import pathBLeverageRoute from '@/data/scenes/path-b-leverage-route.json';
+import pathBLoadingDockRoute from '@/data/scenes/path-b-loading-dock-route.json';
+import pathBEndings from '@/data/scenes/path-b-endings.json';
 
 /**
  * Error thrown when a scene cannot be found
@@ -62,6 +66,42 @@ function initializeSceneCache(): Map<string, Scene> {
   // Load scenes from path-b-chapel-route.json (Path B Chapel Route)
   if (pathBChapelRoute && Array.isArray(pathBChapelRoute.scenes)) {
     for (const scene of pathBChapelRoute.scenes) {
+      if (!sceneCache.has(scene.id)) {
+        sceneCache.set(scene.id, scene as Scene);
+      }
+    }
+  }
+
+  // Load scenes from path-b-chaos-route.json (Path B Chaos Route)
+  if (pathBChaosRoute && Array.isArray(pathBChaosRoute.scenes)) {
+    for (const scene of pathBChaosRoute.scenes) {
+      if (!sceneCache.has(scene.id)) {
+        sceneCache.set(scene.id, scene as Scene);
+      }
+    }
+  }
+
+  // Load scenes from path-b-leverage-route.json (Path B Leverage Route)
+  if (pathBLeverageRoute && Array.isArray(pathBLeverageRoute.scenes)) {
+    for (const scene of pathBLeverageRoute.scenes) {
+      if (!sceneCache.has(scene.id)) {
+        sceneCache.set(scene.id, scene as Scene);
+      }
+    }
+  }
+
+  // Load scenes from path-b-loading-dock-route.json (Path B Loading Dock Route)
+  if (pathBLoadingDockRoute && Array.isArray(pathBLoadingDockRoute.scenes)) {
+    for (const scene of pathBLoadingDockRoute.scenes) {
+      if (!sceneCache.has(scene.id)) {
+        sceneCache.set(scene.id, scene as Scene);
+      }
+    }
+  }
+
+  // Load scenes from path-b-endings.json (Path B Endings)
+  if (pathBEndings && Array.isArray(pathBEndings.scenes)) {
+    for (const scene of pathBEndings.scenes) {
       if (!sceneCache.has(scene.id)) {
         sceneCache.set(scene.id, scene as Scene);
       }
